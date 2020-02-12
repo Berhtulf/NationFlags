@@ -1,0 +1,2588 @@
+[
+  {
+    "name" : "Afghanistan",
+    "alpha2Code" : "AF",
+    "capital" : "Kabul",
+    "region" : "Asia",
+    "population" : 27657145,
+    "latlngZm" : [
+      33.6514781,
+      65.7600695,
+      12
+    ],
+    "area" : 652230
+  },
+  {
+    "name" : "Albania",
+    "alpha2Code" : "AL",
+    "capital" : "Tirana",
+    "region" : "Europe",
+    "population" : 2886026,
+    "latlngZm" : [
+      41.2180154,
+      19.7743905,
+      4
+    ],
+    "area" : 28748
+  },
+  {
+    "name" : "Algeria",
+    "alpha2Code" : "DZ",
+    "capital" : "Algiers",
+    "region" : "Africa",
+    "population" : 40400000,
+    "latlngZm" : [
+      27,
+      2,
+      22
+    ],
+    "area" : 2381741
+  },
+  {
+    "name" : "Andorra",
+    "alpha2Code" : "AD",
+    "capital" : "Andorra la Vella",
+    "region" : "Europe",
+    "population" : 78014,
+    "latlngZm" : [
+      42.5,
+      1.6,
+      0.6
+    ],
+    "area" : 468
+  },
+  {
+    "name" : "Angola",
+    "alpha2Code" : "AO",
+    "capital" : "Luanda",
+    "region" : "Africa",
+    "population" : 25868000,
+    "latlngZm" : [
+      -12.5,
+      18.5,
+      13
+    ],
+    "area" : 1246700
+  },
+  {
+    "name" : "Antigua and Barbuda",
+    "alpha2Code" : "AG",
+    "capital" : "Saint John's",
+    "region" : "Americas",
+    "population" : 86295,
+    "latlngZm" : [
+      17.05,
+      -61.8,
+      0.5
+    ],
+    "area" : 442
+  },
+  {
+    "name" : "Argentina",
+    "alpha2Code" : "AR",
+    "capital" : "Buenos Aires",
+    "region" : "Americas",
+    "population" : 43590400,
+    "latlngZm" : [
+      -34,
+      -64,
+      20
+    ],
+    "area" : 2780400
+  },
+  {
+    "name" : "Armenia",
+    "alpha2Code" : "AM",
+    "capital" : "Yerevan",
+    "region" : "Asia",
+    "population" : 2994400,
+    "latlngZm" : [
+      40,
+      45,
+      5
+    ],
+    "area" : 29743
+  },
+  {
+    "name" : "Australia",
+    "alpha2Code" : "AU",
+    "capital" : "Canberra",
+    "region" : "Oceania",
+    "population" : 24117360,
+    "latlngZm" : [
+      -27,
+      133,
+      40
+    ],
+    "area" : 7692024
+  },
+  {
+    "name" : "Austria",
+    "alpha2Code" : "AT",
+    "capital" : "Vienna",
+    "region" : "Europe",
+    "population" : 8725931,
+    "latlngZm" : [
+      47.33333333,
+      13.33333333,
+      10
+    ],
+    "area" : 83871
+  },
+  {
+    "name" : "Azerbaijan",
+    "alpha2Code" : "AZ",
+    "capital" : "Baku",
+    "region" : "Asia",
+    "population" : 9730500,
+    "latlngZm" : [
+      40.5,
+      47.5,
+      10
+    ],
+    "area" : 86600
+  },
+  {
+    "name" : "Bahamas",
+    "alpha2Code" : "BS",
+    "capital" : "Nassau",
+    "region" : "Americas",
+    "population" : 378040,
+    "latlngZm" : [
+      24.25,
+      -76,
+      5
+    ],
+    "area" : 13943
+  },
+  {
+    "name" : "Bahrain",
+    "alpha2Code" : "BH",
+    "capital" : "Manama",
+    "region" : "Asia",
+    "population" : 1404900,
+    "latlngZm" : [
+      26,
+      50.55,
+      0.7
+    ],
+    "area" : 765
+  },
+  {
+    "name" : "Bangladesh",
+    "alpha2Code" : "BD",
+    "capital" : "Dhaka",
+    "region" : "Asia",
+    "population" : 161006790,
+    "latlngZm" : [
+      24,
+      90,
+      5
+    ],
+    "area" : 147570
+  },
+  {
+    "name" : "Barbados",
+    "alpha2Code" : "BB",
+    "capital" : "Bridgetown",
+    "region" : "Americas",
+    "population" : 285000,
+    "latlngZm" : [
+      13.16666666,
+      -59.53333333,
+      1
+    ],
+    "area" : 430
+  },
+  {
+    "name" : "Belarus",
+    "alpha2Code" : "BY",
+    "capital" : "Minsk",
+    "region" : "Europe",
+    "population" : 9498700,
+    "latlngZm" : [
+      53,
+      28,
+      10
+    ],
+    "area" : 207600
+  },
+  {
+    "name" : "Belgium",
+    "alpha2Code" : "BE",
+    "capital" : "Brussels",
+    "region" : "Europe",
+    "population" : 11319511,
+    "latlngZm" : [
+      50.83333333,
+      4.5,
+      5
+    ],
+    "area" : 30528
+  },
+  {
+    "name" : "Belize",
+    "alpha2Code" : "BZ",
+    "capital" : "Belmopan",
+    "region" : "Americas",
+    "population" : 370300,
+    "latlngZm" : [
+      17.25,
+      -88.75,
+      5
+    ],
+    "area" : 22966
+  },
+  {
+    "name" : "Benin",
+    "alpha2Code" : "BJ",
+    "capital" : "Porto-Novo",
+    "region" : "Africa",
+    "population" : 10653654,
+    "latlngZm" : [
+      9.5,
+      2.25,
+      5
+    ],
+    "area" : 112622
+  },
+  {
+    "name" : "Bhutan",
+    "alpha2Code" : "BT",
+    "capital" : "Thimphu",
+    "region" : "Asia",
+    "population" : 775620,
+    "latlngZm" : [
+      27.5,
+      90.5,
+      5
+    ],
+    "area" : 38394
+  },
+  {
+    "name" : "Bolivia",
+    "alpha2Code" : "BO",
+    "capital" : "Sucre",
+    "region" : "Americas",
+    "population" : 10985059,
+    "latlngZm" : [
+      -16,
+      -65,
+      20
+    ],
+    "area" : 1098581
+  },
+  {
+    "name" : "Bosnia and Herzegovina",
+    "alpha2Code" : "BA",
+    "capital" : "Sarajevo",
+    "region" : "Europe",
+    "population" : 3531159,
+    "latlngZm" : [
+      44,
+      18,
+      8
+    ],
+    "area" : 51209
+  },
+  {
+    "name" : "Botswana",
+    "alpha2Code" : "BW",
+    "capital" : "Gaborone",
+    "region" : "Africa",
+    "population" : 2141206,
+    "latlngZm" : [
+      -22,
+      24,
+      10
+    ],
+    "area" : 582000
+  },
+  {
+    "name" : "Brazil",
+    "alpha2Code" : "BR",
+    "capital" : "Brasília",
+    "region" : "Americas",
+    "population" : 206135893,
+    "latlngZm" : [
+      -10,
+      -55,
+      50
+    ],
+    "area" : 8515767
+  },
+  {
+    "name" : "Brunei",
+    "alpha2Code" : "BN",
+    "capital" : "Bandar Seri Begawan",
+    "region" : "Asia",
+    "population" : 411900,
+    "latlngZm" : [
+      4.5,
+      114.66666666,
+      5
+    ],
+    "area" : 5765
+  },
+  {
+    "name" : "Bulgaria",
+    "alpha2Code" : "BG",
+    "capital" : "Sofia",
+    "region" : "Europe",
+    "population" : 7153784,
+    "latlngZm" : [
+      43,
+      25,
+      10
+    ],
+    "area" : 110879
+  },
+  {
+    "name" : "Burkina Faso",
+    "alpha2Code" : "BF",
+    "capital" : "Ouagadougou",
+    "region" : "Africa",
+    "population" : 19034397,
+    "latlngZm" : [
+      13,
+      -2,
+      9
+    ],
+    "area" : 272967
+  },
+  {
+    "name" : "Burundi",
+    "alpha2Code" : "BI",
+    "capital" : "Bujumbura",
+    "region" : "Africa",
+    "population" : 10114505,
+    "latlngZm" : [
+      -3.5,
+      30,
+      5
+    ],
+    "area" : 27834
+  },
+  {
+    "name" : "Cambodia",
+    "alpha2Code" : "KH",
+    "capital" : "Phnom Penh",
+    "region" : "Asia",
+    "population" : 15626444,
+    "latlngZm" : [
+      13,
+      105,
+      5
+    ],
+    "area" : 181035
+  },
+  {
+    "name" : "Cameroon",
+    "alpha2Code" : "CM",
+    "capital" : "Yaoundé",
+    "region" : "Africa",
+    "population" : 22709892,
+    "latlngZm" : [
+      6,
+      12,
+      10
+    ],
+    "area" : 475442
+  },
+  {
+    "name" : "Canada",
+    "alpha2Code" : "CA",
+    "capital" : "Ottawa",
+    "region" : "Americas",
+    "population" : 36155487,
+    "latlngZm" : [
+      60,
+      -95,
+      60
+    ],
+    "area" : 9984670
+  },
+  {
+    "name" : "Cape Verde",
+    "alpha2Code" : "CV",
+    "capital" : "Praia",
+    "region" : "Africa",
+    "population" : 531239,
+    "latlngZm" : [
+      16,
+      -24,
+      5
+    ],
+    "area" : 4033
+  },
+  {
+    "name" : "Central African Republic",
+    "alpha2Code" : "CF",
+    "capital" : "Bangui",
+    "region" : "Africa",
+    "population" : 4998000,
+    "latlngZm" : [
+      7,
+      21,
+      15
+    ],
+    "area" : 622984
+  },
+  {
+    "name" : "Chad",
+    "alpha2Code" : "TD",
+    "capital" : "N'Djamena",
+    "region" : "Africa",
+    "population" : 14497000,
+    "latlngZm" : [
+      15,
+      19,
+      20
+    ],
+    "area" : 1284000
+  },
+  {
+    "name" : "Chile",
+    "alpha2Code" : "CL",
+    "capital" : "Santiago",
+    "region" : "Americas",
+    "population" : 18191900,
+    "latlngZm" : [
+      -35,
+      -71,
+      20
+    ],
+    "area" : 756102
+  },
+  {
+    "name" : "China",
+    "alpha2Code" : "CN",
+    "capital" : "Beijing",
+    "region" : "Asia",
+    "population" : 1377422166,
+    "latlngZm" : [
+      35,
+      105,
+      50
+    ],
+    "area" : 9640011
+  },
+  {
+    "name" : "Colombia",
+    "alpha2Code" : "CO",
+    "capital" : "Bogotá",
+    "region" : "Americas",
+    "population" : 48759958,
+    "latlngZm" : [
+      4,
+      -72,
+      20
+    ],
+    "area" : 1141748
+  },
+  {
+    "name" : "Comoros",
+    "alpha2Code" : "KM",
+    "capital" : "Moroni",
+    "region" : "Africa",
+    "population" : 806153,
+    "latlngZm" : [
+      -12.16666666,
+      44.25,
+      5
+    ],
+    "area" : 1862
+  },
+  {
+    "name" : "Republic of the Congo",
+    "alpha2Code" : "CG",
+    "capital" : "Brazzaville",
+    "region" : "Africa",
+    "population" : 4741000,
+    "latlngZm" : [
+      -1,
+      15,
+      10
+    ],
+    "area" : 342000
+  },
+  {
+    "name" : "Democratic Republic of the Congo",
+    "alpha2Code" : "CD",
+    "capital" : "Kinshasa",
+    "region" : "Africa",
+    "population" : 85026000,
+    "latlngZm" : [
+      0,
+      25,
+      20
+    ],
+    "area" : 2344858
+  },
+  {
+    "name" : "Cook Islands",
+    "alpha2Code" : "CK",
+    "capital" : "Avarua",
+    "region" : "Oceania",
+    "population" : 18100,
+    "latlngZm" : [
+      -21.23333333,
+      -159.76666666,
+      0.5
+    ],
+    "area" : 236
+  },
+  {
+    "name" : "Costa Rica",
+    "alpha2Code" : "CR",
+    "capital" : "San José",
+    "region" : "Americas",
+    "population" : 4890379,
+    "latlngZm" : [
+      10,
+      -84,
+      5
+    ],
+    "area" : 51100
+  },
+  {
+    "name" : "Croatia",
+    "alpha2Code" : "HR",
+    "capital" : "Zagreb",
+    "region" : "Europe",
+    "population" : 4190669,
+    "latlngZm" : [
+      45.16666666,
+      15.5,
+      10
+    ],
+    "area" : 56594
+  },
+  {
+    "name" : "Cuba",
+    "alpha2Code" : "CU",
+    "capital" : "Havana",
+    "region" : "Americas",
+    "population" : 11239004,
+    "latlngZm" : [
+      21.5,
+      -78,
+      15
+    ],
+    "area" : 109884
+  },
+  {
+    "name" : "Cyprus",
+    "alpha2Code" : "CY",
+    "capital" : "Nicosia",
+    "region" : "Europe",
+    "population" : 847000,
+    "latlngZm" : [
+      35,
+      33,
+      5
+    ],
+    "area" : 9251
+  },
+  {
+    "name" : "Czech Republic",
+    "alpha2Code" : "CZ",
+    "capital" : "Prague",
+    "region" : "Europe",
+    "population" : 10558524,
+    "latlngZm" : [
+      49.75,
+      15.5,
+      10
+    ],
+    "area" : 78865
+  },
+  {
+    "name" : "Denmark",
+    "alpha2Code" : "DK",
+    "capital" : "Copenhagen",
+    "region" : "Europe",
+    "population" : 5717014,
+    "latlngZm" : [
+      56,
+      10,
+      8
+    ],
+    "area" : 43094
+  },
+  {
+    "name" : "Djibouti",
+    "alpha2Code" : "DJ",
+    "capital" : "Djibouti",
+    "region" : "Africa",
+    "population" : 900000,
+    "latlngZm" : [
+      11.5,
+      42.8,
+      3
+    ],
+    "area" : 23200
+  },
+  {
+    "name" : "Dominica",
+    "alpha2Code" : "DM",
+    "capital" : "Roseau",
+    "region" : "Americas",
+    "population" : 71293,
+    "latlngZm" : [
+      15.41666666,
+      -61.33333333,
+      3
+    ],
+    "area" : 751
+  },
+  {
+    "name" : "Dominican Republic",
+    "alpha2Code" : "DO",
+    "capital" : "Santo Domingo",
+    "region" : "Americas",
+    "population" : 10075045,
+    "latlngZm" : [
+      19,
+      -70.66666666,
+      5
+    ],
+    "area" : 48671
+  },
+  {
+    "name" : "Ecuador",
+    "alpha2Code" : "EC",
+    "capital" : "Quito",
+    "region" : "Americas",
+    "population" : 16545799,
+    "latlngZm" : [
+      -2,
+      -78,
+      7
+    ],
+    "area" : 276841
+  },
+  {
+    "name" : "Egypt",
+    "alpha2Code" : "EG",
+    "capital" : "Cairo",
+    "region" : "Africa",
+    "population" : 91290000,
+    "latlngZm" : [
+      27,
+      30,
+      15
+    ],
+    "area" : 1002450
+  },
+  {
+    "name" : "El Salvador",
+    "alpha2Code" : "SV",
+    "capital" : "San Salvador",
+    "region" : "Americas",
+    "population" : 6520675,
+    "latlngZm" : [
+      13.83333333,
+      -88.91666666,
+      5
+    ],
+    "area" : 21041
+  },
+  {
+    "name" : "Equatorial Guinea",
+    "alpha2Code" : "GQ",
+    "capital" : "Malabo",
+    "region" : "Africa",
+    "population" : 1222442,
+    "latlngZm" : [
+      2,
+      10,
+      5
+    ],
+    "area" : 28051
+  },
+  {
+    "name" : "Eritrea",
+    "alpha2Code" : "ER",
+    "capital" : "Asmara",
+    "region" : "Africa",
+    "population" : 5352000,
+    "latlngZm" : [
+      15,
+      39,
+      5
+    ],
+    "area" : 117600
+  },
+  {
+    "name" : "Estonia",
+    "alpha2Code" : "EE",
+    "capital" : "Tallinn",
+    "region" : "Europe",
+    "population" : 1315944,
+    "latlngZm" : [
+      59,
+      26,
+      7
+    ],
+    "area" : 45227
+  },
+  {
+    "name" : "Ethiopia",
+    "alpha2Code" : "ET",
+    "capital" : "Addis Ababa",
+    "region" : "Africa",
+    "population" : 92206005,
+    "latlngZm" : [
+      8,
+      40,
+      15
+    ],
+    "area" : 1104300
+  },
+  {
+    "name" : "Faroe Islands",
+    "alpha2Code" : "FO",
+    "capital" : "Tórshavn",
+    "region" : "Europe",
+    "population" : 49376,
+    "latlngZm" : [
+      62,
+      -7,
+      4
+    ],
+    "area" : 1393
+  },
+  {
+    "name" : "Fiji",
+    "alpha2Code" : "FJ",
+    "capital" : "Suva",
+    "region" : "Oceania",
+    "population" : 867000,
+    "latlngZm" : [
+      -18,
+      179,
+      5
+    ],
+    "area" : 18272
+  },
+  {
+    "name" : "Finland",
+    "alpha2Code" : "FI",
+    "capital" : "Helsinki",
+    "region" : "Europe",
+    "population" : 5491817,
+    "latlngZm" : [
+      66,
+      26,
+      13
+    ],
+    "area" : 338424
+  },
+  {
+    "name" : "France",
+    "alpha2Code" : "FR",
+    "capital" : "Paris",
+    "region" : "Europe",
+    "population" : 66710000,
+    "latlngZm" : [
+      46,
+      2,
+      13
+    ],
+    "area" : 640679
+  },
+  {
+    "name" : "Gabon",
+    "alpha2Code" : "GA",
+    "capital" : "Libreville",
+    "region" : "Africa",
+    "population" : 1802278,
+    "latlngZm" : [
+      -1,
+      11.75,
+      8
+    ],
+    "area" : 267668
+  },
+  {
+    "name" : "Gambia",
+    "alpha2Code" : "GM",
+    "capital" : "Banjul",
+    "region" : "Africa",
+    "population" : 1882450,
+    "latlngZm" : [
+        13.5,
+        -15,
+      5
+    ],
+    "area" : 11295
+  },
+  {
+    "name" : "Georgia",
+    "alpha2Code" : "GE",
+    "capital" : "Tbilisi",
+    "region" : "Asia",
+    "population" : 3720400,
+    "latlngZm" : [
+      42,
+      43.5,
+      5
+    ],
+    "area" : 69700
+  },
+  {
+    "name" : "Germany",
+    "alpha2Code" : "DE",
+    "capital" : "Berlin",
+    "region" : "Europe",
+    "population" : 81770900,
+    "latlngZm" : [
+      51,
+      10,
+      10
+    ],
+    "area" : 357114
+  },
+  {
+    "name" : "Ghana",
+    "alpha2Code" : "GH",
+    "capital" : "Accra",
+    "region" : "Africa",
+    "population" : 27670174,
+    "latlngZm" : [
+      8,
+      -1,
+      5
+    ],
+    "area" : 238533
+  },
+  {
+    "name" : "Greece",
+    "alpha2Code" : "GR",
+    "capital" : "Athens",
+    "region" : "Europe",
+    "population" : 10858018,
+    "latlngZm" : [
+      39,
+      22,
+      10
+    ],
+    "area" : 131990
+  },
+  {
+    "name" : "Grenada",
+    "alpha2Code" : "GD",
+    "capital" : "St. George's",
+    "region" : "Americas",
+    "population" : 103328,
+    "latlngZm" : [
+      12.11666666,
+      -61.66666666,
+      0.5
+    ],
+    "area" : 344
+  },
+  {
+    "name" : "Guatemala",
+    "alpha2Code" : "GT",
+    "capital" : "Guatemala City",
+    "region" : "Americas",
+    "population" : 16176133,
+    "latlngZm" : [
+      15.5,
+      -90.25,
+      5
+    ],
+    "area" : 108889
+  },
+  {
+    "name" : "Guinea",
+    "alpha2Code" : "GN",
+    "capital" : "Conakry",
+    "region" : "Africa",
+    "population" : 12947000,
+    "latlngZm" : [
+      11,
+      -11,
+      8
+    ],
+    "area" : 245857
+  },
+  {
+    "name" : "Guinea-Bissau",
+    "alpha2Code" : "GW",
+    "capital" : "Bissau",
+    "region" : "Africa",
+    "population" : 1547777,
+    "latlngZm" : [
+      12,
+      -15,
+      4
+    ],
+    "area" : 36125
+  },
+  {
+    "name" : "Guyana",
+    "alpha2Code" : "GY",
+    "capital" : "Georgetown",
+    "region" : "Americas",
+    "population" : 746900,
+    "latlngZm" : [
+      5,
+      -59,
+      5
+    ],
+    "area" : 214969
+  },
+  {
+    "name" : "Haiti",
+    "alpha2Code" : "HT",
+    "capital" : "Port-au-Prince",
+    "region" : "Americas",
+    "population" : 11078033,
+    "latlngZm" : [
+      19,
+      -72.41666666,
+      5
+    ],
+    "area" : 27750
+  },
+  {
+    "name" : "Vatican City",
+    "alpha2Code" : "VA",
+    "capital" : "Vatican City",
+    "region" : "Europe",
+    "population" : 451,
+    "latlngZm" : [
+      41.9,
+      12.455,
+      0.03
+    ],
+    "area" : 0.44
+  },
+  {
+    "name" : "Honduras",
+    "alpha2Code" : "HN",
+    "capital" : "Tegucigalpa",
+    "region" : "Americas",
+    "population" : 8576532,
+    "latlngZm" : [
+      15,
+      -86.5,
+      7
+    ],
+    "area" : 112492
+  },
+  {
+    "name" : "Hungary",
+    "alpha2Code" : "HU",
+    "capital" : "Budapest",
+    "region" : "Europe",
+    "population" : 9823000,
+    "latlngZm" : [
+      47,
+      20,
+      10
+    ],
+    "area" : 93028
+  },
+  {
+    "name" : "Iceland",
+    "alpha2Code" : "IS",
+    "capital" : "Reykjavík",
+    "region" : "Europe",
+    "population" : 334300,
+    "latlngZm" : [
+      65,
+      -18,
+      10
+    ],
+    "area" : 103000
+  },
+  {
+    "name" : "India",
+    "alpha2Code" : "IN",
+    "capital" : "New Delhi",
+    "region" : "Asia",
+    "population" : 1295210000,
+    "latlngZm" : [
+      20,
+      78,
+      20
+    ],
+    "area" : 3287590
+  },
+  {
+    "name" : "Indonesia",
+    "alpha2Code" : "ID",
+    "capital" : "Jakarta",
+    "region" : "Asia",
+    "population" : 258705000,
+    "latlngZm" : [
+      -3,
+      120,
+      5
+    ],
+    "area" : 1904569
+  },
+  {
+    "name" : "Côte d’Ivoire",
+    "alpha2Code" : "CI",
+    "capital" : "Yamoussoukro",
+    "region" : "Africa",
+    "population" : 22671331,
+    "latlngZm" : [
+      8,
+      -5,
+      10
+    ],
+    "area" : 322463
+  },
+  {
+    "name" : "Iran",
+    "alpha2Code" : "IR",
+    "capital" : "Tehran",
+    "region" : "Asia",
+    "population" : 79369900,
+    "latlngZm" : [
+      32,
+      53,
+      20
+    ],
+    "area" : 1648195
+  },
+  {
+    "name" : "Iraq",
+    "alpha2Code" : "IQ",
+    "capital" : "Baghdad",
+    "region" : "Asia",
+    "population" : 37883543,
+    "latlngZm" : [
+      33,
+      44,
+      20
+    ],
+    "area" : 438317
+  },
+  {
+    "name" : "Ireland",
+    "alpha2Code" : "IE",
+    "capital" : "Dublin",
+    "region" : "Europe",
+    "population" : 6378000,
+    "latlngZm" : [
+      53,
+      -8,
+      10
+    ],
+    "area" : 70273
+  },
+  {
+    "name" : "Israel",
+    "alpha2Code" : "IL",
+    "capital" : "Jerusalem",
+    "region" : "Asia",
+    "population" : 8527400,
+    "latlngZm" : [
+      31.5,
+      34.75,
+      5
+    ],
+    "area" : 20770
+  },
+  {
+    "name" : "Italy",
+    "alpha2Code" : "IT",
+    "capital" : "Rome",
+    "region" : "Europe",
+    "population" : 60665551,
+    "latlngZm" : [
+      42.83333333,
+      12.83333333,
+      10
+    ],
+    "area" : 301336
+  },
+  {
+    "name" : "Jamaica",
+    "alpha2Code" : "JM",
+    "capital" : "Kingston",
+    "region" : "Americas",
+    "population" : 2723246,
+    "latlngZm" : [
+      18.25,
+      -77.5,
+      5
+    ],
+    "area" : 10991
+  },
+  {
+    "name" : "Japan",
+    "alpha2Code" : "JP",
+    "capital" : "Tokyo",
+    "region" : "Asia",
+    "population" : 126960000,
+    "latlngZm" : [
+      36,
+      138,
+      20
+    ],
+    "area" : 377930
+  },
+  {
+    "name" : "Jordan",
+    "alpha2Code" : "JO",
+    "capital" : "Amman",
+    "region" : "Asia",
+    "population" : 9531712,
+    "latlngZm" : [
+      31,
+      37,
+      6
+    ],
+    "area" : 89342
+  },
+  {
+    "name" : "Kazakhstan",
+    "alpha2Code" : "KZ",
+    "capital" : "Astana",
+    "region" : "Asia",
+    "population" : 17753200,
+    "latlngZm" : [
+      48,
+      68,
+      35
+    ],
+    "area" : 2724900
+  },
+  {
+    "name" : "Kenya",
+    "alpha2Code" : "KE",
+    "capital" : "Nairobi",
+    "region" : "Africa",
+    "population" : 47251000,
+    "latlngZm" : [
+      1,
+      38,
+      5
+    ],
+    "area" : 580367
+  },
+  {
+    "name" : "Kiribati",
+    "alpha2Code" : "KI",
+    "capital" : "South Tarawa",
+    "region" : "Oceania",
+    "population" : 113400,
+    "latlngZm" : [
+      1.41666666,
+      173.05,
+      0.3
+    ],
+    "area" : 811
+  },
+  {
+    "name" : "Kuwait",
+    "alpha2Code" : "KW",
+    "capital" : "Kuwait City",
+    "region" : "Asia",
+    "population" : 4183658,
+    "latlngZm" : [
+      29.5,
+      47.5,
+      3
+    ],
+    "area" : 17818
+  },
+  {
+    "name" : "Kyrgyzstan",
+    "alpha2Code" : "KG",
+    "capital" : "Bishkek",
+    "region" : "Asia",
+    "population" : 6047800,
+    "latlngZm" : [
+      41,
+      74,
+      8
+    ],
+    "area" : 199951
+  },
+  {
+    "name" : "Laos",
+    "alpha2Code" : "LA",
+    "capital" : "Vientiane",
+    "region" : "Asia",
+    "population" : 6492400,
+    "latlngZm" : [
+      18,
+      105,
+      10
+    ],
+    "area" : 236800
+  },
+  {
+    "name" : "Latvia",
+    "alpha2Code" : "LV",
+    "capital" : "Riga",
+    "region" : "Europe",
+    "population" : 1961600,
+    "latlngZm" : [
+      57,
+      25,
+      10
+    ],
+    "area" : 64559
+  },
+  {
+    "name" : "Lebanon",
+    "alpha2Code" : "LB",
+    "capital" : "Beirut",
+    "region" : "Asia",
+    "population" : 5988000,
+    "latlngZm" : [
+      33.83333333,
+      35.83333333,
+      5
+    ],
+    "area" : 10452
+  },
+  {
+    "name" : "Lesotho",
+    "alpha2Code" : "LS",
+    "capital" : "Maseru",
+    "region" : "Africa",
+    "population" : 1894194,
+    "latlngZm" : [
+      -29.5,
+      28.5,
+      5
+    ],
+    "area" : 30355
+  },
+  {
+    "name" : "Liberia",
+    "alpha2Code" : "LR",
+    "capital" : "Monrovia",
+    "region" : "Africa",
+    "population" : 4615000,
+    "latlngZm" : [
+      6.5,
+      -9.5,
+      5
+    ],
+    "area" : 111369
+  },
+  {
+    "name" : "Libya",
+    "alpha2Code" : "LY",
+    "capital" : "Tripoli",
+    "region" : "Africa",
+    "population" : 6385000,
+    "latlngZm" : [
+      25,
+      17,
+      20
+    ],
+    "area" : 1759540
+  },
+  {
+    "name" : "Liechtenstein",
+    "alpha2Code" : "LI",
+    "capital" : "Vaduz",
+    "region" : "Europe",
+    "population" : 37623,
+    "latlngZm" : [
+      47.2,
+      9.53333333,
+      0.4
+    ],
+    "area" : 160
+  },
+  {
+    "name" : "Lithuania",
+    "alpha2Code" : "LT",
+    "capital" : "Vilnius",
+    "region" : "Europe",
+    "population" : 2872294,
+    "latlngZm" : [
+      56,
+      24,
+      10
+    ],
+    "area" : 65300
+  },
+  {
+    "name" : "Luxembourg",
+    "alpha2Code" : "LU",
+    "capital" : "Luxembourg_city",
+    "region" : "Europe",
+    "population" : 576200,
+    "latlngZm" : [
+      49.75,
+      6.16666666,
+      2
+    ],
+    "area" : 2586
+  },
+  {
+    "name" : "Macedonia",
+    "alpha2Code" : "MK",
+    "capital" : "Skopje",
+    "region" : "Europe",
+    "population" : 2058539,
+    "latlngZm" : [
+      41.83333333,
+      22,
+      7
+    ],
+    "area" : 25713
+  },
+  {
+    "name" : "Madagascar",
+    "alpha2Code" : "MG",
+    "capital" : "Antananarivo",
+    "region" : "Africa",
+    "population" : 22434363,
+    "latlngZm" : [
+      -20,
+      47,
+      10
+    ],
+    "area" : 587041
+  },
+  {
+    "name" : "Malawi",
+    "alpha2Code" : "MW",
+    "capital" : "Lilongwe",
+    "region" : "Africa",
+    "population" : 16832910,
+    "latlngZm" : [
+      -13.5,
+      34,
+      5
+    ],
+    "area" : 118484
+  },
+  {
+    "name" : "Malaysia",
+    "alpha2Code" : "MY",
+    "capital" : "Kuala Lumpur",
+    "region" : "Asia",
+    "population" : 31405416,
+    "latlngZm" : [
+      2.5,
+      102,
+      10
+    ],
+    "area" : 330803
+  },
+  {
+    "name" : "Maldives",
+    "alpha2Code" : "MV",
+    "capital" : "Malé",
+    "region" : "Asia",
+    "population" : 344023,
+    "latlngZm" : [
+      4.175,
+      73.508333,
+      0.3
+    ],
+    "area" : 300
+  },
+  {
+    "name" : "Mali",
+    "alpha2Code" : "ML",
+    "capital" : "Bamako",
+    "region" : "Africa",
+    "population" : 18135000,
+    "latlngZm" : [
+      17,
+      -4,
+      20
+    ],
+    "area" : 1240192
+  },
+  {
+    "name" : "Malta",
+    "alpha2Code" : "MT",
+    "capital" : "Valletta",
+    "region" : "Europe",
+    "population" : 425384,
+    "latlngZm" : [
+      35.83333333,
+      14.58333333,
+      3
+    ],
+    "area" : 316
+  },
+  {
+    "name" : "Marshall Islands",
+    "alpha2Code" : "MH",
+    "capital" : "Majuro",
+    "region" : "Oceania",
+    "population" : 54880,
+    "latlngZm" : [
+      7.066667, 171.266667,
+      1
+    ],
+    "area" : 181
+  },
+  {
+    "name" : "Mauritania",
+    "alpha2Code" : "MR",
+    "capital" : "Nouakchott",
+    "region" : "Africa",
+    "population" : 3718678,
+    "latlngZm" : [
+      20,
+      -12,
+      15
+    ],
+    "area" : 1030700
+  },
+  {
+    "name" : "Mauritius",
+    "alpha2Code" : "MU",
+    "capital" : "Port Louis",
+    "region" : "Africa",
+    "population" : 1262879,
+    "latlngZm" : [
+      -20.28333333,
+      57.55,
+      5
+    ],
+    "area" : 2040
+  },
+  {
+    "name" : "Mexico",
+    "alpha2Code" : "MX",
+    "capital" : "Mexico City",
+    "region" : "Americas",
+    "population" : 122273473,
+    "latlngZm" : [
+      23,
+      -102,
+      30
+    ],
+    "area" : 1964375
+  },
+  {
+    "name" : "Micronesia",
+    "alpha2Code" : "FM",
+    "capital" : "Palikir",
+    "region" : "Oceania",
+    "population" : 102800,
+    "latlngZm" : [
+      6.91666666,
+      158.25,
+      1
+    ],
+    "area" : 702
+  },
+  {
+    "name" : "Moldova",
+    "alpha2Code" : "MD",
+    "capital" : "Chișinău",
+    "region" : "Europe",
+    "population" : 3553100,
+    "latlngZm" : [
+      47,
+      29,
+      10
+    ],
+    "area" : 33846
+  },
+  {
+    "name" : "Monaco",
+    "alpha2Code" : "MC",
+    "capital" : "Monaco",
+    "region" : "Europe",
+    "population" : 38400,
+    "latlngZm" : [
+      43.73333333,
+      7.425,
+      0.05
+    ],
+    "area" : 2.02
+  },
+  {
+    "name" : "Mongolia",
+    "alpha2Code" : "MN",
+    "capital" : "Ulan Bator",
+    "region" : "Asia",
+    "population" : 3093100,
+    "latlngZm" : [
+      46,
+      105,
+      50
+    ],
+    "area" : 1564110
+  },
+  {
+    "name" : "Montenegro",
+    "alpha2Code" : "ME",
+    "capital" : "Podgorica",
+    "region" : "Europe",
+    "population" : 621810,
+    "latlngZm" : [
+      42.5,
+      19.3,
+      4
+    ],
+    "area" : 13812
+  },
+  {
+    "name" : "Morocco",
+    "alpha2Code" : "MA",
+    "capital" : "Rabat",
+    "region" : "Africa",
+    "population" : 33337529,
+    "latlngZm" : [
+      32,
+      -7,
+      15
+    ],
+    "area" : 446550
+  },
+  {
+    "name" : "Mozambique",
+    "alpha2Code" : "MZ",
+    "capital" : "Maputo",
+    "region" : "Africa",
+    "population" : 26423700,
+    "latlngZm" : [
+      -18.25,
+      35,
+      15
+    ],
+    "area" : 801590
+  },
+  {
+    "name" : "Myanmar",
+    "alpha2Code" : "MM",
+    "capital" : "Naypyidaw",
+    "region" : "Asia",
+    "population" : 51419420,
+    "latlngZm" : [
+      20,
+      97,
+      15
+    ],
+    "area" : 676578
+  },
+  {
+    "name" : "Namibia",
+    "alpha2Code" : "NA",
+    "capital" : "Windhoek",
+    "region" : "Africa",
+    "population" : 2324388,
+    "latlngZm" : [
+      -22,
+      17,
+      15
+    ],
+    "area" : 825615
+  },
+  {
+    "name" : "Nauru",
+    "alpha2Code" : "NR",
+    "capital" : "Yaren",
+    "region" : "Oceania",
+    "population" : 10084,
+    "latlngZm" : [
+      -0.53333333,
+      166.91666666,
+      0.5
+    ],
+    "area" : 21
+  },
+  {
+    "name" : "Nepal",
+    "alpha2Code" : "NP",
+    "capital" : "Kathmandu",
+    "region" : "Asia",
+    "population" : 28431500,
+    "latlngZm" : [
+      28,
+      84,
+      10
+    ],
+    "area" : 147181
+  },
+  {
+    "name" : "Netherlands",
+    "alpha2Code" : "NL",
+    "capital" : "Amsterdam",
+    "region" : "Europe",
+    "population" : 17019800,
+    "latlngZm" : [
+      52.5,
+      5.75,
+      10
+    ],
+    "area" : 41850
+  },
+  {
+    "name" : "New Zealand",
+    "alpha2Code" : "NZ",
+    "capital" : "Wellington",
+    "region" : "Oceania",
+    "population" : 4697854,
+    "latlngZm" : [
+      -41,
+      174,
+      15
+    ],
+    "area" : 270467
+  },
+  {
+    "name" : "Nicaragua",
+    "alpha2Code" : "NI",
+    "capital" : "Managua",
+    "region" : "Americas",
+    "population" : 6262703,
+    "latlngZm" : [
+      13,
+      -85,
+      5
+    ],
+    "area" : 130373
+  },
+  {
+    "name" : "Niger",
+    "alpha2Code" : "NE",
+    "capital" : "Niamey",
+    "region" : "Africa",
+    "population" : 20715000,
+    "latlngZm" : [
+      16,
+      8,
+      20
+    ],
+    "area" : 1267000
+  },
+  {
+    "name" : "Nigeria",
+    "alpha2Code" : "NG",
+    "capital" : "Abuja",
+    "region" : "Africa",
+    "population" : 186988000,
+    "latlngZm" : [
+      10,
+      8,
+      15
+    ],
+    "area" : 923768
+  },
+  {
+    "name" : "Niue",
+    "alpha2Code" : "NU",
+    "capital" : "Alofi",
+    "region" : "Oceania",
+    "population" : 1470,
+    "latlngZm" : [
+      -19.03333333,
+      -169.86666666,
+      0.5
+    ],
+    "area" : 260
+  },
+  {
+    "name" : "North Korea",
+    "alpha2Code" : "KP",
+    "capital" : "Pyongyang",
+    "region" : "Asia",
+    "population" : 25281000,
+    "latlngZm" : [
+      40,
+      127,
+      7
+    ],
+    "area" : 120538
+  },
+  {
+    "name" : "Norway",
+    "alpha2Code" : "NO",
+    "capital" : "Oslo",
+    "region" : "Europe",
+    "population" : 5223256,
+    "latlngZm" : [
+      62,
+      10,
+      10
+    ],
+    "area" : 323802
+  },
+  {
+    "name" : "Oman",
+    "alpha2Code" : "OM",
+    "capital" : "Muscat",
+    "region" : "Asia",
+    "population" : 4420133,
+    "latlngZm" : [
+      21,
+      57,
+      12
+    ],
+    "area" : 309500
+  },
+  {
+    "name" : "Pakistan",
+    "alpha2Code" : "PK",
+    "capital" : "Islamabad",
+    "region" : "Asia",
+    "population" : 194125062,
+    "latlngZm" : [
+      30,
+      70,
+      25
+    ],
+    "area" : 881912
+  },
+  {
+    "name" : "Palau",
+    "alpha2Code" : "PW",
+    "capital" : "Ngerulmud",
+    "region" : "Oceania",
+    "population" : 17950,
+    "latlngZm" : [
+      7.5,
+      134.5,
+      1
+    ],
+    "area" : 459
+  },
+  {
+    "name" : "Panama",
+    "alpha2Code" : "PA",
+    "capital" : "Panama City",
+    "region" : "Americas",
+    "population" : 3814672,
+    "latlngZm" : [
+      9,
+      -80,
+      8
+    ],
+    "area" : 75417
+  },
+  {
+    "name" : "Papua New Guinea",
+    "alpha2Code" : "PG",
+    "capital" : "Port Moresby",
+    "region" : "Oceania",
+    "population" : 8083700,
+    "latlngZm" : [
+      -6,
+      147,
+      15
+    ],
+    "area" : 462840
+  },
+  {
+    "name" : "Paraguay",
+    "alpha2Code" : "PY",
+    "capital" : "Asunción",
+    "region" : "Americas",
+    "population" : 6854536,
+    "latlngZm" : [
+      -23,
+      -58,
+      15
+    ],
+    "area" : 406752
+  },
+  {
+    "name" : "Peru",
+    "alpha2Code" : "PE",
+    "capital" : "Lima",
+    "region" : "Americas",
+    "population" : 31488700,
+    "latlngZm" : [
+      -10,
+      -76,
+      15
+    ],
+    "area" : 1285216
+  },
+  {
+    "name" : "Philippines",
+    "alpha2Code" : "PH",
+    "capital" : "Manila",
+    "region" : "Asia",
+    "population" : 103279800,
+    "latlngZm" : [
+      13,
+      123,
+      10
+    ],
+    "area" : 342353
+  },
+  {
+    "name" : "Poland",
+    "alpha2Code" : "PL",
+    "capital" : "Warsaw",
+    "region" : "Europe",
+    "population" : 38437239,
+    "latlngZm" : [
+      52,
+      20,
+      10
+    ],
+    "area" : 312679
+  },
+  {
+    "name" : "Portugal",
+    "alpha2Code" : "PT",
+    "capital" : "Lisbon",
+    "region" : "Europe",
+    "population" : 10374822,
+    "latlngZm" : [
+      39.5,
+      -8,
+      10
+    ],
+    "area" : 92090
+  },
+  {
+    "name" : "Qatar",
+    "alpha2Code" : "QA",
+    "capital" : "Doha",
+    "region" : "Asia",
+    "population" : 2587564,
+    "latlngZm" : [
+      25.5,
+      51.25,
+      3
+    ],
+    "area" : 11586
+  },
+  {
+    "name" : "Kosovo",
+    "alpha2Code" : "XK",
+    "capital" : "Pristina",
+    "region" : "Europe",
+    "population" : 1733842,
+    "latlngZm" : [
+      42.666667,
+      21.166667,
+      3
+    ],
+    "area" : 10908
+  },
+  {
+    "name" : "Romania",
+    "alpha2Code" : "RO",
+    "capital" : "Bucharest",
+    "region" : "Europe",
+    "population" : 19861408,
+    "latlngZm" : [
+      46,
+      25,
+      10
+    ],
+    "area" : 238391
+  },
+  {
+    "name" : "Russia",
+    "alpha2Code" : "RU",
+    "capital" : "Moscow",
+    "region" : "Europe",
+    "population" : 146599183,
+    "latlngZm" : [
+      60,
+      100,
+      60
+    ],
+    "area" : 17124442
+  },
+  {
+    "name" : "Rwanda",
+    "alpha2Code" : "RW",
+    "capital" : "Kigali",
+    "region" : "Africa",
+    "population" : 11553188,
+    "latlngZm" : [
+      -2,
+      30,
+      5
+    ],
+    "area" : 26338
+  },
+  {
+    "name" : "Saint Kitts and Nevis",
+    "alpha2Code" : "KN",
+    "capital" : "Basseterre",
+    "region" : "Americas",
+    "population" : 46204,
+    "latlngZm" : [
+      17.33333333,
+      -62.75,
+      1
+    ],
+    "area" : 261
+  },
+  {
+    "name" : "Saint Lucia",
+    "alpha2Code" : "LC",
+    "capital" : "Castries",
+    "region" : "Americas",
+    "population" : 186000,
+    "latlngZm" : [
+      13.88333333,
+      -60.96666666,
+      1
+    ],
+    "area" : 616
+  },
+  {
+    "name" : "Saint Vincent and the Grenadines",
+    "alpha2Code" : "VC",
+    "capital" : "Kingstown",
+    "region" : "Americas",
+    "population" : 109991,
+    "latlngZm" : [
+      13.25,
+      -61.2,
+      1
+    ],
+    "area" : 389
+  },
+  {
+    "name" : "Samoa",
+    "alpha2Code" : "WS",
+    "capital" : "Apia",
+    "region" : "Oceania",
+    "population" : 194899,
+    "latlngZm" : [
+      -13.58333333,
+      -172.33333333,
+      5
+    ],
+    "area" : 2842
+  },
+  {
+    "name" : "San Marino",
+    "alpha2Code" : "SM",
+    "capital" : "City of San Marino",
+    "region" : "Europe",
+    "population" : 33005,
+    "latlngZm" : [
+      43.96666666,
+      12.45,
+      0.2
+    ],
+    "area" : 61
+  },
+  {
+    "name" : "Sao Tome and Principe",
+    "alpha2Code" : "ST",
+    "capital" : "São Tomé",
+    "region" : "Africa",
+    "population" : 187356,
+    "latlngZm" : [
+      1,
+      7,
+      2
+    ],
+    "area" : 964
+  },
+  {
+    "name" : "Saudi Arabia",
+    "alpha2Code" : "SA",
+    "capital" : "Riyadh",
+    "region" : "Asia",
+    "population" : 32248200,
+    "latlngZm" : [
+      25,
+      45,
+      20
+    ],
+    "area" : 2149690
+  },
+  {
+    "name" : "Senegal",
+    "alpha2Code" : "SN",
+    "capital" : "Dakar",
+    "region" : "Africa",
+    "population" : 14799859,
+    "latlngZm" : [
+      14,
+      -14,
+      10
+    ],
+    "area" : 196722
+  },
+  {
+    "name" : "Serbia",
+    "alpha2Code" : "RS",
+    "capital" : "Belgrade",
+    "region" : "Europe",
+    "population" : 7076372,
+    "latlngZm" : [
+      44,
+      21,
+      10
+    ],
+    "area" : 88361
+  },
+  {
+    "name" : "Seychelles",
+    "alpha2Code" : "SC",
+    "capital" : "Victoria",
+    "region" : "Africa",
+    "population" : 91400,
+    "latlngZm" : [
+      -4.58333333,
+      55.66666666,
+      1
+    ],
+    "area" : 452
+  },
+  {
+    "name" : "Sierra Leone",
+    "alpha2Code" : "SL",
+    "capital" : "Freetown",
+    "region" : "Africa",
+    "population" : 7075641,
+    "latlngZm" : [
+      8.5,
+      -11.5,
+      5
+    ],
+    "area" : 71740
+  },
+  {
+    "name" : "Singapore",
+    "alpha2Code" : "SG",
+    "capital" : "Singapore",
+    "region" : "Asia",
+    "population" : 5535000,
+    "latlngZm" : [
+      1.36666666,
+      103.8,
+      1
+    ],
+    "area" : 710
+  },
+  {
+    "name" : "Slovakia",
+    "alpha2Code" : "SK",
+    "capital" : "Bratislava",
+    "region" : "Europe",
+    "population" : 5426252,
+    "latlngZm" : [
+      48.66666666,
+      19.5,
+      10
+    ],
+    "area" : 49037
+  },
+  {
+    "name" : "Slovenia",
+    "alpha2Code" : "SI",
+    "capital" : "Ljubljana",
+    "region" : "Europe",
+    "population" : 2064188,
+    "latlngZm" : [
+      46.11666666,
+      14.81666666,
+      10
+    ],
+    "area" : 20273
+  },
+  {
+    "name" : "Solomon Islands",
+    "alpha2Code" : "SB",
+    "capital" : "Honiara",
+    "region" : "Oceania",
+    "population" : 642000,
+    "latlngZm" : [
+      -8,
+      159,
+      7
+    ],
+    "area" : 28896
+  },
+  {
+    "name" : "Somalia",
+    "alpha2Code" : "SO",
+    "capital" : "Mogadishu",
+    "region" : "Africa",
+    "population" : 11079000,
+    "latlngZm" : [
+      10,
+      47,
+      15
+    ],
+    "area" : 637657
+  },
+  {
+    "name" : "South Africa",
+    "alpha2Code" : "ZA",
+    "capital" : "Pretoria",
+    "region" : "Africa",
+    "population" : 55653654,
+    "latlngZm" : [
+      -29,
+      24,
+      25
+    ],
+    "area" : 1221037
+  },
+  {
+    "name" : "South Korea",
+    "alpha2Code" : "KR",
+    "capital" : "Seoul",
+    "region" : "Asia",
+    "population" : 50801405,
+    "latlngZm" : [
+      37,
+      127.5,
+      5
+    ],
+    "area" : 100210
+  },
+  {
+    "name" : "South Sudan",
+    "alpha2Code" : "SS",
+    "capital" : "Juba",
+    "region" : "Africa",
+    "population" : 12131000,
+    "latlngZm" : [
+      7,
+      30,
+      15
+    ],
+    "area" : 619745
+  },
+  {
+    "name" : "Spain",
+    "alpha2Code" : "ES",
+    "capital" : "Madrid",
+    "region" : "Europe",
+    "population" : 46438422,
+    "latlngZm" : [
+      40,
+      -4,
+      10
+    ],
+    "area" : 505992
+  },
+  {
+    "name" : "Sri Lanka",
+    "alpha2Code" : "LK",
+    "capital" : "Colombo",
+    "region" : "Asia",
+    "population" : 20966000,
+    "latlngZm" : [
+      7,
+      81,
+      5
+    ],
+    "area" : 65610
+  },
+  {
+    "name" : "Sudan",
+    "alpha2Code" : "SD",
+    "capital" : "Khartoum",
+    "region" : "Africa",
+    "population" : 39598700,
+    "latlngZm" : [
+      15,
+      30,
+      25
+    ],
+    "area" : 1886068
+  },
+  {
+    "name" : "Suriname",
+    "alpha2Code" : "SR",
+    "capital" : "Paramaribo",
+    "region" : "Americas",
+    "population" : 541638,
+    "latlngZm" : [
+      4,
+      -56,
+      5
+    ],
+    "area" : 163820
+  },
+  {
+    "name" : "Swaziland",
+    "alpha2Code" : "SZ",
+    "capital" : "Lobamba",
+    "region" : "Africa",
+    "population" : 1132657,
+    "latlngZm" : [
+      -26.5,
+      31.5,
+      5
+    ],
+    "area" : 17364
+  },
+  {
+    "name" : "Sweden",
+    "alpha2Code" : "SE",
+    "capital" : "Stockholm",
+    "region" : "Europe",
+    "population" : 9894888,
+    "latlngZm" : [
+      62,
+      15,
+      15
+    ],
+    "area" : 450295
+  },
+  {
+    "name" : "Switzerland",
+    "alpha2Code" : "CH",
+    "capital" : "Bern",
+    "region" : "Europe",
+    "population" : 8341600,
+    "latlngZm" : [
+      47,
+      8,
+      10
+    ],
+    "area" : 41284
+  },
+  {
+    "name" : "Syria",
+    "alpha2Code" : "SY",
+    "capital" : "Damascus",
+    "region" : "Asia",
+    "population" : 18564000,
+    "latlngZm" : [
+      35,
+      39,
+      10
+    ],
+    "area" : 185180
+  },
+  {
+    "name" : "Taiwan",
+    "alpha2Code" : "TW",
+    "capital" : "Taipei",
+    "region" : "Asia",
+    "population" : 23503349,
+    "latlngZm" : [
+      23.5,
+      121,
+      5
+    ],
+    "area" : 36193
+  },
+  {
+    "name" : "Tajikistan",
+    "alpha2Code" : "TJ",
+    "capital" : "Dushanbe",
+    "region" : "Asia",
+    "population" : 8593600,
+    "latlngZm" : [
+      39,
+      71,
+      8
+    ],
+    "area" : 143100
+  },
+  {
+    "name" : "Tanzania",
+    "alpha2Code" : "TZ",
+    "capital" : "Dodoma",
+    "region" : "Africa",
+    "population" : 55155000,
+    "latlngZm" : [
+      -6,
+      35,
+      15
+    ],
+    "area" : 945087
+  },
+  {
+    "name" : "Thailand",
+    "alpha2Code" : "TH",
+    "capital" : "Bangkok",
+    "region" : "Asia",
+    "population" : 65327652,
+    "latlngZm" : [
+      15,
+      103,
+      15
+    ],
+    "area" : 513120
+  },
+  {
+    "name" : "Timor-Leste",
+    "alpha2Code" : "TL",
+    "capital" : "Dili",
+    "region" : "Asia",
+    "population" : 1167242,
+    "latlngZm" : [
+      -8.83333333,
+      125.91666666,
+      5
+    ],
+    "area" : 14874
+  },
+  {
+    "name" : "Togo",
+    "alpha2Code" : "TG",
+    "capital" : "Lomé",
+    "region" : "Africa",
+    "population" : 7143000,
+    "latlngZm" : [
+      8,
+      1.16666666,
+      5
+    ],
+    "area" : 56785
+  },
+  {
+    "name" : "Tonga",
+    "alpha2Code" : "TO",
+    "capital" : "Nuku'alofa",
+    "region" : "Oceania",
+    "population" : 103252,
+    "latlngZm" : [
+      -20,
+      -175,
+      2
+    ],
+    "area" : 747
+  },
+  {
+    "name" : "Trinidad and Tobago",
+    "alpha2Code" : "TT",
+    "capital" : "Port of Spain",
+    "region" : "Americas",
+    "population" : 1349667,
+    "latlngZm" : [
+      11,
+      -61,
+      5
+    ],
+    "area" : 5130
+  },
+  {
+    "name" : "Tunisia",
+    "alpha2Code" : "TN",
+    "capital" : "Tunis",
+    "region" : "Africa",
+    "population" : 11154400,
+    "latlngZm" : [
+      34,
+      10,
+      7
+    ],
+    "area" : 163610
+  },
+  {
+    "name" : "Turkey",
+    "alpha2Code" : "TR",
+    "capital" : "Ankara",
+    "region" : "Asia",
+    "population" : 78741053,
+    "latlngZm" : [
+      39,
+      35,
+      25
+    ],
+    "area" : 783562
+  },
+  {
+    "name" : "Turkmenistan",
+    "alpha2Code" : "TM",
+    "capital" : "Ashgabat",
+    "region" : "Asia",
+    "population" : 4751120,
+    "latlngZm" : [
+      40,
+      60,
+      15
+    ],
+    "area" : 488100
+  },
+  {
+    "name" : "Tuvalu",
+    "alpha2Code" : "TV",
+    "capital" : "Funafuti",
+    "region" : "Oceania",
+    "population" : 10640,
+    "latlngZm" : [
+      -8.516667,
+      179.216667,
+      0.51
+    ],
+    "area" : 26
+  },
+  {
+    "name" : "Uganda",
+    "alpha2Code" : "UG",
+    "capital" : "Kampala",
+    "region" : "Africa",
+    "population" : 33860700,
+    "latlngZm" : [
+      1,
+      32,
+      10
+    ],
+    "area" : 241550
+  },
+  {
+    "name" : "Ukraine",
+    "alpha2Code" : "UA",
+    "capital" : "Kiev",
+    "region" : "Europe",
+    "population" : 42692393,
+    "latlngZm" : [
+      49,
+      32,
+      20
+    ],
+    "area" : 603700
+  },
+  {
+    "name" : "United Arab Emirates",
+    "alpha2Code" : "AE",
+    "capital" : "Abu Dhabi",
+    "region" : "Asia",
+    "population" : 9856000,
+    "latlngZm" : [
+      24,
+      54,
+      8
+    ],
+    "area" : 83600
+  },
+  {
+    "name" : "United Kingdom",
+    "alpha2Code" : "GB",
+    "capital" : "London",
+    "region" : "Europe",
+    "population" : 65110000,
+    "latlngZm" : [
+      54,
+      -3.5,
+      15
+    ],
+    "area" : 242900
+  },
+  {
+    "name" : "United States of America",
+    "alpha2Code" : "US",
+    "capital" : "Washington, D.C.",
+    "region" : "Americas",
+    "population" : 323947000,
+    "latlngZm" : [
+      38,
+      -97,
+      55
+    ],
+    "area" : 9629091
+  },
+  {
+    "name" : "Uruguay",
+    "alpha2Code" : "UY",
+    "capital" : "Montevideo",
+    "region" : "Americas",
+    "population" : 3480222,
+    "latlngZm" : [
+      -33,
+      -56,
+      5
+    ],
+    "area" : 181034
+  },
+  {
+    "name" : "Uzbekistan",
+    "alpha2Code" : "UZ",
+    "capital" : "Tashkent",
+    "region" : "Asia",
+    "population" : 31576400,
+    "latlngZm" : [
+      41,
+      64,
+      10
+    ],
+    "area" : 447400
+  },
+  {
+    "name" : "Vanuatu",
+    "alpha2Code" : "VU",
+    "capital" : "Port Vila",
+    "region" : "Oceania",
+    "population" : 277500,
+    "latlngZm" : [
+      -17,
+      168,
+      5
+    ],
+    "area" : 12189
+  },
+  {
+    "name" : "Venezuela",
+    "alpha2Code" : "VE",
+    "capital" : "Caracas",
+    "region" : "Americas",
+    "population" : 31028700,
+    "latlngZm" : [
+      8,
+      -66,
+      20
+    ],
+    "area" : 916445
+  },
+  {
+    "name" : "Vietnam",
+    "alpha2Code" : "VN",
+    "capital" : "Hanoi",
+    "region" : "Asia",
+    "population" : 92700000,
+    "latlngZm" : [
+      16.16666666,
+      107.83333333,
+      15
+    ],
+    "area" : 331212
+  },
+  {
+    "name" : "Yemen",
+    "alpha2Code" : "YE",
+    "capital" : "Sana'a",
+    "region" : "Asia",
+    "population" : 27478000,
+    "latlngZm" : [
+      15,
+      48,
+      15
+    ],
+    "area" : 527968
+  },
+  {
+    "name" : "Zambia",
+    "alpha2Code" : "ZM",
+    "capital" : "Lusaka",
+    "region" : "Africa",
+    "population" : 15933883,
+    "latlngZm" : [
+      -15,
+      28,
+      15
+    ],
+    "area" : 752612
+  },
+  {
+    "name" : "Zimbabwe",
+    "alpha2Code" : "ZW",
+    "capital" : "Harare",
+    "region" : "Africa",
+    "population" : 14240168,
+    "latlngZm" : [
+      -20,
+      30,
+      15
+    ],
+    "area" : 390757
+  }
+]

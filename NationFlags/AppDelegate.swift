@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  NationFlags
+//  Flags
 //
-//  Created by Martin Václavík on 28/01/2020.
-//  Copyright © 2020 Martin Václavík. All rights reserved.
+//  Created by Martin Václavík on 25/11/2019.
+//  Copyright © 2019 Martin Václavík. All rights reserved.
 //
 
 import UIKit
@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "NationFlags")
+        let container = NSPersistentContainer(name: "Leaderboards")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

@@ -1,0 +1,89 @@
+/*
+  Localization.strings
+  Countries
+
+  Created by Martin Václavík on 05/10/2019.
+  Copyright © 2019 Martin Václavík. All rights reserved.
+*/
+"Countries" = "National Flags";
+
+"play" = "Play";
+"list" = "Country list";
+"score" = "Your score:";
+"NameToFlag" = "Name to flag";
+"FlagToName" = "Flag to name";
+"StateToCity" = "State to city";
+"CityToState" = "City to state";
+"ModeSelect" = "Choose game mode";
+"Main menu" = "Main menu";
+"SaveAndPlay" = "Play again";
+"Game over!" = "Game over!";
+"Map" = "Map";
+"ErrorGame" = "Until first mistake";
+"TimedGame" = "Timed challange";
+"Capitals" = "Capitals";
+"chooseMode" = "Choose game mode";
+"TopScore" = "Leaderboards";
+"points" = "points";
+"EnterYourName" = "Enter your name";
+"regionSelect" = "Tap to select game regions";
+"GameSettings" = "Game settings";
+
+/* Detail */
+"MainCity" = "Main city";
+"Population" = "Population";
+"StateSize" = "Size";
+"Density" = "Density";
+
+/* States */
+"Albania";
+"Andorra";
+"Austria";
+"Belarus";
+"Belgium";
+"Bosnia and Herzegovina";
+"Bulgaria";
+"Croatia";
+"Cyprus";
+"Czech Republic";
+"Denmark";
+"Estonia";
+"Faroe Islands";
+"Finland";
+"France";
+"Germany";
+"Gibraltar";
+"Greece";
+"Hungary";
+"Iceland";
+"Ireland";
+"Isle of Man";
+"Italy";
+"Kosovo";
+"Latvia";
+"Liechtenstein";
+"Lithuania";
+"Macedonia" = "North Macedonia";
+"Malta";
+"Moldova";
+"Monaco";
+"Montenegro";
+"Netherlands";
+"Norway";
+"Poland";
+"Portugal";
+"Romania";
+"Russia";
+"San Marino";
+"Serbia";
+"Slovakia";
+"Slovenia";
+"Spain";
+"Sweden";
+"Switzerland";
+"Ukraine";
+"United Kingdom";
+"Vatican City";
+/* States */
+"Douglas, Isle of Man" = "Douglas";
+"Luxembourg_city" = "Luxembourg";
