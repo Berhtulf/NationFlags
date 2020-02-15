@@ -85,6 +85,7 @@ struct NameToFlagView: View {
                     }
                     VStack{
                         Button(action: {
+                            self.settings.saveScore(score: Int64(self.score), view: "NameToFlag")
                             self.playAgain()
                         }) {
                             Text("SaveAndPlay")

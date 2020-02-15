@@ -9,6 +9,7 @@
 import SwiftUI
 
 class UserSettings: ObservableObject {
+    @Environment(\.managedObjectContext) var managedObjectContext
     // Prodleva před načtením dalších otázek
     @Published var nextDelay = 0.5
     @Published var gameMode = 1
@@ -18,8 +19,35 @@ class UserSettings: ObservableObject {
     
     @Published var nationList: [Nation]? = nil
     @Published var img: [Int] = [0,0,0,0,0]
-    @Published var regions:Set<String> = ["Asia"]
+    @Published var regions:Set<String> = []
     var pool:[Nation]{
         return restNation.filter{regions.contains($0.region)}
+    }
+    @FetchRequest(
+        entity: Records.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Records.view, ascending: true),
+            NSSortDescriptor(keyPath: \Records.score, ascending: false)
+        ]
+    ) var records: FetchedResults<Records>
+    
+    @FetchRequest(entity: Records.entity(), sortDescriptors: [
+        NSSortDescriptor(keyPath: \Records.view, ascending: true),
+        NSSortDescriptor(keyPath: \Records.score, ascending: false)
+    ], predicate:  NSPredicate(format: "view == %@", "FlagToName")
+    ) var firstScore: FetchedResults<Records>
+    func saveScore(score:Int64, view:String){
+        let item = Records(context: self.managedObjectContext)
+        item.score = score
+        item.view = view
+        // more code here
+        for old in records {
+            if old.view == item.view && old.score < item.score {
+                do {
+                    try self.managedObjectContext.save()
+                    self.managedObjectContext.delete(old)
+                } catch {}
+            }
+        }
     }
 }

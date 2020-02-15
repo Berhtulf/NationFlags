@@ -19,4 +19,3 @@ extension Double {
         return String(formatter.string(from: number) ?? "")
     }
 }
-

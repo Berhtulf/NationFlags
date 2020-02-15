@@ -7,53 +7,53 @@
 //
 
 import SwiftUI
+import CoreData
+
 struct ModeSelect: View {
     @EnvironmentObject var settings: UserSettings
+    @State private var showSubMenu:Int = 0
+    @State var mapWidth:CGFloat = 0
+    @State var mapHeight:CGFloat = 0
     public var dragGesture: some Gesture {
         DragGesture(minimumDistance: 0, coordinateSpace: .local)
             .onEnded {
                 print("Changed \($0.location)")
-                if $0.location.x > 310 && $0.location.y > 110{
-                    if self.settings.regions.contains("Oceania") {
-                        self.settings.regions.remove("Oceania")
-                    }else{
-                        self.settings.regions.insert("Oceania")
-                    }
-                    self.toogleMap(position: 4)
+                if $0.location.x > self.mapWidth*0.75 && $0.location.y > self.mapHeight/2{
+                        if self.settings.regions.contains("Oceania") {
+                            self.settings.regions.remove("Oceania")
+                        }else{
+                            self.settings.regions.insert("Oceania")
+                        }
+                        self.toogleMap(position: 4)
+                }else if $0.location.x < self.mapWidth*0.35{
+                        if self.settings.regions.contains("America") {
+                            self.settings.regions.remove("America")
+                        }else{
+                            self.settings.regions.insert("America")
+                        }
+                        self.toogleMap(position: 0)
+                }else if $0.location.x > self.mapWidth*0.35 && $0.location.x < self.mapWidth*0.6 && $0.location.y > self.mapHeight*0.3{
+                        if self.settings.regions.contains("Africa") {
+                            self.settings.regions.remove("Africa")
+                        }else{
+                            self.settings.regions.insert("Africa")
+                        }
+                        self.toogleMap(position: 2)
+                }else if $0.location.x > self.mapWidth*0.35 && $0.location.x < self.mapWidth*0.6 && $0.location.y < self.mapHeight*0.3{
+                        if self.settings.regions.contains("Europe") {
+                            self.settings.regions.remove("Europe")
+                        }else{
+                            self.settings.regions.insert("Europe")
+                        }
+                        self.toogleMap(position: 1)
+                }else if $0.location.x > self.mapWidth*0.6 && $0.location.y < self.mapHeight/2{
+                        if self.settings.regions.contains("Asia") {
+                            self.settings.regions.remove("Asia")
+                        }else{
+                            self.settings.regions.insert("Asia")
+                        }
+                        self.toogleMap(position: 3)
                 }
-                else if $0.location.x < 140 {
-                    if self.settings.regions.contains("Americas") {
-                        self.settings.regions.remove("Americas")
-                    }else{
-                        self.settings.regions.insert("Americas")
-                    }
-                    self.toogleMap(position: 0)
-                }
-                else if ($0.location.x > 140 && $0.location.x < 240 && $0.location.y > 70){
-                    if self.settings.regions.contains("Africa") {
-                        self.settings.regions.remove("Africa")
-                    }else{
-                        self.settings.regions.insert("Africa")
-                    }
-                    self.toogleMap(position: 2)
-                }
-                else if $0.location.x > 240 && $0.location.y < 120 {
-                    if self.settings.regions.contains("Asia") {
-                        self.settings.regions.remove("Asia")
-                    }else{
-                        self.settings.regions.insert("Asia")
-                    }
-                    self.toogleMap(position: 3)
-                }
-                else if ($0.location.x > 140 && $0.location.x < 240 && $0.location.y < 405) {
-                    if self.settings.regions.contains("Europe") {
-                        self.settings.regions.remove("Europe")
-                    }else{
-                        self.settings.regions.insert("Europe")
-                    }
-                    self.toogleMap(position: 1)
-                }
-                //print(self.settings.regions)
         }
     }
     func toogleMap(position:Int){
@@ -64,9 +64,6 @@ struct ModeSelect: View {
         }
         //print(settings.img)
     }
-    
-    @State private var showSubMenu:Int = 0
-    
     var body: some View {
         ZStack{
             VStack{
@@ -78,8 +75,16 @@ struct ModeSelect: View {
                     }.pickerStyle(SegmentedPickerStyle())
                 }.padding()
                 VStack{
-                    ModeSelectMapImage()
-                        .gesture(dragGesture)
+                    GeometryReader { geometryReader in
+                        ModeSelectMapImage()
+                            .gesture(self.dragGesture)
+                            .onAppear(){
+                                print("\(CGFloat(geometryReader.size.width)) x \(CGFloat(geometryReader.size.height))")
+                                self.mapWidth = geometryReader.size.width
+                                self.mapHeight = geometryReader.size.height
+                        }
+                        }.clipped()
+                        
                     ScrollView{
                         if self.settings.regions.count > 0{
                             if self.settings.gameMode == 1 {
@@ -306,7 +311,8 @@ struct ModeSelect: View {
                 }
                 Spacer()
             }
-        }.navigationBarTitle("GameSettings", displayMode: .inline)
+        }
+            .navigationBarTitle("GameSettings", displayMode: .inline)
     }
 }
 
