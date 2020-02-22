@@ -41,6 +41,7 @@
 		6321B61023E07CE700DC745D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6321B60F23E07CE700DC745D /* Preview Assets.xcassets */; };
 		6321B61323E07CE700DC745D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6321B61123E07CE700DC745D /* LaunchScreen.storyboard */; };
 		6374990723F45AAB005C3942 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6374990623F45AAB005C3942 /* IntExtensions.swift */; };
+		63A053B32401A378005909CD /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A053B22401A378005909CD /* SearchButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		6321B60C23E07CE700DC745D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6321B60F23E07CE700DC745D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6374990623F45AAB005C3942 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
+		63A053B22401A378005909CD /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				6309E43223F01A7A009C9B0E /* SearchBar.swift */,
 				6309E43423F01A8E009C9B0E /* ModeSelectMapImage.swift */,
 				6309E43823F01AC7009C9B0E /* MiniFlagViews.swift */,
+				63A053B22401A378005909CD /* SearchButton.swift */,
 			);
 			path = SupportingViews;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				6309E44723F01B6D009C9B0E /* NameToFlagErrorView.swift in Sources */,
 				6309E44323F01B42009C9B0E /* NameToCityErrorView.swift in Sources */,
 				6309E43123F01A6E009C9B0E /* MapView.swift in Sources */,
+				63A053B32401A378005909CD /* SearchButton.swift in Sources */,
 				6309E43923F01AC7009C9B0E /* MiniFlagViews.swift in Sources */,
 				6309E43523F01A8E009C9B0E /* ModeSelectMapImage.swift in Sources */,
 				6309E44523F01B5F009C9B0E /* NameToFlagView.swift in Sources */,

@@ -36,21 +36,6 @@ struct NationList: View {
         }
     }
 }
-struct SearchButton: View {
-    @EnvironmentObject var settings: UserSettings
-    var body: some View{
-        Button(action: {
-            withAnimation{
-                self.settings.showSearch.toggle()
-            }
-        }
-        ) {
-            Image(systemName: "magnifyingglass")
-                .padding()
-        }
-    }
-}
-
 
 struct NationList_Previews: PreviewProvider {
     static var previews: some View {

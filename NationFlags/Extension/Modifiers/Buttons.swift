@@ -7,26 +7,21 @@
 //
 
 import SwiftUI
+
 struct BasicButton: ViewModifier {
-    var color:Color
+    var color:Color = Color("CustomGray")
     func body(content: Content) -> some View{
         content
             .foregroundColor(Color.primary)
             .lineLimit(1)
             .allowsTightening(true)
             .minimumScaleFactor(0.005)
-            .frame(width: 200, height: 40)
+            .frame(minWidth: 140, maxWidth: 170, minHeight: 20, maxHeight: 50)
             .padding(.horizontal)
             .background(color)
-            .cornerRadius(50)
+            .cornerRadius(10)
             .padding(.vertical,6)
-            .shadow(radius: 3)
-    }
-}
-struct GameButton: ViewModifier {
-    func body(content: Content) -> some View{
-        content
-            .modifier(BasicButton(color: Color("SystemGray3")))
+            .shadow(radius: 3, y: 3)
     }
 }
 struct CorrectButton: ViewModifier {
@@ -35,57 +30,36 @@ struct CorrectButton: ViewModifier {
             .modifier(BasicButton(color: Color.green))
     }
 }
+struct ShowCorrectButton: ViewModifier {
+    func body(content: Content) -> some View{
+        content
+            .foregroundColor(Color.primary)
+            .lineLimit(1)
+            .allowsTightening(true)
+            .minimumScaleFactor(0.005)
+            .frame(minWidth: 140, maxWidth: 170, minHeight: 20, maxHeight: 50)
+            .padding(.horizontal)
+            .background(Color("CustomGray"))
+            .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.green, lineWidth: 2)
+            )
+            .padding(.vertical,6)
+            .shadow(radius: 3, y: 3)
+            
+    }
+}
 struct WrongButton: ViewModifier {
     func body(content: Content) -> some View{
         content
             .modifier(BasicButton(color: Color.red))
     }
 }
+
 struct MainMenuButton: ViewModifier {
     func body(content: Content) -> some View{
         content
-            .modifier(BasicButton(color: Color("SystemGray3")))
-    }
-}
-
-struct SmallGameModeButton: ViewModifier{
-    func body(content: Content) -> some View{
-        content
-        .foregroundColor(Color.primary)
-        .lineLimit(1)
-        .allowsTightening(true)
-        .minimumScaleFactor(0.001)
-        .frame(width: 120, height: 50)
-        .padding(.horizontal)
-        .background(Color.init("SystemGray3"))
-        .cornerRadius(50)
-        .padding(.vertical,7)
-    }
-}
-
-struct Modifier_Previews: PreviewProvider {
-    static var previews: some View {
-        Group{
-            Text("Svatý Tomáš a Princův ostrov")
-                .modifier(GameButton())
-                .padding(5)
-                .previewLayout(.sizeThatFits)
-            Text("Dominikánská republika Kongo")
-                .modifier(CorrectButton())
-                .padding(5)
-                .previewLayout(.sizeThatFits)
-            Text("Čad")
-                .modifier(WrongButton())
-                .padding(5)
-                .previewLayout(.sizeThatFits)
-            Text("MainMenuButton")
-                .modifier(MainMenuButton())
-                .padding(5)
-                .previewLayout(.sizeThatFits)
-            Text("SmallGame ModeButton")
-                .modifier(SmallGameModeButton())
-                .padding(5)
-                .previewLayout(.sizeThatFits)
-        }
+            .modifier(BasicButton(color: Color("CustomGray")))
     }
 }

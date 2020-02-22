@@ -10,6 +10,7 @@ import SwiftUI
 
 struct FlagToNameView: View {
     @EnvironmentObject var settings: UserSettings
+    @Environment(\.presentationMode) var presentationMode
     @State private var options:[Nation] = []
     @State private var correctOption:Nation?
     @State private var history = Set<Nation?>()
@@ -49,7 +50,10 @@ struct FlagToNameView: View {
             self.timer -= 1
             if (self.timer <= 0) {
                 timer.invalidate()
-                self.finish = true
+                self.disableAll = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                    self.finish = true
+                }
             }
         }
     }
@@ -71,183 +75,166 @@ struct FlagToNameView: View {
     
     var body: some View {
         ZStack{
-            if finish {
-                Spacer()
-                VStack(alignment: .center){
-                    Text("Game over!")
-                        .font(.largeTitle)
-                    HStack {
-                        Text("score")
-                        Text("\(score)")
-                        Text("points")
-                    }
+            VStack{
+                if  correctOption != nil { Text(LocalizedStringKey(correctOption!.name))
+                    .font(.system(size: 25))
+                    .lineLimit(1)
+                    .allowsTightening(true)
+                    .minimumScaleFactor(0.005)
+                    .padding(.horizontal)
+                    .padding(.vertical,7)
+                }
+                if (options.count > 0) {
                     VStack{
-                        Button(action: {
-                            self.playAgain()
-                        }) {
-                            Text("SaveAndPlay")
-                                .modifier(MainMenuButton())
-                                .font(.title)
-                        }
-                    }
-                }.padding()
-                Spacer()
-            }
-            else{
-                VStack{
-                    if  correctOption != nil { Text(LocalizedStringKey(correctOption!.name))
-                        .font(.system(size: 25))
-                        .lineLimit(1)
-                        .allowsTightening(true)
-                        .minimumScaleFactor(0.005)
-                        .padding(.horizontal)
-                        .padding(.vertical,7)
-                    }
-                    if (options.count > 0) {
-                        VStack{
-                            HStack{
-                                Spacer()
-                                if options[0].name == self.correctOption?.name {
-                                    if self.didTap0 == true {
-                                        GameCorrectFlag(image: options[0].image)
+                        HStack{
+                            Spacer()
+                            if options[0].name == self.correctOption?.name {
+                                if self.didTap0 == true {
+                                    GameCorrectFlag(image: options[0].image)
+                                }else{
+                                    GameFlagImage(image: options[0].image)
+                                        .onTapGesture {
+                                            self.didTap0 = true
+                                            self.disableAll = true
+                                            self.score += 10
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                                                self.generateOptions()
+                                            }
+                                    }
+                                }
+                            }
+                            else{
+                                if self.didTap0 == true {
+                                    GameWrongFlag(image: options[0].image)
+                                }else{
+                                    if self.disableAll == true {
+                                        GameFlagImage(image: options[0].image)
                                     }else{
                                         GameFlagImage(image: options[0].image)
                                             .onTapGesture {
                                                 self.didTap0 = true
-                                                self.disableAll = true
-                                                self.score += 10
-                                                DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                                    self.generateOptions()
-                                                }
+                                                self.score -= 5
                                         }
                                     }
                                 }
-                                else{
-                                    if self.didTap0 == true {
-                                        GameWrongFlag(image: options[0].image)
-                                    }else{
-                                        if self.disableAll == true {
-                                            GameFlagImage(image: options[0].image)
-                                        }else{
-                                            GameFlagImage(image: options[0].image)
-                                                .onTapGesture {
-                                                    self.didTap0 = true
-                                                    self.score -= 5
+                            }
+                            Spacer()
+                            if options[1].name == self.correctOption?.name {
+                                if self.didTap1 == true {
+                                    GameCorrectFlag(image: options[1].image)
+                                }else{
+                                    GameFlagImage(image: options[1].image)
+                                        .onTapGesture {
+                                            self.didTap1 = true
+                                            self.disableAll = true
+                                            self.score += 10
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                                                self.generateOptions()
                                             }
-                                        }
                                     }
                                 }
-                                Spacer()
-                                if options[1].name == self.correctOption?.name {
-                                    if self.didTap1 == true {
-                                        GameCorrectFlag(image: options[1].image)
+                                
+                            }
+                            else{
+                                if self.didTap1 == true {
+                                    GameWrongFlag(image: options[1].image)
+                                }else{
+                                    if self.disableAll == true {
+                                        GameFlagImage(image: options[1].image)
                                     }else{
                                         GameFlagImage(image: options[1].image)
                                             .onTapGesture {
                                                 self.didTap1 = true
-                                                self.disableAll = true
-                                                self.score += 10
-                                                DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                                    self.generateOptions()
-                                                }
+                                                self.score -= 5
                                         }
                                     }
-                                    
                                 }
-                                else{
-                                    if self.didTap1 == true {
-                                        GameWrongFlag(image: options[1].image)
-                                    }else{
-                                        if self.disableAll == true {
-                                            GameFlagImage(image: options[1].image)
-                                        }else{
-                                            GameFlagImage(image: options[1].image)
-                                                .onTapGesture {
-                                                    self.didTap1 = true
-                                                    self.score -= 5
+                            }
+                            Spacer()
+                        }.padding(.vertical)
+                        HStack{
+                            Spacer()
+                            if options[2].name == self.correctOption?.name {
+                                if self.didTap2 == true {
+                                    GameCorrectFlag(image: options[2].image)
+                                }else{
+                                    GameFlagImage(image: options[2].image)
+                                        .onTapGesture {
+                                            self.didTap2 = true
+                                            self.disableAll = true
+                                            self.score += 10
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                                                self.generateOptions()
                                             }
-                                        }
                                     }
                                 }
-                                Spacer()
-                            }.padding(.vertical)
-                            HStack{
-                                Spacer()
-                                if options[2].name == self.correctOption?.name {
-                                    if self.didTap2 == true {
-                                        GameCorrectFlag(image: options[2].image)
+                            }
+                            else{
+                                if self.didTap2 == true {
+                                    GameWrongFlag(image: options[2].image)
+                                }else{
+                                    if self.disableAll == true {
+                                        GameFlagImage(image: options[2].image)
                                     }else{
                                         GameFlagImage(image: options[2].image)
                                             .onTapGesture {
                                                 self.didTap2 = true
-                                                self.disableAll = true
-                                                self.score += 10
-                                                DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                                    self.generateOptions()
-                                                }
+                                                self.score -= 5
                                         }
                                     }
                                 }
-                                else{
-                                    if self.didTap2 == true {
-                                        GameWrongFlag(image: options[2].image)
-                                    }else{
-                                        if self.disableAll == true {
-                                            GameFlagImage(image: options[2].image)
-                                        }else{
-                                            GameFlagImage(image: options[2].image)
-                                                .onTapGesture {
-                                                    self.didTap2 = true
-                                                    self.score -= 5
+                            }
+                            Spacer()
+                            if options[3].name == self.correctOption?.name {
+                                if self.didTap3 == true {
+                                    GameCorrectFlag(image: options[3].image)
+                                }else{
+                                    GameFlagImage(image: options[3].image)
+                                        .onTapGesture {
+                                            self.didTap3 = true
+                                            self.disableAll = true
+                                            self.score += 10
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                                                self.generateOptions()
                                             }
-                                        }
                                     }
                                 }
-                                Spacer()
-                                if options[3].name == self.correctOption?.name {
-                                    if self.didTap3 == true {
-                                        GameCorrectFlag(image: options[3].image)
+                            }
+                            else{
+                                if self.didTap3 == true {
+                                    GameWrongFlag(image: options[3].image)
+                                }else{
+                                    if self.disableAll == true {
+                                        GameFlagImage(image: options[3].image)
                                     }else{
                                         GameFlagImage(image: options[3].image)
                                             .onTapGesture {
                                                 self.didTap3 = true
-                                                self.disableAll = true
-                                                self.score += 10
-                                                DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                                    self.generateOptions()
-                                                }
+                                                self.score -= 5
                                         }
                                     }
                                 }
-                                else{
-                                    if self.didTap3 == true {
-                                        GameWrongFlag(image: options[3].image)
-                                    }else{
-                                        if self.disableAll == true {
-                                            GameFlagImage(image: options[3].image)
-                                        }else{
-                                            GameFlagImage(image: options[3].image)
-                                                .onTapGesture {
-                                                    self.didTap3 = true
-                                                    self.score -= 5
-                                            }
-                                        }
-                                    }
-                                }
-                                Spacer()
-                            }.padding(.vertical)
-                        }
+                            }
+                            Spacer()
+                        }.padding(.vertical)
                     }
                 }
-                VStack{
-                    ProgressBar(value: $timer).padding(10)
-                    Spacer()
-                }
+            }
+            VStack{
+                ProgressBar(value: $timer).padding(10)
+                Spacer()
             }
         }
         .navigationBarTitle("Flags", displayMode: .inline)
         .onAppear() {
             self.playAgain()
+        }
+        .alert(isPresented: $finish) {
+            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"), primaryButton: .destructive(Text("Back")) {
+                self.presentationMode.wrappedValue.dismiss()
+                }, secondaryButton: .default(Text("SaveAndPlay")) {
+                    self.playAgain()
+                })
         }
     }
 }

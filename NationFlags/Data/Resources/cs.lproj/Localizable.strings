@@ -7,10 +7,10 @@
 */
 "Countries" = "Národní vlajky";
 "Cancel" = "Zrušit";
-
+"Back" = "Zpět";
+"score <%lld>" = "Tvé skóre: %lld bodů";
 "play" = "Hrát";
 "list" = "Seznam zemí";
-"score" = "Tvé skóre:";
 "Search" = "Hledat";
 "Main menu" = "Hlavní menu";
 "SaveAndPlay" = "Hrát znovu";
@@ -28,9 +28,6 @@
 "Flags" = "Vlajky";
 "chooseMode" = "Co chcete hádat?";
 "TopScore" = "Žebříček";
-"points" = "bodů";
-"EnterYourName" = "Zadej své jméno";
-"regionSelect" = "Klepnutím vyberte herní regiony";
 "GameSettings" = "Nastavení hry";
 
 "All" = "Vše";

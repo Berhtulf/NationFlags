@@ -10,6 +10,7 @@ import SwiftUI
 
 struct FlagToNameErrorView: View {
     @EnvironmentObject var settings: UserSettings
+    @Environment(\.presentationMode) var presentationMode
     @State private var options:[Nation] = []
     @State private var correctOption:Nation?
     @State private var history = Set<Nation?>()
@@ -60,31 +61,8 @@ struct FlagToNameErrorView: View {
     
     var body: some View {
         VStack{
-            if finish {
                 Spacer()
-                VStack(alignment: .center){
-                    Text("Game over!")
-                        .font(.largeTitle)
-                    HStack {
-                        Text("score")
-                        Text("\(score)")
-                        Text("points")
-                    }
-                    VStack{
-                        Button(action: {
-                            self.playAgain()
-                        }) {
-                            Text("SaveAndPlay")
-                                .modifier(MainMenuButton())
-                                .font(.title)
-                        }
-                    }
-                }.padding()
-                Spacer()
-            }
-            else{
-                Spacer()
-                if  correctOption != nil { Text(LocalizedStringKey(correctOption!.name))
+                if correctOption != nil { Text(LocalizedStringKey(correctOption!.name))
                     .font(.system(size: 25))
                     .lineLimit(1)
                     .allowsTightening(true)
@@ -121,6 +99,7 @@ struct FlagToNameErrorView: View {
                                         GameFlagImage(image: options[0].image)
                                             .onTapGesture {
                                                 self.didTap0 = true
+                                                self.disableAll = true
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                                     self.finish = true
                                                 }
@@ -155,6 +134,7 @@ struct FlagToNameErrorView: View {
                                         GameFlagImage(image: options[1].image)
                                             .onTapGesture {
                                                 self.didTap1 = true
+                                                self.disableAll = true
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                                     self.finish = true
                                                 }
@@ -191,6 +171,7 @@ struct FlagToNameErrorView: View {
                                         GameFlagImage(image: options[2].image)
                                             .onTapGesture {
                                                 self.didTap2 = true
+                                                self.disableAll = true
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                                     self.finish = true
                                                 }
@@ -224,6 +205,7 @@ struct FlagToNameErrorView: View {
                                         GameFlagImage(image: options[3].image)
                                             .onTapGesture {
                                                 self.didTap3 = true
+                                                self.disableAll = true
                                                 DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                                     self.finish = true
                                                 }
@@ -236,11 +218,17 @@ struct FlagToNameErrorView: View {
                     }
                 }
                 Spacer()
-            }
         }
         .navigationBarTitle("Flags", displayMode: .inline)
         .onAppear() {
             self.playAgain()
+        }
+        .alert(isPresented: $finish) {
+            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"), primaryButton: .destructive(Text("Back")) {
+                self.presentationMode.wrappedValue.dismiss()
+                }, secondaryButton: .default(Text("SaveAndPlay")) {
+                    self.playAgain()
+                })
         }
     }
 }

@@ -31,12 +31,7 @@ class UserSettings: ObservableObject {
         ]
     ) var records: FetchedResults<Records>
     
-    @FetchRequest(entity: Records.entity(), sortDescriptors: [
-        NSSortDescriptor(keyPath: \Records.view, ascending: true),
-        NSSortDescriptor(keyPath: \Records.score, ascending: false)
-    ], predicate:  NSPredicate(format: "view == %@", "FlagToName")
-    ) var firstScore: FetchedResults<Records>
-    func saveScore(score:Int64, view:String){
+    func saveScoreSQL(score:Int64, view:String){
         let item = Records(context: self.managedObjectContext)
         item.score = score
         item.view = view
@@ -48,6 +43,13 @@ class UserSettings: ObservableObject {
                     self.managedObjectContext.delete(old)
                 } catch {}
             }
+        }
+    }
+    
+    func saveScore(score:Int64, view:String){
+        let dbScore = UserDefaults.standard.integer(forKey: view)
+        if score > dbScore {
+            UserDefaults.standard.set(score, forKey: view)
         }
     }
 }
