@@ -265,15 +265,16 @@ struct NameToFlagView: View {
                 Spacer()
             }
             
-        }.navigationBarTitle("Names", displayMode: .inline)
+        }.navigationBarTitle("NameToFlag", displayMode: .inline)
             .onAppear() {
                 self.playAgain()
         }
         .alert(isPresented: $finish) {
-            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"), primaryButton: .destructive(Text("Back")) {
-                self.settings.saveScore(score: Int64(self.score), view: "NameToFlag")
-                self.presentationMode.wrappedValue.dismiss()
-                }, secondaryButton: .default(Text("SaveAndPlay")) {
+            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"),
+                  primaryButton: .destructive(Text("Back")) {
+                    self.settings.saveScore(score: Int64(self.score), view: "NameToFlag")
+                    self.presentationMode.wrappedValue.dismiss()},
+                  secondaryButton: .default(Text("SaveAndPlay")) {
                     self.settings.saveScore(score: Int64(self.score), view: "NameToFlag")
                     self.playAgain()
                 })

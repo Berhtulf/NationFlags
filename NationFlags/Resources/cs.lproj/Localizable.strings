@@ -20,13 +20,12 @@
 "FlagToName" = "Vlajka k názvu";
 "StateToCity" = "Stát k městu";
 "CityToState" = "Město ke státu";
-"ModeSelect" = "Herní řežim";
 "ErrorGame" = "Do první chyby";
 "TimedGame" = "Časová výzva";
 "Capitals" = "Města";
 "Names" = "Státy";
 "Flags" = "Vlajky";
-"chooseMode" = "Co chcete hádat?";
+"chooseMode" = "Vyberte herní režim";
 "TopScore" = "Žebříček";
 "GameSettings" = "Nastavení hry";
 

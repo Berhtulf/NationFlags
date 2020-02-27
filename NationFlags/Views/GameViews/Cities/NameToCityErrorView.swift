@@ -255,14 +255,17 @@ struct NameToCityErrorView: View {
                 }
                 Spacer()
             
-        }.navigationBarTitle("Capitals", displayMode: .inline)
+        }.navigationBarTitle("StateToCity", displayMode: .inline)
             .onAppear() {
                 self.playAgain()
         }
         .alert(isPresented: $finish) {
-            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"), primaryButton: .destructive(Text("Back")) {
-                self.presentationMode.wrappedValue.dismiss()
-                }, secondaryButton: .default(Text("SaveAndPlay")) {
+            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"),
+                  primaryButton: .destructive(Text("Back")) {
+                    self.settings.saveScore(score: Int64(self.score), view: "NameToCityError")
+                    self.presentationMode.wrappedValue.dismiss()},
+                  secondaryButton: .default(Text("SaveAndPlay")) {
+                    self.settings.saveScore(score: Int64(self.score), view: "NameToCityError")
                     self.playAgain()
                 })
         }

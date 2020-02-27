@@ -9,7 +9,7 @@
 import SwiftUI
 
 extension Int64 {
-    func ToString() -> String {
+    func toString() -> String {
         return String(self)
     }
 }

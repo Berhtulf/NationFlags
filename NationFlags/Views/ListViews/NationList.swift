@@ -17,12 +17,10 @@ struct NationList: View {
                     .padding(.top)
                     .padding(.horizontal)
             }
-            List(restNation.filter{
-                NSLocalizedString($0.name, comment: "").contains(settings.search) || settings.search == ""
-            }.sorted(by: {
-                NSLocalizedString($0.name, comment: "") < NSLocalizedString($1.name, comment: "")
-            }), id: \.self)
-            { nation in
+            List(restNation
+                .filter{NSLocalizedString($0.name, comment: "").contains(settings.search) || settings.search == ""}
+                .sorted(by: {NSLocalizedString($0.name, comment: "") < NSLocalizedString($1.name, comment: "")
+            }), id: \.self) { nation in
                 NavigationLink(destination: NationDetail(nation: nation)){
                     NationRow(nation: nation)
                 }

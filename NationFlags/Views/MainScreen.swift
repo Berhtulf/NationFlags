@@ -11,33 +11,35 @@ import SwiftUI
 struct MainScreen: View {
     @EnvironmentObject var settings: UserSettings
     var body: some View {
-        NavigationView{
-            VStack {
-                Spacer()
-                Image("Icon")
-                    .resizable()
-                    .padding()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height:245)
-                Text("Countries").font(.largeTitle)
-                    .padding(.vertical,40)
-                NavigationLink(destination: ModeSelect()){
-                    Text("play")
-                        .modifier(MainMenuButton())
+        VStack{
+            NavigationView{
+                VStack {
+                    Spacer()
+                    Image("Icon")
+                        .resizable()
+                        .padding()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height:245)
+                    Text("Countries").font(.largeTitle)
+                        .padding(.vertical,40)
+                    NavigationLink(destination: ModeSelect()){
+                        Text("play")
+                            .modifier(MainMenuButton())
                     }.font(.title)
-                NavigationLink(destination: NationList()) {
-                    Text("list")
-                        .modifier(MainMenuButton())
-                }.font(.title)
-                Spacer()
-            }.edgesIgnoringSafeArea(.all)
-            .accentColor(.orange)
+                    NavigationLink(destination: NationList()) {
+                        Text("list")
+                            .modifier(MainMenuButton())
+                    }.font(.title)
+                    Spacer()
+                }.edgesIgnoringSafeArea(.all)
+                    .accentColor(.orange)
+            }
         }
     }
 }
 
 struct MainScreen_Previews: PreviewProvider {
     static var previews: some View {
-        MainScreen()
+        MainScreen().environmentObject(UserSettings())
     }
 }

@@ -14,14 +14,13 @@
 "FlagToName" = "Flag to name";
 "StateToCity" = "State to city";
 "CityToState" = "City to state";
-"ModeSelect" = "Choose game mode";
 "Main menu" = "Main menu";
 "SaveAndPlay" = "Play again";
 "Game over!" = "Game over!";
 "ErrorGame" = "Until first mistake";
 "TimedGame" = "Timed challange";
 "Capitals" = "Capitals";
-"chooseMode" = "Choose game mode";
+"chooseMode" = "Choose your game mode";
 "EnterYourName" = "Enter your name";
 "regionSelect" = "Tap to select game regions";
 "GameSettings" = "Game settings";

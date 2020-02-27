@@ -23,28 +23,6 @@ class UserSettings: ObservableObject {
     var pool:[Nation]{
         return restNation.filter{regions.contains($0.region)}
     }
-    @FetchRequest(
-        entity: Records.entity(),
-        sortDescriptors: [
-            NSSortDescriptor(keyPath: \Records.view, ascending: true),
-            NSSortDescriptor(keyPath: \Records.score, ascending: false)
-        ]
-    ) var records: FetchedResults<Records>
-    
-    func saveScoreSQL(score:Int64, view:String){
-        let item = Records(context: self.managedObjectContext)
-        item.score = score
-        item.view = view
-        // more code here
-        for old in records {
-            if old.view == item.view && old.score < item.score {
-                do {
-                    try self.managedObjectContext.save()
-                    self.managedObjectContext.delete(old)
-                } catch {}
-            }
-        }
-    }
     
     func saveScore(score:Int64, view:String){
         let dbScore = UserDefaults.standard.integer(forKey: view)
