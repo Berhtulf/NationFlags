@@ -13,12 +13,7 @@ struct GameFlagImage: View {
         image?
             .resizable()
             .cornerRadius(4)
-            .overlay(
-                RoundedRectangle(cornerRadius: 4)
-                    .stroke(Color.init("DarkWhite"), lineWidth: 1)
-        )
-            .clipped()
-            .shadow(radius: 4)
+            .shadow(color: Color("CustomShadow"), radius: 4)
             .aspectRatio(contentMode: .fit)
             .frame(width:150, height: 100)
     }
@@ -39,6 +34,15 @@ struct GameCorrectFlag: View {
                         Circle()
                             .stroke(Color.black, lineWidth: 1)
                 )
+        }
+    }
+}
+struct ShowCorrectFlag: View {
+    var image: Image?
+    var body: some View {
+        ZStack{
+            GameFlagImage(image: image)
+                .shadow(color: .green, radius: 5)
         }
     }
 }
@@ -65,9 +69,26 @@ struct GameWrongFlag: View {
 struct GameCorrectFlag_Previews: PreviewProvider {
     static var previews: some View {
         Group{
-            GameFlagImage(image: Image("de")).padding(50).previewLayout(.sizeThatFits)
-            GameCorrectFlag(image: Image("de")).padding(50).previewLayout(.sizeThatFits)
-            GameWrongFlag(image: Image("va")).padding(50).previewLayout(.sizeThatFits)
+            HStack{
+                GameFlagImage(image: Image("np")).padding()
+                GameFlagImage(image: Image("va")).padding()
+                GameFlagImage(image: Image("cz")).padding()
+            }.previewLayout(.sizeThatFits)
+            HStack{
+                GameCorrectFlag(image: Image("np")).padding()
+                GameCorrectFlag(image: Image("va")).padding()
+                GameCorrectFlag(image: Image("cz")).padding()
+            }.previewLayout(.sizeThatFits)
+            HStack{
+                GameWrongFlag(image: Image("np")).padding()
+                GameWrongFlag(image: Image("va")).padding()
+                GameWrongFlag(image: Image("cz")).padding()
+            }.previewLayout(.sizeThatFits)
+            HStack{
+                ShowCorrectFlag(image: Image("np")).padding()
+                ShowCorrectFlag(image: Image("va")).padding()
+                ShowCorrectFlag(image: Image("de")).padding()
+            }.previewLayout(.sizeThatFits)
         }
     }
 }

@@ -12,6 +12,7 @@ class UserSettings: ObservableObject {
     @Environment(\.managedObjectContext) var managedObjectContext
     // Prodleva před načtením dalších otázek
     @Published var nextDelay = 0.5
+    @Published var learnDelay = 1.0
     @Published var gameMode = 1
     @Published var listRegion = 2
     @Published var showSearch:Bool = false

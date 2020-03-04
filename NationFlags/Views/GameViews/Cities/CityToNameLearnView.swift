@@ -1,16 +1,8 @@
-//
-//  NameToFlagErrorView.swift
-//  NationFlags
-//
-//  Created by Martin Václavík on 09/02/2020.
-//  Copyright © 2020 Martin Václavík. All rights reserved.
-//
 import SwiftUI
 
-struct NameToFlagErrorView: View {
+struct CityToNameLearnView: View {
     @EnvironmentObject var settings: UserSettings
     @Environment(\.presentationMode) var presentationMode
-    
     @State private var options:[Nation] = []
     @State private var correctOption:Nation?
     @State private var history = Set<Nation?>()
@@ -62,27 +54,35 @@ struct NameToFlagErrorView: View {
     var body: some View {
         VStack{
             Spacer()
-            FlagImage(image: correctOption?.image).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 300, alignment: .center).padding(.horizontal)
+            Text(LocalizedStringKey(correctOption?.name ?? ""))
+                .font(.title)
+                .lineLimit(1)
+                .allowsTightening(true)
+                .minimumScaleFactor(0.005)
+                .padding(.horizontal)
+                .padding(.vertical,7)
+            Spacer()
+                .frame(height: 50)
             if (options.count > 0) {
                 if options[0].name == self.correctOption?.name {
                     if self.disableAll {
                         if self.didTap0 {
-                            Text(LocalizedStringKey(options[0].name))
+                            Text(LocalizedStringKey(options[0].capital))
                                 .modifier(CorrectButton())
                         }else{
-                            Text(LocalizedStringKey(options[0].name))
+                            Text(LocalizedStringKey(options[0].capital))
                                 .modifier(ShowCorrectButton())
                         }
                     }else{
                         Button(action: {
                             self.didTap0 = true
                             self.disableAll = true
-                            self.score += 10
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                            self.score += 1
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
                                 self.generateOptions()
                             }
                         }) {
-                            Text(LocalizedStringKey(options[0].name))
+                            Text(LocalizedStringKey(options[0].capital))
                                 .modifier(BasicButton())
                         }
                     }
@@ -90,21 +90,21 @@ struct NameToFlagErrorView: View {
                 else{
                     if self.disableAll {
                         if self.didTap0 {
-                            Text(LocalizedStringKey(options[0].name))
+                            Text(LocalizedStringKey(options[0].capital))
                                 .modifier(WrongButton())
                         }else{
-                            Text(LocalizedStringKey(options[0].name))
+                            Text(LocalizedStringKey(options[0].capital))
                                 .modifier(BasicButton())
                         }
                     }else{
                         Button(action: {
                             self.didTap0 = true
                             self.disableAll = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.finish = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
+                                self.generateOptions()
                             }
                         }) {
-                            Text(LocalizedStringKey(options[0].name))
+                            Text(LocalizedStringKey(options[0].capital))
                                 .modifier(BasicButton())
                         }
                     }
@@ -112,22 +112,22 @@ struct NameToFlagErrorView: View {
                 if options[1].name == self.correctOption?.name {
                     if self.disableAll {
                         if self.didTap1 {
-                            Text(LocalizedStringKey(options[1].name))
+                            Text(LocalizedStringKey(options[1].capital))
                                 .modifier(CorrectButton())
                         }else{
-                            Text(LocalizedStringKey(options[1].name))
+                            Text(LocalizedStringKey(options[1].capital))
                                 .modifier(ShowCorrectButton())
                         }
                     }else{
                         Button(action: {
                             self.didTap1 = true
                             self.disableAll = true
-                            self.score += 10
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                            self.score += 1
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
                                 self.generateOptions()
                             }
                         }) {
-                            Text(LocalizedStringKey(options[1].name))
+                            Text(LocalizedStringKey(options[1].capital))
                                 .modifier(BasicButton())
                         }
                     }
@@ -135,21 +135,21 @@ struct NameToFlagErrorView: View {
                 else{
                     if self.disableAll {
                         if self.didTap1 {
-                            Text(LocalizedStringKey(options[1].name))
+                            Text(LocalizedStringKey(options[1].capital))
                                 .modifier(WrongButton())
                         }else{
-                            Text(LocalizedStringKey(options[1].name))
+                            Text(LocalizedStringKey(options[1].capital))
                                 .modifier(BasicButton())
                         }
                     }else{
                         Button(action: {
                             self.didTap1 = true
                             self.disableAll = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.finish = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
+                                self.generateOptions()
                             }
                         }) {
-                            Text(LocalizedStringKey(options[1].name))
+                            Text(LocalizedStringKey(options[1].capital))
                                 .modifier(BasicButton())
                         }
                     }
@@ -157,22 +157,22 @@ struct NameToFlagErrorView: View {
                 if options[2].name == self.correctOption?.name {
                     if self.disableAll {
                         if self.didTap2 {
-                            Text(LocalizedStringKey(options[2].name))
+                            Text(LocalizedStringKey(options[2].capital))
                                 .modifier(CorrectButton())
                         }else{
-                            Text(LocalizedStringKey(options[2].name))
+                            Text(LocalizedStringKey(options[2].capital))
                                 .modifier(ShowCorrectButton())
                         }
                     }else{
                         Button(action: {
                             self.didTap2 = true
                             self.disableAll = true
-                            self.score += 10
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                            self.score += 1
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
                                 self.generateOptions()
                             }
                         }) {
-                            Text(LocalizedStringKey(options[2].name))
+                            Text(LocalizedStringKey(options[2].capital))
                                 .modifier(BasicButton())
                         }
                     }
@@ -180,21 +180,21 @@ struct NameToFlagErrorView: View {
                 else{
                     if self.disableAll {
                         if self.didTap2 {
-                            Text(LocalizedStringKey(options[2].name))
+                            Text(LocalizedStringKey(options[2].capital))
                                 .modifier(WrongButton())
                         }else{
-                            Text(LocalizedStringKey(options[2].name))
+                            Text(LocalizedStringKey(options[2].capital))
                                 .modifier(BasicButton())
                         }
                     }else{
                         Button(action: {
                             self.didTap2 = true
                             self.disableAll = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.finish = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
+                                self.generateOptions()
                             }
                         }) {
-                            Text(LocalizedStringKey(options[2].name))
+                            Text(LocalizedStringKey(options[2].capital))
                                 .modifier(BasicButton())
                         }
                     }
@@ -202,22 +202,22 @@ struct NameToFlagErrorView: View {
                 if options[3].name == self.correctOption?.name {
                     if self.disableAll {
                         if self.didTap3 {
-                            Text(LocalizedStringKey(options[3].name))
+                            Text(LocalizedStringKey(options[3].capital))
                                 .modifier(CorrectButton())
                         }else{
-                            Text(LocalizedStringKey(options[3].name))
+                            Text(LocalizedStringKey(options[3].capital))
                                 .modifier(ShowCorrectButton())
                         }
                     }else{
                         Button(action: {
                             self.didTap3 = true
                             self.disableAll = true
-                            self.score += 10
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                            self.score += 1
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
                                 self.generateOptions()
                             }
                         }) {
-                            Text(LocalizedStringKey(options[3].name))
+                            Text(LocalizedStringKey(options[3].capital))
                                 .modifier(BasicButton())
                         }
                     }
@@ -225,49 +225,50 @@ struct NameToFlagErrorView: View {
                 else{
                     if self.disableAll {
                         if self.didTap3 {
-                            Text(LocalizedStringKey(options[3].name))
+                            Text(LocalizedStringKey(options[3].capital))
                                 .modifier(WrongButton())
                         }else{
-                            Text(LocalizedStringKey(options[3].name))
+                            Text(LocalizedStringKey(options[3].capital))
                                 .modifier(BasicButton())
                         }
                     }else{
                         Button(action: {
                             self.didTap3 = true
                             self.disableAll = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.finish = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
+                                self.generateOptions()
                             }
                         }) {
-                            Text(LocalizedStringKey(options[3].name))
+                            Text(LocalizedStringKey(options[3].capital))
                                 .modifier(BasicButton())
                         }
                     }
                 }
             }
             Spacer()
-        }.navigationBarTitle("NameToFlag", displayMode: .inline)
-            .onAppear() {
-                self.playAgain()
+        }
+        .navigationBarTitle("CityToState", displayMode: .inline)
+        .onAppear() {
+            self.playAgain()
         }
         .alert(isPresented: $finish) {
-            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"),
+            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>/<\(self.settings.pool.count)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    self.settings.saveScore(score: Int64(self.score), view: "NameToFlagError")
+                    self.settings.saveScore(score: Int64(self.score), view: "CityToNameError")
                     self.presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    self.settings.saveScore(score: Int64(self.score), view: "NameToFlagError")
+                    self.settings.saveScore(score: Int64(self.score), view: "CityToNameError")
                     self.playAgain()
                 })
         }
     }
 }
 
-struct NameToFlagErrorView_Previews: PreviewProvider {
+struct CityToNameLearnView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
             NavigationView{
-                NameToFlagErrorView().environmentObject(UserSettings()).environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+                CityToNameLearnView().environmentObject(UserSettings())
             }
         }
         

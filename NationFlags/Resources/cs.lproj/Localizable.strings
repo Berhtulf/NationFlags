@@ -9,6 +9,7 @@
 "Cancel" = "Zrušit";
 "Back" = "Zpět";
 "score <%lld>" = "Tvé skóre: %lld bodů";
+"score <%lld>/<%lld>" = "Správně %lld z %lld otázek!";
 "play" = "Hrát";
 "list" = "Seznam zemí";
 "Search" = "Hledat";
@@ -22,12 +23,20 @@
 "CityToState" = "Město ke státu";
 "ErrorGame" = "Do první chyby";
 "TimedGame" = "Časová výzva";
+"LearnGame" = "Výukový režim";
 "Capitals" = "Města";
 "Names" = "Státy";
 "Flags" = "Vlajky";
 "chooseMode" = "Vyberte herní režim";
 "TopScore" = "Žebříček";
 "GameSettings" = "Nastavení hry";
+
+// Feedback
+"Feedback" = "Zpětná vazba";
+"FeedbackInfo" = "Vaše připomínky pomáhají zlepšit tuto aplikaci!";
+"AppReview" = "Ohodnotit aplikaci";
+"BugReport" = "Nahlásit chybu";
+
 
 "All" = "Vše";
 "Europe" = "Evropa";
@@ -93,7 +102,7 @@
 "Djibouti" = "Džíbútí";
 "Dominica" = "Dominika";
 "Dominican Republic" = "Dominikánská republika";
-"East Timor" = "Východní Timor";
+"Timor-Leste" = "Východní Timor";
 "Ecuador" = "Ekvádor";
 "Egypt" = "Egypt";
 "El Salvador" = "Salvador";

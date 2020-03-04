@@ -63,7 +63,7 @@ struct CityToNameErrorView: View {
         VStack{
             Spacer()
             Text(LocalizedStringKey(correctOption?.name ?? ""))
-                .font(.system(size: 25))
+                .font(.title)
                 .lineLimit(1)
                 .allowsTightening(true)
                 .minimumScaleFactor(0.005)

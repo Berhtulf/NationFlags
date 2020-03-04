@@ -15,51 +15,45 @@ struct ModeSelect: View {
     
     var body: some View {
         ZStack{
-            if !self.firstLaunch {
+            VStack{
+                VStack{
+                    Text("chooseMode").font(.headline)
+                    Picker(selection: $gameMode, label: Text("ModeSelect")) {
+                        Text("Flags").tag(0)
+                        Text("Capitals").tag(1)
+                    }.pickerStyle(SegmentedPickerStyle())
+                }.padding()
+                VStack{
+                    MapSelectView()
+                    ModeScrollView(gameMode: self.gameMode)
+                }
+                Spacer()
+            }.transition(AnyTransition.move(edge: .top))
+                .sheet(isPresented: $firstLaunch){
                 VStack{
                     Image("HelpImage")
-                        .resizable()
-                        .padding()
-                        .aspectRatio(contentMode: .fit)
-                    Button(action:{
-                        UserDefaults.standard.set(true, forKey: "firstLaunch")
-                        withAnimation(){
-                            self.firstLaunch = true
-                        }
-                    }){
-                        Text("OK")
-                            .modifier(BlueMenuButton())
+                    .resizable()
+                    .padding()
+                    .aspectRatio(contentMode: .fit)
+                }.onDisappear(){
+                        UserDefaults.standard.set(false, forKey: "firstLaunch")
                     }
-                }
-                .transition(AnyTransition.slideBottom)
-            }else {
-                VStack{
-                    VStack{
-                        Text("chooseMode").font(.headline)
-                        Picker(selection: $settings.gameMode, label: Text("ModeSelect")) {
-                            Text("Flags").tag(1)
-                            Text("Capitals").tag(2)
-                        }.pickerStyle(SegmentedPickerStyle())
-                    }.padding()
-                    VStack{
-                        MapSelectView()
-                        
-                        ModeScrollView()
-                    }
-                    Spacer()
-                }.transition(AnyTransition.move(edge: .top))
             }
         }
-        .navigationBarHidden(self.firstLaunch ? false : true)
-        .navigationBarTitle(self.firstLaunch ? "GameSettings" : "", displayMode: .inline)
+        .navigationBarTitle("GameSettings", displayMode: .inline)
         .navigationBarItems(trailing: Button(action:{
             UserDefaults.standard.set(false, forKey: "firstLaunch")
-            withAnimation(){
                 self.firstLaunch.toggle()
-            }
         }){
             Image(systemName: "questionmark.circle")
+                .padding()
         })
+        .onDisappear(){
+            UserDefaults.standard.set(self.gameMode, forKey: "gameMode")
+        }
+        .onAppear(){
+            self.gameMode = UserDefaults.standard.integer(forKey: "gameMode")
+        }
     }
 }
 

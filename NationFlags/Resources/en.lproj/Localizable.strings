@@ -8,6 +8,7 @@
 "Countries" = "National Flags";
 
 "score <%lld>" = "Your score: %lld points";
+"score <%lld>/<%lld>" = "Correct answers: %lld/%lld";
 "play" = "Play";
 "list" = "Country list";
 "NameToFlag" = "Name to flag";
@@ -19,11 +20,18 @@
 "Game over!" = "Game over!";
 "ErrorGame" = "Until first mistake";
 "TimedGame" = "Timed challange";
+"LearnGame" = "Learning mode";
 "Capitals" = "Capitals";
 "chooseMode" = "Choose your game mode";
 "EnterYourName" = "Enter your name";
 "regionSelect" = "Tap to select game regions";
 "GameSettings" = "Game settings";
+
+//Feedback
+"Feedback" = "Feedback";
+"FeedbackInfo" = "Your feedback helps me make this App...";
+"AppReview" = "Rate on App Store";
+"BugReport" = "Report a bug";
 
 /* Detail */
 "MainCity" = "Main city";

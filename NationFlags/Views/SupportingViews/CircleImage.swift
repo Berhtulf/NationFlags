@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CircleImage: View {
+struct FlagImage: View {
     var image: Image?
     var body: some View {
         image?
@@ -24,10 +24,8 @@ struct CircleImage: View {
     }
 }
 
-struct CircleImage_Previews: PreviewProvider {
+struct FlagImage_Previews: PreviewProvider {
     static var previews: some View {
-        Group{
-            CircleImage(image: Image("np"))
-        }
+        FlagImage(image: Image("np"))
     }
 }

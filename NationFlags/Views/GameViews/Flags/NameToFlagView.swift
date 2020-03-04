@@ -80,7 +80,7 @@ struct NameToFlagView: View {
             VStack{
                 ProgressBar(value: $timer).padding(.top, 10).padding(.horizontal)
                 Spacer()
-                CircleImage(image: correctOption?.image).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 250, alignment: .center).padding(.horizontal)
+                FlagImage(image: correctOption?.image).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 250, alignment: .center).padding(.horizontal)
                 if (options.count > 0) {
                     if options[0].name == self.correctOption?.name {
                         Button(action: {

@@ -40,11 +40,16 @@
 		6321B60D23E07CE700DC745D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6321B60C23E07CE700DC745D /* Assets.xcassets */; };
 		6321B61023E07CE700DC745D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6321B60F23E07CE700DC745D /* Preview Assets.xcassets */; };
 		6321B61323E07CE700DC745D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6321B61123E07CE700DC745D /* LaunchScreen.storyboard */; };
+		632BF531240C376800C05B87 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632BF530240C376800C05B87 /* UIDevice.swift */; };
 		6374990723F45AAB005C3942 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6374990623F45AAB005C3942 /* IntExtensions.swift */; };
 		6380707424069519006EB5E1 /* MapSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380707324069519006EB5E1 /* MapSelectView.swift */; };
 		63807076240695B9006EB5E1 /* AnyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63807075240695B9006EB5E1 /* AnyTransition.swift */; };
 		6380707A240807FD006EB5E1 /* ModeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63807079240807FD006EB5E1 /* ModeScrollView.swift */; };
+		6380707C240AD841006EB5E1 /* NameToFlagLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380707B240AD841006EB5E1 /* NameToFlagLearnView.swift */; };
 		63A053B32401A378005909CD /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A053B22401A378005909CD /* SearchButton.swift */; };
+		63A3520B240BBF03009B636A /* FlagToNameLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3520A240BBF03009B636A /* FlagToNameLearnView.swift */; };
+		63A3520D240BCB6A009B636A /* CityToNameLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3520C240BCB6A009B636A /* CityToNameLearnView.swift */; };
+		63A3520F240BCB89009B636A /* NameToCityLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3520E240BCB89009B636A /* NameToCityLearnView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,11 +90,16 @@
 		6321B60823E07CE500DC745D /* NationFlags.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NationFlags.xcdatamodel; sourceTree = "<group>"; };
 		6321B60C23E07CE700DC745D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6321B60F23E07CE700DC745D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		632BF530240C376800C05B87 /* UIDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		6374990623F45AAB005C3942 /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		6380707324069519006EB5E1 /* MapSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectView.swift; sourceTree = "<group>"; };
 		63807075240695B9006EB5E1 /* AnyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransition.swift; sourceTree = "<group>"; };
 		63807079240807FD006EB5E1 /* ModeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeScrollView.swift; sourceTree = "<group>"; };
+		6380707B240AD841006EB5E1 /* NameToFlagLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameToFlagLearnView.swift; sourceTree = "<group>"; };
 		63A053B22401A378005909CD /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
+		63A3520A240BBF03009B636A /* FlagToNameLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagToNameLearnView.swift; sourceTree = "<group>"; };
+		63A3520C240BCB6A009B636A /* CityToNameLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityToNameLearnView.swift; sourceTree = "<group>"; };
+		63A3520E240BCB89009B636A /* NameToCityLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameToCityLearnView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +162,8 @@
 				6309E43E23F01B28009C9B0E /* CityToNameErrorView.swift */,
 				6309E44023F01B35009C9B0E /* NameToCityView.swift */,
 				6309E44223F01B42009C9B0E /* NameToCityErrorView.swift */,
+				63A3520C240BCB6A009B636A /* CityToNameLearnView.swift */,
+				63A3520E240BCB89009B636A /* NameToCityLearnView.swift */,
 			);
 			path = Cities;
 			sourceTree = "<group>";
@@ -161,8 +173,10 @@
 			children = (
 				6309E44423F01B5F009C9B0E /* NameToFlagView.swift */,
 				6309E44623F01B6D009C9B0E /* NameToFlagErrorView.swift */,
+				6380707B240AD841006EB5E1 /* NameToFlagLearnView.swift */,
 				6309E44823F01B7F009C9B0E /* FlagToNameView.swift */,
 				6309E44A23F01B8B009C9B0E /* FlagToNameErrorView.swift */,
+				63A3520A240BBF03009B636A /* FlagToNameLearnView.swift */,
 			);
 			path = Flags;
 			sourceTree = "<group>";
@@ -173,6 +187,7 @@
 				6309E42923F01A2A009C9B0E /* DoubleExtensions.swift */,
 				6374990623F45AAB005C3942 /* IntExtensions.swift */,
 				63807075240695B9006EB5E1 /* AnyTransition.swift */,
+				632BF530240C376800C05B87 /* UIDevice.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -336,6 +351,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6309E42023F019A4009C9B0E /* Nation.swift in Sources */,
+				63A3520B240BBF03009B636A /* FlagToNameLearnView.swift in Sources */,
+				63A3520F240BCB89009B636A /* NameToCityLearnView.swift in Sources */,
+				632BF531240C376800C05B87 /* UIDevice.swift in Sources */,
 				6309E41E23F01947009C9B0E /* Data.swift in Sources */,
 				6309E43323F01A7A009C9B0E /* SearchBar.swift in Sources */,
 				6321B60423E07CE500DC745D /* AppDelegate.swift in Sources */,
@@ -346,8 +364,10 @@
 				6309E41923F018A4009C9B0E /* NationRow.swift in Sources */,
 				6321B60923E07CE500DC745D /* NationFlags.xcdatamodeld in Sources */,
 				6309E44923F01B7F009C9B0E /* FlagToNameView.swift in Sources */,
+				6380707C240AD841006EB5E1 /* NameToFlagLearnView.swift in Sources */,
 				6309E43F23F01B28009C9B0E /* CityToNameErrorView.swift in Sources */,
 				63807076240695B9006EB5E1 /* AnyTransition.swift in Sources */,
+				63A3520D240BCB6A009B636A /* CityToNameLearnView.swift in Sources */,
 				6309E44123F01B35009C9B0E /* NameToCityView.swift in Sources */,
 				6309E44723F01B6D009C9B0E /* NameToFlagErrorView.swift in Sources */,
 				6309E44323F01B42009C9B0E /* NameToCityErrorView.swift in Sources */,
@@ -523,7 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"NationFlags/Preview Content\"";
 				DEVELOPMENT_TEAM = 45Z42MYT8F;
 				ENABLE_PREVIEWS = YES;
@@ -545,7 +565,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"NationFlags/Preview Content\"";
 				DEVELOPMENT_TEAM = 45Z42MYT8F;
 				ENABLE_PREVIEWS = YES;

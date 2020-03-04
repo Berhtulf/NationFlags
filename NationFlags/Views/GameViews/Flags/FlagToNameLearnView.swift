@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct FlagToNameErrorView: View {
+struct FlagToNameLearnView: View {
     @EnvironmentObject var settings: UserSettings
     @Environment(\.presentationMode) var presentationMode
     @State private var options:[Nation] = []
@@ -84,8 +84,8 @@ struct FlagToNameErrorView: View {
                                     .onTapGesture {
                                         self.didTap0 = true
                                         self.disableAll = true
-                                        self.score += 10
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                                        self.score += 1
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
                                             self.generateOptions()
                                         }
                                 }
@@ -102,8 +102,8 @@ struct FlagToNameErrorView: View {
                                         .onTapGesture {
                                             self.didTap0 = true
                                             self.disableAll = true
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                                self.finish = true
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
+                                                self.generateOptions()
                                             }
                                     }
                                 }
@@ -120,8 +120,8 @@ struct FlagToNameErrorView: View {
                                     .onTapGesture {
                                         self.didTap1 = true
                                         self.disableAll = true
-                                        self.score += 10
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                                        self.score += 1
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
                                             self.generateOptions()
                                         }
                                 }
@@ -139,8 +139,8 @@ struct FlagToNameErrorView: View {
                                         .onTapGesture {
                                             self.didTap1 = true
                                             self.disableAll = true
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                                self.finish = true
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
+                                                self.generateOptions()
                                             }
                                     }
                                 }
@@ -160,8 +160,8 @@ struct FlagToNameErrorView: View {
                                     .onTapGesture {
                                         self.didTap2 = true
                                         self.disableAll = true
-                                        self.score += 10
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                                        self.score += 1
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
                                             self.generateOptions()
                                         }
                                 }
@@ -178,8 +178,8 @@ struct FlagToNameErrorView: View {
                                         .onTapGesture {
                                             self.didTap2 = true
                                             self.disableAll = true
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                                self.finish = true
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
+                                                self.generateOptions()
                                             }
                                     }
                                 }
@@ -196,8 +196,8 @@ struct FlagToNameErrorView: View {
                                     .onTapGesture {
                                         self.didTap3 = true
                                         self.disableAll = true
-                                        self.score += 10
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                                        self.score += 1
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
                                             self.generateOptions()
                                         }
                                 }
@@ -214,8 +214,8 @@ struct FlagToNameErrorView: View {
                                         .onTapGesture {
                                             self.didTap3 = true
                                             self.disableAll = true
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                                self.finish = true
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
+                                                self.generateOptions()
                                             }
                                     }
                                 }
@@ -232,7 +232,7 @@ struct FlagToNameErrorView: View {
             self.playAgain()
         }
         .alert(isPresented: $finish) {
-            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"),
+            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>/<\(self.settings.pool.count)>"),
                   primaryButton: .destructive(Text("Back")) {
                     self.settings.saveScore(score: Int64(self.score), view: "FlagToNameError")
                     self.presentationMode.wrappedValue.dismiss()},
@@ -244,11 +244,11 @@ struct FlagToNameErrorView: View {
     }
 }
 
-struct FlagToNameErrorView_Previews: PreviewProvider {
+struct FlagToNameLearnView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
             NavigationView{
-                FlagToNameErrorView().environmentObject(UserSettings())
+                FlagToNameLearnView().environmentObject(UserSettings())
             }
         }
     }

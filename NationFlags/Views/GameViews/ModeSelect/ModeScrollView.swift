@@ -32,15 +32,15 @@ struct ModeScrollView: View {
         self.NameToCity = UserDefaults.standard.integer(forKey: "NameToCity")
         self.NameToCityError = UserDefaults.standard.integer(forKey: "NameToCityError")
     }
+    var gameMode:Int
     var body: some View {
         ScrollView{
             if self.settings.regions.count > 0{
-                if self.settings.gameMode == 1 {
+                if self.gameMode == 0 {
                     VStack{
                         Divider()
                         HStack{
                             Text("FlagToName")
-                                .font(.system(size: 20))
                             Spacer()
                             Image(systemName: "chevron.right")
                                 .rotationEffect(.degrees(self.showSubMenu == 1 ? 90 : 0))
@@ -63,7 +63,6 @@ struct ModeScrollView: View {
                                         HStack{
                                             Text("TimedGame")
                                                 .padding(.leading)
-                                                .font(.system(size: 20))
                                             Spacer()
                                             Text(String(self.FlagToName)).font(.callout)
                                             Image(systemName: "rosette")
@@ -76,10 +75,20 @@ struct ModeScrollView: View {
                                         HStack{
                                             Text("ErrorGame")
                                                 .padding(.leading)
-                                                .font(.system(size: 20))
                                             Spacer()
                                             Text(String(self.FlagToNameError)).font(.callout)
                                             Image(systemName: "rosette")
+                                        }}).foregroundColor(Color.primary)
+                                }
+                                .padding(.horizontal)
+                                Divider()
+                                HStack{
+                                    NavigationLink(destination: FlagToNameLearnView(), label: {
+                                        HStack{
+                                            Text("LearnGame")
+                                                .padding(.leading)
+                                            Spacer()
+                                            Image(systemName: "briefcase.fill")
                                         }}).foregroundColor(Color.primary)
                                 }
                                 .padding(.horizontal)
@@ -89,7 +98,6 @@ struct ModeScrollView: View {
                         Divider()
                         HStack{
                             Text("NameToFlag")
-                                .font(.system(size: 20))
                             Spacer()
                             Image(systemName: "chevron.right")
                                 .rotationEffect(.degrees(self.showSubMenu == 2 ? 90 : 0))
@@ -112,7 +120,6 @@ struct ModeScrollView: View {
                                         HStack{
                                             Text("TimedGame")
                                                 .padding(.leading)
-                                                .font(.system(size: 20))
                                             Spacer()
                                             Text(String(self.NameToFlag)).font(.callout)
                                             Image(systemName: "rosette")
@@ -125,10 +132,20 @@ struct ModeScrollView: View {
                                         HStack{
                                             Text("ErrorGame")
                                                 .padding(.leading)
-                                                .font(.system(size: 20))
                                             Spacer()
                                             Text(String(self.NameToFlagError)).font(.callout)
                                             Image(systemName: "rosette")
+                                        }}).foregroundColor(Color.primary)
+                                }
+                                .padding(.horizontal)
+                                Divider()
+                                HStack{
+                                    NavigationLink(destination: NameToFlagLearnView(), label: {
+                                        HStack{
+                                            Text("LearnGame")
+                                                .padding(.leading)
+                                            Spacer()
+                                            Image(systemName: "briefcase.fill")
                                         }}).foregroundColor(Color.primary)
                                 }
                                 .padding(.horizontal)
@@ -138,12 +155,11 @@ struct ModeScrollView: View {
                         }
                     }.padding(.vertical)
                 }
-                if self.settings.gameMode == 2 {
+                if self.gameMode == 1 {
                     VStack{
                         Divider()
                         HStack{
                             Text("CityToState")
-                                .font(.system(size: 20))
                             Spacer()
                             Image(systemName: "chevron.right")
                                 .rotationEffect(.degrees(self.showSubMenu == 1 ? 90 : 0))
@@ -166,7 +182,6 @@ struct ModeScrollView: View {
                                         HStack{
                                             Text("TimedGame")
                                                 .padding(.leading)
-                                                .font(.system(size: 20))
                                             Spacer()
                                             Text(String(self.CityToName)).font(.callout)
                                             Image(systemName: "rosette")
@@ -179,10 +194,20 @@ struct ModeScrollView: View {
                                         HStack{
                                             Text("ErrorGame")
                                                 .padding(.leading)
-                                                .font(.system(size: 20))
                                             Spacer()
                                             Text(String(self.CityToNameError)).font(.callout)
                                             Image(systemName: "rosette")
+                                        }}).foregroundColor(Color.primary)
+                                }
+                                .padding(.horizontal)
+                                Divider()
+                                HStack{
+                                    NavigationLink(destination: CityToNameLearnView(), label: {
+                                        HStack{
+                                            Text("LearnGame")
+                                                .padding(.leading)
+                                            Spacer()
+                                            Image(systemName: "briefcase.fill")
                                         }}).foregroundColor(Color.primary)
                                 }
                                 .padding(.horizontal)
@@ -192,7 +217,6 @@ struct ModeScrollView: View {
                         Divider()
                         HStack{
                             Text("StateToCity")
-                                .font(.system(size: 20))
                             Spacer()
                             Image(systemName: "chevron.right")
                                 .rotationEffect(.degrees(self.showSubMenu == 2 ? 90 : 0))
@@ -216,7 +240,6 @@ struct ModeScrollView: View {
                                         HStack{
                                             Text("TimedGame")
                                                 .padding(.leading)
-                                                .font(.system(size: 20))
                                             Spacer()
                                             Text(String(self.NameToCity)).font(.callout)
                                             Image(systemName: "rosette")
@@ -229,10 +252,20 @@ struct ModeScrollView: View {
                                         HStack{
                                             Text("ErrorGame")
                                                 .padding(.leading)
-                                                .font(.system(size: 20))
                                             Spacer()
                                             Text(String(self.NameToCityError)).font(.callout)
                                             Image(systemName: "rosette")
+                                        }}).foregroundColor(Color.primary)
+                                }
+                                .padding(.horizontal)
+                                Divider()
+                                HStack{
+                                    NavigationLink(destination: NameToCityLearnView(), label: {
+                                        HStack{
+                                            Text("LearnGame")
+                                                .padding(.leading)
+                                            Spacer()
+                                            Image(systemName: "briefcase.fill")
                                         }}).foregroundColor(Color.primary)
                                 }
                                 .padding(.horizontal)
@@ -242,20 +275,19 @@ struct ModeScrollView: View {
                         }
                     }.padding(.vertical)
                 }
-            }else {
+            }
+            else {
                 VStack{
                     Divider()
                     HStack{
-                        Text(self.settings.gameMode == 1 ? "FlagToName" : "CityToState")
-                            .font(.system(size: 20))
+                        Text(self.gameMode == 0 ? "FlagToName" : "CityToState")
                         Spacer()
                         Image(systemName: "chevron.right")
                     }.foregroundColor(Color.secondary)
                         .padding(.horizontal)
                     Divider()
                     HStack{
-                        Text(self.settings.gameMode == 1 ? "NameToFlag" : "StateToCity")
-                            .font(.system(size: 20))
+                        Text(self.gameMode == 0 ? "NameToFlag" : "StateToCity")
                         Spacer()
                         Image(systemName: "chevron.right")
                     }.foregroundColor(Color.secondary)
@@ -272,6 +304,6 @@ struct ModeScrollView: View {
 
 struct ModeScrollView_Previews: PreviewProvider {
     static var previews: some View {
-        ModeScrollView().environmentObject(UserSettings())
+        ModeScrollView(gameMode: 1).environmentObject(UserSettings())
     }
 }

@@ -54,7 +54,7 @@ struct NationDetailInfo: View {
             VStack(alignment: .leading){
                 HStack{
                     VStack{
-                        CircleImage(image: nation.image).padding()
+                        FlagImage(image: nation.image).padding()
                         Text(LocalizedStringKey(nation.name))
                             .font(.title)
                     }

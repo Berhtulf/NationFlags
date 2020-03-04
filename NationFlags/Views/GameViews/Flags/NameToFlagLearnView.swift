@@ -7,7 +7,7 @@
 //
 import SwiftUI
 
-struct NameToFlagErrorView: View {
+struct NameToFlagLearnView: View {
     @EnvironmentObject var settings: UserSettings
     @Environment(\.presentationMode) var presentationMode
     
@@ -77,8 +77,8 @@ struct NameToFlagErrorView: View {
                         Button(action: {
                             self.didTap0 = true
                             self.disableAll = true
-                            self.score += 10
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                            self.score += 1
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
                                 self.generateOptions()
                             }
                         }) {
@@ -100,8 +100,8 @@ struct NameToFlagErrorView: View {
                         Button(action: {
                             self.didTap0 = true
                             self.disableAll = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.finish = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
+                                self.generateOptions()
                             }
                         }) {
                             Text(LocalizedStringKey(options[0].name))
@@ -122,8 +122,8 @@ struct NameToFlagErrorView: View {
                         Button(action: {
                             self.didTap1 = true
                             self.disableAll = true
-                            self.score += 10
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                            self.score += 1
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
                                 self.generateOptions()
                             }
                         }) {
@@ -145,8 +145,8 @@ struct NameToFlagErrorView: View {
                         Button(action: {
                             self.didTap1 = true
                             self.disableAll = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.finish = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
+                                self.generateOptions()
                             }
                         }) {
                             Text(LocalizedStringKey(options[1].name))
@@ -167,8 +167,8 @@ struct NameToFlagErrorView: View {
                         Button(action: {
                             self.didTap2 = true
                             self.disableAll = true
-                            self.score += 10
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                            self.score += 1
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
                                 self.generateOptions()
                             }
                         }) {
@@ -190,8 +190,8 @@ struct NameToFlagErrorView: View {
                         Button(action: {
                             self.didTap2 = true
                             self.disableAll = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.finish = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
+                                self.generateOptions()
                             }
                         }) {
                             Text(LocalizedStringKey(options[2].name))
@@ -212,8 +212,8 @@ struct NameToFlagErrorView: View {
                         Button(action: {
                             self.didTap3 = true
                             self.disableAll = true
-                            self.score += 10
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
+                            self.score += 1
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
                                 self.generateOptions()
                             }
                         }) {
@@ -235,8 +235,8 @@ struct NameToFlagErrorView: View {
                         Button(action: {
                             self.didTap3 = true
                             self.disableAll = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.finish = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.learnDelay) {
+                                self.generateOptions()
                             }
                         }) {
                             Text(LocalizedStringKey(options[3].name))
@@ -251,23 +251,22 @@ struct NameToFlagErrorView: View {
                 self.playAgain()
         }
         .alert(isPresented: $finish) {
-            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"),
+            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>/<\(self.settings.pool.count)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    self.settings.saveScore(score: Int64(self.score), view: "NameToFlagError")
+                    self.settings.saveScore(score: Int64(self.score), view: "NameToFlagLearn")
                     self.presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    self.settings.saveScore(score: Int64(self.score), view: "NameToFlagError")
+                    self.settings.saveScore(score: Int64(self.score), view: "NameToFlagLearn")
                     self.playAgain()
                 })
         }
     }
 }
 
-struct NameToFlagErrorView_Previews: PreviewProvider {
+struct NameToFlagLearnView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
-            NavigationView{
-                NameToFlagErrorView().environmentObject(UserSettings()).environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+            NavigationView{ NameToFlagLearnView().environmentObject(UserSettings()).environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
             }
         }
         
