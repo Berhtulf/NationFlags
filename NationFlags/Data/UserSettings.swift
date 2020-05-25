@@ -11,8 +11,9 @@ import SwiftUI
 class UserSettings: ObservableObject {
     @Environment(\.managedObjectContext) var managedObjectContext
     // Prodleva před načtením dalších otázek
-    @Published var nextDelay = 0.5
-    @Published var learnDelay = 1.0
+    let nextDelay = 0.5
+    let learnDelay = 1.5
+    
     @Published var gameMode = 1
     @Published var listRegion = 2
     @Published var showSearch:Bool = false
@@ -20,6 +21,14 @@ class UserSettings: ObservableObject {
     
     @Published var nationList: [Nation]? = nil
     @Published var img: [Int] = [0,0,0,0,0]
+    var imgName:String{
+        var retval = ""
+        for item in img {
+            retval = retval + String(item)
+        }
+        return retval
+    }
+    
     @Published var regions:Set<String> = []
     var pool:[Nation]{
         return restNation.filter{regions.contains($0.region)}
@@ -31,4 +40,36 @@ class UserSettings: ObservableObject {
             UserDefaults.standard.set(score, forKey: view)
         }
     }
+    
+    func emptyHistory(){
+        history = []
+    }
+    
+    var options:[Nation] = []
+    var correctOption:Nation? = nil
+    var finish = false
+    
+    @Published var history = Set<Nation?>()
+    
+    func generateOptions() {
+        if history.count < pool.count {
+            repeat{
+                self.correctOption = pool.randomElement()!
+            } while history.contains(self.correctOption)
+            
+            var options = Set<Nation>()
+            let correctOption = self.correctOption
+            options.insert(correctOption!)
+            history.insert(correctOption)
+            while options.count < 4 {
+                if let option = pool.randomElement(){
+                    options.insert(option)
+                }
+            }
+            self.options = options.map({$0}).shuffled()
+        }else{
+            self.finish = true
+        }
+    }
+    
 }

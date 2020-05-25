@@ -11,9 +11,9 @@ import MessageUI
 
 
 struct MainScreen: View {
-    @State var showActions:Bool = false
     @EnvironmentObject var settings: UserSettings
     @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var isShowingActions = false
     @State var isShowingMailView = false
     private func mailView() -> some View {
         MFMailComposeViewController.canSendMail() ?
@@ -48,17 +48,16 @@ struct MainScreen: View {
                         Spacer()
                         HStack{
                             Button(action: {
-                                self.showActions.toggle()
-                                //self.isShowingMailView.toggle()
+                                self.isShowingActions.toggle()
                             }, label: {
                                 Image(systemName: "bubble.left.fill")
                             })
                             Spacer()
                         }.padding()
                     }
-                    .actionSheet(isPresented: $showActions) {
+                    .actionSheet(isPresented: $isShowingActions) {
                         ActionSheet(title: Text("Feedback"), message: Text("FeedbackInfo"), buttons: [
-                            .default(Text("AppReview")),
+                           // .default(Text("AppReview")),
                             .default(Text("BugReport"), action: {
                                 self.isShowingMailView.toggle()
                             }),

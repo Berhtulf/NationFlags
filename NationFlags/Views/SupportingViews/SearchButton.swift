@@ -13,6 +13,7 @@ struct SearchButton: View {
     var body: some View{
         Button(action: {
             withAnimation{
+                self.settings.search = ""
                 self.settings.showSearch.toggle()
             }
         }

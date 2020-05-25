@@ -78,7 +78,7 @@ struct FlagToNameLearnView: View {
                             if self.didTap0 == true {
                                 GameCorrectFlag(image: options[0].image)
                             }else if self.disableAll == true{
-                                ShowCorrectFlag(image: options[0].image)
+                                ShowCorrectFlag(nation: options[0])
                             }else{
                                 GameFlagImage(image: options[0].image)
                                     .onTapGesture {
@@ -114,7 +114,7 @@ struct FlagToNameLearnView: View {
                             if self.didTap1 == true {
                                 GameCorrectFlag(image: options[1].image)
                             }else if self.disableAll == true{
-                                ShowCorrectFlag(image: options[1].image)
+                                ShowCorrectFlag(nation: options[1])
                             }else{
                                 GameFlagImage(image: options[1].image)
                                     .onTapGesture {
@@ -154,7 +154,7 @@ struct FlagToNameLearnView: View {
                             if self.didTap2 == true {
                                 GameCorrectFlag(image: options[2].image)
                             }else if self.disableAll == true{
-                                ShowCorrectFlag(image: options[2].image)
+                                ShowCorrectFlag(nation: options[2])
                             }else{
                                 GameFlagImage(image: options[2].image)
                                     .onTapGesture {
@@ -190,7 +190,7 @@ struct FlagToNameLearnView: View {
                             if self.didTap3 == true {
                                 GameCorrectFlag(image: options[3].image)
                             }else if self.disableAll == true{
-                                ShowCorrectFlag(image: options[3].image)
+                                ShowCorrectFlag(nation: options[3])
                             }else{
                                 GameFlagImage(image: options[3].image)
                                     .onTapGesture {

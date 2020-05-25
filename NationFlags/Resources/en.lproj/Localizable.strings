@@ -19,7 +19,7 @@
 "SaveAndPlay" = "Play again";
 "Game over!" = "Game over!";
 "ErrorGame" = "Until first mistake";
-"TimedGame" = "Timed challange";
+"TimedGame" = "Time challenge";
 "LearnGame" = "Learning mode";
 "Capitals" = "Capitals";
 "chooseMode" = "Choose your game mode";
@@ -29,7 +29,7 @@
 
 //Feedback
 "Feedback" = "Feedback";
-"FeedbackInfo" = "Your feedback helps me make this App...";
+"FeedbackInfo" = "Your feedback helps me make this App better.";
 "AppReview" = "Rate on App Store";
 "BugReport" = "Report a bug";
 

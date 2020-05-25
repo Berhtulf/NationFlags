@@ -24,7 +24,7 @@ struct NationList: View {
                 NavigationLink(destination: NationDetail(nation: nation)){
                     NationRow(nation: nation)
                 }
-            }.padding(.top)
+            }
         }.navigationBarTitle("list", displayMode:.inline)
             .navigationBarItems(trailing: SearchButton())
             .onAppear(){

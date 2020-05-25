@@ -17,11 +17,3 @@ extension AnyTransition {
         return .asymmetric(insertion: insertion, removal: removal)
     }
 }
-
-extension AnyTransition {
-    static var slideBottom: AnyTransition {
-        let insertion = AnyTransition.move(edge: .top)
-        let removal = AnyTransition.move(edge: .top)
-        return .asymmetric(insertion: insertion, removal: removal)
-    }
-}

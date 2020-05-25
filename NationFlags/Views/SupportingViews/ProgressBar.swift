@@ -22,7 +22,7 @@ struct ProgressBar: View {
                     RoundedRectangle(cornerRadius: 5)
                         .foregroundColor(self.value > 15 ? Color.green : Color.red)
                         .frame(width: CGFloat(geometryReader.size.width / 60 * CGFloat(self.value)), height: 10)
-                        .animation(.default)
+                        .animation(.linear(duration: 1))
                 }
                 Text("\(self.value)")
             }

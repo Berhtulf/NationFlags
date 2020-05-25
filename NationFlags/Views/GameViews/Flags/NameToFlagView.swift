@@ -11,8 +11,8 @@ import SwiftUI
 struct NameToFlagView: View {
     @EnvironmentObject var settings: UserSettings
     @Environment(\.presentationMode) var presentationMode
-    @State private var options:[Nation] = []
-    @State private var correctOption:Nation?
+    @State var options:[Nation] = []
+    @State var correctOption:Nation?
     @State private var history = Set<Nation?>()
     
     @State private var didTap0:Bool = false
@@ -24,7 +24,7 @@ struct NameToFlagView: View {
     @State private var finish = false
     @State private var score:Int = 0
     @State private var timer:Int = 60
-    
+
     func generateOptions() {
         if history.count < settings.pool.count {
             self.resetButtons()

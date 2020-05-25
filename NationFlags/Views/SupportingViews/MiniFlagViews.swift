@@ -38,11 +38,28 @@ struct GameCorrectFlag: View {
     }
 }
 struct ShowCorrectFlag: View {
-    var image: Image?
+    var nation: Nation
     var body: some View {
-        ZStack{
-            GameFlagImage(image: image)
-                .shadow(color: .green, radius: 5)
+        Group{
+            if nation.name == "Nepal" {
+                Image("np_correct")
+                    .resizable()
+                    .cornerRadius(4)
+                    .shadow(color: Color("CustomShadow"), radius: 4)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width:150, height: 100)
+            }else{
+                Image(nation.alpha2Code.lowercased())
+                    .resizable()
+                    .cornerRadius(4)
+                    .shadow(color: Color("CustomShadow"), radius: 4)
+                    .aspectRatio(contentMode: .fit)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 4)
+                            .stroke(Color.green, lineWidth: 6)
+                    )
+                    .frame(width:150, height: 100)
+            }
         }
     }
 }
@@ -83,11 +100,6 @@ struct GameCorrectFlag_Previews: PreviewProvider {
                 GameWrongFlag(image: Image("np")).padding()
                 GameWrongFlag(image: Image("va")).padding()
                 GameWrongFlag(image: Image("cz")).padding()
-            }.previewLayout(.sizeThatFits)
-            HStack{
-                ShowCorrectFlag(image: Image("np")).padding()
-                ShowCorrectFlag(image: Image("va")).padding()
-                ShowCorrectFlag(image: Image("de")).padding()
             }.previewLayout(.sizeThatFits)
         }
     }

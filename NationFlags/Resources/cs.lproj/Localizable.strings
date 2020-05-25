@@ -6,6 +6,7 @@
   Copyright © 2019 Martin Václavík. All rights reserved.
 */
 "Countries" = "Národní vlajky";
+
 "Cancel" = "Zrušit";
 "Back" = "Zpět";
 "score <%lld>" = "Tvé skóre: %lld bodů";
