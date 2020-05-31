@@ -50,9 +50,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func sceneWillEnterForeground(_ scene: UIScene) {
-        //TODO zakazuje komplet hru, radsi jen vygenerovat novou otazku!
-        self.settings.img = [0,0,0,0,0]
-        self.settings.regions.removeAll()
+        if settings.pool.count > 0 {
+            settings.generateOptions()
+        }
         // Called as the scene transitions from the background
         // Use this method to undo the changes made on entering the background.
     }
@@ -61,6 +61,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information to restore the scene back to its current state.
+        
     }
 }
 

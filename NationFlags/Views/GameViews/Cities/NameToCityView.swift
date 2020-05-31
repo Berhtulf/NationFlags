@@ -11,9 +11,6 @@ import SwiftUI
 struct NameToCityView: View {
     @EnvironmentObject var settings: UserSettings
     @Environment(\.presentationMode) var presentationMode
-    @State private var options:[Nation] = []
-    @State private var correctOption:Nation?
-    @State private var history = Set<Nation?>()
     
     @State private var didTap0:Bool = false
     @State private var didTap1:Bool = false
@@ -21,32 +18,9 @@ struct NameToCityView: View {
     @State private var didTap3:Bool = false
     @State private var disableAll:Bool = false
     
-    @State private var finish = false
     @State private var score:Int = 0
     @State private var timer:Int = 60
     
-    func generateOptions() {
-        if history.count < settings.pool.count {
-            self.resetButtons()
-            // nesmí se opakovat odpověd
-            repeat{
-                self.correctOption = settings.pool.randomElement()
-            } while history.contains(self.correctOption)
-            
-            var options = Set<Nation>()
-            guard let correctOption = self.correctOption else { return }
-            options.insert(correctOption)
-            history.insert(correctOption)
-            while options.count < 4 {
-                if let option = settings.pool.randomElement() {
-                    options.insert(option)
-                }
-            }
-            self.options = options.map({$0}).shuffled()
-        }else{
-            self.finish = true
-        }
-    }
     func startTimer() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             self.timer -= 1
@@ -54,18 +28,19 @@ struct NameToCityView: View {
                 timer.invalidate()
                 self.disableAll = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                    self.finish = true
+                    self.settings.finish = true
                 }
             }
         }
     }
     func playAgain() {
-        self.finish = false
         self.score = 0
-        self.history.removeAll()
+        settings.history.removeAll()
         self.timer = 60
-        self.generateOptions()
+        settings.generateOptions()
         self.startTimer()
+        resetButtons()
+        settings.finish = false
     }
     func resetButtons() {
         self.didTap0 = false
@@ -83,7 +58,7 @@ struct NameToCityView: View {
             }
             VStack{
                 Spacer()
-                Text(LocalizedStringKey(correctOption?.capital ?? ""))
+                Text(LocalizedStringKey(settings.correctOption?.capital ?? ""))
                     .font(.title)
                     .lineLimit(1)
                     .allowsTightening(true)
@@ -92,21 +67,21 @@ struct NameToCityView: View {
                     .padding(.vertical,7)
                 Spacer()
                     .frame(height: 50)
-                if (options.count > 0) {
-                    if options[0].name == self.correctOption?.name {
+                if (settings.options.count > 0) {
+                    if settings.options[0].name == settings.correctOption?.name {
                         Button(action: {
                             self.didTap0 = true
                             self.disableAll = true
                             self.score += 10
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.generateOptions()
+                                self.settings.generateOptions()
                             }
                         }) {
                             if self.didTap0 {
-                                Text(LocalizedStringKey(options[0].name))
+                                Text(LocalizedStringKey(settings.options[0].name))
                                     .modifier(CorrectButton())
                             }else{
-                                Text(LocalizedStringKey(options[0].name))
+                                Text(LocalizedStringKey(settings.options[0].name))
                                     .modifier(BasicButton())
                             }
                         }
@@ -121,39 +96,39 @@ struct NameToCityView: View {
                                 }
                             }) {
                                 if self.didTap0 {
-                                    Text(LocalizedStringKey(options[0].name))
+                                    Text(LocalizedStringKey(settings.options[0].name))
                                         .modifier(WrongButton())
                                 }else{
-                                    Text(LocalizedStringKey(options[0].name))
+                                    Text(LocalizedStringKey(settings.options[0].name))
                                         .modifier(BasicButton())
                                 }
                             }
                             .disabled(self.didTap0 ? true : false)
                         }else{
                             if self.didTap0 {
-                                Text(LocalizedStringKey(options[0].name))
+                                Text(LocalizedStringKey(settings.options[0].name))
                                     .modifier(WrongButton())
                             }else{
-                                Text(LocalizedStringKey(options[0].name))
+                                Text(LocalizedStringKey(settings.options[0].name))
                                     .modifier(BasicButton())
                             }
                         }
                     }
-                    if options[1].name == self.correctOption?.name {
+                    if settings.options[1].name == settings.correctOption?.name {
                         Button(action: {
                             self.didTap1 = true
                             self.disableAll = true
                             self.score += 10
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.generateOptions()
+                                self.settings.generateOptions()
                             }
                         }) {
                             if self.didTap1 {
-                                Text(LocalizedStringKey(options[1].name))
+                                Text(LocalizedStringKey(settings.options[1].name))
                                     .modifier(CorrectButton())
                                 
                             }else{
-                                Text(LocalizedStringKey(options[1].name))
+                                Text(LocalizedStringKey(settings.options[1].name))
                                     .modifier(BasicButton())
                             }
                         }
@@ -168,39 +143,39 @@ struct NameToCityView: View {
                                 }
                             }) {
                                 if self.didTap1 {
-                                    Text(LocalizedStringKey(options[1].name))
+                                    Text(LocalizedStringKey(settings.options[1].name))
                                         .modifier(WrongButton())
                                 }else{
-                                    Text(LocalizedStringKey(options[1].name))
+                                    Text(LocalizedStringKey(settings.options[1].name))
                                         .modifier(BasicButton())
                                 }
                             }
                             .disabled(self.didTap1 ? true : false)
                         }else{
                             if self.didTap1 {
-                                Text(LocalizedStringKey(options[1].name))
+                                Text(LocalizedStringKey(settings.options[1].name))
                                     .modifier(WrongButton())
                             }else{
-                                Text(LocalizedStringKey(options[1].name))
+                                Text(LocalizedStringKey(settings.options[1].name))
                                     .modifier(BasicButton())
                             }
                         }
                     }
-                    if options[2].name == self.correctOption?.name {
+                    if settings.options[2].name == settings.correctOption?.name {
                         Button(action: {
                             self.didTap2 = true
                             self.disableAll = true
                             self.score += 10
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.generateOptions()
+                                self.settings.generateOptions()
                             }
                         }) {
                             if self.didTap2 {
-                                Text(LocalizedStringKey(options[2].name))
+                                Text(LocalizedStringKey(settings.options[2].name))
                                     .modifier(CorrectButton())
                                 
                             }else{
-                                Text(LocalizedStringKey(options[2].name))
+                                Text(LocalizedStringKey(settings.options[2].name))
                                     .modifier(BasicButton())
                             }
                         }
@@ -215,39 +190,39 @@ struct NameToCityView: View {
                                 }
                             }) {
                                 if self.didTap2 {
-                                    Text(LocalizedStringKey(options[2].name))
+                                    Text(LocalizedStringKey(settings.options[2].name))
                                         .modifier(WrongButton())
                                 }else{
-                                    Text(LocalizedStringKey(options[2].name))
+                                    Text(LocalizedStringKey(settings.options[2].name))
                                         .modifier(BasicButton())
                                 }
                             }
                             .disabled(self.didTap2 ? true : false)
                         }else{
                             if self.didTap2 {
-                                Text(LocalizedStringKey(options[2].name))
+                                Text(LocalizedStringKey(settings.options[2].name))
                                     .modifier(WrongButton())
                             }else{
-                                Text(LocalizedStringKey(options[2].name))
+                                Text(LocalizedStringKey(settings.options[2].name))
                                     .modifier(BasicButton())
                             }
                         }
                     }
-                    if options[3].name == self.correctOption?.name {
+                    if settings.options[3].name == settings.correctOption?.name {
                         Button(action: {
                             self.didTap3 = true
                             self.disableAll = true
                             self.score += 10
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.generateOptions()
+                                self.settings.generateOptions()
                             }
                         }) {
                             if self.didTap3 {
-                                Text(LocalizedStringKey(options[3].name))
+                                Text(LocalizedStringKey(settings.options[3].name))
                                     .modifier(CorrectButton())
                                 
                             }else{
-                                Text(LocalizedStringKey(options[3].name))
+                                Text(LocalizedStringKey(settings.options[3].name))
                                     .modifier(BasicButton())
                             }
                         }
@@ -262,20 +237,20 @@ struct NameToCityView: View {
                                 }
                             }) {
                                 if self.didTap3 {
-                                    Text(LocalizedStringKey(options[3].name))
+                                    Text(LocalizedStringKey(settings.options[3].name))
                                         .modifier(WrongButton())
                                 }else{
-                                    Text(LocalizedStringKey(options[3].name))
+                                    Text(LocalizedStringKey(settings.options[3].name))
                                         .modifier(BasicButton())
                                 }
                             }
                             .disabled(self.didTap3 ? true : false)
                         }else{
                             if self.didTap3 {
-                                Text(LocalizedStringKey(options[3].name))
+                                Text(LocalizedStringKey(settings.options[3].name))
                                     .modifier(WrongButton())
                             }else{
-                                Text(LocalizedStringKey(options[3].name))
+                                Text(LocalizedStringKey(settings.options[3].name))
                                     .modifier(BasicButton())
                             }
                         }
@@ -288,7 +263,7 @@ struct NameToCityView: View {
             .onAppear() {
                 self.playAgain()
         }
-        .alert(isPresented: $finish) {
+        .alert(isPresented: $settings.finish) {
             Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"),
                   primaryButton: .destructive(Text("Back")) {
                     self.settings.saveScore(score: Int64(self.score), view: "NameToCity")

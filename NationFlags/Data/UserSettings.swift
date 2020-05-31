@@ -41,13 +41,9 @@ class UserSettings: ObservableObject {
         }
     }
     
-    func emptyHistory(){
-        history = []
-    }
-    
     var options:[Nation] = []
     var correctOption:Nation? = nil
-    var finish = false
+    @Published var finish = false
     
     @Published var history = Set<Nation?>()
     
@@ -71,5 +67,4 @@ class UserSettings: ObservableObject {
             self.finish = true
         }
     }
-    
 }
