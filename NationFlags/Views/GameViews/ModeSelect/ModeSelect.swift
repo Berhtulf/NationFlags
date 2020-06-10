@@ -52,6 +52,7 @@ struct ModeSelect: View {
             UserDefaults.standard.set(self.gameMode, forKey: "gameMode")
         }
         .onAppear(){
+            self.settings.finish = false
             self.gameMode = UserDefaults.standard.integer(forKey: "gameMode")
         }
     }

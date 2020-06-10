@@ -63,6 +63,7 @@ struct CityToNameErrorView: View {
                             self.score += 10
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                 self.settings.generateOptions()
+                                self.resetButtons()
                             }
                         }) {
                             Text(LocalizedStringKey(settings.options[0].capital))
@@ -108,6 +109,7 @@ struct CityToNameErrorView: View {
                             self.score += 10
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                 self.settings.generateOptions()
+                                self.resetButtons()
                             }
                         }) {
                             Text(LocalizedStringKey(settings.options[1].capital))
@@ -153,6 +155,7 @@ struct CityToNameErrorView: View {
                             self.score += 10
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                 self.settings.generateOptions()
+                                self.resetButtons()
                             }
                         }) {
                             Text(LocalizedStringKey(settings.options[2].capital))
@@ -198,6 +201,7 @@ struct CityToNameErrorView: View {
                             self.score += 10
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                 self.settings.generateOptions()
+                                self.resetButtons()
                             }
                         }) {
                             Text(LocalizedStringKey(settings.options[3].capital))

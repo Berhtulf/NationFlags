@@ -62,6 +62,7 @@ struct FlagToNameErrorView: View {
                                         self.score += 10
                                         DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                             self.settings.generateOptions()
+                                            self.resetButtons()
                                         }
                                 }
                             }
@@ -98,6 +99,7 @@ struct FlagToNameErrorView: View {
                                         self.score += 10
                                         DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                             self.settings.generateOptions()
+                                            self.resetButtons()
                                         }
                                 }
                             }
@@ -138,6 +140,7 @@ struct FlagToNameErrorView: View {
                                         self.score += 10
                                         DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                             self.settings.generateOptions()
+                                            self.resetButtons()
                                         }
                                 }
                             }
@@ -174,6 +177,7 @@ struct FlagToNameErrorView: View {
                                         self.score += 10
                                         DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                             self.settings.generateOptions()
+                                            self.resetButtons()
                                         }
                                 }
                             }

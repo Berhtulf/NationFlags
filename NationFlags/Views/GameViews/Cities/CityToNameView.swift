@@ -71,6 +71,7 @@ struct CityToNameView: View {
                             self.score += 10
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                 self.settings.generateOptions()
+                                self.resetButtons()
                             }
                         }) {
                             if self.didTap0 {
@@ -117,6 +118,7 @@ struct CityToNameView: View {
                             self.score += 10
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                 self.settings.generateOptions()
+                                self.resetButtons()
                             }
                         }) {
                             if self.didTap1 {
@@ -164,6 +166,7 @@ struct CityToNameView: View {
                             self.score += 10
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                 self.settings.generateOptions()
+                                self.resetButtons()
                             }
                         }) {
                             if self.didTap2 {
@@ -211,6 +214,7 @@ struct CityToNameView: View {
                             self.score += 10
                             DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                                 self.settings.generateOptions()
+                                self.resetButtons()
                             }
                         }) {
                             if self.didTap3 {
