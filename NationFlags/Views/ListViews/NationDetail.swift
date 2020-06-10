@@ -9,6 +9,14 @@
 import SwiftUI
 
 struct NationDetail: View {
+    @State var showInfo:Bool = false
+    @EnvironmentObject var settings: UserSettings
+    static let taskDateFormat: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }()
+    var dueDate = Date()
     var nation: Nation
     @State private var selection = "default"
     var body: some View {
@@ -33,7 +41,21 @@ struct NationDetail: View {
                     Text("Map")
                 }
             }
-        }.navigationBarTitle(LocalizedStringKey(nation.name), displayMode: .inline)
+        }
+        .navigationBarTitle(LocalizedStringKey(nation.name), displayMode: .inline)
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.showInfo.toggle()
+                }
+                ) {
+                    Image(systemName: "info.circle.fill")
+                        .padding()
+                }
+            )
+    .alert(isPresented: $showInfo) {
+        Alert(title: Text("infoLastUpdate"), message: Text("\(dueDate,formatter: NationDetail.self.taskDateFormat)"),
+          dismissButton: .default(Text("Back")) {})
+        }
     }
 }
 

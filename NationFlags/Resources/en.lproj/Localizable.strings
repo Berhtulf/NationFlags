@@ -34,6 +34,8 @@
 "BugReport" = "Report a bug";
 
 /* Detail */
+"infoLastUpdate" = "Last update";
+
 "MainCity" = "Main city";
 "Population" = "Population";
 "StateSize" = "Size";

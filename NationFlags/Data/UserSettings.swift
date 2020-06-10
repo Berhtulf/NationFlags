@@ -9,6 +9,8 @@
 import SwiftUI
 
 class UserSettings: ObservableObject {
+    var updateDate:Date = Date(timeIntervalSince1970: 1276161969)
+    
     @Environment(\.managedObjectContext) var managedObjectContext
     // Prodleva před načtením dalších otázek
     let nextDelay = 0.5

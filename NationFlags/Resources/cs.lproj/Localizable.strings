@@ -47,6 +47,8 @@
 "Oceania" = "Oceánie";
 
 /* Detail */
+"infoLastUpdate" = "Poslední aktualizace";
+
 "MainCity" = "Hlavní město";
 "Population" = "Populace";
 "StateSize" = "Rozloha";
