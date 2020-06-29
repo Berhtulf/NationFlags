@@ -48,7 +48,7 @@ struct NationDetail: View {
                     self.showInfo.toggle()
                 }
                 ) {
-                    Image(systemName: "info.circle.fill")
+                    Image(systemName: "questionmark.circle")
                         .padding()
                 }
             )
