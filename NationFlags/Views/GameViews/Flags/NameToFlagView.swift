@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NameToFlagView: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     @Environment(\.presentationMode) var presentationMode
     
     @State private var didTap0:Bool = false
@@ -264,7 +264,7 @@ struct NameToFlagView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
             NavigationView{
-                NameToFlagView().environmentObject(UserSettings())
+                NameToFlagView().environmentObject(GlobalSettings())
             }
         }
     }

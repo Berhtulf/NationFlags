@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SearchButton: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     var body: some View{
         Button(action: {
             withAnimation{
@@ -26,6 +26,7 @@ struct SearchButton: View {
 
 struct SearchButton_Previews: PreviewProvider {
     static var previews: some View {
-        SearchButton()
+        SearchButton().padding()
+        .previewLayout(.sizeThatFits)
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 
 struct NationDetail: View {
     @State var showInfo:Bool = false
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     static let taskDateFormat: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
@@ -52,7 +52,7 @@ struct NationDetail: View {
                         .padding()
                 }
             )
-    .alert(isPresented: $showInfo) {
+            .alert(isPresented: $showInfo) {
         Alert(title: Text("infoLastUpdate"), message: Text("\(dueDate,formatter: NationDetail.self.taskDateFormat)"),
           dismissButton: .default(Text("Back")) {})
         }

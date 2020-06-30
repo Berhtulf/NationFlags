@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NameToFlagErrorView: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     @Environment(\.presentationMode) var presentationMode
     
     @State private var didTap0:Bool = false
@@ -246,7 +246,7 @@ struct NameToFlagErrorView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
             NavigationView{
-                NameToFlagErrorView().environmentObject(UserSettings()).environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+                NameToFlagErrorView().environmentObject(GlobalSettings()).environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
             }
         }
         

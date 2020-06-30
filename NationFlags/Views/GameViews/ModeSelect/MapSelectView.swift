@@ -9,42 +9,42 @@
 import SwiftUI
 
 struct MapSelectView: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     @State var mapWidth:CGFloat = 301
     @State var mapHeight:CGFloat = 0
     public var dragGesture: some Gesture {
         DragGesture(minimumDistance: 0, coordinateSpace: .local)
             .onEnded {
                 print("Changed \($0.location)")
-                if $0.location.x > self.mapWidth*0.75 && $0.location.y > self.mapHeight/2{
+                if $0.location.x > self.mapWidth * 0.75 && $0.location.y > self.mapHeight / 2{
                     if self.settings.regions.contains("Oceania") {
                         self.settings.regions.remove("Oceania")
                     }else{
                         self.settings.regions.insert("Oceania")
                     }
                     self.toogleMap(position: 4)
-                }else if $0.location.x < self.mapWidth*0.35{
+                }else if $0.location.x < self.mapWidth * 0.35{
                     if self.settings.regions.contains("Americas") {
                         self.settings.regions.remove("Americas")
                     }else{
                         self.settings.regions.insert("Americas")
                     }
                     self.toogleMap(position: 0)
-                }else if $0.location.x > self.mapWidth*0.35 && $0.location.x < self.mapWidth*0.6 && $0.location.y > self.mapHeight*0.3{
+                }else if $0.location.x > self.mapWidth * 0.35 && $0.location.x < self.mapWidth * 0.6 && $0.location.y > self.mapHeight * 0.3{
                     if self.settings.regions.contains("Africa") {
                         self.settings.regions.remove("Africa")
                     }else{
                         self.settings.regions.insert("Africa")
                     }
                     self.toogleMap(position: 2)
-                }else if $0.location.x > self.mapWidth*0.35 && $0.location.x < self.mapWidth*0.6 && $0.location.y < self.mapHeight*0.3{
+                }else if $0.location.x > self.mapWidth * 0.35 && $0.location.x < self.mapWidth * 0.6 && $0.location.y < self.mapHeight * 0.3{
                     if self.settings.regions.contains("Europe") {
                         self.settings.regions.remove("Europe")
                     }else{
                         self.settings.regions.insert("Europe")
                     }
                     self.toogleMap(position: 1)
-                }else if $0.location.x > self.mapWidth*0.6 && $0.location.y < self.mapHeight/2{
+                }else if $0.location.x > self.mapWidth * 0.6 && $0.location.y < self.mapHeight / 2{
                     if self.settings.regions.contains("Asia") {
                         self.settings.regions.remove("Asia")
                     }else{
@@ -77,6 +77,6 @@ struct MapSelectView: View {
 
 struct MapSelectView_Previews: PreviewProvider {
     static var previews: some View {
-        MapSelectView().environmentObject(UserSettings())
+        MapSelectView().environmentObject(GlobalSettings())
     }
 }

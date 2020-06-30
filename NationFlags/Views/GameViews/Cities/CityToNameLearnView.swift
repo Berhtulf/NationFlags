@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CityToNameLearnView: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     @Environment(\.presentationMode) var presentationMode
     
     @State private var didTap0:Bool = false
@@ -252,7 +252,7 @@ struct CityToNameLearnView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
             NavigationView{
-                CityToNameLearnView().environmentObject(UserSettings())
+                CityToNameLearnView().environmentObject(GlobalSettings())
             }
         }
         

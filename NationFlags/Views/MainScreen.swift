@@ -11,7 +11,7 @@ import MessageUI
 
 
 struct MainScreen: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     @State var result: Result<MFMailComposeResult, Error>? = nil
     @State var isShowingActions = false
     @State var isShowingMailView = false
@@ -129,6 +129,6 @@ struct MailView: UIViewControllerRepresentable {
 
 struct MainScreen_Previews: PreviewProvider {
     static var previews: some View {
-        MainScreen().environmentObject(UserSettings())
+        MainScreen().environmentObject(GlobalSettings())
     }
 }

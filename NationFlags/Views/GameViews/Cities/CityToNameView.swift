@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CityToNameView: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     @Environment(\.presentationMode) var presentationMode
     
     @State private var didTap0:Bool = false
@@ -283,7 +283,7 @@ struct CityToNameView: View {
 struct capitalToNameView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            CityToNameView().environmentObject(UserSettings())
+            CityToNameView().environmentObject(GlobalSettings())
                 .environment(\.locale, Locale(identifier: "cs"))
         }
     }

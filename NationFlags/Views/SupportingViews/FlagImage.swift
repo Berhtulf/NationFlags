@@ -26,6 +26,8 @@ struct FlagImage: View {
 
 struct FlagImage_Previews: PreviewProvider {
     static var previews: some View {
-        FlagImage(image: Image("np"))
+        FlagImage(image: Image((restNation.randomElement()?.alpha2Code.lowercased())!))
+            .padding()
+            .previewLayout(.sizeThatFits)
     }
 }

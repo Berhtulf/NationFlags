@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NameToCityErrorView: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     @Environment(\.presentationMode) var presentationMode
     
     @State private var didTap0:Bool = false
@@ -255,7 +255,7 @@ struct NameToCityErrorView: View {
 struct NameToCityErrorView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            NameToCityErrorView().environmentObject(UserSettings())
+            NameToCityErrorView().environmentObject(GlobalSettings())
         }
     }
 }

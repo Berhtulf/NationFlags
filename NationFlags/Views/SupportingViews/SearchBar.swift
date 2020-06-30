@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     var body: some View {
         HStack{
             HStack{
@@ -35,6 +35,7 @@ struct SearchBar: View {
 
 struct SearchBar_Previews: PreviewProvider {
     static var previews: some View {
-        SearchBar().environmentObject(UserSettings())
+        SearchBar().environmentObject(GlobalSettings()).padding()
+        .previewLayout(.sizeThatFits)
     }
 }

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ModeSelectMapImage: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     var body: some View {
         VStack{
             Image(settings.imgName)
@@ -24,7 +24,7 @@ struct ModeSelectMapImage: View {
 struct ModeSelectMapImage_Preview: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            ModeSelectMapImage().environmentObject(UserSettings())
+            ModeSelectMapImage().environmentObject(GlobalSettings())
                 .environment(\.locale, Locale(identifier: "cs"))
         }
     }

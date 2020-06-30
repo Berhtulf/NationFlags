@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ModeScrollView: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     @State private var NameToFlag = UserDefaults.standard.integer(forKey: "NameToFlag")
     @State private var NameToFlagError = UserDefaults.standard.integer(forKey: "NameToFlagError")
     @State private var FlagToName = UserDefaults.standard.integer(forKey: "FlagToName")
@@ -304,6 +304,6 @@ struct ModeScrollView: View {
 
 struct ModeScrollView_Previews: PreviewProvider {
     static var previews: some View {
-        ModeScrollView(gameMode: 1).environmentObject(UserSettings())
+        ModeScrollView(gameMode: 1).environmentObject(GlobalSettings())
     }
 }

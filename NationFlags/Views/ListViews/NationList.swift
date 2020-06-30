@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NationList: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     var body: some View {
         VStack{
             if settings.showSearch{
@@ -20,7 +20,7 @@ struct NationList: View {
             List(restNation
                 .filter{NSLocalizedString($0.name, comment: "").contains(settings.search) || settings.search == ""}
                 .sorted(by: {NSLocalizedString($0.name, comment: "") < NSLocalizedString($1.name, comment: "")
-            }), id: \.self) { nation in
+                }), id: \.id) { nation in
                 NavigationLink(destination: NationDetail(nation: nation)){
                     NationRow(nation: nation)
                 }
@@ -39,7 +39,7 @@ struct NationList_Previews: PreviewProvider {
     static var previews: some View {
         Group{
             NavigationView{
-                NationList().environmentObject(UserSettings())
+                NationList().environmentObject(GlobalSettings())
             }
         }
     }

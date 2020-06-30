@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NameToCityView: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     @Environment(\.presentationMode) var presentationMode
     
     @State private var didTap0:Bool = false
@@ -283,7 +283,7 @@ struct NameToCityView: View {
 struct NameToCityView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            NameToCityView().environmentObject(UserSettings())
+            NameToCityView().environmentObject(GlobalSettings())
         }
     }
 }

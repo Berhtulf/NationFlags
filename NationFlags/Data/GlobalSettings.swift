@@ -5,10 +5,9 @@
 //  Created by Martin Václavík on 21/10/2019.
 //  Copyright © 2019 Martin Václavík. All rights reserved.
 //
-
 import SwiftUI
 
-class UserSettings: ObservableObject {
+class GlobalSettings: ObservableObject {
     var updateDate:Date = Date(timeIntervalSince1970: 1276161969)
     
     @Environment(\.managedObjectContext) var managedObjectContext

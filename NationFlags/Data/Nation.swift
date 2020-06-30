@@ -9,19 +9,20 @@ import SwiftUI
 import CoreLocation
 
 struct Nation: Hashable, Codable, Identifiable {
+    private var latlngZm:[Double]
+    
     let id = UUID()
     var name: String
-    var alpha2Code: String
     var capital: String
     var region: String
     var population: Int
     var area: Double
+    var alpha2Code: String
     
     var density: Int {
         let number = round(Double(population) / area)
         return Int(number)
     }
-    var latlngZm:[Double]
 
     var image: Image {
         let name = alpha2Code.lowercased()

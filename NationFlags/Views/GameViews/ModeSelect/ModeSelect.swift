@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ModeSelect: View {
-    @EnvironmentObject var settings: UserSettings
+    @EnvironmentObject var settings: GlobalSettings
     @State private var firstLaunch = UserDefaults.standard.bool(forKey: "firstLaunch")
     @State private var gameMode = UserDefaults.standard.integer(forKey: "gameMode")
     
@@ -61,7 +61,7 @@ struct ModeSelect: View {
 struct ModeSelect_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            ModeSelect().environmentObject(UserSettings())
+            ModeSelect().environmentObject(GlobalSettings())
         }//.environment(\.colorScheme, .dark)
     }
 }
