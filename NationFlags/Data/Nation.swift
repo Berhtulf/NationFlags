@@ -18,6 +18,7 @@ struct Nation: Hashable, Codable, Identifiable {
     var population: Int
     var area: Double
     var alpha2Code: String
+    var notRecognizedBy: String
     
     var density: Int {
         let number = round(Double(population) / area)

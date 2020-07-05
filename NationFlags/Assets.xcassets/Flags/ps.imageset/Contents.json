@@ -1,18 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "Ikonka.png",
-      "idiom" : "iphone",
+      "filename" : "2880px-Flag_of_Palestine.svg.png",
+      "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Ikonka@2x.png",
-      "idiom" : "iphone",
+      "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Ikonka@3x.png",
-      "idiom" : "iphone",
+      "idiom" : "universal",
       "scale" : "3x"
     }
   ],

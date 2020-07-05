@@ -48,6 +48,11 @@
 /* Detail */
 "infoLastUpdate" = "Poslední aktualizace";
 
+"RedRecognition" = "Stát neuznaný žádným jiným státem";
+"OrangeRecognition" = "Stát uznaný jedním nebo více uznanými státy";
+"GreenRecognition" = "Stát neuznaný alespoň jedním státem";
+"PinkRecognition" = "Stát uznaný pouze neuznanými státy";
+
 "MainCity" = "Hlavní město";
 "Population" = "Populace";
 "StateSize" = "Rozloha";

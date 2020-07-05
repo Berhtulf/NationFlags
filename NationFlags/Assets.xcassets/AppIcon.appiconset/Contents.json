@@ -37,13 +37,13 @@
       "size" : "40x40"
     },
     {
-      "filename" : "Ikonka_120.png",
+      "filename" : "icon-ios-new-40@3x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
-      "filename" : "Ikonka_180.png",
+      "filename" : "icon-ios-new-60@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"

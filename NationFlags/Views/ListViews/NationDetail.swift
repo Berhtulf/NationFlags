@@ -18,11 +18,31 @@ struct NationDetail: View {
     }()
     var dueDate = Date()
     var nation: Nation
+    @State var showLegend:Bool = false
+    
     @State private var selection = "default"
     var body: some View {
         TabView(selection: $selection){
             ZStack {
-                NationDetailInfo(nation: nation)
+                NationDetailInfo(nation: nation, legend: $showLegend)
+                    .opacity(showLegend ? 0.3 : 1)
+                if (showLegend){
+                    VStack{
+                        Spacer()
+                        legend()
+                            .background(Color(UIColor.systemBackground))
+                            .shadow(radius: 10)
+                            .gesture(DragGesture(minimumDistance: 1, coordinateSpace: .local)
+                                .onEnded { value in
+                                    if (value.translation.height > 20) { self.showLegend = false}
+                                })
+                    }.animation(.easeInOut)
+                        .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)))
+                }
+            }.onTapGesture {
+                    withAnimation(){
+                        self.showLegend = false
+                    }
             }
             .tag("default")
             .tabItem{
@@ -43,18 +63,18 @@ struct NationDetail: View {
             }
         }
         .navigationBarTitle(LocalizedStringKey(nation.name), displayMode: .inline)
-            .navigationBarItems(trailing:
-                Button(action: {
-                    self.showInfo.toggle()
-                }
-                ) {
-                    Image(systemName: "questionmark.circle")
-                        .padding()
-                }
-            )
+        .navigationBarItems(trailing:
+            Button(action: {
+                self.showInfo.toggle()
+            }
+            ) {
+                Image(systemName: "questionmark.circle")
+                    .padding()
+            }
+        )
             .alert(isPresented: $showInfo) {
-        Alert(title: Text("infoLastUpdate"), message: Text("\(dueDate,formatter: NationDetail.self.taskDateFormat)"),
-          dismissButton: .default(Text("Back")) {})
+                Alert(title: Text("infoLastUpdate"), message: Text("\(dueDate,formatter: NationDetail.self.taskDateFormat)"),
+                      dismissButton: .default(Text("Back")) {})
         }
     }
 }
@@ -71,32 +91,33 @@ struct ContentView_Previews: PreviewProvider {
 
 struct NationDetailInfo: View {
     var nation: Nation
+    @Binding var legend:Bool
     var body: some View {
-        VStack {
-            VStack(alignment: .leading){
-                HStack{
-                    VStack{
-                        FlagImage(image: nation.image).padding()
-                        Text(LocalizedStringKey(nation.name))
-                            .font(.title)
-                    }
+        VStack(alignment: .leading){
+            HStack{
+                VStack{
+                    FlagImage(image: nation.image).padding()
+                    Text(LocalizedStringKey(nation.name))
+                        .font(.title)
                 }
-                Divider()
-                HStack{
-                    Text("MainCity")
-                        .padding(.leading)
-                    Spacer()
-                    Text(LocalizedStringKey(nation.capital))
-                        .padding(.trailing)
-                }
-                Divider()
-                HStack{
-                    Text("Population")
-                        .padding(.leading)
-                    Spacer()
-                    Text("\(nation.population)")
+            }
+            Divider()
+            HStack{
+                Text("MainCity")
+                    .padding(.leading)
+                Spacer()
+                Text(LocalizedStringKey(nation.capital))
                     .padding(.trailing)
-                }
+            }
+            Divider()
+            HStack{
+                Text("Population")
+                    .padding(.leading)
+                Spacer()
+                Text("\(nation.population)")
+                    .padding(.trailing)
+            }
+            Group{
                 Divider()
                 HStack{
                     Text("StateSize")
@@ -114,8 +135,66 @@ struct NationDetailInfo: View {
                         .padding(.trailing)
                 }
                 Divider()
+                HStack{
+                    //                            TODO - podle Nation.Recognized
+                    RoundedRectangle(cornerRadius: 3)
+                        .fill(Color.red)
+                        .frame(width: 30, height: 30)
+                        .padding(.horizontal)
+                        .onTapGesture {
+                            withAnimation(){
+                                self.legend.toggle()
+                            }
+                    }
+                    Spacer()
+                    Text("RedRecognition")
+                        .padding(.horizontal)
+                }
+                Divider()
             }
-            .padding()
+        }.padding()
+    }
+}
+
+struct legend: View {
+    var body: some View{
+        VStack(alignment: .leading) {
+            HStack{
+                RoundedRectangle(cornerRadius: 3)
+                    .fill(Color.red)
+                    .frame(width: 30, height: 30)
+                    .padding(.horizontal)
+                Text("RedRecognition")
+                    .padding(.horizontal)
+            }
+            Divider()
+            HStack{
+                RoundedRectangle(cornerRadius: 3)
+                    .fill(Color.orange)
+                    .frame(width: 30, height: 30)
+                    .padding(.horizontal)
+                Text("OrangeRecognition")
+                    .padding(.horizontal)
+            }
+            Divider()
+            HStack{
+                RoundedRectangle(cornerRadius: 3)
+                    .fill(Color.green)
+                    .frame(width: 30, height: 30)
+                    .padding(.horizontal)
+                Text("GreenRecognition")
+                    .padding(.horizontal)
+            }
+            Divider()
+            HStack{
+                RoundedRectangle(cornerRadius: 3)
+                    .fill(Color.pink)
+                    .frame(width: 30, height: 30)
+                    .padding(.horizontal)
+                Text("PinkRecognition")
+                    .padding(.horizontal)
+            }
         }
+        .padding()
     }
 }

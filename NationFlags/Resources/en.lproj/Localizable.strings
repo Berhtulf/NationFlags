@@ -36,6 +36,11 @@
 /* Detail */
 "infoLastUpdate" = "Last update";
 
+"RedRecognition" = "State is not recognized by any other state";
+"OrangeRecognition" = "States recognized by one or more recognized states";
+"GreenRecognition" = "States not recognized by at least one state";
+"PinkRecognition" = "States recognized only by non-recognized states";
+
 "MainCity" = "Main city";
 "Population" = "Population";
 "StateSize" = "Size";

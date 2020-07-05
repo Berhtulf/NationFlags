@@ -10,7 +10,8 @@
       65.7600695,
       12
     ],
-    "area" : 652230
+    "area" : 652230,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Albania",
@@ -23,7 +24,8 @@
       19.7743905,
       4
     ],
-    "area" : 28748
+    "area" : 28748,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Algeria",
@@ -36,7 +38,8 @@
       2,
       22
     ],
-    "area" : 2381741
+    "area" : 2381741,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Andorra",
@@ -49,7 +52,8 @@
       1.6,
       0.6
     ],
-    "area" : 468
+    "area" : 468,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Angola",
@@ -62,7 +66,8 @@
       18.5,
       13
     ],
-    "area" : 1246700
+    "area" : 1246700,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Antigua and Barbuda",
@@ -75,7 +80,8 @@
       -61.8,
       0.5
     ],
-    "area" : 442
+    "area" : 442,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Argentina",
@@ -88,7 +94,8 @@
       -64,
       20
     ],
-    "area" : 2780400
+    "area" : 2780400,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Armenia",
@@ -101,7 +108,8 @@
       45,
       5
     ],
-    "area" : 29743
+    "area" : 29743,
+    "notRecognizedBy" : "Pakistan"
   },
   {
     "name" : "Australia",
@@ -114,7 +122,8 @@
       133,
       40
     ],
-    "area" : 7692024
+    "area" : 7692024,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Austria",
@@ -127,7 +136,8 @@
       13.33333333,
       10
     ],
-    "area" : 83871
+    "area" : 83871,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Azerbaijan",
@@ -140,7 +150,8 @@
       47.5,
       10
     ],
-    "area" : 86600
+    "area" : 86600,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Bahamas",
@@ -153,7 +164,8 @@
       -76,
       5
     ],
-    "area" : 13943
+    "area" : 13943,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Bahrain",
@@ -166,7 +178,8 @@
       50.55,
       0.7
     ],
-    "area" : 765
+    "area" : 765,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Bangladesh",
@@ -179,7 +192,8 @@
       90,
       5
     ],
-    "area" : 147570
+    "area" : 147570,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Barbados",
@@ -192,7 +206,8 @@
       -59.53333333,
       1
     ],
-    "area" : 430
+    "area" : 430,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Belarus",
@@ -205,7 +220,8 @@
       28,
       10
     ],
-    "area" : 207600
+    "area" : 207600,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Belgium",
@@ -218,7 +234,8 @@
       4.5,
       5
     ],
-    "area" : 30528
+    "area" : 30528,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Belize",
@@ -231,7 +248,8 @@
       -88.75,
       5
     ],
-    "area" : 22966
+    "area" : 22966,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Benin",
@@ -244,7 +262,8 @@
       2.25,
       5
     ],
-    "area" : 112622
+    "area" : 112622,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Bhutan",
@@ -257,7 +276,8 @@
       90.5,
       5
     ],
-    "area" : 38394
+    "area" : 38394,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Bolivia",
@@ -270,7 +290,8 @@
       -65,
       20
     ],
-    "area" : 1098581
+    "area" : 1098581,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Bosnia and Herzegovina",
@@ -283,7 +304,8 @@
       18,
       8
     ],
-    "area" : 51209
+    "area" : 51209,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Botswana",
@@ -296,7 +318,8 @@
       24,
       10
     ],
-    "area" : 582000
+    "area" : 582000,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Brazil",
@@ -309,7 +332,8 @@
       -55,
       50
     ],
-    "area" : 8515767
+    "area" : 8515767,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Brunei",
@@ -322,7 +346,8 @@
       114.66666666,
       5
     ],
-    "area" : 5765
+    "area" : 5765,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Bulgaria",
@@ -335,7 +360,8 @@
       25,
       10
     ],
-    "area" : 110879
+    "area" : 110879,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Burkina Faso",
@@ -348,7 +374,8 @@
       -2,
       9
     ],
-    "area" : 272967
+    "area" : 272967,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Burundi",
@@ -361,7 +388,8 @@
       30,
       5
     ],
-    "area" : 27834
+    "area" : 27834,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Cambodia",
@@ -374,7 +402,8 @@
       105,
       5
     ],
-    "area" : 181035
+    "area" : 181035,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Cameroon",
@@ -387,7 +416,8 @@
       12,
       10
     ],
-    "area" : 475442
+    "area" : 475442,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Canada",
@@ -400,7 +430,8 @@
       -95,
       60
     ],
-    "area" : 9984670
+    "area" : 9984670,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Cape Verde",
@@ -413,7 +444,8 @@
       -24,
       5
     ],
-    "area" : 4033
+    "area" : 4033,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Central African Republic",
@@ -426,7 +458,8 @@
       21,
       15
     ],
-    "area" : 622984
+    "area" : 622984,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Chad",
@@ -439,7 +472,8 @@
       19,
       20
     ],
-    "area" : 1284000
+    "area" : 1284000,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Chile",
@@ -452,7 +486,8 @@
       -71,
       20
     ],
-    "area" : 756102
+    "area" : 756102,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "China",
@@ -465,7 +500,8 @@
       105,
       50
     ],
-    "area" : 9640011
+    "area" : 9640011,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Colombia",
@@ -478,7 +514,8 @@
       -72,
       20
     ],
-    "area" : 1141748
+    "area" : 1141748,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Comoros",
@@ -491,7 +528,8 @@
       44.25,
       5
     ],
-    "area" : 1862
+    "area" : 1862,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Republic of the Congo",
@@ -504,7 +542,8 @@
       15,
       10
     ],
-    "area" : 342000
+    "area" : 342000,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Democratic Republic of the Congo",
@@ -517,7 +556,8 @@
       25,
       20
     ],
-    "area" : 2344858
+    "area" : 2344858,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Cook Islands",
@@ -530,7 +570,8 @@
       -159.76666666,
       0.5
     ],
-    "area" : 236
+    "area" : 236,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Costa Rica",
@@ -543,7 +584,8 @@
       -84,
       5
     ],
-    "area" : 51100
+    "area" : 51100,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Croatia",
@@ -556,7 +598,8 @@
       15.5,
       10
     ],
-    "area" : 56594
+    "area" : 56594,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Cuba",
@@ -569,7 +612,8 @@
       -78,
       15
     ],
-    "area" : 109884
+    "area" : 109884,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Cyprus",
@@ -582,7 +626,8 @@
       33,
       5
     ],
-    "area" : 9251
+    "area" : 9251,
+    "notRecognizedBy" : "Turkey"
   },
   {
     "name" : "Czech Republic",
@@ -595,7 +640,8 @@
       15.5,
       10
     ],
-    "area" : 78865
+    "area" : 78865,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Denmark",
@@ -608,7 +654,8 @@
       10,
       8
     ],
-    "area" : 43094
+    "area" : 43094,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Djibouti",
@@ -621,7 +668,8 @@
       42.8,
       3
     ],
-    "area" : 23200
+    "area" : 23200,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Dominica",
@@ -634,7 +682,8 @@
       -61.33333333,
       3
     ],
-    "area" : 751
+    "area" : 751,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Dominican Republic",
@@ -647,7 +696,8 @@
       -70.66666666,
       5
     ],
-    "area" : 48671
+    "area" : 48671,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Ecuador",
@@ -660,7 +710,8 @@
       -78,
       7
     ],
-    "area" : 276841
+    "area" : 276841,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Egypt",
@@ -673,7 +724,8 @@
       30,
       15
     ],
-    "area" : 1002450
+    "area" : 1002450,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "El Salvador",
@@ -686,7 +738,8 @@
       -88.91666666,
       5
     ],
-    "area" : 21041
+    "area" : 21041,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Equatorial Guinea",
@@ -699,7 +752,8 @@
       10,
       5
     ],
-    "area" : 28051
+    "area" : 28051,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Eritrea",
@@ -712,7 +766,8 @@
       39,
       5
     ],
-    "area" : 117600
+    "area" : 117600,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Estonia",
@@ -725,7 +780,8 @@
       26,
       7
     ],
-    "area" : 45227
+    "area" : 45227,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Ethiopia",
@@ -738,7 +794,8 @@
       40,
       15
     ],
-    "area" : 1104300
+    "area" : 1104300,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Faroe Islands",
@@ -751,7 +808,8 @@
       -7,
       4
     ],
-    "area" : 1393
+    "area" : 1393,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Fiji",
@@ -764,7 +822,8 @@
       179,
       5
     ],
-    "area" : 18272
+    "area" : 18272,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Finland",
@@ -777,7 +836,8 @@
       26,
       13
     ],
-    "area" : 338424
+    "area" : 338424,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "France",
@@ -790,7 +850,8 @@
       2,
       13
     ],
-    "area" : 640679
+    "area" : 640679,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Gabon",
@@ -803,7 +864,8 @@
       11.75,
       8
     ],
-    "area" : 267668
+    "area" : 267668,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Gambia",
@@ -816,7 +878,8 @@
         -15,
       5
     ],
-    "area" : 11295
+    "area" : 11295,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Georgia",
@@ -829,7 +892,8 @@
       43.5,
       5
     ],
-    "area" : 69700
+    "area" : 69700,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Germany",
@@ -842,7 +906,8 @@
       10,
       10
     ],
-    "area" : 357114
+    "area" : 357114,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Ghana",
@@ -855,7 +920,8 @@
       -1,
       5
     ],
-    "area" : 238533
+    "area" : 238533,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Greece",
@@ -868,7 +934,8 @@
       22,
       10
     ],
-    "area" : 131990
+    "area" : 131990,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Grenada",
@@ -881,7 +948,8 @@
       -61.66666666,
       0.5
     ],
-    "area" : 344
+    "area" : 344,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Guatemala",
@@ -894,7 +962,8 @@
       -90.25,
       5
     ],
-    "area" : 108889
+    "area" : 108889,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Guinea",
@@ -907,7 +976,8 @@
       -11,
       8
     ],
-    "area" : 245857
+    "area" : 245857,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Guinea-Bissau",
@@ -920,7 +990,8 @@
       -15,
       4
     ],
-    "area" : 36125
+    "area" : 36125,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Guyana",
@@ -933,7 +1004,8 @@
       -59,
       5
     ],
-    "area" : 214969
+    "area" : 214969,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Haiti",
@@ -946,7 +1018,8 @@
       -72.41666666,
       5
     ],
-    "area" : 27750
+    "area" : 27750,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Vatican City",
@@ -959,7 +1032,8 @@
       12.455,
       0.03
     ],
-    "area" : 0.44
+    "area" : 0.44,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Honduras",
@@ -972,7 +1046,8 @@
       -86.5,
       7
     ],
-    "area" : 112492
+    "area" : 112492,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Hungary",
@@ -985,7 +1060,8 @@
       20,
       10
     ],
-    "area" : 93028
+    "area" : 93028,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Iceland",
@@ -998,7 +1074,8 @@
       -18,
       10
     ],
-    "area" : 103000
+    "area" : 103000,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "India",
@@ -1011,7 +1088,8 @@
       78,
       20
     ],
-    "area" : 3287590
+    "area" : 3287590,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Indonesia",
@@ -1024,7 +1102,8 @@
       120,
       5
     ],
-    "area" : 1904569
+    "area" : 1904569,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Côte d’Ivoire",
@@ -1037,7 +1116,8 @@
       -5,
       10
     ],
-    "area" : 322463
+    "area" : 322463,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Iran",
@@ -1050,7 +1130,8 @@
       53,
       20
     ],
-    "area" : 1648195
+    "area" : 1648195,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Iraq",
@@ -1063,7 +1144,8 @@
       44,
       20
     ],
-    "area" : 438317
+    "area" : 438317,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Ireland",
@@ -1076,7 +1158,8 @@
       -8,
       10
     ],
-    "area" : 70273
+    "area" : 70273,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Israel",
@@ -1089,7 +1172,8 @@
       34.75,
       5
     ],
-    "area" : 20770
+    "area" : 20770,
+    "notRecognizedBy" : "TODO - https://cs.wikipedia.org/wiki/Zahraničn%C3%AD_vztahy_Izraele#Částečné_uznán%C3%AD_a/nebo_obchodn%C3%AD_dohody"
   },
   {
     "name" : "Italy",
@@ -1102,7 +1186,8 @@
       12.83333333,
       10
     ],
-    "area" : 301336
+    "area" : 301336,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Jamaica",
@@ -1115,7 +1200,8 @@
       -77.5,
       5
     ],
-    "area" : 10991
+    "area" : 10991,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Japan",
@@ -1128,7 +1214,8 @@
       138,
       20
     ],
-    "area" : 377930
+    "area" : 377930,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Jordan",
@@ -1141,7 +1228,8 @@
       37,
       6
     ],
-    "area" : 89342
+    "area" : 89342,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Kazakhstan",
@@ -1154,7 +1242,8 @@
       68,
       35
     ],
-    "area" : 2724900
+    "area" : 2724900,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Kenya",
@@ -1167,7 +1256,8 @@
       38,
       5
     ],
-    "area" : 580367
+    "area" : 580367,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Kiribati",
@@ -1180,7 +1270,8 @@
       173.05,
       0.3
     ],
-    "area" : 811
+    "area" : 811,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Kuwait",
@@ -1193,7 +1284,8 @@
       47.5,
       3
     ],
-    "area" : 17818
+    "area" : 17818,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Kyrgyzstan",
@@ -1206,7 +1298,8 @@
       74,
       8
     ],
-    "area" : 199951
+    "area" : 199951,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Laos",
@@ -1219,7 +1312,8 @@
       105,
       10
     ],
-    "area" : 236800
+    "area" : 236800,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Latvia",
@@ -1232,7 +1326,8 @@
       25,
       10
     ],
-    "area" : 64559
+    "area" : 64559,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Lebanon",
@@ -1245,7 +1340,8 @@
       35.83333333,
       5
     ],
-    "area" : 10452
+    "area" : 10452,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Lesotho",
@@ -1258,7 +1354,8 @@
       28.5,
       5
     ],
-    "area" : 30355
+    "area" : 30355,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Liberia",
@@ -1271,7 +1368,8 @@
       -9.5,
       5
     ],
-    "area" : 111369
+    "area" : 111369,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Libya",
@@ -1284,7 +1382,8 @@
       17,
       20
     ],
-    "area" : 1759540
+    "area" : 1759540,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Liechtenstein",
@@ -1297,7 +1396,8 @@
       9.53333333,
       0.4
     ],
-    "area" : 160
+    "area" : 160,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Lithuania",
@@ -1310,7 +1410,8 @@
       24,
       10
     ],
-    "area" : 65300
+    "area" : 65300,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Luxembourg",
@@ -1323,7 +1424,8 @@
       6.16666666,
       2
     ],
-    "area" : 2586
+    "area" : 2586,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Macedonia",
@@ -1336,7 +1438,8 @@
       22,
       7
     ],
-    "area" : 25713
+    "area" : 25713,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Madagascar",
@@ -1349,7 +1452,8 @@
       47,
       10
     ],
-    "area" : 587041
+    "area" : 587041,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Malawi",
@@ -1362,7 +1466,8 @@
       34,
       5
     ],
-    "area" : 118484
+    "area" : 118484,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Malaysia",
@@ -1375,7 +1480,8 @@
       102,
       10
     ],
-    "area" : 330803
+    "area" : 330803,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Maldives",
@@ -1388,7 +1494,8 @@
       73.508333,
       0.3
     ],
-    "area" : 300
+    "area" : 300,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Mali",
@@ -1401,7 +1508,8 @@
       -4,
       20
     ],
-    "area" : 1240192
+    "area" : 1240192,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Malta",
@@ -1414,7 +1522,8 @@
       14.58333333,
       3
     ],
-    "area" : 316
+    "area" : 316,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Marshall Islands",
@@ -1426,7 +1535,8 @@
       7.066667, 171.266667,
       1
     ],
-    "area" : 181
+    "area" : 181,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Mauritania",
@@ -1439,7 +1549,8 @@
       -12,
       15
     ],
-    "area" : 1030700
+    "area" : 1030700,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Mauritius",
@@ -1452,7 +1563,8 @@
       57.55,
       5
     ],
-    "area" : 2040
+    "area" : 2040,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Mexico",
@@ -1465,7 +1577,8 @@
       -102,
       30
     ],
-    "area" : 1964375
+    "area" : 1964375,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Micronesia",
@@ -1478,7 +1591,8 @@
       158.25,
       1
     ],
-    "area" : 702
+    "area" : 702,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Moldova",
@@ -1491,7 +1605,8 @@
       29,
       10
     ],
-    "area" : 33846
+    "area" : 33846,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Monaco",
@@ -1504,7 +1619,8 @@
       7.425,
       0.05
     ],
-    "area" : 2.02
+    "area" : 2.02,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Mongolia",
@@ -1517,7 +1633,8 @@
       105,
       50
     ],
-    "area" : 1564110
+    "area" : 1564110,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Montenegro",
@@ -1530,7 +1647,8 @@
       19.3,
       4
     ],
-    "area" : 13812
+    "area" : 13812,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Morocco",
@@ -1543,7 +1661,8 @@
       -7,
       15
     ],
-    "area" : 446550
+    "area" : 446550,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Mozambique",
@@ -1556,7 +1675,8 @@
       35,
       15
     ],
-    "area" : 801590
+    "area" : 801590,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Myanmar",
@@ -1569,7 +1689,8 @@
       97,
       15
     ],
-    "area" : 676578
+    "area" : 676578,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Namibia",
@@ -1582,7 +1703,8 @@
       17,
       15
     ],
-    "area" : 825615
+    "area" : 825615,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Nauru",
@@ -1595,7 +1717,8 @@
       166.91666666,
       0.5
     ],
-    "area" : 21
+    "area" : 21,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Nepal",
@@ -1608,7 +1731,8 @@
       84,
       10
     ],
-    "area" : 147181
+    "area" : 147181,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Netherlands",
@@ -1621,7 +1745,8 @@
       5.75,
       10
     ],
-    "area" : 41850
+    "area" : 41850,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "New Zealand",
@@ -1634,7 +1759,8 @@
       174,
       15
     ],
-    "area" : 270467
+    "area" : 270467,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Nicaragua",
@@ -1647,7 +1773,8 @@
       -85,
       5
     ],
-    "area" : 130373
+    "area" : 130373,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Niger",
@@ -1660,7 +1787,8 @@
       8,
       20
     ],
-    "area" : 1267000
+    "area" : 1267000,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Nigeria",
@@ -1673,7 +1801,8 @@
       8,
       15
     ],
-    "area" : 923768
+    "area" : 923768,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Niue",
@@ -1686,7 +1815,8 @@
       -169.86666666,
       0.5
     ],
-    "area" : 260
+    "area" : 260,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "North Korea",
@@ -1699,7 +1829,8 @@
       127,
       7
     ],
-    "area" : 120538
+    "area" : 120538,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Norway",
@@ -1712,7 +1843,8 @@
       10,
       10
     ],
-    "area" : 323802
+    "area" : 323802,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Oman",
@@ -1725,7 +1857,8 @@
       57,
       12
     ],
-    "area" : 309500
+    "area" : 309500,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Pakistan",
@@ -1738,7 +1871,8 @@
       70,
       25
     ],
-    "area" : 881912
+    "area" : 881912,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Palau",
@@ -1751,7 +1885,22 @@
       134.5,
       1
     ],
-    "area" : 459
+    "area" : 459,
+    "notRecognizedBy" : "None"
+  },
+  {
+    "name" : "Palestina",
+    "alpha2Code" : "PS",
+    "capital" : "Jerusalem",
+    "region" : "Asia",
+    "population" : 5051953,
+    "latlngZm" : [
+      31.5,
+      34.75,
+      5
+    ],
+    "area" : 6020,
+    "notRecognizedBy" : "Israel"
   },
   {
     "name" : "Panama",
@@ -1764,7 +1913,8 @@
       -80,
       8
     ],
-    "area" : 75417
+    "area" : 75417,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Papua New Guinea",
@@ -1777,7 +1927,8 @@
       147,
       15
     ],
-    "area" : 462840
+    "area" : 462840,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Paraguay",
@@ -1790,7 +1941,8 @@
       -58,
       15
     ],
-    "area" : 406752
+    "area" : 406752,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Peru",
@@ -1803,7 +1955,8 @@
       -76,
       15
     ],
-    "area" : 1285216
+    "area" : 1285216,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Philippines",
@@ -1816,7 +1969,8 @@
       123,
       10
     ],
-    "area" : 342353
+    "area" : 342353,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Poland",
@@ -1829,7 +1983,8 @@
       20,
       10
     ],
-    "area" : 312679
+    "area" : 312679,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Portugal",
@@ -1842,7 +1997,8 @@
       -8,
       10
     ],
-    "area" : 92090
+    "area" : 92090,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Qatar",
@@ -1855,7 +2011,8 @@
       51.25,
       3
     ],
-    "area" : 11586
+    "area" : 11586,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Kosovo",
@@ -1868,7 +2025,8 @@
       21.166667,
       3
     ],
-    "area" : 10908
+    "area" : 10908,
+    "notRecognizedBy" : "Serbia"
   },
   {
     "name" : "Romania",
@@ -1881,7 +2039,8 @@
       25,
       10
     ],
-    "area" : 238391
+    "area" : 238391,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Russia",
@@ -1894,7 +2053,8 @@
       100,
       60
     ],
-    "area" : 17124442
+    "area" : 17124442,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Rwanda",
@@ -1907,7 +2067,8 @@
       30,
       5
     ],
-    "area" : 26338
+    "area" : 26338,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Saint Kitts and Nevis",
@@ -1920,7 +2081,8 @@
       -62.75,
       1
     ],
-    "area" : 261
+    "area" : 261,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Saint Lucia",
@@ -1933,7 +2095,8 @@
       -60.96666666,
       1
     ],
-    "area" : 616
+    "area" : 616,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Saint Vincent and the Grenadines",
@@ -1946,7 +2109,8 @@
       -61.2,
       1
     ],
-    "area" : 389
+    "area" : 389,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Samoa",
@@ -1959,7 +2123,8 @@
       -172.33333333,
       5
     ],
-    "area" : 2842
+    "area" : 2842,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "San Marino",
@@ -1972,7 +2137,8 @@
       12.45,
       0.2
     ],
-    "area" : 61
+    "area" : 61,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Sao Tome and Principe",
@@ -1985,7 +2151,8 @@
       7,
       2
     ],
-    "area" : 964
+    "area" : 964,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Saudi Arabia",
@@ -1998,7 +2165,8 @@
       45,
       20
     ],
-    "area" : 2149690
+    "area" : 2149690,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Senegal",
@@ -2011,7 +2179,8 @@
       -14,
       10
     ],
-    "area" : 196722
+    "area" : 196722,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Serbia",
@@ -2024,7 +2193,8 @@
       21,
       10
     ],
-    "area" : 88361
+    "area" : 88361,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Seychelles",
@@ -2037,7 +2207,8 @@
       55.66666666,
       1
     ],
-    "area" : 452
+    "area" : 452,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Sierra Leone",
@@ -2050,7 +2221,8 @@
       -11.5,
       5
     ],
-    "area" : 71740
+    "area" : 71740,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Singapore",
@@ -2063,7 +2235,8 @@
       103.8,
       1
     ],
-    "area" : 710
+    "area" : 710,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Slovakia",
@@ -2076,7 +2249,8 @@
       19.5,
       10
     ],
-    "area" : 49037
+    "area" : 49037,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Slovenia",
@@ -2089,7 +2263,8 @@
       14.81666666,
       10
     ],
-    "area" : 20273
+    "area" : 20273,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Solomon Islands",
@@ -2102,7 +2277,8 @@
       159,
       7
     ],
-    "area" : 28896
+    "area" : 28896,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Somalia",
@@ -2115,7 +2291,8 @@
       47,
       15
     ],
-    "area" : 637657
+    "area" : 637657,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "South Africa",
@@ -2128,7 +2305,8 @@
       24,
       25
     ],
-    "area" : 1221037
+    "area" : 1221037,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "South Korea",
@@ -2141,7 +2319,8 @@
       127.5,
       5
     ],
-    "area" : 100210
+    "area" : 100210,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "South Sudan",
@@ -2154,7 +2333,8 @@
       30,
       15
     ],
-    "area" : 619745
+    "area" : 619745,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Spain",
@@ -2167,7 +2347,8 @@
       -4,
       10
     ],
-    "area" : 505992
+    "area" : 505992,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Sri Lanka",
@@ -2180,7 +2361,8 @@
       81,
       5
     ],
-    "area" : 65610
+    "area" : 65610,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Sudan",
@@ -2193,7 +2375,8 @@
       30,
       25
     ],
-    "area" : 1886068
+    "area" : 1886068,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Suriname",
@@ -2206,7 +2389,8 @@
       -56,
       5
     ],
-    "area" : 163820
+    "area" : 163820,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Swaziland",
@@ -2219,7 +2403,8 @@
       31.5,
       5
     ],
-    "area" : 17364
+    "area" : 17364,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Sweden",
@@ -2232,7 +2417,8 @@
       15,
       15
     ],
-    "area" : 450295
+    "area" : 450295,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Switzerland",
@@ -2245,7 +2431,8 @@
       8,
       10
     ],
-    "area" : 41284
+    "area" : 41284,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Syria",
@@ -2258,7 +2445,8 @@
       39,
       10
     ],
-    "area" : 185180
+    "area" : 185180,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Taiwan",
@@ -2271,7 +2459,8 @@
       121,
       5
     ],
-    "area" : 36193
+    "area" : 36193,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Tajikistan",
@@ -2284,7 +2473,8 @@
       71,
       8
     ],
-    "area" : 143100
+    "area" : 143100,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Tanzania",
@@ -2297,7 +2487,8 @@
       35,
       15
     ],
-    "area" : 945087
+    "area" : 945087,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Thailand",
@@ -2310,7 +2501,8 @@
       103,
       15
     ],
-    "area" : 513120
+    "area" : 513120,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Timor-Leste",
@@ -2323,7 +2515,8 @@
       125.91666666,
       5
     ],
-    "area" : 14874
+    "area" : 14874,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Togo",
@@ -2336,7 +2529,8 @@
       1.16666666,
       5
     ],
-    "area" : 56785
+    "area" : 56785,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Tonga",
@@ -2349,7 +2543,8 @@
       -175,
       2
     ],
-    "area" : 747
+    "area" : 747,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Trinidad and Tobago",
@@ -2362,7 +2557,8 @@
       -61,
       5
     ],
-    "area" : 5130
+    "area" : 5130,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Tunisia",
@@ -2375,7 +2571,8 @@
       10,
       7
     ],
-    "area" : 163610
+    "area" : 163610,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Turkey",
@@ -2388,7 +2585,8 @@
       35,
       25
     ],
-    "area" : 783562
+    "area" : 783562,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Turkmenistan",
@@ -2401,7 +2599,8 @@
       60,
       15
     ],
-    "area" : 488100
+    "area" : 488100,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Tuvalu",
@@ -2414,7 +2613,8 @@
       179.216667,
       0.51
     ],
-    "area" : 26
+    "area" : 26,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Uganda",
@@ -2427,7 +2627,8 @@
       32,
       10
     ],
-    "area" : 241550
+    "area" : 241550,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Ukraine",
@@ -2440,7 +2641,8 @@
       32,
       20
     ],
-    "area" : 603700
+    "area" : 603700,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "United Arab Emirates",
@@ -2453,7 +2655,8 @@
       54,
       8
     ],
-    "area" : 83600
+    "area" : 83600,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "United Kingdom",
@@ -2466,7 +2669,8 @@
       -3.5,
       15
     ],
-    "area" : 242900
+    "area" : 242900,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "United States of America",
@@ -2479,7 +2683,8 @@
       -97,
       55
     ],
-    "area" : 9629091
+    "area" : 9629091,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Uruguay",
@@ -2492,7 +2697,8 @@
       -56,
       5
     ],
-    "area" : 181034
+    "area" : 181034,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Uzbekistan",
@@ -2505,7 +2711,8 @@
       64,
       10
     ],
-    "area" : 447400
+    "area" : 447400,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Vanuatu",
@@ -2518,7 +2725,8 @@
       168,
       5
     ],
-    "area" : 12189
+    "area" : 12189,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Venezuela",
@@ -2531,7 +2739,8 @@
       -66,
       20
     ],
-    "area" : 916445
+    "area" : 916445,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Vietnam",
@@ -2544,7 +2753,8 @@
       107.83333333,
       15
     ],
-    "area" : 331212
+    "area" : 331212,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Yemen",
@@ -2557,7 +2767,8 @@
       48,
       15
     ],
-    "area" : 527968
+    "area" : 527968,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Zambia",
@@ -2570,7 +2781,8 @@
       28,
       15
     ],
-    "area" : 752612
+    "area" : 752612,
+    "notRecognizedBy" : "None"
   },
   {
     "name" : "Zimbabwe",
@@ -2583,6 +2795,7 @@
       30,
       15
     ],
-    "area" : 390757
+    "area" : 390757,
+    "notRecognizedBy" : "None"
   }
 ]
