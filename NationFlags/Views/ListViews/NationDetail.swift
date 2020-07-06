@@ -83,7 +83,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
             NavigationView{
-                NationDetail(nation: restNation.randomElement()!)
+                NationDetail(nation: restNation[153])
             }
         }
     }
@@ -98,7 +98,7 @@ struct NationDetailInfo: View {
                 VStack{
                     NationDetailFlag(nation: $nation).padding()
                     Text(LocalizedStringKey(nation.name))
-                        .font(.title)
+                        .font(.title).multilineTextAlignment(.center)
                 }
             }
             Divider()
@@ -139,7 +139,7 @@ struct NationDetailInfo: View {
                     HStack{
                         if (nation.recognition == "Red" || nation.recognition == "Orange"){
                             RoundedRectangle(cornerRadius: 3)
-                                .fill(nation.recognition == "Red" ? Color.red : Color.orange)
+                                .fill(nation.recognition == "Red" ? Color("RedRecognition") : Color("OrangeRecognition"))
                                 .frame(width: 30, height: 30)
                                 .padding(.horizontal)
                                 .onTapGesture {
@@ -149,10 +149,10 @@ struct NationDetailInfo: View {
                             }
                             Spacer()
                             Text(nation.recognition == "Red" ? "RedRecognition" : "OrangeRecognition")
-                                .padding(.horizontal)
+                                .padding(.horizontal).multilineTextAlignment(.trailing)
                         }else if (nation.recognition == "Pink" || nation.recognition == "Green"){
                             RoundedRectangle(cornerRadius: 3)
-                                .fill(nation.recognition == "Pink" ? Color.pink : Color.green)
+                                .fill(nation.recognition == "Pink" ? Color("PinkRecognition") : Color("GreenRecognition"))
                                 .frame(width: 30, height: 30)
                                 .padding(.horizontal)
                                 .onTapGesture {
@@ -162,7 +162,7 @@ struct NationDetailInfo: View {
                             }
                             Spacer()
                             Text(nation.recognition == "Pink" ? "PinkRecognition" : "GreenRecognition")
-                                .padding(.horizontal)
+                                .padding(.horizontal).multilineTextAlignment(.trailing)
                         }
                     }
                     Divider()
@@ -177,7 +177,7 @@ struct RecognitionLegend: View {
         VStack(alignment: .leading) {
             HStack{
                 RoundedRectangle(cornerRadius: 3)
-                    .fill(Color.red)
+                    .fill(Color("RedRecognition"))
                     .frame(width: 30, height: 30)
                     .padding(.horizontal)
                 Text("RedRecognition")
@@ -186,7 +186,7 @@ struct RecognitionLegend: View {
             Divider()
             HStack{
                 RoundedRectangle(cornerRadius: 3)
-                    .fill(Color.orange)
+                    .fill(Color("OrangeRecognition"))
                     .frame(width: 30, height: 30)
                     .padding(.horizontal)
                 Text("OrangeRecognition")
@@ -195,7 +195,7 @@ struct RecognitionLegend: View {
             Divider()
             HStack{
                 RoundedRectangle(cornerRadius: 3)
-                    .fill(Color.green)
+                    .fill(Color("GreenRecognition"))
                     .frame(width: 30, height: 30)
                     .padding(.horizontal)
                 Text("GreenRecognition")
@@ -204,7 +204,7 @@ struct RecognitionLegend: View {
             Divider()
             HStack{
                 RoundedRectangle(cornerRadius: 3)
-                    .fill(Color.pink)
+                    .fill(Color("PinkRecognition"))
                     .frame(width: 30, height: 30)
                     .padding(.horizontal)
                 Text("PinkRecognition")
