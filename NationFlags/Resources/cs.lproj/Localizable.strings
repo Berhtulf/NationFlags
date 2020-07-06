@@ -59,6 +59,7 @@
 "Density" = "Hustota";
 
 /* States */
+"Abkhazia" = "Abcházie";
 "Afghanistan" = "Afghánistán";
 "Albania" = "Albánie";
 "Algeria" = "Alžírsko";
@@ -206,6 +207,7 @@
 "Romania" = "Rumunsko";
 "Russia" = "Rusko";
 "Rwanda" = "Rwanda";
+"Republic of Artsakh" = "Republika Arcach";
 "Saint Kitts and Nevis" = "Svatý Kryštof a Nevis";
 "Saint Lucia" = "Svatá Lucie";
 "Saint Vincent and the Grenadines" = "Svatý Vincenc a Grenadiny";
@@ -213,6 +215,7 @@
 "San Marino" = "San Marino";
 "Sao Tome and Principe" = "Svatý Tomáš a Princův ostrov";
 "Saudi Arabia" = "Saúdská Arábie";
+"Sahrawi Arab Democratic Republic" = "Saharská arabská demokratická republika";
 "Senegal" = "Senegal";
 "Serbia" = "Srbsko";
 "Seychelles" = "Seychely";
@@ -225,6 +228,7 @@
 "South Africa" = "Jihoafrická republika";
 "South Korea" = "Jižní Korea";
 "South Sudan" = "Jižní Súdán";
+"South Ossetia" = "Jižní Osetie";
 "Spain" = "Španělsko";
 "Sri Lanka" = "Srí Lanka";
 "Sudan" = "Súdán";
@@ -239,6 +243,7 @@
 "Togo" = "Togo";
 "Tonga" = "Tonga";
 "Trinidad and Tobago" = "Trinidad a Tobago";
+"Transnistria" = "Podněstří";
 "Tunisia" = "Tunisko";
 "Turkey" = "Turecko";
 "Turkmenistan" = "Turkmenistán";
@@ -343,6 +348,7 @@
 "Kinshasa" = "Kinshasa";
 "Kuala Lumpur" = "Kuala Lumpur";
 "Kuwait City" = "Kuvajt";
+"Laayoune" = "Laayoune";
 "Libreville" = "Libreville";
 "Lilongwe" = "Lilongwe";
 "Lima" = "Lima";
@@ -427,6 +433,7 @@
 "Sofia" = "Sofia";
 "Sri Jayawardenepura Kotte" = "Šrí Džajavardanapura Kotte";
 "Stockholm" = "Stockholm";
+"Stepanakert" = "Stěpanakert";
 "Sucre" = "Sucre";
 "Suva" = "Suva";
 "Taipei" = "Tchaj-pej";
@@ -436,8 +443,10 @@
 "Tbilisi" = "Tbilisi";
 "Tegucigalpa" = "Tegucigalpa";
 "Tehran" = "Teherán";
+"Tskhinvali" = "Cchinvali";
 "Thimphu" = "Thimphu";
 "Tirana" = "Tirana";
+"Tiraspol" = "Tiraspol";
 "Tokyo" = "Tokio";
 "Tripoli" = "Tripolis";
 "Tunis" = "Tunis";

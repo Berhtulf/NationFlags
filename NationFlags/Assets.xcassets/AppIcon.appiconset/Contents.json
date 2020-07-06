@@ -1,43 +1,43 @@
 {
   "images" : [
     {
-      "filename" : "Ikonka_40.png",
+      "filename" : "icon-ios-new-20@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
-      "filename" : "Ikonka_60.png",
+      "filename" : "icon-ios-new-20@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
     },
     {
-      "filename" : "Ikonka_58.png",
+      "filename" : "icon-ios-new-29@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "29x29"
     },
     {
-      "filename" : "Ikonka_87.png",
+      "filename" : "icon-ios-new-29@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "29x29"
     },
     {
-      "filename" : "Ikonka_80.png",
+      "filename" : "icon-ios-new-40@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "40x40"
     },
     {
-      "filename" : "Ikonka_120-1.png",
+      "filename" : "icon-ios-new-60@2x-1.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "40x40"
     },
     {
-      "filename" : "icon-ios-new-40@3x.png",
+      "filename" : "icon-ios-new-60@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
@@ -49,7 +49,7 @@
       "size" : "60x60"
     },
     {
-      "filename" : "Ikonka_1024.png",
+      "filename" : "icon-ios-new-1024@1x.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"

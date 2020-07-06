@@ -29,7 +29,7 @@ struct NationDetail: View {
                 if (showLegend){
                     VStack{
                         Spacer()
-                        legend()
+                        RecognitionLegend()
                             .background(Color(UIColor.systemBackground))
                             .shadow(radius: 10)
                             .gesture(DragGesture(minimumDistance: 1, coordinateSpace: .local)
@@ -90,13 +90,13 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 struct NationDetailInfo: View {
-    var nation: Nation
+    @State var nation: Nation
     @Binding var legend:Bool
     var body: some View {
         VStack(alignment: .leading){
             HStack{
                 VStack{
-                    FlagImage(image: nation.image).padding()
+                    NationDetailFlag(nation: $nation).padding()
                     Text(LocalizedStringKey(nation.name))
                         .font(.title)
                 }
@@ -135,28 +135,44 @@ struct NationDetailInfo: View {
                         .padding(.trailing)
                 }
                 Divider()
-                HStack{
-                    //                            TODO - podle Nation.Recognized
-                    RoundedRectangle(cornerRadius: 3)
-                        .fill(Color.red)
-                        .frame(width: 30, height: 30)
-                        .padding(.horizontal)
-                        .onTapGesture {
-                            withAnimation(){
-                                self.legend.toggle()
+                if (nation.recognition != "All"){
+                    HStack{
+                        if (nation.recognition == "Red" || nation.recognition == "Orange"){
+                            RoundedRectangle(cornerRadius: 3)
+                                .fill(nation.recognition == "Red" ? Color.red : Color.orange)
+                                .frame(width: 30, height: 30)
+                                .padding(.horizontal)
+                                .onTapGesture {
+                                    withAnimation(){
+                                        self.legend.toggle()
+                                    }
                             }
+                            Spacer()
+                            Text(nation.recognition == "Red" ? "RedRecognition" : "OrangeRecognition")
+                                .padding(.horizontal)
+                        }else if (nation.recognition == "Pink" || nation.recognition == "Green"){
+                            RoundedRectangle(cornerRadius: 3)
+                                .fill(nation.recognition == "Pink" ? Color.pink : Color.green)
+                                .frame(width: 30, height: 30)
+                                .padding(.horizontal)
+                                .onTapGesture {
+                                    withAnimation(){
+                                        self.legend.toggle()
+                                    }
+                            }
+                            Spacer()
+                            Text(nation.recognition == "Pink" ? "PinkRecognition" : "GreenRecognition")
+                                .padding(.horizontal)
+                        }
                     }
-                    Spacer()
-                    Text("RedRecognition")
-                        .padding(.horizontal)
+                    Divider()
                 }
-                Divider()
             }
         }.padding()
     }
 }
 
-struct legend: View {
+struct RecognitionLegend: View {
     var body: some View{
         VStack(alignment: .leading) {
             HStack{

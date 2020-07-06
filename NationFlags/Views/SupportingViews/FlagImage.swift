@@ -17,17 +17,36 @@ struct FlagImage: View {
             .overlay(
                 RoundedRectangle(cornerRadius: 4)
                     .stroke(Color("DarkWhite"), lineWidth: 1)
-            )
+        )
             .clipped()
             .shadow(radius: 4)
             .aspectRatio(contentMode: .fit)
     }
 }
 
-struct FlagImage_Previews: PreviewProvider {
-    static var previews: some View {
-        FlagImage(image: Image((restNation.randomElement()?.alpha2Code.lowercased())!))
-            .padding()
-            .previewLayout(.sizeThatFits)
+struct NationDetailFlag: View{
+    @Binding var nation: Nation
+    var body: some View {
+        ZStack{
+            if nation.name == "Nepal" {
+                nation.image
+                    .resizable()
+                    .cornerRadius(4)
+                    .clipped()
+                    .shadow(radius: 4)
+                    .aspectRatio(contentMode: .fit)
+            }else{
+                nation.image
+                    .resizable()
+                    .cornerRadius(4)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 4)
+                            .stroke(Color("DarkWhite"), lineWidth: 1)
+                )
+                    .clipped()
+                    .shadow(radius: 4)
+                    .aspectRatio(contentMode: .fit)
+            }
+        }
     }
 }

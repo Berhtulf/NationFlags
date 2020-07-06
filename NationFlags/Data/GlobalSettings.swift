@@ -8,7 +8,7 @@
 import SwiftUI
 
 class GlobalSettings: ObservableObject {
-    var updateDate:Date = Date(timeIntervalSince1970: 1276161969)
+    var updateDate:Date = Date(timeIntervalSince1970: 1594029613)
     
     @Environment(\.managedObjectContext) var managedObjectContext
     // Prodleva před načtením dalších otázek
