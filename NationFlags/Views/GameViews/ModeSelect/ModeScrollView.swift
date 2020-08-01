@@ -298,6 +298,7 @@ struct ModeScrollView: View {
         }
         .onAppear() {
             self.refreshScore()
+            self.settings.timer?.invalidate()
         }
     }
 }

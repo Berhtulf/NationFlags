@@ -20,10 +20,10 @@ struct NameToFlagErrorView: View {
     @State private var score:Int = 0
     
     func playAgain() {
+        self.settings.finish = false
         self.score = 0
         settings.history.removeAll()
         settings.generateOptions()
-        settings.finish = false
         resetButtons()
     }
     func resetButtons() {

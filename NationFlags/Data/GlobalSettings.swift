@@ -45,6 +45,7 @@ class GlobalSettings: ObservableObject {
     var options:[Nation] = []
     var correctOption:Nation? = nil
     @Published var finish = false
+    @Published var timer:Timer? = nil
     
     @Published var history = Set<Nation?>()
     

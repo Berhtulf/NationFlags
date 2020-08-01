@@ -20,10 +20,10 @@ struct FlagToNameLearnView: View {
     @State private var score:Int = 0
     
     func playAgain() {
+        settings.finish = false
         self.score = 0
         settings.history.removeAll()
         settings.generateOptions()
-        settings.finish = false
         self.resetButtons()
     }
     func resetButtons() {

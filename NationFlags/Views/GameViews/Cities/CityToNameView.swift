@@ -19,13 +19,14 @@ struct CityToNameView: View {
     @State private var disableAll:Bool = false
     
     @State private var score:Int = 0
-    @State private var timer:Int = 60
+    @State private var time:Int = 60
     
     func startTimer() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            self.timer -= 1
-            if (self.timer <= 0) {
-                timer.invalidate()
+            self.settings.timer = timer
+            self.time -= 1
+            if (self.time <= 0) {
+                self.settings.timer?.invalidate()
                 self.disableAll = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
                     self.settings.finish = true
@@ -34,12 +35,13 @@ struct CityToNameView: View {
         }
     }
     func playAgain() {
+        self.settings.timer?.invalidate()
+        self.settings.finish = false
         self.score = 0
         settings.history.removeAll()
-        self.timer = 60
+        self.time = 60
         settings.generateOptions()
         self.resetButtons()
-        settings.finish = false
         self.startTimer()
     }
     func resetButtons() {
@@ -259,7 +261,7 @@ struct CityToNameView: View {
                 Spacer()
             }
             VStack{
-                ProgressBar(value: $timer).padding(10)
+                ProgressBar(value: $time).padding(10)
                 Spacer()
             }
         }
