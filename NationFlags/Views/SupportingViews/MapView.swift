@@ -12,14 +12,26 @@ import MapKit
 struct MapView: UIViewRepresentable {
     var coord: CLLocationCoordinate2D
     var zoom: CLLocationDegrees
+    var type:Int = 0
     
-    func makeUIView(context: Context) -> MKMapView {
-        MKMapView(frame:.zero)
+    var mapType:MKMapType {
+        if type == 0 {return .standard}
+        if type == 1 {return .hybrid}
+        if type == 2 {return .satellite}
+        return .standard
     }
-    func updateUIView(_ uiView: MKMapView, context: Context) {
+    func getMapType(type:Int){
+        
+    }
+    func makeUIView(context: Context) -> MKMapView {
+        let mapView = MKMapView(frame: .zero)
         let span = MKCoordinateSpan(latitudeDelta: zoom, longitudeDelta: zoom)
         let region = MKCoordinateRegion(center: coord, span: span)
-        uiView.setRegion(region, animated: true)
+        mapView.setRegion(region, animated: true)
+        return mapView
+    }
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+        uiView.mapType = mapType
     }
 }
 

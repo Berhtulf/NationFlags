@@ -18,7 +18,7 @@ struct NationList: View {
                     .padding(.horizontal)
             }
             List(restNation
-                .filter{NSLocalizedString($0.name, comment: "").contains(settings.search) || settings.search == "" || NSLocalizedString($0.capital, comment: "").contains(settings.search)}
+                .filter{NSLocalizedString($0.name.lowercased(), comment: "").contains(settings.search.lowercased()) || settings.search == "" || NSLocalizedString($0.capital.lowercased(), comment: "").contains(settings.search.lowercased())}
                 .sorted(by: {NSLocalizedString($0.name, comment: "") < NSLocalizedString($1.name, comment: "")
                 }), id: \.id) { nation in
                 NavigationLink(destination: NationDetail(nation: nation)){

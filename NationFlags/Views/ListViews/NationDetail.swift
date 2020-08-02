@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct NationDetail: View {
     @State var showInfo:Bool = false
@@ -21,6 +22,7 @@ struct NationDetail: View {
     @State var showLegend:Bool = false
     
     @State private var selection = "default"
+    @State private var mapType = 0
     var body: some View {
         TabView(selection: $selection){
             ZStack {
@@ -35,14 +37,14 @@ struct NationDetail: View {
                             .gesture(DragGesture(minimumDistance: 1, coordinateSpace: .local)
                                 .onEnded { value in
                                     if (value.translation.height > 20) { self.showLegend = false}
-                                })
+                            })
                     }.animation(.easeInOut)
                         .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)))
                 }
             }.onTapGesture {
-                    withAnimation(){
-                        self.showLegend = false
-                    }
+                withAnimation(){
+                    self.showLegend = false
+                }
             }
             .tag("default")
             .tabItem{
@@ -52,7 +54,14 @@ struct NationDetail: View {
                 }
             }
             ZStack {
-                MapView(coord: nation.locationCoordinate, zoom: nation.locationZoom)
+                MapView(coord: nation.locationCoordinate, zoom: nation.locationZoom, type: mapType)
+                HStack{
+                    VStack{
+                        Spacer()
+                        MapLayers(screenSide: "left", mapType: self.$mapType).padding().padding(.vertical, 15)
+                    }
+                    Spacer()
+                }
             }
             .tag("map")
             .tabItem{
@@ -212,5 +221,59 @@ struct RecognitionLegend: View {
             }
         }
         .padding()
+    }
+}
+
+struct MapLayers: View {
+    @State var showMapTypes:Bool = false
+    @State var screenSide:String = "left"
+    @Binding var mapType:Int
+    var body: some View {
+        HStack{
+            if screenSide == "left" {
+                Button(action: {
+                    withAnimation(){
+                        self.showMapTypes.toggle()
+                    }
+                }){
+                    ZStack{
+                        Image(systemName: "circle.fill").foregroundColor(.white).font(.title)
+                        Image(systemName: "square.stack.3d.up.fill")
+                    }.frame(height: 40)
+                }.buttonStyle(PlainButtonStyle())
+                if showMapTypes {
+                    HStack{
+                        Picker(selection: $mapType, label: Text("ModeSelect")) {
+                            Text("Standard").tag(0)
+                            Text("Hybrid").tag(1)
+                            Text("Satellite").tag(2)
+                        }.pickerStyle(SegmentedPickerStyle())
+                    }.frame(width:250)
+                }
+            }
+            else{
+                if showMapTypes {
+                    HStack{
+                        Picker(selection: $mapType, label: Text("ModeSelect")) {
+                            Text("Standard").tag(0)
+                            Text("Hybrid").tag(1)
+                            Text("Satellite").tag(2)
+                        }.pickerStyle(SegmentedPickerStyle())
+                    }.frame(width:250)
+                }
+                Button(action: {
+                    withAnimation(){
+                        self.showMapTypes.toggle()
+                    }
+                }){
+                    ZStack{
+                        Image(systemName: "circle.fill").foregroundColor(.white).font(.title)
+                        Image(systemName: "square.stack.3d.up.fill")
+                    }.frame(height: 40)
+                }.buttonStyle(PlainButtonStyle())
+            }
+        }.padding(.horizontal,6)
+        .background(Color.white)
+            .cornerRadius(20)
     }
 }
