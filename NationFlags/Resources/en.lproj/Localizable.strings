@@ -46,6 +46,10 @@
 "StateSize" = "Size";
 "Density" = "Density";
 
+"Hybrid" = "Hybrid";
+"Satellite" = "Satellite";
+"Standard" = "Standard";
+
 /* States */
 "Albania";
 "Andorra";

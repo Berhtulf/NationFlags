@@ -58,6 +58,10 @@
 "StateSize" = "Rozloha";
 "Density" = "Hustota";
 
+"Hybrid" = "Hybridní";
+"Satellite" = "Satelitní";
+"Standard" = "Standardní";
+
 /* States */
 "Abkhazia" = "Abcházie";
 "Afghanistan" = "Afghánistán";
