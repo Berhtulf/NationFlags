@@ -54,6 +54,7 @@ struct ModeSelect: View {
         .onAppear(){
             self.settings.finish = false
             self.gameMode = UserDefaults.standard.integer(forKey: "gameMode")
+            AppStoreReviewPrompt.requestReviewIfAppropriate()
         }
     }
 }

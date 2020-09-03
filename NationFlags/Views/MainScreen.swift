@@ -9,7 +9,6 @@
 import SwiftUI
 import MessageUI
 
-
 struct MainScreen: View {
     @EnvironmentObject var settings: GlobalSettings
     @State var result: Result<MFMailComposeResult, Error>? = nil
@@ -66,7 +65,7 @@ struct MainScreen: View {
                         .sheet(isPresented: $isShowingMailView) {
                             self.mailView()
                         }
-                }
+				}
             }
         }
     }
@@ -123,7 +122,6 @@ struct MailView: UIViewControllerRepresentable {
 
     func updateUIViewController(_ uiViewController: MFMailComposeViewController,
                                 context: UIViewControllerRepresentableContext<MailView>) {
-
     }
 }
 
