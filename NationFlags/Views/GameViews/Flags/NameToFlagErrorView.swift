@@ -246,7 +246,7 @@ struct NameToFlagErrorView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
             NavigationView{
-                NameToFlagErrorView().environmentObject(GlobalSettings()).environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+                NameToFlagErrorView().environmentObject(GlobalSettings())
             }
         }
         

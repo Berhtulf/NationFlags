@@ -248,7 +248,7 @@ struct NameToFlagLearnView: View {
 struct NameToFlagLearnView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
-            NavigationView{ NameToFlagLearnView().environmentObject(GlobalSettings()).environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+            NavigationView{ NameToFlagLearnView().environmentObject(GlobalSettings())
             }
         }
         
