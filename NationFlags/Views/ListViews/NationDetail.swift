@@ -17,9 +17,9 @@ struct NationDetail: View {
         formatter.dateStyle = .long
         return formatter
     }()
-    var dueDate = Date()
     var nation: Nation
     @State var showLegend:Bool = false
+    @State var location:MKCoordinateRegion
     
     @State private var selection = "default"
     @State private var mapType = 0
@@ -35,13 +35,14 @@ struct NationDetail: View {
                             .background(Color(UIColor.systemBackground))
                             .shadow(radius: 10)
                             .gesture(DragGesture(minimumDistance: 1, coordinateSpace: .local)
-                                .onEnded { value in
-                                    if (value.translation.height > 20) { self.showLegend = false}
-                            })
+                                        .onEnded { value in
+                                            if (value.translation.height > 20) { self.showLegend = false}
+                                        })
                     }.animation(.easeInOut)
-                        .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)))
+                    .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)))
                 }
-            }.onTapGesture {
+            }
+            .onTapGesture {
                 withAnimation(){
                     self.showLegend = false
                 }
@@ -58,7 +59,9 @@ struct NationDetail: View {
                 HStack{
                     VStack{
                         Spacer()
-                        MapLayers(screenSide: "left", mapType: self.$mapType).padding().padding(.vertical, 15)
+                        MapLayers(mapType: self.$mapType)
+                            .padding()
+                            .padding(.vertical, 15)
                     }
                     Spacer()
                 }
@@ -73,17 +76,17 @@ struct NationDetail: View {
         }
         .navigationBarTitle(LocalizedStringKey(nation.name), displayMode: .inline)
         .navigationBarItems(trailing:
-            Button(action: {
-                self.showInfo.toggle()
-            }
-            ) {
-                Image(systemName: "questionmark.circle")
-                    .padding()
-            }
+                                Button(action: {
+                                    self.showInfo.toggle()
+                                }
+                                ) {
+                                    Image(systemName: "questionmark.circle")
+                                        .padding()
+                                }
         )
-            .alert(isPresented: $showInfo) {
-                Alert(title: Text("infoLastUpdate"), message: Text("\(dueDate,formatter: NationDetail.self.taskDateFormat)"),
-                      dismissButton: .default(Text("Back")) {})
+        .alert(isPresented: $showInfo) {
+            Alert(title: Text("infoLastUpdate"), message: Text("\(settings.updateDate)"),
+                  dismissButton: .default(Text("Back")) {})
         }
     }
 }
@@ -92,7 +95,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
             NavigationView{
-                NationDetail(nation: restNation[153])
+                NationDetail(nation: restNation[153], location: MKCoordinateRegion(center: restNation[153].locationCoordinate, span: MKCoordinateSpan(latitudeDelta: restNation[153].locationZoom, longitudeDelta: restNation[153].locationZoom)))
             }
         }
     }
@@ -155,7 +158,7 @@ struct NationDetailInfo: View {
                                     withAnimation(){
                                         self.legend.toggle()
                                     }
-                            }
+                                }
                             Spacer()
                             Text(nation.recognition == "Red" ? "RedRecognition" : "OrangeRecognition")
                                 .padding(.horizontal).multilineTextAlignment(.trailing)
@@ -168,7 +171,7 @@ struct NationDetailInfo: View {
                                     withAnimation(){
                                         self.legend.toggle()
                                     }
-                            }
+                                }
                             Spacer()
                             Text(nation.recognition == "Pink" ? "PinkRecognition" : "GreenRecognition")
                                 .padding(.horizontal).multilineTextAlignment(.trailing)
@@ -226,54 +229,37 @@ struct RecognitionLegend: View {
 
 struct MapLayers: View {
     @State var showMapTypes:Bool = false
-    @State var screenSide:String = "left"
+    
     @Binding var mapType:Int
     var body: some View {
         HStack{
-            if screenSide == "left" {
-                Button(action: {
-                    withAnimation(){
-                        self.showMapTypes.toggle()
-                    }
-                }){
-                    ZStack{
-                        Image(systemName: "circle.fill").foregroundColor(.white).font(.title)
-                        Image(systemName: "square.stack.3d.up.fill")
-                    }.frame(height: 40)
-                }.buttonStyle(PlainButtonStyle())
-                if showMapTypes {
-                    HStack{
-                        Picker(selection: $mapType, label: Text("ModeSelect")) {
-                            Text("Standard").tag(0)
-                            Text("Hybrid").tag(1)
-                            Text("Satellite").tag(2)
-                        }.pickerStyle(SegmentedPickerStyle())
-                    }.frame(width:250)
+            Button(action: {
+                withAnimation(){
+                    self.showMapTypes.toggle()
                 }
+            }){
+                ZStack{
+//                    Image(systemName: "circle.fill")
+//                        .foregroundColor(Color(UIColor.systemBackground))
+//                        .font(.title)
+                    Image(systemName: "square.stack.3d.up.fill")
+                        .padding(5)
+                }.frame(height: 40)
+            }.buttonStyle(PlainButtonStyle())
+            if showMapTypes {
+                HStack{
+                    Picker(selection: $mapType, label: Text("ModeSelect")) {
+                        Text("Standard").tag(0)
+                        Text("Hybrid").tag(1)
+                        Text("Satellite").tag(2)
+                    }.pickerStyle(SegmentedPickerStyle())
+                }.frame(width:250)
             }
-            else{
-                if showMapTypes {
-                    HStack{
-                        Picker(selection: $mapType, label: Text("ModeSelect")) {
-                            Text("Standard").tag(0)
-                            Text("Hybrid").tag(1)
-                            Text("Satellite").tag(2)
-                        }.pickerStyle(SegmentedPickerStyle())
-                    }.frame(width:250)
-                }
-                Button(action: {
-                    withAnimation(){
-                        self.showMapTypes.toggle()
-                    }
-                }){
-                    ZStack{
-                        Image(systemName: "circle.fill").foregroundColor(.white).font(.title)
-                        Image(systemName: "square.stack.3d.up.fill")
-                    }.frame(height: 40)
-                }.buttonStyle(PlainButtonStyle())
-            }
-        }.padding(.horizontal,6)
-        .background(Color.white)
-            .cornerRadius(20)
+        }.padding(.horizontal,10)
+//        .background(
+//            RoundedRectangle(cornerRadius: 10, style: .circular)
+//                        .fill(Color(UIColor.systemBackground)))
+        .background(Color(UIColor.systemBackground))
+        .cornerRadius(20)
     }
 }

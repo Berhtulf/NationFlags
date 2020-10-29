@@ -15,14 +15,11 @@ struct MapView: UIViewRepresentable {
     var type:Int = 0
     
     var mapType:MKMapType {
-        if type == 0 {return .standard}
         if type == 1 {return .hybrid}
         if type == 2 {return .satellite}
         return .standard
     }
-    func getMapType(type:Int){
-        
-    }
+    
     func makeUIView(context: Context) -> MKMapView {
         let mapView = MKMapView(frame: .zero)
         let span = MKCoordinateSpan(latitudeDelta: zoom, longitudeDelta: zoom)

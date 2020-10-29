@@ -241,10 +241,10 @@ struct CityToNameErrorView: View {
         .alert(isPresented: $settings.finish) {
             Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    self.settings.saveScore(score: Int64(self.score), view: "CityToNameError")
+                    self.settings.saveScore(score: self.score, view: "CityToNameError")
                     self.presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    self.settings.saveScore(score: Int64(self.score), view: "CityToNameError")
+                    self.settings.saveScore(score: self.score, view: "CityToNameError")
                     self.playAgain()
                 })
         }

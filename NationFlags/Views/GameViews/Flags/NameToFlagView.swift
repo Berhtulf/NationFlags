@@ -56,7 +56,9 @@ struct NameToFlagView: View {
             VStack{
                 ProgressBar(value: $time).padding(.top, 10).padding(.horizontal)
                 Spacer()
-                FlagImage(image: settings.correctOption?.image).frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 250, alignment: .center).padding(.horizontal)
+                FlagImage(image: settings.correctOption?.image)
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 250, alignment: .center)
+                    .padding(.horizontal)
                 if (settings.options.count > 0) {
                     if settings.options[0].name == settings.correctOption?.name {
                         Button(action: {
@@ -244,7 +246,6 @@ struct NameToFlagView: View {
                 }
                 Spacer()
             }
-            
         }.navigationBarTitle("NameToFlag", displayMode: .inline)
             .onAppear() {
                 self.playAgain()
@@ -252,10 +253,10 @@ struct NameToFlagView: View {
         .alert(isPresented: $settings.finish) {
             Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    self.settings.saveScore(score: Int64(self.score), view: "NameToFlag")
+                    self.settings.saveScore(score: self.score, view: "NameToFlag")
                     self.presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    self.settings.saveScore(score: Int64(self.score), view: "NameToFlag")
+                    self.settings.saveScore(score: self.score, view: "NameToFlag")
                     self.playAgain()
                 })
         }

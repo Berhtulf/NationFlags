@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import GameKit
+import MapKit
 
 struct NationList: View {
     @EnvironmentObject var settings: GlobalSettings
@@ -21,13 +23,14 @@ struct NationList: View {
                 .filter{NSLocalizedString($0.name, comment: "").lowercased().contains(settings.search.lowercased()) || settings.search == "" || NSLocalizedString($0.capital, comment: "").lowercased().contains(settings.search.lowercased())}
                 .sorted(by: {NSLocalizedString($0.name, comment: "") < NSLocalizedString($1.name, comment: "")
                 }), id: \.id) { nation in
-                NavigationLink(destination: NationDetail(nation: nation)){
+                NavigationLink(destination: NationDetail(nation: nation, location: MKCoordinateRegion(center: nation.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: nation.locationZoom, longitudeDelta: nation.locationZoom)) )){
                     NationRow(nation: nation)
                 }
             }
-        }.navigationBarTitle("list", displayMode:.inline)
+        }.navigationBarTitle("list", displayMode: .inline)
             .navigationBarItems(trailing: SearchButton())
             .onAppear(){
+                GKAccessPoint.shared.isActive = false
                 if self.settings.search == "" {
                     self.settings.showSearch = false
                 }

@@ -7,31 +7,22 @@
 //
 
 import SwiftUI
+import GameKit
 
 struct ModeScrollView: View {
     @EnvironmentObject var settings: GlobalSettings
-    @State private var NameToFlag = UserDefaults.standard.integer(forKey: "NameToFlag")
-    @State private var NameToFlagError = UserDefaults.standard.integer(forKey: "NameToFlagError")
-    @State private var FlagToName = UserDefaults.standard.integer(forKey: "FlagToName")
-    @State private var FlagToNameError = UserDefaults.standard.integer(forKey: "FlagToNameError")
+    @AppStorage("NameToFlag") private var NameToFlag = 0
+    @AppStorage("NameToFlagError") private var NameToFlagError = 0
+    @AppStorage("FlagToName") private var FlagToName = 0
+    @AppStorage("FlagToNameError") private var FlagToNameError = 0
     
-    @State private var NameToCity = UserDefaults.standard.integer(forKey: "NameToCity")
-    @State private var NameToCityError = UserDefaults.standard.integer(forKey: "NameToCityError")
-    @State private var CityToName = UserDefaults.standard.integer(forKey: "CityToName")
-    @State private var CityToNameError = UserDefaults.standard.integer(forKey: "CityToNameError")
+    @AppStorage("NameToCity") private var NameToCity = 0
+    @AppStorage("NameToCityError") private var NameToCityError = 0
+    @AppStorage("CityToName") private var CityToName = 0
+    @AppStorage("CityToNameError") private var CityToNameError = 0
     
     @State private var showSubMenu:Int = 0
-    func refreshScore(){
-        self.NameToFlag = UserDefaults.standard.integer(forKey: "NameToFlag")
-        self.NameToFlagError = UserDefaults.standard.integer(forKey: "NameToFlagError")
-        self.FlagToName = UserDefaults.standard.integer(forKey: "FlagToName")
-        self.FlagToNameError = UserDefaults.standard.integer(forKey: "FlagToNameError")
-        
-        self.CityToName = UserDefaults.standard.integer(forKey: "CityToName")
-        self.CityToNameError = UserDefaults.standard.integer(forKey: "CityToNameError")
-        self.NameToCity = UserDefaults.standard.integer(forKey: "NameToCity")
-        self.NameToCityError = UserDefaults.standard.integer(forKey: "NameToCityError")
-    }
+    
     var gameMode:Int
     var body: some View {
         ScrollView{
@@ -297,7 +288,6 @@ struct ModeScrollView: View {
             }
         }
         .onAppear() {
-            self.refreshScore()
             self.settings.timer?.invalidate()
         }
     }

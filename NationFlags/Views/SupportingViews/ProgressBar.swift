@@ -10,9 +10,9 @@ import SwiftUI
 
 struct ProgressBar: View {
     @Binding var value:Int
+    
     var body: some View {
         GeometryReader { geometryReader in
-            // 3
             VStack {
                 ZStack(alignment: .leading) {
                     RoundedRectangle(cornerRadius: 5)

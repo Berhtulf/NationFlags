@@ -10,8 +10,8 @@ import SwiftUI
 
 struct ModeSelect: View {
     @EnvironmentObject var settings: GlobalSettings
-    @State private var firstLaunch = UserDefaults.standard.bool(forKey: "firstLaunch")
-    @State private var gameMode = UserDefaults.standard.integer(forKey: "gameMode")
+    @AppStorage("firstLaunch") private var firstLaunch = true
+    @AppStorage("gameMode") private var gameMode = 1
     
     var body: some View {
         ZStack{
@@ -35,25 +35,18 @@ struct ModeSelect: View {
                     .resizable()
                     .padding()
                     .aspectRatio(contentMode: .fit)
-                }.onDisappear(){
-                        UserDefaults.standard.set(false, forKey: "firstLaunch")
-                    }
+                }
             }
         }
         .navigationBarTitle("GameSettings", displayMode: .inline)
         .navigationBarItems(trailing: Button(action:{
-            UserDefaults.standard.set(false, forKey: "firstLaunch")
-                self.firstLaunch.toggle()
+            firstLaunch.toggle()
         }){
             Image(systemName: "questionmark.circle")
                 .padding()
         })
-        .onDisappear(){
-            UserDefaults.standard.set(self.gameMode, forKey: "gameMode")
-        }
         .onAppear(){
             self.settings.finish = false
-            self.gameMode = UserDefaults.standard.integer(forKey: "gameMode")
             AppStoreReviewPrompt.requestReviewIfAppropriate()
         }
     }

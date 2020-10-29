@@ -217,10 +217,8 @@ struct FlagToNameLearnView: View {
         .alert(isPresented: $settings.finish) {
             Alert(title: Text("Game over!"), message: Text("score <\(self.score)>/<\(self.settings.pool.count)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    self.settings.saveScore(score: Int64(self.score), view: "FlagToNameError")
                     self.presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    self.settings.saveScore(score: Int64(self.score), view: "FlagToNameError")
                     self.playAgain()
                 })
         }

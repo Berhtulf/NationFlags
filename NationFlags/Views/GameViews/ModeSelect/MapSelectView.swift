@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import GameKit
 
 struct MapSelectView: View {
     @EnvironmentObject var settings: GlobalSettings
@@ -15,7 +16,6 @@ struct MapSelectView: View {
     public var dragGesture: some Gesture {
         DragGesture(minimumDistance: 0, coordinateSpace: .local)
             .onEnded {
-                print("Changed \($0.location)")
                 if $0.location.x > self.mapWidth * 0.75 && $0.location.y > self.mapHeight / 2{
                     if self.settings.regions.contains("Oceania") {
                         self.settings.regions.remove("Oceania")
@@ -62,16 +62,17 @@ struct MapSelectView: View {
         }
         //print(settings.img)
     }
+    
     var body: some View {
         GeometryReader { geometryReader in
             ModeSelectMapImage()
                 .gesture(self.dragGesture)
                 .onAppear(){
+                    GKAccessPoint.shared.isActive = false
                     self.mapWidth = geometryReader.size.width
                     self.mapHeight = geometryReader.size.height
             }
-        }
-        .frame(minWidth: 300, idealWidth: mapWidth, maxWidth: 414, idealHeight: mapHeight, maxHeight: 225)
+        }.frame(minWidth: 300, idealWidth: mapWidth, maxWidth: 414, idealHeight: mapHeight, maxHeight: 225)
     }
 }
 

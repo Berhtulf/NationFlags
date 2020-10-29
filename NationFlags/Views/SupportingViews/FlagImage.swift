@@ -17,7 +17,7 @@ struct FlagImage: View {
             .overlay(
                 RoundedRectangle(cornerRadius: 4)
                     .stroke(Color("DarkWhite"), lineWidth: 1)
-        )
+            )
             .clipped()
             .shadow(radius: 4)
             .aspectRatio(contentMode: .fit)
@@ -42,7 +42,7 @@ struct NationDetailFlag: View{
                     .overlay(
                         RoundedRectangle(cornerRadius: 4)
                             .stroke(Color("DarkWhite"), lineWidth: 1)
-                )
+                    )
                     .clipped()
                     .shadow(radius: 4)
                     .aspectRatio(contentMode: .fit)

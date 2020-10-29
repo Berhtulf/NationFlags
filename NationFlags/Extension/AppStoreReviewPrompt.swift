@@ -1,42 +1,36 @@
 import StoreKit
+import SwiftUI
+
+class StoreReview {
+    @AppStorage("ActionCount") var actionCount = 0
+    @AppStorage("lastReviewRequestAppVersion") var lastVersion:String = ""
+}
 
 struct AppStoreReviewPrompt {
-  // 1.
-  static let minimumActionCount = 15
-
-  static func requestReviewIfAppropriate() {
-    let defaults = UserDefaults.standard
-    let bundle = Bundle.main
-
-    // 2.
-    var actionCount = defaults.integer(forKey: "ActionCount")
-
-    // 3.
-    actionCount += 1
-
-    // 4.
-    defaults.set(actionCount, forKey: "ActionCount")
-
-    // 5.
-    guard actionCount >= minimumActionCount else {
-      return
+    // 1.
+    static let minimumActionCount = 15
+    
+    static func requestReviewIfAppropriate() {
+        let bundle = Bundle.main
+        let storeReview = StoreReview()
+        // 3.
+        storeReview.actionCount += 1
+        
+        // 5.
+        guard storeReview.actionCount >= minimumActionCount else { return }
+        
+        // 6.
+        let bundleVersionKey = kCFBundleVersionKey as String
+        let currentVersion = bundle.object(forInfoDictionaryKey: bundleVersionKey) as? String
+        
+        // 7.
+        guard storeReview.lastVersion != currentVersion else { return }
+        
+        // 8.
+        SKStoreReviewController.requestReview()
+        
+        // 9.
+        storeReview.actionCount = 0
+        storeReview.lastVersion = currentVersion ?? ""
     }
-
-    // 6.
-    let bundleVersionKey = kCFBundleVersionKey as String
-    let currentVersion = bundle.object(forInfoDictionaryKey: bundleVersionKey) as? String
-    let lastVersion = defaults.string(forKey: "lastReviewRequestAppVersion")
-
-    // 7.
-    guard lastVersion == nil || lastVersion != currentVersion else {
-      return
-    }
-
-    // 8.
-    SKStoreReviewController.requestReview()
-
-    // 9.
-    defaults.set(0, forKey: "ActionCount")
-    defaults.set(currentVersion, forKey: "lastReviewRequestAppVersion")
-  }
 }
