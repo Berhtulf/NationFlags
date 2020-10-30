@@ -6,6 +6,7 @@
   Copyright © 2019 Martin Václavík. All rights reserved.
 */
 "Countries" = "Národní vlajky";
+"WidgetDescription" = "Zobrazuje země a jejich základní informace";
 
 "Cancel" = "Zrušit";
 "Back" = "Zpět";

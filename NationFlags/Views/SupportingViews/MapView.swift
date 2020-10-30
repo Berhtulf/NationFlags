@@ -31,12 +31,3 @@ struct MapView: UIViewRepresentable {
         uiView.mapType = mapType
     }
 }
-
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group{
-        MapView(coord: restNation[3].locationCoordinate,
-                zoom:  restNation[3].locationZoom)
-        }
-    }
-}

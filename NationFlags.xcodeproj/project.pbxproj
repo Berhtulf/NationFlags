@@ -48,7 +48,45 @@
 		63A3520D240BCB6A009B636A /* CityToNameLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3520C240BCB6A009B636A /* CityToNameLearnView.swift */; };
 		63A3520F240BCB89009B636A /* NameToCityLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3520E240BCB89009B636A /* NameToCityLearnView.swift */; };
 		63E58B4F2520B88C00B4702C /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E58B4E2520B88C00B4702C /* GameCenter.swift */; };
+		63EFEE9C254B00D80031A325 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EFEE9B254B00D80031A325 /* WidgetKit.framework */; };
+		63EFEE9E254B00D80031A325 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EFEE9D254B00D80031A325 /* SwiftUI.framework */; };
+		63EFEEA1254B00D80031A325 /* NationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFEEA0254B00D80031A325 /* NationWidget.swift */; };
+		63EFEEA4254B00DA0031A325 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63EFEEA3254B00DA0031A325 /* Assets.xcassets */; };
+		63EFEEAA254B00DA0031A325 /* NationWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 63EFEE99254B00D80031A325 /* NationWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		63EFEEB1254B01770031A325 /* Nation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309E41F23F019A4009C9B0E /* Nation.swift */; };
+		63EFEEC5254B24440031A325 /* FlagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309E42E23F01A63009C9B0E /* FlagImage.swift */; };
+		63EFEED2254B348E0031A325 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6309E45623F01DDD009C9B0E /* Localizable.strings */; };
+		63EFEED5254C25A80031A325 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6309E43023F01A6E009C9B0E /* MapView.swift */; };
+		63EFEEEA254C92C40031A325 /* NationEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFEEE4254C925B0031A325 /* NationEntry.swift */; };
+		63EFEEEF254C92C80031A325 /* SmallWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFEEDD254C920E0031A325 /* SmallWidgetView.swift */; };
+		63EFEEF8254C93120031A325 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFEEF4254C93080031A325 /* MediumWidgetView.swift */; };
+		63EFEEFC254C93310031A325 /* LargeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFEEFB254C93310031A325 /* LargeWidgetView.swift */; };
+		63EFEF00254C93530031A325 /* NationWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFEEFF254C93530031A325 /* NationWidgetEntryView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		63EFEEA8254B00DA0031A325 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6321B5F823E07CE500DC745D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63EFEE98254B00D80031A325;
+			remoteInfo = NationWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		63EFEEAE254B00DA0031A325 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				63EFEEAA254B00DA0031A325 /* NationWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6309E41423F01891009C9B0E /* NationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationList.swift; sourceTree = "<group>"; };
@@ -96,6 +134,19 @@
 		63A3520C240BCB6A009B636A /* CityToNameLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityToNameLearnView.swift; sourceTree = "<group>"; };
 		63A3520E240BCB89009B636A /* NameToCityLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameToCityLearnView.swift; sourceTree = "<group>"; };
 		63E58B4E2520B88C00B4702C /* GameCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
+		63EFEE93254B00240031A325 /* NationFlags.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NationFlags.entitlements; sourceTree = "<group>"; };
+		63EFEE99254B00D80031A325 /* NationWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NationWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		63EFEE9B254B00D80031A325 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		63EFEE9D254B00D80031A325 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		63EFEEA0254B00D80031A325 /* NationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationWidget.swift; sourceTree = "<group>"; };
+		63EFEEA3254B00DA0031A325 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63EFEEA5254B00DA0031A325 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63EFEEBD254B03AB0031A325 /* NationWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NationWidgetExtension.entitlements; sourceTree = "<group>"; };
+		63EFEEDD254C920E0031A325 /* SmallWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallWidgetView.swift; sourceTree = "<group>"; };
+		63EFEEE4254C925B0031A325 /* NationEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationEntry.swift; sourceTree = "<group>"; };
+		63EFEEF4254C93080031A325 /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
+		63EFEEFB254C93310031A325 /* LargeWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeWidgetView.swift; sourceTree = "<group>"; };
+		63EFEEFF254C93530031A325 /* NationWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationWidgetEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +154,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63EFEE96254B00D80031A325 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63EFEE9E254B00D80031A325 /* SwiftUI.framework in Frameworks */,
+				63EFEE9C254B00D80031A325 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +283,10 @@
 		6321B5F723E07CE500DC745D = {
 			isa = PBXGroup;
 			children = (
+				63EFEEBD254B03AB0031A325 /* NationWidgetExtension.entitlements */,
 				6321B60223E07CE500DC745D /* NationFlags */,
+				63EFEE9F254B00D80031A325 /* NationWidget */,
+				63EFEE9A254B00D80031A325 /* Frameworks */,
 				6321B60123E07CE500DC745D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -232,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				6321B60023E07CE500DC745D /* NationFlags.app */,
+				63EFEE99254B00D80031A325 /* NationWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,6 +303,7 @@
 		6321B60223E07CE500DC745D /* NationFlags */ = {
 			isa = PBXGroup;
 			children = (
+				63EFEE93254B00240031A325 /* NationFlags.entitlements */,
 				63702AC52520EADA00101EA8 /* NationFlagsApp.swift */,
 				6321B60C23E07CE700DC745D /* Assets.xcassets */,
 				6309E44E23F01D0E009C9B0E /* Info.plist */,
@@ -270,6 +335,46 @@
 			path = ModeSelect;
 			sourceTree = "<group>";
 		};
+		63EFEE9A254B00D80031A325 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				63EFEE9B254B00D80031A325 /* WidgetKit.framework */,
+				63EFEE9D254B00D80031A325 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		63EFEE9F254B00D80031A325 /* NationWidget */ = {
+			isa = PBXGroup;
+			children = (
+				63EFEEE3254C924F0031A325 /* Models */,
+				63EFEEDC254C91FD0031A325 /* Views */,
+				63EFEEA0254B00D80031A325 /* NationWidget.swift */,
+				63EFEEA3254B00DA0031A325 /* Assets.xcassets */,
+				63EFEEA5254B00DA0031A325 /* Info.plist */,
+			);
+			path = NationWidget;
+			sourceTree = "<group>";
+		};
+		63EFEEDC254C91FD0031A325 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63EFEEFF254C93530031A325 /* NationWidgetEntryView.swift */,
+				63EFEEDD254C920E0031A325 /* SmallWidgetView.swift */,
+				63EFEEF4254C93080031A325 /* MediumWidgetView.swift */,
+				63EFEEFB254C93310031A325 /* LargeWidgetView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		63EFEEE3254C924F0031A325 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63EFEEE4254C925B0031A325 /* NationEntry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -280,15 +385,34 @@
 				6321B5FC23E07CE500DC745D /* Sources */,
 				6321B5FD23E07CE500DC745D /* Frameworks */,
 				6321B5FE23E07CE500DC745D /* Resources */,
+				63EFEEAE254B00DA0031A325 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				63EFEEA9254B00DA0031A325 /* PBXTargetDependency */,
 			);
 			name = NationFlags;
 			productName = NationFlags;
 			productReference = 6321B60023E07CE500DC745D /* NationFlags.app */;
 			productType = "com.apple.product-type.application";
+		};
+		63EFEE98254B00D80031A325 /* NationWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63EFEEAB254B00DA0031A325 /* Build configuration list for PBXNativeTarget "NationWidgetExtension" */;
+			buildPhases = (
+				63EFEE95254B00D80031A325 /* Sources */,
+				63EFEE96254B00D80031A325 /* Frameworks */,
+				63EFEE97254B00D80031A325 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NationWidgetExtension;
+			productName = NationWidgetExtension;
+			productReference = 63EFEE99254B00D80031A325 /* NationWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -296,12 +420,15 @@
 		6321B5F823E07CE500DC745D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1170;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Martin Václavík";
 				TargetAttributes = {
 					6321B5FF23E07CE500DC745D = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					63EFEE98254B00D80031A325 = {
+						CreatedOnToolsVersion = 12.0.1;
 					};
 				};
 			};
@@ -320,6 +447,7 @@
 			projectRoot = "";
 			targets = (
 				6321B5FF23E07CE500DC745D /* NationFlags */,
+				63EFEE98254B00D80031A325 /* NationWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -334,6 +462,15 @@
 				6321B61023E07CE700DC745D /* Preview Assets.xcassets in Resources */,
 				6309E46023F01E56009C9B0E /* Nations.json in Resources */,
 				6321B60D23E07CE700DC745D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63EFEE97254B00D80031A325 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63EFEEA4254B00DA0031A325 /* Assets.xcassets in Resources */,
+				63EFEED2254B348E0031A325 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +520,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		63EFEE95254B00D80031A325 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63EFEEA1254B00D80031A325 /* NationWidget.swift in Sources */,
+				63EFEEF8254C93120031A325 /* MediumWidgetView.swift in Sources */,
+				63EFEED5254C25A80031A325 /* MapView.swift in Sources */,
+				63EFEEFC254C93310031A325 /* LargeWidgetView.swift in Sources */,
+				63EFEEEA254C92C40031A325 /* NationEntry.swift in Sources */,
+				63EFEF00254C93530031A325 /* NationWidgetEntryView.swift in Sources */,
+				63EFEEB1254B01770031A325 /* Nation.swift in Sources */,
+				63EFEEC5254B24440031A325 /* FlagImage.swift in Sources */,
+				63EFEEEF254C92C80031A325 /* SmallWidgetView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63EFEEA9254B00DA0031A325 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63EFEE98254B00D80031A325 /* NationWidgetExtension */;
+			targetProxy = 63EFEEA8254B00DA0031A325 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6309E45623F01DDD009C9B0E /* Localizable.strings */ = {
@@ -528,9 +689,11 @@
 		6321B61823E07CE700DC745D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NationFlags/NationFlags.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"NationFlags/Preview Content\"";
 				DEVELOPMENT_TEAM = 45Z42MYT8F;
 				ENABLE_PREVIEWS = YES;
@@ -551,9 +714,11 @@
 		6321B61923E07CE700DC745D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NationFlags/NationFlags.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"NationFlags/Preview Content\"";
 				DEVELOPMENT_TEAM = 45Z42MYT8F;
 				ENABLE_PREVIEWS = YES;
@@ -568,6 +733,54 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		63EFEEAC254B00DA0031A325 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = NationWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 45Z42MYT8F;
+				INFOPLIST_FILE = NationWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaclavikmartin.nationFlags.NationWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		63EFEEAD254B00DA0031A325 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = NationWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 45Z42MYT8F;
+				INFOPLIST_FILE = NationWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vaclavikmartin.nationFlags.NationWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -588,6 +801,15 @@
 			buildConfigurations = (
 				6321B61823E07CE700DC745D /* Debug */,
 				6321B61923E07CE700DC745D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63EFEEAB254B00DA0031A325 /* Build configuration list for PBXNativeTarget "NationWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63EFEEAC254B00DA0031A325 /* Debug */,
+				63EFEEAD254B00DA0031A325 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

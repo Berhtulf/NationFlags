@@ -35,6 +35,7 @@ struct MainScreen: View {
 				Spacer()
 			}.edgesIgnoringSafeArea(.all)
 			.onAppear{
+				print(restNation.count)
 				GKAccessPoint.shared.isActive = true
 			}
 		}

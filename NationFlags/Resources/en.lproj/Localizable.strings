@@ -6,6 +6,7 @@
   Copyright © 2019 Martin Václavík. All rights reserved.
 */
 "Countries" = "National Flags";
+"WidgetDescription" = "Displays random nations and their basic informations";
 
 "score <%lld>" = "Your score: %lld points";
 "score <%lld>/<%lld>" = "Correct answers: %lld/%lld";

@@ -67,7 +67,7 @@ class GlobalSettings: ObservableObject {
         
         GKAchievement.report(achievements, withCompletionHandler: { error in
             guard error == nil else {
-                print("Error saving, \(error?.localizedDescription)")
+                print("Error saving, \(error!.localizedDescription)")
                 return
             }
             print("Done")
