@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct NationWidgetEntryView: View {
     @Environment(\.widgetFamily) var family: WidgetFamily

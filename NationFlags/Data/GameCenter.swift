@@ -11,10 +11,8 @@ import GameKit
 
 class GameCenter: ObservableObject {
     let localPlayer = GKLocalPlayer.local
-    let gameSave = GKSavedGame()
-    let playerName = GKLocalPlayer.local.displayName
-    
-    func authenticateUser() {
+    var viewController: UIViewController?
+    func authenticateUser() -> UIViewController? {
         localPlayer.authenticateHandler = { vc, error in
             guard error == nil else {
                 print(error?.localizedDescription ?? "")
@@ -22,9 +20,11 @@ class GameCenter: ObservableObject {
             }
             GKAccessPoint.shared.location = .topLeading
             GKAccessPoint.shared.showHighlights = true
-            GKAccessPoint.shared.isActive = self.localPlayer.isAuthenticated
+            
+            self.viewController = vc
             
             GKAchievement.loadAchievements()
         }
+        return viewController
     }
 }

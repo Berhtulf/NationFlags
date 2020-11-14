@@ -238,13 +238,9 @@ struct MapLayers: View {
                     self.showMapTypes.toggle()
                 }
             }){
-                ZStack{
-//                    Image(systemName: "circle.fill")
-//                        .foregroundColor(Color(UIColor.systemBackground))
-//                        .font(.title)
-                    Image(systemName: "square.stack.3d.up.fill")
-                        .padding(5)
-                }.frame(height: 40)
+                Image(systemName: "square.stack.3d.up.fill")
+                    .padding(showMapTypes ? 0 : 10)
+                    .frame(height: 40)
             }.buttonStyle(PlainButtonStyle())
             if showMapTypes {
                 HStack{
@@ -255,10 +251,8 @@ struct MapLayers: View {
                     }.pickerStyle(SegmentedPickerStyle())
                 }.frame(width:250)
             }
-        }.padding(.horizontal,10)
-//        .background(
-//            RoundedRectangle(cornerRadius: 10, style: .circular)
-//                        .fill(Color(UIColor.systemBackground)))
+        }
+        .padding(.horizontal, showMapTypes ? 10 : 0)
         .background(Color(UIColor.systemBackground))
         .cornerRadius(20)
     }

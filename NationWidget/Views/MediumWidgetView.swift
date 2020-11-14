@@ -17,22 +17,25 @@ struct MediumWidgetView: View {
                 .font(.headline)
                 .multilineTextAlignment(.center)
             HStack{
+                Spacer()
                 FlagImage(image: entry.nation.image)
-                    .scaledToFit()
                 Spacer()
                 VStack (alignment: .leading, spacing: 5){
                     HStack{
                         Label("\(entry.nation.capital)", systemImage: "house.fill")
                             .allowsTightening(true)
                             .lineLimit(1)
+                            .minimumScaleFactor(0.5)
                     }
                     HStack{
                         Label("\(entry.nation.population)", systemImage: "person.2.fill")
                             .allowsTightening(true)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
                     }
                 }
                 .font(.system(size: 15))
-                .padding()
+                Spacer()
             }
         }
         .padding()

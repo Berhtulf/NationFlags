@@ -15,8 +15,7 @@ struct NationWidget: Widget {
     let kind: String = "NationWidget"
     
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind,
-                            provider: Provider()) { entry in
+        StaticConfiguration(kind: kind, provider: Provider()) { entry in
             NationWidgetEntryView(entry: entry)
         }
         .configurationDisplayName(LocalizedStringKey("Countries"))
@@ -28,13 +27,13 @@ struct Provider: TimelineProvider {
     @AppStorage("nations", store: UserDefaults(suiteName: "group.com.vaclavikmartin.nationFlags"))
     var nationsData: Data = Data()
     
-    func getSnapshot(in context: Context, completion: @escaping (NationEntry) -> Void) {
-        guard let nation = try? JSONDecoder().decode([Nation].self, from: nationsData) else { return }
-        let item = nation.randomElement()!
+    //Preview ve Widget gallery
+    func getSnapshot(in context: Context, completion: @escaping (NationEntry) -> (Void)) {
+        let item = Nation.czechRepublic
         let mapSnapshotOptions = MKMapSnapshotter.Options()
-        mapSnapshotOptions.region = MKCoordinateRegion(center: item.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: item.locationZoom + 10, longitudeDelta: item.locationZoom + 10))
+        mapSnapshotOptions.region = MKCoordinateRegion(center: item.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: item.locationZoom  * 1.15, longitudeDelta: item.locationZoom * 1.15))
         mapSnapshotOptions.scale = UIScreen.main.scale
-        mapSnapshotOptions.size = CGSize(width: UIScreen.main.bounds.height * 0.8 , height: UIScreen.main.bounds.height / 4)
+        mapSnapshotOptions.size = CGSize(width: UIScreen.main.bounds.width * 0.9 , height: UIScreen.main.bounds.height / 4 + 10)
         
         let snapShotter = MKMapSnapshotter(options: mapSnapshotOptions)
         
@@ -51,15 +50,16 @@ struct Provider: TimelineProvider {
         }
     }
     
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
+    //Reálná data na obrazovce uživatele
+    func getTimeline(in context: Context, completion: @escaping (Timeline<NationEntry>) -> Void) {
         guard let nation = try? JSONDecoder().decode([Nation].self, from: nationsData) else { return }
         let item = nation.randomElement()!
         let date = Date()
         //        let entry = NationEntry(nation: nation.randomElement()!)
-        let nextUpdateDate = Calendar.current.date(byAdding: .second, value: 1, to: date)!
+        let nextUpdateDate = Calendar.current.date(byAdding: .day, value: 1, to: date)!
         
         let mapSnapshotOptions = MKMapSnapshotter.Options()
-        mapSnapshotOptions.region = MKCoordinateRegion(center: item.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: item.locationZoom + 10, longitudeDelta: item.locationZoom + 10))
+        mapSnapshotOptions.region = MKCoordinateRegion(center: item.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: item.locationZoom * 1.2, longitudeDelta: item.locationZoom * 1.1))
         mapSnapshotOptions.scale = UIScreen.main.scale
         mapSnapshotOptions.size = CGSize(width: UIScreen.main.bounds.width * 0.9 , height: UIScreen.main.bounds.height / 4 + 10)
         

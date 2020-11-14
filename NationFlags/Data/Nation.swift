@@ -38,4 +38,15 @@ struct Nation: Hashable, Codable, Identifiable {
     var locationZoom:CLLocationDegrees{
         CLLocationDegrees(latlngZm[2])
     }
+    
+    static let czechRepublic = Nation(
+        latlngZm: [49.75, 15.5, 10],
+        name: "Czech Republic",
+        capital: "Prague",
+        region: "Europe",
+        population: 10558524,
+        area: 78865,
+        alpha2Code: "CZ",
+        recognition: "All"
+    )
 }

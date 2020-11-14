@@ -15,8 +15,10 @@ struct LargeWidgetView: View {
         VStack{
             MediumWidgetView(entry: entry)
             if let image = entry.image {
-                Image(uiImage: image)
+            Image(uiImage: image)
                     .shadow(radius: 4)
+            }else{
+                Rectangle()
             }
         }
     }

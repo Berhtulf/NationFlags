@@ -16,8 +16,12 @@ struct SmallWidgetView: View {
         VStack{
             Text(LocalizedStringKey(entry.nation.name))
                 .font(.headline)
+                .lineLimit(2)
+                .minimumScaleFactor(0.5)
             Text(LocalizedStringKey(entry.nation.capital))
                 .font(.caption)
+                .lineLimit(1)
+                .minimumScaleFactor(0.5)
             Spacer()
             FlagImage(image: entry.nation.image)
                 .scaledToFit()
