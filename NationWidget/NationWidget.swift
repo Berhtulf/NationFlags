@@ -33,7 +33,7 @@ struct Provider: TimelineProvider {
         let mapSnapshotOptions = MKMapSnapshotter.Options()
         mapSnapshotOptions.region = MKCoordinateRegion(center: item.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: item.locationZoom  * 1.15, longitudeDelta: item.locationZoom * 1.15))
         mapSnapshotOptions.scale = UIScreen.main.scale
-        mapSnapshotOptions.size = CGSize(width: UIScreen.main.bounds.width * 0.9 , height: UIScreen.main.bounds.height / 4 + 10)
+        mapSnapshotOptions.size = CGSize(width: 400 , height: 250)
         
         let snapShotter = MKMapSnapshotter(options: mapSnapshotOptions)
         
@@ -59,9 +59,9 @@ struct Provider: TimelineProvider {
         let nextUpdateDate = Calendar.current.date(byAdding: .day, value: 1, to: date)!
         
         let mapSnapshotOptions = MKMapSnapshotter.Options()
-        mapSnapshotOptions.region = MKCoordinateRegion(center: item.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: item.locationZoom * 1.2, longitudeDelta: item.locationZoom * 1.1))
+        mapSnapshotOptions.region = MKCoordinateRegion(center: item.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: item.locationZoom * 1.1, longitudeDelta: item.locationZoom * 1.1))
         mapSnapshotOptions.scale = UIScreen.main.scale
-        mapSnapshotOptions.size = CGSize(width: UIScreen.main.bounds.width * 0.9 , height: UIScreen.main.bounds.height / 4 + 10)
+        mapSnapshotOptions.size = CGSize(width: 400 , height: 250)
         
         let snapShotter = MKMapSnapshotter(options: mapSnapshotOptions)
         
@@ -73,15 +73,12 @@ struct Provider: TimelineProvider {
             let image = snap?.image
             entry.image = image
             
-            print(entry)
-            
             let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
             completion(timeline)
         }
     }
     
     func placeholder(in context: Context) -> NationEntry {
-        let nation = try? JSONDecoder().decode([Nation].self, from: nationsData)
-        return NationEntry(date: Date(), nation: nation!.first!)
+        return NationEntry(date: Date(), nation: Nation.czechRepublic)
     }
 }

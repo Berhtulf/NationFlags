@@ -12,13 +12,20 @@ struct LargeWidgetView: View {
     let entry: NationEntry
     
     var body: some View {
-        VStack{
-            MediumWidgetView(entry: entry)
-            if let image = entry.image {
-            Image(uiImage: image)
-                    .shadow(radius: 4)
-            }else{
-                Rectangle()
+        GeometryReader{ geometry in
+            VStack{
+                MediumWidgetView(entry: entry)
+                    .frame(height: geometry.size.height/3)
+                Spacer()
+                VStack{
+                    if let image = entry.image {
+                        Image(uiImage: image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                    }
+                }
+                .shadow(radius: 4)
+                .frame(height: geometry.size.height/1.5)
             }
         }
     }

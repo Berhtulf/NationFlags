@@ -22,7 +22,7 @@ struct MediumWidgetView: View {
                 Spacer()
                 VStack (alignment: .leading, spacing: 5){
                     HStack{
-                        Label("\(entry.nation.capital)", systemImage: "house.fill")
+                        Label(LocalizedStringKey(entry.nation.capital), systemImage: "house.fill")
                             .allowsTightening(true)
                             .lineLimit(1)
                             .minimumScaleFactor(0.5)

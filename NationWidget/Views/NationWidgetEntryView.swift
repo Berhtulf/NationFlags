@@ -25,3 +25,16 @@ struct NationWidgetEntryView: View {
         }
     }
 }
+
+struct NationWidgetEntryView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group{
+            NationWidgetEntryView(entry: NationEntry(date: Date(), nation: Nation.czechRepublic))
+                .previewContext(WidgetPreviewContext(family: .systemSmall))
+            NationWidgetEntryView(entry: NationEntry(date: Date(), nation: Nation.czechRepublic))
+                .previewContext(WidgetPreviewContext(family: .systemMedium))
+            NationWidgetEntryView(entry: NationEntry(date: Date(), nation: Nation.czechRepublic))
+                .previewContext(WidgetPreviewContext(family: .systemLarge))
+        }
+    }
+}
