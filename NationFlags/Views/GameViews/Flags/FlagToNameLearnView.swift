@@ -37,7 +37,8 @@ struct FlagToNameLearnView: View {
     var body: some View {
         VStack{
             Spacer()
-            if settings.correctOption != nil { Text(LocalizedStringKey(settings.correctOption!.name))
+            if let correctOption = settings.correctOption {
+                Text(LocalizedStringKey(correctOption.name))
                 .font(.title)
                 .lineLimit(1)
                 .allowsTightening(true)

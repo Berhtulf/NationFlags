@@ -24,9 +24,6 @@ struct NationWidget: Widget {
 }
 
 struct Provider: TimelineProvider {
-    @AppStorage("nations", store: UserDefaults(suiteName: "group.com.vaclavikmartin.nationFlags"))
-    var nationsData: Data = Data()
-    
     //Preview ve Widget gallery
     func getSnapshot(in context: Context, completion: @escaping (NationEntry) -> (Void)) {
         let item = Nation.czechRepublic
@@ -52,33 +49,75 @@ struct Provider: TimelineProvider {
     
     //Reálná data na obrazovce uživatele
     func getTimeline(in context: Context, completion: @escaping (Timeline<NationEntry>) -> Void) {
-        guard let nation = try? JSONDecoder().decode([Nation].self, from: nationsData) else { return }
-        let item = nation.randomElement()!
-        let date = Date()
-        //        let entry = NationEntry(nation: nation.randomElement()!)
-        let nextUpdateDate = Calendar.current.date(byAdding: .day, value: 1, to: date)!
-        
-        let mapSnapshotOptions = MKMapSnapshotter.Options()
-        mapSnapshotOptions.region = MKCoordinateRegion(center: item.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: item.locationZoom * 1.1, longitudeDelta: item.locationZoom * 1.1))
-        mapSnapshotOptions.scale = UIScreen.main.scale
-        mapSnapshotOptions.size = CGSize(width: 400 , height: 250)
-        
-        let snapShotter = MKMapSnapshotter(options: mapSnapshotOptions)
-        
-        var entry = NationEntry(
-            date: date,
-            nation: item
-        )
-        snapShotter.start { (snap, error) in
-            let image = snap?.image
-            entry.image = image
+        print("test")
+        getSamples(count: 1, context: context){ samples in
+            let date = Date()
+            let nextUpdateDate = Calendar.current.date(byAdding: .day, value: 1, to: date)!
             
-            let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
+            let timeline = Timeline(entries: samples, policy: .after(nextUpdateDate))
             completion(timeline)
+            print("Timeline")
         }
     }
     
     func placeholder(in context: Context) -> NationEntry {
         return NationEntry(date: Date(), nation: Nation.czechRepublic)
+    }
+    
+    
+    func getSamples(count: Int, context: Context, completion: @escaping (_ samples: [NationEntry]) -> Void) {
+        let nationSample = getNationSample(count: count)
+        generateSamples(sampleList: nationSample, context: context){ retval in
+            completion(retval)
+        }
+        
+    }
+    func generateSamples(sampleList: Set<Nation>, context: Context, completion: @escaping (([NationEntry]) -> Void)){
+        let currentDate = Date()
+        var dayOffset = 0
+        var retval: [NationEntry] = []
+        for nation in sampleList {
+            let entryDate = Calendar.current.date(byAdding: .day, value: dayOffset, to: currentDate)!
+            generateSample(nation: nation, context: context) { sample in
+                var entry = sample
+                entry.date = entryDate
+                retval.append(entry)
+                dayOffset += 1
+                if (dayOffset == sampleList.count){
+                    completion(retval)
+                }
+            }
+        }
+    }
+    
+    func generateSample(nation: Nation, context: Context, completion: @escaping ((NationEntry) -> Void)){
+        var entry = NationEntry(date: Date(), nation: nation)
+        if context.family == .systemLarge {
+            let mapSnapshotOptions = MKMapSnapshotter.Options()
+            mapSnapshotOptions.region = MKCoordinateRegion(center: nation.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: nation.locationZoom * 1.1, longitudeDelta: nation.locationZoom * 1.1))
+//            mapSnapshotOptions.scale = 1
+            mapSnapshotOptions.size = CGSize(width: 400 , height: 250)
+            
+            let snapShotter = MKMapSnapshotter(options: mapSnapshotOptions)
+            
+            snapShotter.start { (snap, error) in
+                let image = snap?.image
+                entry.image = image
+                print("Image")
+                completion(entry)
+            }
+        }else{
+            print("Small")
+            completion(entry)
+        }
+    }
+    private func getNationSample(count: Int) -> Set<Nation>{
+        let list = Nation.list
+        var nationSample: Set<Nation> = []
+        while nationSample.count < count {
+            guard let selectedNation = list.randomElement() else { return []}
+            nationSample.insert(selectedNation)
+        }
+        return nationSample
     }
 }

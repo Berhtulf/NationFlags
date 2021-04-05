@@ -32,7 +32,7 @@ class GlobalSettings: ObservableObject {
     
     @Published var regions:Set<String> = []
     var pool:[Nation]{
-        return restNation.filter{regions.contains($0.region)}
+        return Nation.list.filter{regions.contains($0.region)}
     }
     
     
@@ -66,8 +66,8 @@ class GlobalSettings: ObservableObject {
         }
         
         GKAchievement.report(achievements, withCompletionHandler: { error in
-            guard error == nil else {
-                print("Error saving, \(error!.localizedDescription)")
+            if let er = error {
+                print("Error saving, \(er.localizedDescription)")
                 return
             }
             print("Done")
@@ -88,8 +88,8 @@ class GlobalSettings: ObservableObject {
             } while history.contains(self.correctOption)
             
             var options = Set<Nation>()
-            let correctOption = self.correctOption
-            options.insert(correctOption!)
+            guard let correctOption = self.correctOption else { return }
+            options.insert(correctOption)
             history.insert(correctOption)
             while options.count < 4 {
                 if let option = pool.randomElement(){

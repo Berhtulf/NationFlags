@@ -9,15 +9,14 @@
 import SwiftUI
 
 struct SearchButton: View {
-    @EnvironmentObject var settings: GlobalSettings
+    @EnvironmentObject var model: NationListViewModel
     var body: some View{
         Button(action: {
             withAnimation{
-                self.settings.search = ""
-                self.settings.showSearch.toggle()
+                model.search = ""
+                model.showSearch.toggle()
             }
-        }
-        ) {
+        }) {
             Image(systemName: "magnifyingglass")
                 .padding()
         }

@@ -24,7 +24,7 @@ struct LargeWidgetView: View {
                             .aspectRatio(contentMode: .fill)
                     }
                 }
-                .shadow(radius: 4)
+                .shadow(color: Color("DarkWhite"), radius: 4)
                 .frame(height: geometry.size.height/1.5)
             }
         }

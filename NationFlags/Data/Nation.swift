@@ -9,6 +9,7 @@ import SwiftUI
 import CoreLocation
 
 struct Nation: Hashable, Codable, Identifiable {
+    static var list: [Nation] = load("Nations.json")
     private var latlngZm:[Double]
     
     let id = UUID()
@@ -47,6 +48,16 @@ struct Nation: Hashable, Codable, Identifiable {
         population: 10558524,
         area: 78865,
         alpha2Code: "CZ",
+        recognition: "All"
+    )
+    static let nepal = Nation(
+        latlngZm: [49.75, 15.5, 10],
+        name: "Nepal",
+        capital: "Prague",
+        region: "Europe",
+        population: 10558524,
+        area: 78865,
+        alpha2Code: "NP",
         recognition: "All"
     )
 }

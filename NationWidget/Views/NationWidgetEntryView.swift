@@ -16,12 +16,12 @@ struct NationWidgetEntryView: View {
     @ViewBuilder
     var body: some View {
         switch family {
-        case .systemSmall:
-            SmallWidgetView(entry: entry)
+        case .systemLarge:
+            LargeWidgetView(entry: entry)
         case .systemMedium:
             MediumWidgetView(entry: entry)
         default:
-            LargeWidgetView(entry: entry)
+            SmallWidgetView(entry: entry)
         }
     }
 }

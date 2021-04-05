@@ -12,29 +12,14 @@ struct NationRow: View {
     var nation: Nation
     var body: some View {
         HStack{
-            if (nation.name == "Nepal") {
-                nation.image
-                    .resizable()
-                    .cornerRadius(4)
-                    .clipped()
-                    .shadow(radius: 4)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width:100, height: 70)
-                    .padding(.horizontal)
-            }else{
-                nation.image
+            nation.image
                 .resizable()
                 .cornerRadius(4)
-                .overlay(
-                        RoundedRectangle(cornerRadius: 4)
-                            .stroke(Color.init("DarkWhite"), lineWidth: 1)
-                )
                 .clipped()
-                .shadow(radius: 4)
                 .aspectRatio(contentMode: .fit)
                 .frame(width:100, height: 70)
+                .shadow(color: Color("DarkWhite"), radius: 5)
                 .padding(.horizontal)
-            }
             VStack(alignment: .leading) {
                 VStack(alignment: .leading){
                     Text(LocalizedStringKey(nation.name))
@@ -45,7 +30,6 @@ struct NationRow: View {
                 }
             }
             Spacer()
-            
         }
     }
 }
@@ -53,9 +37,14 @@ struct NationRow: View {
 struct NationRow_Previews: PreviewProvider {
     static var previews: some View {
         List{
-            NationRow(nation: restNation.randomElement()!)
-            NationRow(nation: restNation.randomElement()!)
-            NationRow(nation: restNation.randomElement()!)
-        }
+            NationRow(nation: Nation.list.randomElement()!)
+            NationRow(nation: Nation.list.randomElement()!)
+            NationRow(nation: Nation.list.randomElement()!)
+            NationRow(nation: Nation.list.randomElement()!)
+            NationRow(nation: Nation.list.randomElement()!)
+            NationRow(nation: Nation.list.randomElement()!)
+            NationRow(nation: Nation.czechRepublic)
+            NationRow(nation: Nation.nepal)
+        }.preferredColorScheme(.dark)
     }
 }

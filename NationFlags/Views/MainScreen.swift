@@ -26,6 +26,7 @@ struct MainScreen: View {
 						.padding()
 						.aspectRatio(contentMode: .fit)
 						.frame(height:245)
+						.shadow(radius: 10)
 					Text("Countries").font(.largeTitle)
 						.padding(.vertical,40)
 					NavigationLink(destination: ModeSelect()){
@@ -39,7 +40,7 @@ struct MainScreen: View {
 					Spacer()
 				}.edgesIgnoringSafeArea(.all)
 				.onAppear{
-					print(restNation.count)
+					print(Nation.list.count)
 					GKAccessPoint.shared.isActive = true
 				}
 				

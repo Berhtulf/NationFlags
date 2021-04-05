@@ -9,8 +9,6 @@ import UIKit
 import SwiftUI
 import CoreLocation
 
-let restNation: [Nation] = load("Nations.json")
-
 func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
     let data: Data
     guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
@@ -26,8 +24,6 @@ func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
     
     do {
         let decoder = JSONDecoder()
-        UserDefaults(suiteName: "group.com.vaclavikmartin.nationFlags")!.set(data, forKey: "nations")
-        
         return try decoder.decode(T.self, from: data)
     } catch {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")

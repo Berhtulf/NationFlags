@@ -6,12 +6,12 @@
 //  Copyright © 2020 Martin Václavík. All rights reserved.
 //
 
-import SwiftUI
+import UIKit
 import WidgetKit
 
-struct NationEntry: TimelineEntry {
-    let date: Date
+struct NationEntry: TimelineEntry, Hashable {
+    var date: Date
     let nation: Nation
     
-    var image:UIImage? = nil
+    var image:UIImage?
 }

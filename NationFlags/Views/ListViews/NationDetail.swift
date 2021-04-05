@@ -95,7 +95,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group{
             NavigationView{
-                NationDetail(nation: restNation[153], location: MKCoordinateRegion(center: restNation[153].locationCoordinate, span: MKCoordinateSpan(latitudeDelta: restNation[153].locationZoom, longitudeDelta: restNation[153].locationZoom)))
+                NationDetail(nation: Nation.list[153], location: MKCoordinateRegion(center: Nation.list[153].locationCoordinate, span: MKCoordinateSpan(latitudeDelta: Nation.list[153].locationZoom, longitudeDelta: Nation.list[153].locationZoom)))
             }
         }
     }
