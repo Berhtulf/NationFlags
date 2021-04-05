@@ -27,7 +27,9 @@ struct AppStoreReviewPrompt {
         guard storeReview.lastVersion != currentVersion else { return }
         
         // 8.
-        SKStoreReviewController.requestReview()
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+            SKStoreReviewController.requestReview(in: scene)
+        }
         
         // 9.
         storeReview.actionCount = 0
