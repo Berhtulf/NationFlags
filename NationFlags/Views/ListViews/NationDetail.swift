@@ -54,17 +54,11 @@ struct NationDetail: View {
                     Text("Info")
                 }
             }
-            ZStack {
+            ZStack(alignment: .bottomLeading) {
                 MapView(coord: nation.locationCoordinate, zoom: nation.locationZoom, type: mapType)
-                HStack{
-                    VStack{
-                        Spacer()
-                        MapLayers(mapType: self.$mapType)
-                            .padding()
-                            .padding(.vertical, 15)
-                    }
-                    Spacer()
-                }
+                MapLayers(mapType: self.$mapType)
+                    .padding()
+                    .padding(.vertical, 15)
             }
             .tag("map")
             .tabItem{
@@ -75,15 +69,14 @@ struct NationDetail: View {
             }
         }
         .navigationBarTitle(LocalizedStringKey(nation.name), displayMode: .inline)
-        .navigationBarItems(trailing:
-                                Button(action: {
-                                    self.showInfo.toggle()
-                                }
-                                ) {
-                                    Image(systemName: "questionmark.circle")
-                                        .padding()
-                                }
-        )
+        .toolbar(content: {
+            Button(action: {
+                self.showInfo.toggle()
+            }) {
+                Image(systemName: "questionmark.circle")
+                    .padding()
+            }
+        })
         .alert(isPresented: $showInfo) {
             Alert(title: Text("infoLastUpdate"), message: Text("\(settings.updateDate)"),
                   dismissButton: .default(Text("Back")) {})
