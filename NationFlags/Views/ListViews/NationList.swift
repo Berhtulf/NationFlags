@@ -27,12 +27,15 @@ struct NationList: View {
                 }
             }
         }.navigationBarTitle("list", displayMode: .inline)
-        .navigationBarItems(trailing: SearchButton().environmentObject(model))
-            .onAppear(){
-                GKAccessPoint.shared.isActive = false
-                if model.search == "" {
-                    model.showSearch = false
-                }
+        .toolbar(content: {
+            SearchButton()
+                .environmentObject(model)
+        })
+        .onAppear(){
+            GKAccessPoint.shared.isActive = false
+            if model.search == "" {
+                model.showSearch = false
+            }
         }
     }
 }
