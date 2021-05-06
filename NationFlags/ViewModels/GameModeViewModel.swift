@@ -10,15 +10,14 @@ import SwiftUI
 
 final class GameModeViewModel: ObservableObject {
     @Published var gameMode: Int = 1
-    @Published var mapIndexes = [0,0,0,0,0]
-    var imgName: String {
-        mapIndexes.map{ String($0) }.joined()
-    }
+    @Published var settings = GlobalSettings.shared
+    
     private func toggleMap(position:Int){
-        if mapIndexes[position] > 0 {
-            mapIndexes[position] = 0
+        objectWillChange.send()
+        if settings.img[position] > 0 {
+            settings.img[position] = 0
         }else{
-            mapIndexes[position] = 1
+            settings.img[position] = 1
         }
     }
     
@@ -27,19 +26,19 @@ final class GameModeViewModel: ObservableObject {
         switch region {
         case .americas:
             toggleMap(position: 0)
-            GlobalSettings.shared.toggleRegion(.americas)
+            settings.toggleRegion(.americas)
         case .europe:
             toggleMap(position: 1)
-            GlobalSettings.shared.toggleRegion(.europe)
+            settings.toggleRegion(.europe)
         case .africa:
             toggleMap(position: 2)
-            GlobalSettings.shared.toggleRegion(.africa)
+            settings.toggleRegion(.africa)
         case .asia:
             toggleMap(position: 3)
-            GlobalSettings.shared.toggleRegion(.asia)
+            settings.toggleRegion(.asia)
         case .oceania:
             toggleMap(position: 4)
-            GlobalSettings.shared.toggleRegion(.oceania)
+            settings.toggleRegion(.oceania)
         }
     }
     

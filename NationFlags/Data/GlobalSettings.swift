@@ -16,14 +16,11 @@ class GlobalSettings: ObservableObject {
     let nextDelay = 0.5
     let learnDelay = 1.5
     
+    @Published var regions:Set<String> = []
+    @Published var finish = false
     @Published var img: [Int] = [0,0,0,0,0]
     var imgName:String{
         img.map{ String($0) }.joined()
-    }
-    
-    @Published var regions:Set<String> = []
-    var pool:[Nation]{
-        return Nation.list.filter{regions.contains($0.region)}
     }
     
     func toggleRegion(_ region: MapRegion) {
@@ -34,19 +31,19 @@ class GlobalSettings: ObservableObject {
         }
     }
     
-    func saveScore(score:Int, view:String){
+    func saveScore(maxScore: Int, score:Int, view:String){
         print("Score: \(score)")
         var achievements = [GKAchievement]()
         achievements.append(GKAchievement.init(identifier: "FirstGamePlayed"))
         
         let dbScore = UserDefaults.standard.integer(forKey: view)
         
-        if imgName == "10000" && score == pool.count * 10 {achievements.append(GKAchievement.init(identifier: "PerfectAME"))}
-        if imgName == "01000" && score == pool.count * 10 {achievements.append(GKAchievement.init(identifier: "PerfectEU"))}
-        if imgName == "00100" && score == pool.count * 10 {achievements.append(GKAchievement.init(identifier: "PerfectAFR"))}
-        if imgName == "00010" && score == pool.count * 10 {achievements.append(GKAchievement.init(identifier: "PerfectAsia"))}
-        if imgName == "00001" && score == pool.count * 10 {achievements.append(GKAchievement.init(identifier: "PerfectAUS"))}
-        if imgName == "11111" && score == pool.count * 10 {achievements.append(GKAchievement.init(identifier: "PerfectALL"))}
+        if imgName == "10000" && score == maxScore { achievements.append(GKAchievement.init(identifier: "PerfectAME")) }
+        if imgName == "01000" && score == maxScore { achievements.append(GKAchievement.init(identifier: "PerfectEU")) }
+        if imgName == "00100" && score == maxScore { achievements.append(GKAchievement.init(identifier: "PerfectAFR")) }
+        if imgName == "00010" && score == maxScore { achievements.append(GKAchievement.init(identifier: "PerfectAsia")) }
+        if imgName == "00001" && score == maxScore { achievements.append(GKAchievement.init(identifier: "PerfectAUS")) }
+        if imgName == "11111" && score == maxScore { achievements.append(GKAchievement.init(identifier: "PerfectALL")) }
         
         addAchievementProgress(achievements, progress: 100)
         
@@ -71,6 +68,4 @@ class GlobalSettings: ObservableObject {
             }
         })
     }
-    
-    @Published var finish = false
 }

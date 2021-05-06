@@ -12,7 +12,7 @@ struct ModeSelectMapImage: View {
     @EnvironmentObject var viewModel: GameModeViewModel
     var body: some View {
         VStack{
-            Image(viewModel.imgName)
+            Image(viewModel.settings.imgName)
                 .resizable()
                 .shadow(radius: 2)
                 .aspectRatio(contentMode: .fit)
@@ -23,9 +23,8 @@ struct ModeSelectMapImage: View {
 
 struct ModeSelectMapImage_Preview: PreviewProvider {
     static var previews: some View {
-        NavigationView{
-            ModeSelectMapImage().environmentObject(GlobalSettings())
+            ModeSelectMapImage()
+                .environmentObject(GameModeViewModel())
                 .environment(\.locale, Locale(identifier: "cs"))
-        }
     }
 }

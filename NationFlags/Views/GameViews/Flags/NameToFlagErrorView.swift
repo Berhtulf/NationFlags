@@ -45,10 +45,10 @@ struct NameToFlagErrorView: View {
         .alert(isPresented: $settings.finish) {
             Alert(title: Text("Game over!"), message: Text("score <\(viewModel.score)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    settings.saveScore(score: viewModel.score, view: "NameToFlagError")
+                    viewModel.saveScore(score: viewModel.score, view: "NameToFlagError")
                     presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    settings.saveScore(score: viewModel.score, view: "NameToFlagError")
+                    viewModel.saveScore(score: viewModel.score, view: "NameToFlagError")
                     viewModel.playAgain()
                   })
         }

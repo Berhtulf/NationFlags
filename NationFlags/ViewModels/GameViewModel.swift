@@ -9,6 +9,7 @@
 import SwiftUI
 
 final class GameViewModel: ObservableObject {
+    private var settings = GlobalSettings.shared
     init(withTimer: Bool) {
         useTimer = withTimer
     }
@@ -24,7 +25,7 @@ final class GameViewModel: ObservableObject {
     
     @Published var history = Set<Nation?>()
     var pool:[Nation]{
-        return Nation.list.filter{GlobalSettings.shared.regions.contains($0.region)}
+        return Nation.list.filter{settings.regions.contains($0.region)}
     }
     
     @Published var disabledButtons : Set<Nation> = []
@@ -32,7 +33,9 @@ final class GameViewModel: ObservableObject {
     @Published private(set) var showCorrectOption = false
     
     //MARK: - Intents
-    
+    func saveScore(score: Int, view: String) {
+        settings.saveScore(maxScore: pool.count * 10, score: score, view: view)
+    }
     func startGame() {
         score = 0
         history.removeAll()
@@ -66,7 +69,7 @@ final class GameViewModel: ObservableObject {
             }
             self.options = options.map({$0}).shuffled()
         }else{
-            GlobalSettings.shared.finish = true
+            settings.finish = true
         }
     }
     func highlightCorrectOption() {
@@ -76,7 +79,7 @@ final class GameViewModel: ObservableObject {
         GlobalSettings.shared.finish = true
     }
     func generateOptions(useDelay: Bool, learnMode: Bool = false) {
-        let delay = learnMode ? GlobalSettings.shared.learnDelay : GlobalSettings.shared.nextDelay
+        let delay = learnMode ? settings.learnDelay : settings.nextDelay
         
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             self.generateOptions()
