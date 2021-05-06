@@ -34,7 +34,7 @@ struct OptionButtonStyle: ButtonStyle {
     
     func getBackgroundColor() -> Color {
         if isEnabled || !wasPressed {
-            return Color.white
+            return Color("CustomGray")
         }else{
             return isCorrect ? Color.green : .red
         }
@@ -45,5 +45,6 @@ struct OptionButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
         Button("Button", action: {})
             .buttonStyle(OptionButtonStyle(wasPressed: false, isCorrect: false))
+            .preferredColorScheme(.dark)
     }
 }
