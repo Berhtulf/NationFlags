@@ -41,24 +41,18 @@ struct ModeScrollView: View {
                     if viewModel.showingMenu == 1 {
                         Divider()
                         VStack{
-                            HStack{
-                                NavigationLink(destination: FlagToNameView()) {
-                                    GameModeRowView(title: "TimedGame", score: FlagToName)
-                                }
+                            NavigationLink(destination: FlagToNameView()) {
+                                GameModeRowView(title: "TimedGame", score: FlagToName)
                             }
                             .padding(.horizontal)
                             Divider()
-                            HStack{
-                                NavigationLink(destination: FlagToNameErrorView()) {
-                                    GameModeRowView(title: "ErrorGame", score: FlagToNameError)
-                                }
+                            NavigationLink(destination: FlagToNameErrorView()) {
+                                GameModeRowView(title: "ErrorGame", score: FlagToNameError)
                             }
                             .padding(.horizontal)
                             Divider()
-                            HStack{
-                                NavigationLink(destination: FlagToNameLearnView()) {
-                                    GameModeRowView(title: "LearnGame", practice: true)
-                                }
+                            NavigationLink(destination: FlagToNameLearnView()) {
+                                GameModeRowView(title: "LearnGame", practice: true)
                             }
                             .padding(.horizontal)
                         }
@@ -78,24 +72,18 @@ struct ModeScrollView: View {
                     Divider()
                     if viewModel.showingMenu == 2 {
                         VStack{
-                            HStack{
-                                NavigationLink(destination: NameToFlagView()) {
-                                    GameModeRowView(title: "TimedGame", score: NameToFlag)
-                                }
+                            NavigationLink(destination: NameToFlagView()) {
+                                GameModeRowView(title: "TimedGame", score: NameToFlag)
                             }
                             .padding(.horizontal)
                             Divider()
-                            HStack{
-                                NavigationLink(destination: NameToFlagErrorView()) {
-                                    GameModeRowView(title: "TimedGame", score: NameToFlagError)
-                                }
+                            NavigationLink(destination: NameToFlagErrorView()) {
+                                GameModeRowView(title: "ErrorGame", score: NameToFlagError)
                             }
                             .padding(.horizontal)
                             Divider()
-                            HStack{
-                                NavigationLink(destination: NameToFlagLearnView()) {
-                                    GameModeRowView(title: "LearnGame", practice: true)
-                                }
+                            NavigationLink(destination: NameToFlagLearnView()) {
+                                GameModeRowView(title: "LearnGame", practice: true)
                             }
                             .padding(.horizontal)
                             Divider()
@@ -119,24 +107,18 @@ struct ModeScrollView: View {
                     if viewModel.showingMenu == 1 {
                         Divider()
                         VStack{
-                            HStack{
-                                NavigationLink(destination: CityToNameView()) {
-                                    GameModeRowView(title: "TimedGame", score: CityToName)
-                                }
+                            NavigationLink(destination: CityToNameView()) {
+                                GameModeRowView(title: "TimedGame", score: CityToName)
                             }
                             .padding(.horizontal)
                             Divider()
-                            HStack{
-                                NavigationLink(destination: CityToNameErrorView()) {
-                                    GameModeRowView(title: "ErrorGame", score: CityToNameError)
-                                }
+                            NavigationLink(destination: CityToNameErrorView()) {
+                                GameModeRowView(title: "ErrorGame", score: CityToNameError)
                             }
                             .padding(.horizontal)
                             Divider()
-                            HStack{
-                                NavigationLink(destination: CityToNameLearnView()) {
-                                    GameModeRowView(title: "LearnGame", practice: true)
-                                }
+                            NavigationLink(destination: CityToNameLearnView()) {
+                                GameModeRowView(title: "LearnGame", practice: true)
                             }
                             .padding(.horizontal)
                         }
@@ -157,24 +139,18 @@ struct ModeScrollView: View {
                     Divider()
                     if viewModel.showingMenu == 2 {
                         VStack{
-                            HStack{
-                                NavigationLink(destination: NameToCityView()) {
-                                    GameModeRowView(title: "TimedGame", score: NameToCity)
-                                }
+                            NavigationLink(destination: NameToCityView()) {
+                                GameModeRowView(title: "TimedGame", score: NameToCity)
                             }
                             .padding(.horizontal)
                             Divider()
-                            HStack{
-                                NavigationLink(destination: NameToCityErrorView()) {
-                                    GameModeRowView(title: "ErrorGame", score: NameToCityError)
-                                }
+                            NavigationLink(destination: NameToCityErrorView()) {
+                                GameModeRowView(title: "ErrorGame", score: NameToCityError)
                             }
                             .padding(.horizontal)
                             Divider()
-                            HStack{
-                                NavigationLink(destination: NameToCityLearnView()) {
-                                    GameModeRowView(title: "LearnGame", practice: true)
-                                }
+                            NavigationLink(destination: NameToCityLearnView()) {
+                                GameModeRowView(title: "LearnGame", practice: true)
                             }
                             .padding(.horizontal)
                             Divider()
