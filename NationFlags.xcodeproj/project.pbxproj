@@ -56,6 +56,7 @@
 		63A3520F240BCB89009B636A /* NameToCityLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3520E240BCB89009B636A /* NameToCityLearnView.swift */; };
 		63A5AF452643119F00B3BB8A /* FlagButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A5AF442643119F00B3BB8A /* FlagButtonStyle.swift */; };
 		63A5AF482643D15600B3BB8A /* GameConditionalFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A5AF472643D15600B3BB8A /* GameConditionalFlagView.swift */; };
+		63A5AF4B26444E7B00B3BB8A /* GameModeRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A5AF4A26444E7B00B3BB8A /* GameModeRowView.swift */; };
 		63E58B4F2520B88C00B4702C /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E58B4E2520B88C00B4702C /* GameCenter.swift */; };
 		63EFEE9C254B00D80031A325 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EFEE9B254B00D80031A325 /* WidgetKit.framework */; };
 		63EFEE9E254B00D80031A325 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EFEE9D254B00D80031A325 /* SwiftUI.framework */; };
@@ -149,6 +150,7 @@
 		63A3520E240BCB89009B636A /* NameToCityLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameToCityLearnView.swift; sourceTree = "<group>"; };
 		63A5AF442643119F00B3BB8A /* FlagButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagButtonStyle.swift; sourceTree = "<group>"; };
 		63A5AF472643D15600B3BB8A /* GameConditionalFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConditionalFlagView.swift; sourceTree = "<group>"; };
+		63A5AF4A26444E7B00B3BB8A /* GameModeRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeRowView.swift; sourceTree = "<group>"; };
 		63E58B4E2520B88C00B4702C /* GameCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
 		63EFEE93254B00240031A325 /* NationFlags.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NationFlags.entitlements; sourceTree = "<group>"; };
 		63EFEE99254B00D80031A325 /* NationWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NationWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,7 +208,7 @@
 			path = GameViews;
 			sourceTree = "<group>";
 		};
-		6309E41A23F018D4009C9B0E /* Data */ = {
+		6309E41A23F018D4009C9B0E /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				6309E43623F01AAF009C9B0E /* GlobalSettings.swift */,
@@ -216,7 +218,7 @@
 				63E58B4E2520B88C00B4702C /* GameCenter.swift */,
 				630B65AE264122C300D5E2F0 /* MapRegion.swift */,
 			);
-			path = Data;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6309E41B23F018ED009C9B0E /* Views */ = {
@@ -262,7 +264,6 @@
 			children = (
 				6309E42923F01A2A009C9B0E /* DoubleExtensions.swift */,
 				63807075240695B9006EB5E1 /* AnyTransition.swift */,
-				636CFA6F24DD4E2F000C93EB /* AppStoreReviewPrompt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -337,9 +338,9 @@
 				6309E42623F019F9009C9B0E /* Modifiers */,
 				6309E42523F019E3009C9B0E /* Extension */,
 				63694A9C260644FD008A8703 /* ViewModels */,
+				6309E41A23F018D4009C9B0E /* Models */,
 				6309E41B23F018ED009C9B0E /* Views */,
 				6309E45E23F01E48009C9B0E /* Resources */,
-				6309E41A23F018D4009C9B0E /* Data */,
 				6321B60E23E07CE700DC745D /* Preview Content */,
 			);
 			path = NationFlags;
@@ -366,6 +367,7 @@
 		63719BB526418E9600D192B7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				636CFA6F24DD4E2F000C93EB /* AppStoreReviewPrompt.swift */,
 				63719BB626418EAF00D192B7 /* TimerManager.swift */,
 			);
 			path = Helpers;
@@ -374,10 +376,8 @@
 		63807078240807E8006EB5E1 /* ModeSelect */ = {
 			isa = PBXGroup;
 			children = (
+				63A5AF4926444E7100B3BB8A /* SubViews */,
 				6309E43A23F01B00009C9B0E /* ModeSelect.swift */,
-				6380707324069519006EB5E1 /* MapSelectView.swift */,
-				6309E43423F01A8E009C9B0E /* ModeSelectMapImage.swift */,
-				63807079240807FD006EB5E1 /* ModeScrollView.swift */,
 			);
 			path = ModeSelect;
 			sourceTree = "<group>";
@@ -386,6 +386,17 @@
 			isa = PBXGroup;
 			children = (
 				63A5AF472643D15600B3BB8A /* GameConditionalFlagView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		63A5AF4926444E7100B3BB8A /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				63807079240807FD006EB5E1 /* ModeScrollView.swift */,
+				6309E43423F01A8E009C9B0E /* ModeSelectMapImage.swift */,
+				6380707324069519006EB5E1 /* MapSelectView.swift */,
+				63A5AF4A26444E7B00B3BB8A /* GameModeRowView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -547,6 +558,7 @@
 				6309E43B23F01B00009C9B0E /* ModeSelect.swift in Sources */,
 				6309E42A23F01A2A009C9B0E /* DoubleExtensions.swift in Sources */,
 				6309E43D23F01B1B009C9B0E /* CityToNameView.swift in Sources */,
+				63A5AF4B26444E7B00B3BB8A /* GameModeRowView.swift in Sources */,
 				6309E41923F018A4009C9B0E /* NationRow.swift in Sources */,
 				6309E44923F01B7F009C9B0E /* FlagToNameView.swift in Sources */,
 				63A5AF482643D15600B3BB8A /* GameConditionalFlagView.swift in Sources */,

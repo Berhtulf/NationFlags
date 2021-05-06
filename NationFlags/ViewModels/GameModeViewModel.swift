@@ -12,6 +12,8 @@ final class GameModeViewModel: ObservableObject {
     @Published var gameMode: Int = 1
     @Published var settings = GlobalSettings.shared
     
+    @Published var showingMenu: Int?
+    
     private func toggleMap(position:Int){
         objectWillChange.send()
         if settings.img[position] > 0 {
@@ -22,6 +24,15 @@ final class GameModeViewModel: ObservableObject {
     }
     
     //MARK: - Intents
+    func toggleSubmenu(index: Int) {
+        withAnimation{
+            if showingMenu == index {
+                showingMenu = nil
+            }else{
+                showingMenu = index
+            }
+        }
+    }
     func toggleMapRegion(region: MapRegion) {
         switch region {
         case .americas:
