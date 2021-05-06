@@ -12,32 +12,12 @@ struct CityToNameErrorView: View {
     @EnvironmentObject var settings: GlobalSettings
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var didTap0:Bool = false
-    @State private var didTap1:Bool = false
-    @State private var didTap2:Bool = false
-    @State private var didTap3:Bool = false
-    @State private var disableAll:Bool = false
-    @State private var score:Int = 0
-    
-    func playAgain() {
-        settings.finish = false
-        self.score = 0
-        settings.history.removeAll()
-        settings.generateOptions()
-        resetButtons()
-    }
-    func resetButtons() {
-        self.didTap0 = false
-        self.didTap1 = false
-        self.didTap2 = false
-        self.didTap3 = false
-        self.disableAll = false
-    }
+    @StateObject var viewModel = GameViewModel(withTimer: false)
     
     var body: some View {
         VStack{
             Spacer()
-            Text(LocalizedStringKey(settings.correctOption?.name ?? ""))
+            Text(LocalizedStringKey(viewModel.correctOption?.name ?? ""))
                 .font(.title)
                 .lineLimit(1)
                 .allowsTightening(true)
@@ -46,206 +26,40 @@ struct CityToNameErrorView: View {
                 .padding(.vertical,7)
             Spacer()
                 .frame(height: 50)
-            if (settings.options.count > 0) {
-                if settings.options[0].name == settings.correctOption?.name {
-                    if self.disableAll {
-                        if self.didTap0 {
-                            Text(LocalizedStringKey(settings.options[0].capital))
-                                .modifier(CorrectButton())
+            if (!viewModel.options.isEmpty) {
+                ForEach(viewModel.options){ item in
+                    Button(action: {
+                        viewModel.pressedButtonFor(item: item)
+                        if item == viewModel.correctOption {
+                            viewModel.generateOptions(useDelay: true)
+                            viewModel.disableAllButtons()
                         }else{
-                            Text(LocalizedStringKey(settings.options[0].capital))
-                                .modifier(ShowCorrectButton())
+                            viewModel.disableButton(item: item)
+                            viewModel.highlightCorrectOption()
+                            viewModel.endGame()
                         }
-                    }else{
-                        Button(action: {
-                            self.didTap0 = true
-                            self.disableAll = true
-                            self.score += 10
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.settings.generateOptions()
-                                self.resetButtons()
-                            }
-                        }) {
-                            Text(LocalizedStringKey(settings.options[0].capital))
-                                .modifier(BasicButton())
-                        }
-                    }
-                }
-                else{
-                    if self.disableAll {
-                        if self.didTap0 {
-                            Text(LocalizedStringKey(settings.options[0].capital))
-                                .modifier(WrongButton())
-                        }else{
-                            Text(LocalizedStringKey(settings.options[0].capital))
-                                .modifier(BasicButton())
-                        }
-                    }else{
-                        Button(action: {
-                            self.didTap0 = true
-                            self.disableAll = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.settings.finish = true
-                            }
-                        }) {
-                            Text(LocalizedStringKey(settings.options[0].capital))
-                                .modifier(BasicButton())
-                        }
-                    }
-                }
-                if settings.options[1].name == settings.correctOption?.name {
-                    if self.disableAll {
-                        if self.didTap1 {
-                            Text(LocalizedStringKey(settings.options[1].capital))
-                                .modifier(CorrectButton())
-                        }else{
-                            Text(LocalizedStringKey(settings.options[1].capital))
-                                .modifier(ShowCorrectButton())
-                        }
-                    }else{
-                        Button(action: {
-                            self.didTap1 = true
-                            self.disableAll = true
-                            self.score += 10
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.settings.generateOptions()
-                                self.resetButtons()
-                            }
-                        }) {
-                            Text(LocalizedStringKey(settings.options[1].capital))
-                                .modifier(BasicButton())
-                        }
-                    }
-                }
-                else{
-                    if self.disableAll {
-                        if self.didTap1 {
-                            Text(LocalizedStringKey(settings.options[1].capital))
-                                .modifier(WrongButton())
-                        }else{
-                            Text(LocalizedStringKey(settings.options[1].capital))
-                                .modifier(BasicButton())
-                        }
-                    }else{
-                        Button(action: {
-                            self.didTap1 = true
-                            self.disableAll = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.settings.finish = true
-                            }
-                        }) {
-                            Text(LocalizedStringKey(settings.options[1].capital))
-                                .modifier(BasicButton())
-                        }
-                    }
-                }
-                if settings.options[2].name == settings.correctOption?.name {
-                    if self.disableAll {
-                        if self.didTap2 {
-                            Text(LocalizedStringKey(settings.options[2].capital))
-                                .modifier(CorrectButton())
-                        }else{
-                            Text(LocalizedStringKey(settings.options[2].capital))
-                                .modifier(ShowCorrectButton())
-                        }
-                    }else{
-                        Button(action: {
-                            self.didTap2 = true
-                            self.disableAll = true
-                            self.score += 10
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.settings.generateOptions()
-                                self.resetButtons()
-                            }
-                        }) {
-                            Text(LocalizedStringKey(settings.options[2].capital))
-                                .modifier(BasicButton())
-                        }
-                    }
-                }
-                else{
-                    if self.disableAll {
-                        if self.didTap2 {
-                            Text(LocalizedStringKey(settings.options[2].capital))
-                                .modifier(WrongButton())
-                        }else{
-                            Text(LocalizedStringKey(settings.options[2].capital))
-                                .modifier(BasicButton())
-                        }
-                    }else{
-                        Button(action: {
-                            self.didTap2 = true
-                            self.disableAll = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.settings.finish = true
-                            }
-                        }) {
-                            Text(LocalizedStringKey(settings.options[2].capital))
-                                .modifier(BasicButton())
-                        }
-                    }
-                }
-                if settings.options[3].name == settings.correctOption?.name {
-                    if self.disableAll {
-                        if self.didTap3 {
-                            Text(LocalizedStringKey(settings.options[3].capital))
-                                .modifier(CorrectButton())
-                        }else{
-                            Text(LocalizedStringKey(settings.options[3].capital))
-                                .modifier(ShowCorrectButton())
-                        }
-                    }else{
-                        Button(action: {
-                            self.didTap3 = true
-                            self.disableAll = true
-                            self.score += 10
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.settings.generateOptions()
-                                self.resetButtons()
-                            }
-                        }) {
-                            Text(LocalizedStringKey(settings.options[3].capital))
-                                .modifier(BasicButton())
-                        }
-                    }
-                }
-                else{
-                    if self.disableAll {
-                        if self.didTap3 {
-                            Text(LocalizedStringKey(settings.options[3].capital))
-                                .modifier(WrongButton())
-                        }else{
-                            Text(LocalizedStringKey(settings.options[3].capital))
-                                .modifier(BasicButton())
-                        }
-                    }else{
-                        Button(action: {
-                            self.didTap3 = true
-                            self.disableAll = true
-                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                self.settings.finish = true
-                            }
-                        }) {
-                            Text(LocalizedStringKey(settings.options[3].capital))
-                                .modifier(BasicButton())
-                        }
-                    }
+                        viewModel.adjustScore(wasCorrect: item == viewModel.correctOption)
+                    },label: {
+                        Text(LocalizedStringKey(item.capital))
+                    })
+                    .buttonStyle(OptionButtonStyle(wasPressed: viewModel.pressedButtons.contains(item),
+                                                   isCorrect: item == viewModel.correctOption,
+                                                   showCorrect: viewModel.showCorrectOption))
+                    .disabled(viewModel.disabledButtons.contains(item))
                 }
             }
             Spacer()
         }
         .navigationBarTitle("CityToState", displayMode: .inline)
-        .onAppear() {
-            self.playAgain()
-        }
+        .onAppear(perform: viewModel.playAgain)
         .alert(isPresented: $settings.finish) {
-            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"),
+            Alert(title: Text("Game over!"), message: Text("score <\(viewModel.score)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    self.settings.saveScore(score: self.score, view: "CityToNameError")
-                    self.presentationMode.wrappedValue.dismiss()},
+                    settings.saveScore(score: viewModel.score, view: "CityToNameError")
+                    presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    self.settings.saveScore(score: self.score, view: "CityToNameError")
-                    self.playAgain()
+                    settings.saveScore(score: viewModel.score, view: "CityToNameError")
+                    viewModel.playAgain()
                 })
         }
     }

@@ -11,8 +11,7 @@ import MessageUI
 import GameKit
 
 struct MainScreen: View {
-	@EnvironmentObject var settings: GlobalSettings
-	private var gameCenter = GameCenter()
+	@StateObject var gameModel = GameModeViewModel()
 	
 	var body: some View {
 		NavigationView{
@@ -27,25 +26,30 @@ struct MainScreen: View {
 						.aspectRatio(contentMode: .fit)
 						.frame(height:245)
 						.shadow(radius: 10)
-					Text("Countries").font(.largeTitle)
+					Text("Countries")
+						.font(.largeTitle)
 						.padding(.vertical,40)
-					NavigationLink(destination: ModeSelect()){
-						Text("play")
-							.modifier(MainMenuButton())
-					}.font(.title)
+					NavigationLink(
+						destination:
+							ModeSelect()
+								.environmentObject(gameModel)
+						,label: {
+							Text("play")
+								.modifier(MainMenuButton())
+								.font(.title2)
+						})
 					NavigationLink(destination: NationList()) {
 						Text("list")
 							.modifier(MainMenuButton())
-					}.font(.title)
+					}.font(.title2)
 					Spacer()
 				}.edgesIgnoringSafeArea(.all)
 				.onAppear{
-					print(Nation.list.count)
 					GKAccessPoint.shared.isActive = true
 				}
 				
 			}
-		}
+		}.navigationViewStyle(StackNavigationViewStyle())
 	}
 }
 

@@ -9,27 +9,26 @@
 import SwiftUI
 
 struct ModeSelect: View {
-    @EnvironmentObject var settings: GlobalSettings
-    @AppStorage("firstLaunch") private var firstLaunch = true
-    @AppStorage("gameMode") private var gameMode = 1
+    @EnvironmentObject var viewModel: GameModeViewModel
+    @State private var showHelp = false
     
     var body: some View {
         ZStack{
             VStack{
                 VStack{
                     Text("chooseMode").font(.headline)
-                    Picker(selection: $gameMode, label: Text("ModeSelect")) {
+                    Picker(selection: $viewModel.gameMode, label: Text("ModeSelect")) {
                         Text("Flags").tag(0)
                         Text("Capitals").tag(1)
                     }.pickerStyle(SegmentedPickerStyle())
                 }.padding()
                 VStack{
                     MapSelectView()
-                    ModeScrollView(gameMode: self.gameMode)
+                    ModeScrollView()
                 }
                 Spacer()
             }.transition(AnyTransition.move(edge: .top))
-                .sheet(isPresented: $firstLaunch){
+            .sheet(isPresented: $showHelp){
                 VStack{
                     Image("HelpImage")
                     .resizable()
@@ -39,14 +38,16 @@ struct ModeSelect: View {
             }
         }
         .navigationBarTitle("GameSettings", displayMode: .inline)
-        .navigationBarItems(trailing: Button(action:{
-            firstLaunch.toggle()
-        }){
-            Image(systemName: "questionmark.circle")
-                .padding()
-        })
+        .toolbar{
+            Button(action:{
+                showHelp.toggle()
+            }){
+                Image(systemName: "questionmark.circle")
+                    .padding()
+            }
+        }
         .onAppear(){
-            self.settings.finish = false
+            GlobalSettings.shared.finish = false
             AppStoreReviewPrompt.requestReviewIfAppropriate()
         }
     }
@@ -56,6 +57,6 @@ struct ModeSelect_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
             ModeSelect().environmentObject(GlobalSettings())
-        }//.environment(\.colorScheme, .dark)
+        }
     }
 }

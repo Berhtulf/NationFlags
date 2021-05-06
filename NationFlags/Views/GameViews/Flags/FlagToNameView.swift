@@ -12,49 +12,15 @@ struct FlagToNameView: View {
     @EnvironmentObject var settings: GlobalSettings
     @Environment(\.presentationMode) var presentationMode
     
-    @State private var didTap0:Bool = false
-    @State private var didTap1:Bool = false
-    @State private var didTap2:Bool = false
-    @State private var didTap3:Bool = false
-    @State private var disableAll:Bool = false
-    @State private var score:Int = 0
-    @State private var time:Int = 60
-    
-    func startTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-            self.settings.timer = timer
-            self.time -= 1
-            if (self.time <= 0) {
-                self.settings.timer?.invalidate()
-                self.disableAll = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                    self.settings.finish = true
-                }
-            }
-        }
-    }
-    func playAgain() {
-        self.settings.timer?.invalidate()
-        self.settings.finish = false
-        self.score = 0
-        settings.history.removeAll()
-        self.time = 60
-        settings.generateOptions()
-        self.resetButtons()
-        self.startTimer()
-    }
-    func resetButtons() {
-        self.didTap0 = false
-        self.didTap1 = false
-        self.didTap2 = false
-        self.didTap3 = false
-        self.disableAll = false
-    }
+    @StateObject var viewModel = GameViewModel(withTimer: true)
     
     var body: some View {
         ZStack{
             VStack{
-                if let correctOption = settings.correctOption {
+                ProgressBar()
+                    .padding(10)
+                Spacer()
+                if let correctOption = viewModel.correctOption {
                     Text(LocalizedStringKey(correctOption.name))
                     .font(.title)
                     .lineLimit(1)
@@ -63,172 +29,52 @@ struct FlagToNameView: View {
                     .padding(.horizontal)
                     .padding(.vertical,7)
                 }
-                if (settings.options.count > 0) {
-                    VStack{
-                        HStack{
-                            Spacer()
-                            if settings.options[0].name == settings.correctOption?.name {
-                                if self.didTap0 == true {
-                                    GameCorrectFlag(image: settings.options[0].image)
+                if (!viewModel.options.isEmpty) {
+                    LazyVGrid(columns: [GridItem(.flexible()),GridItem(.flexible())]){
+                        ForEach(viewModel.options){ item in
+                            Button(action: {
+                                viewModel.pressedButtonFor(item: item)
+                                if item == viewModel.correctOption {
+                                    viewModel.generateOptions(useDelay: true)
+                                    viewModel.disableAllButtons()
                                 }else{
-                                    GameFlagImage(image: settings.options[0].image)
-                                        .onTapGesture {
-                                            self.didTap0 = true
-                                            self.disableAll = true
-                                            self.score += 10
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                                self.settings.generateOptions()
-                                                self.resetButtons()
-                                            }
-                                    }
+                                    viewModel.disableButton(item: item)
                                 }
-                            }
-                            else{
-                                if self.didTap0 == true {
-                                    GameWrongFlag(image: settings.options[0].image)
-                                }else{
-                                    if self.disableAll == true {
-                                        GameFlagImage(image: settings.options[0].image)
-                                    }else{
-                                        GameFlagImage(image: settings.options[0].image)
-                                            .onTapGesture {
-                                                self.didTap0 = true
-                                                self.score -= 5
-                                        }
-                                    }
-                                }
-                            }
-                            Spacer()
-                            if settings.options[1].name == settings.correctOption?.name {
-                                if self.didTap1 == true {
-                                    GameCorrectFlag(image: settings.options[1].image)
-                                }else{
-                                    GameFlagImage(image: settings.options[1].image)
-                                        .onTapGesture {
-                                            self.didTap1 = true
-                                            self.disableAll = true
-                                            self.score += 10
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                                self.settings.generateOptions()
-                                                self.resetButtons()
-                                            }
-                                    }
-                                }
-                                
-                            }
-                            else{
-                                if self.didTap1 == true {
-                                    GameWrongFlag(image: settings.options[1].image)
-                                }else{
-                                    if self.disableAll == true {
-                                        GameFlagImage(image: settings.options[1].image)
-                                    }else{
-                                        GameFlagImage(image: settings.options[1].image)
-                                            .onTapGesture {
-                                                self.didTap1 = true
-                                                self.score -= 5
-                                        }
-                                    }
-                                }
-                            }
-                            Spacer()
-                        }.padding(.vertical)
-                        HStack{
-                            Spacer()
-                            if settings.options[2].name == settings.correctOption?.name {
-                                if self.didTap2 == true {
-                                    GameCorrectFlag(image: settings.options[2].image)
-                                }else{
-                                    GameFlagImage(image: settings.options[2].image)
-                                        .onTapGesture {
-                                            self.didTap2 = true
-                                            self.disableAll = true
-                                            self.score += 10
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                                self.settings.generateOptions()
-                                                self.resetButtons()
-                                            }
-                                    }
-                                }
-                            }
-                            else{
-                                if self.didTap2 == true {
-                                    GameWrongFlag(image: settings.options[2].image)
-                                }else{
-                                    if self.disableAll == true {
-                                        GameFlagImage(image: settings.options[2].image)
-                                    }else{
-                                        GameFlagImage(image: settings.options[2].image)
-                                            .onTapGesture {
-                                                self.didTap2 = true
-                                                self.score -= 5
-                                        }
-                                    }
-                                }
-                            }
-                            Spacer()
-                            if settings.options[3].name == settings.correctOption?.name {
-                                if self.didTap3 == true {
-                                    GameCorrectFlag(image: settings.options[3].image)
-                                }else{
-                                    GameFlagImage(image: settings.options[3].image)
-                                        .onTapGesture {
-                                            self.didTap3 = true
-                                            self.disableAll = true
-                                            self.score += 10
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + self.settings.nextDelay) {
-                                                self.settings.generateOptions()
-                                                self.resetButtons()
-                                            }
-                                    }
-                                }
-                            }
-                            else{
-                                if self.didTap3 == true {
-                                    GameWrongFlag(image: settings.options[3].image)
-                                }else{
-                                    if self.disableAll == true {
-                                        GameFlagImage(image: settings.options[3].image)
-                                    }else{
-                                        GameFlagImage(image: settings.options[3].image)
-                                            .onTapGesture {
-                                                self.didTap3 = true
-                                                self.score -= 5
-                                        }
-                                    }
-                                }
-                            }
-                            Spacer()
-                        }.padding(.vertical)
+                                viewModel.adjustScore(wasCorrect: item == viewModel.correctOption, deduct: true)
+                            },label: {
+                                GameConditionalFlagView(item: item,
+                                                        isCorrect: item == viewModel.correctOption,
+                                                        wasTapped: viewModel.pressedButtons.contains(item))
+                            })
+                            .disabled(viewModel.disabledButtons.contains(item))
+                        }
                     }
                 }
-            }
-            VStack{
-                ProgressBar(value: $time).padding(10)
                 Spacer()
             }
         }
         .navigationBarTitle("FlagToName", displayMode: .inline)
-        .onAppear() {
-            self.playAgain()
-        }
+        .onAppear(perform: viewModel.playAgain)
         .alert(isPresented: $settings.finish) {
-            Alert(title: Text("Game over!"), message: Text("score <\(self.score)>"),
+            Alert(title: Text("Game over!"), message: Text("score <\(viewModel.score)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    self.settings.saveScore(score: self.score, view: "FlagToName")
-                    self.presentationMode.wrappedValue.dismiss()},
+                    settings.saveScore(score: viewModel.score, view: "FlagToName")
+                    presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    self.settings.saveScore(score: self.score, view: "FlagToName")
-                    self.playAgain()
+                    settings.saveScore(score: viewModel.score, view: "FlagToName")
+                    viewModel.playAgain()
                 })
         }
     }
 }
 
+
+
 struct FlagToNameView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            FlagToNameView().environmentObject(GlobalSettings())
+            FlagToNameView()
+                .environmentObject(GlobalSettings())
         }
     }
 }

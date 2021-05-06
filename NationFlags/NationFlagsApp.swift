@@ -12,19 +12,18 @@ import UIKit
 
 @main
 struct NationFlagsApp: App {
-    private var gameCenter = GameCenter()
+    @StateObject var settings = GlobalSettings.shared
     
     var body: some Scene {
         WindowGroup{
             MainScreen()
-                .environmentObject(GlobalSettings())
+                .environmentObject(settings)
         }
     }
 }
 
 class ViewController: UIViewController {
     override func viewDidLoad() {
-        //        super.viewDidLoad()
         authenticateUser()
     }
     let localPlayer = GKLocalPlayer.local

@@ -42,21 +42,18 @@ struct Provider: TimelineProvider {
             let image = snap?.image
             entry.image = image
             
-            print(entry)
             completion(entry)
         }
     }
     
     //Reálná data na obrazovce uživatele
     func getTimeline(in context: Context, completion: @escaping (Timeline<NationEntry>) -> Void) {
-        print("test")
         getSamples(count: 1, context: context){ samples in
             let date = Date()
             let nextUpdateDate = Calendar.current.date(byAdding: .day, value: 1, to: date)!
             
             let timeline = Timeline(entries: samples, policy: .after(nextUpdateDate))
             completion(timeline)
-            print("Timeline")
         }
     }
     
@@ -103,11 +100,9 @@ struct Provider: TimelineProvider {
             snapShotter.start { (snap, error) in
                 let image = snap?.image
                 entry.image = image
-                print("Image")
                 completion(entry)
             }
         }else{
-            print("Small")
             completion(entry)
         }
     }

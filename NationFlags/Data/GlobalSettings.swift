@@ -9,25 +9,17 @@ import SwiftUI
 import GameKit
 
 class GlobalSettings: ObservableObject {
+    static var shared = GlobalSettings()
+
     var updateDate:Date = Date(timeIntervalSince1970: 1594029613)
     @Environment(\.managedObjectContext) var managedObjectContext
     // Prodleva před načtením dalších otázek
     let nextDelay = 0.5
     let learnDelay = 1.5
     
-    @Published var gameMode = 1
-    @Published var listRegion = 2
-    @Published var showSearch:Bool = false
-    @Published var search:String = ""
-    
-    @Published var nationList: [Nation]? = nil
     @Published var img: [Int] = [0,0,0,0,0]
     var imgName:String{
-        var retval = ""
-        for item in img {
-            retval = retval + String(item)
-        }
-        return retval
+        img.map{ String($0) }.joined()
     }
     
     @Published var regions:Set<String> = []
@@ -35,8 +27,16 @@ class GlobalSettings: ObservableObject {
         return Nation.list.filter{regions.contains($0.region)}
     }
     
+    func toggleRegion(_ region: MapRegion) {
+        if regions.contains(region.rawValue) {
+            regions.remove(region.rawValue)
+        }else{
+            regions.insert(region.rawValue)
+        }
+    }
     
     func saveScore(score:Int, view:String){
+        print("Score: \(score)")
         var achievements = [GKAchievement]()
         achievements.append(GKAchievement.init(identifier: "FirstGamePlayed"))
         
@@ -70,35 +70,8 @@ class GlobalSettings: ObservableObject {
                 print("Error saving, \(er.localizedDescription)")
                 return
             }
-            print("Done")
         })
     }
     
-    var options:[Nation] = []
-    var correctOption:Nation? = nil
     @Published var finish = false
-    @Published var timer:Timer? = nil
-    
-    @Published var history = Set<Nation?>()
-    
-    func generateOptions() {
-        if history.count < pool.count {
-            repeat{
-                self.correctOption = pool.randomElement()!
-            } while history.contains(self.correctOption)
-            
-            var options = Set<Nation>()
-            guard let correctOption = self.correctOption else { return }
-            options.insert(correctOption)
-            history.insert(correctOption)
-            while options.count < 4 {
-                if let option = pool.randomElement(){
-                    options.insert(option)
-                }
-            }
-            self.options = options.map({$0}).shuffled()
-        }else{
-            self.finish = true
-        }
-    }
 }

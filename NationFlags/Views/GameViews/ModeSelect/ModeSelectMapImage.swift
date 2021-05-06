@@ -9,12 +9,12 @@
 import SwiftUI
 
 struct ModeSelectMapImage: View {
-    @EnvironmentObject var settings: GlobalSettings
+    @EnvironmentObject var viewModel: GameModeViewModel
     var body: some View {
         VStack{
-            Image(settings.imgName)
+            Image(viewModel.imgName)
                 .resizable()
-                .shadow(radius: 10)
+                .shadow(radius: 2)
                 .aspectRatio(contentMode: .fit)
                 .padding(15)
         }

@@ -34,6 +34,8 @@
 		6309E45423F01DDD009C9B0E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6309E45623F01DDD009C9B0E /* Localizable.strings */; };
 		6309E45A23F01E1D009C9B0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6309E45C23F01E1D009C9B0E /* InfoPlist.strings */; };
 		6309E46023F01E56009C9B0E /* Nations.json in Resources */ = {isa = PBXBuildFile; fileRef = 6309E45F23F01E56009C9B0E /* Nations.json */; };
+		630B65AD26411D8000D5E2F0 /* GameModeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B65AC26411D8000D5E2F0 /* GameModeViewModel.swift */; };
+		630B65AF264122C300D5E2F0 /* MapRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B65AE264122C300D5E2F0 /* MapRegion.swift */; };
 		6321B60D23E07CE700DC745D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6321B60C23E07CE700DC745D /* Assets.xcassets */; };
 		6321B61023E07CE700DC745D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6321B60F23E07CE700DC745D /* Preview Assets.xcassets */; };
 		6331BB7925E2E7300027F3EC /* Nations.json in Resources */ = {isa = PBXBuildFile; fileRef = 6309E45F23F01E56009C9B0E /* Nations.json */; };
@@ -41,6 +43,9 @@
 		63694A9E26064512008A8703 /* NationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63694A9D26064512008A8703 /* NationListViewModel.swift */; };
 		636CFA7024DD4E2F000C93EB /* AppStoreReviewPrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636CFA6F24DD4E2F000C93EB /* AppStoreReviewPrompt.swift */; };
 		63702AC62520EADA00101EA8 /* NationFlagsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63702AC52520EADA00101EA8 /* NationFlagsApp.swift */; };
+		63719BB42641784A00D192B7 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63719BB32641784A00D192B7 /* GameViewModel.swift */; };
+		63719BB726418EAF00D192B7 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63719BB626418EAF00D192B7 /* TimerManager.swift */; };
+		63719BB926419E0100D192B7 /* OptionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63719BB826419E0100D192B7 /* OptionButtonStyle.swift */; };
 		6380707424069519006EB5E1 /* MapSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380707324069519006EB5E1 /* MapSelectView.swift */; };
 		63807076240695B9006EB5E1 /* AnyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63807075240695B9006EB5E1 /* AnyTransition.swift */; };
 		6380707A240807FD006EB5E1 /* ModeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63807079240807FD006EB5E1 /* ModeScrollView.swift */; };
@@ -49,6 +54,8 @@
 		63A3520B240BBF03009B636A /* FlagToNameLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3520A240BBF03009B636A /* FlagToNameLearnView.swift */; };
 		63A3520D240BCB6A009B636A /* CityToNameLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3520C240BCB6A009B636A /* CityToNameLearnView.swift */; };
 		63A3520F240BCB89009B636A /* NameToCityLearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A3520E240BCB89009B636A /* NameToCityLearnView.swift */; };
+		63A5AF452643119F00B3BB8A /* FlagButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A5AF442643119F00B3BB8A /* FlagButtonStyle.swift */; };
+		63A5AF482643D15600B3BB8A /* GameConditionalFlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A5AF472643D15600B3BB8A /* GameConditionalFlagView.swift */; };
 		63E58B4F2520B88C00B4702C /* GameCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E58B4E2520B88C00B4702C /* GameCenter.swift */; };
 		63EFEE9C254B00D80031A325 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EFEE9B254B00D80031A325 /* WidgetKit.framework */; };
 		63EFEE9E254B00D80031A325 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EFEE9D254B00D80031A325 /* SwiftUI.framework */; };
@@ -121,12 +128,17 @@
 		6309E45B23F01E1D009C9B0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6309E45D23F01E20009C9B0E /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6309E45F23F01E56009C9B0E /* Nations.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Nations.json; sourceTree = "<group>"; };
+		630B65AC26411D8000D5E2F0 /* GameModeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModeViewModel.swift; sourceTree = "<group>"; };
+		630B65AE264122C300D5E2F0 /* MapRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRegion.swift; sourceTree = "<group>"; };
 		6321B60023E07CE500DC745D /* NationFlags.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NationFlags.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6321B60C23E07CE700DC745D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6321B60F23E07CE700DC745D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		63694A9D26064512008A8703 /* NationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationListViewModel.swift; sourceTree = "<group>"; };
 		636CFA6F24DD4E2F000C93EB /* AppStoreReviewPrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreReviewPrompt.swift; sourceTree = "<group>"; };
 		63702AC52520EADA00101EA8 /* NationFlagsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationFlagsApp.swift; sourceTree = "<group>"; };
+		63719BB32641784A00D192B7 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		63719BB626418EAF00D192B7 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		63719BB826419E0100D192B7 /* OptionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionButtonStyle.swift; sourceTree = "<group>"; };
 		6380707324069519006EB5E1 /* MapSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSelectView.swift; sourceTree = "<group>"; };
 		63807075240695B9006EB5E1 /* AnyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransition.swift; sourceTree = "<group>"; };
 		63807079240807FD006EB5E1 /* ModeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeScrollView.swift; sourceTree = "<group>"; };
@@ -135,6 +147,8 @@
 		63A3520A240BBF03009B636A /* FlagToNameLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagToNameLearnView.swift; sourceTree = "<group>"; };
 		63A3520C240BCB6A009B636A /* CityToNameLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityToNameLearnView.swift; sourceTree = "<group>"; };
 		63A3520E240BCB89009B636A /* NameToCityLearnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameToCityLearnView.swift; sourceTree = "<group>"; };
+		63A5AF442643119F00B3BB8A /* FlagButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagButtonStyle.swift; sourceTree = "<group>"; };
+		63A5AF472643D15600B3BB8A /* GameConditionalFlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConditionalFlagView.swift; sourceTree = "<group>"; };
 		63E58B4E2520B88C00B4702C /* GameCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCenter.swift; sourceTree = "<group>"; };
 		63EFEE93254B00240031A325 /* NationFlags.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NationFlags.entitlements; sourceTree = "<group>"; };
 		63EFEE99254B00D80031A325 /* NationWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NationWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,6 +188,7 @@
 		6309E41123F01864009C9B0E /* ListViews */ = {
 			isa = PBXGroup;
 			children = (
+				630B65B026415CA200D5E2F0 /* SubViews */,
 				6309E41423F01891009C9B0E /* NationList.swift */,
 				6309E41623F0189D009C9B0E /* NationDetail.swift */,
 				6309E41823F018A4009C9B0E /* NationRow.swift */,
@@ -199,6 +214,7 @@
 				6309E41F23F019A4009C9B0E /* Nation.swift */,
 				6309E45C23F01E1D009C9B0E /* InfoPlist.strings */,
 				63E58B4E2520B88C00B4702C /* GameCenter.swift */,
+				630B65AE264122C300D5E2F0 /* MapRegion.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -209,7 +225,7 @@
 				6309E42323F019CE009C9B0E /* MainScreen.swift */,
 				6309E41323F01877009C9B0E /* GameViews */,
 				6309E41123F01864009C9B0E /* ListViews */,
-				6309E42B23F01A44009C9B0E /* SupportingViews */,
+				6309E42B23F01A44009C9B0E /* Shared */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +246,7 @@
 		6309E42223F019BF009C9B0E /* Flags */ = {
 			isa = PBXGroup;
 			children = (
+				63A5AF462643D14200B3BB8A /* SubViews */,
 				6309E44423F01B5F009C9B0E /* NameToFlagView.swift */,
 				6309E44623F01B6D009C9B0E /* NameToFlagErrorView.swift */,
 				6380707B240AD841006EB5E1 /* NameToFlagLearnView.swift */,
@@ -254,22 +271,21 @@
 			isa = PBXGroup;
 			children = (
 				6309E42723F01A0E009C9B0E /* Buttons.swift */,
+				63719BB826419E0100D192B7 /* OptionButtonStyle.swift */,
+				63A5AF442643119F00B3BB8A /* FlagButtonStyle.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
-		6309E42B23F01A44009C9B0E /* SupportingViews */ = {
+		6309E42B23F01A44009C9B0E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
 				6309E42C23F01A52009C9B0E /* ProgressBar.swift */,
 				6309E42E23F01A63009C9B0E /* FlagImage.swift */,
 				6309E43023F01A6E009C9B0E /* MapView.swift */,
-				6309E43223F01A7A009C9B0E /* SearchBar.swift */,
-				6309E43423F01A8E009C9B0E /* ModeSelectMapImage.swift */,
 				6309E43823F01AC7009C9B0E /* MiniFlagViews.swift */,
-				63A053B22401A378005909CD /* SearchButton.swift */,
 			);
-			path = SupportingViews;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		6309E45E23F01E48009C9B0E /* Resources */ = {
@@ -279,6 +295,15 @@
 				6309E45F23F01E56009C9B0E /* Nations.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		630B65B026415CA200D5E2F0 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				6309E43223F01A7A009C9B0E /* SearchBar.swift */,
+				63A053B22401A378005909CD /* SearchButton.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		6321B5F723E07CE500DC745D = {
@@ -308,6 +333,7 @@
 				63702AC52520EADA00101EA8 /* NationFlagsApp.swift */,
 				6321B60C23E07CE700DC745D /* Assets.xcassets */,
 				6309E44E23F01D0E009C9B0E /* Info.plist */,
+				63719BB526418E9600D192B7 /* Helpers */,
 				6309E42623F019F9009C9B0E /* Modifiers */,
 				6309E42523F019E3009C9B0E /* Extension */,
 				63694A9C260644FD008A8703 /* ViewModels */,
@@ -331,18 +357,37 @@
 			isa = PBXGroup;
 			children = (
 				63694A9D26064512008A8703 /* NationListViewModel.swift */,
+				630B65AC26411D8000D5E2F0 /* GameModeViewModel.swift */,
+				63719BB32641784A00D192B7 /* GameViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		63719BB526418E9600D192B7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				63719BB626418EAF00D192B7 /* TimerManager.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		63807078240807E8006EB5E1 /* ModeSelect */ = {
 			isa = PBXGroup;
 			children = (
-				6380707324069519006EB5E1 /* MapSelectView.swift */,
 				6309E43A23F01B00009C9B0E /* ModeSelect.swift */,
+				6380707324069519006EB5E1 /* MapSelectView.swift */,
+				6309E43423F01A8E009C9B0E /* ModeSelectMapImage.swift */,
 				63807079240807FD006EB5E1 /* ModeScrollView.swift */,
 			);
 			path = ModeSelect;
+			sourceTree = "<group>";
+		};
+		63A5AF462643D14200B3BB8A /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				63A5AF472643D15600B3BB8A /* GameConditionalFlagView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		63EFEE9A254B00D80031A325 /* Frameworks */ = {
@@ -498,17 +543,22 @@
 				6309E41E23F01947009C9B0E /* Data.swift in Sources */,
 				6309E43323F01A7A009C9B0E /* SearchBar.swift in Sources */,
 				6309E42F23F01A63009C9B0E /* FlagImage.swift in Sources */,
+				63719BB42641784A00D192B7 /* GameViewModel.swift in Sources */,
 				6309E43B23F01B00009C9B0E /* ModeSelect.swift in Sources */,
 				6309E42A23F01A2A009C9B0E /* DoubleExtensions.swift in Sources */,
 				6309E43D23F01B1B009C9B0E /* CityToNameView.swift in Sources */,
 				6309E41923F018A4009C9B0E /* NationRow.swift in Sources */,
 				6309E44923F01B7F009C9B0E /* FlagToNameView.swift in Sources */,
+				63A5AF482643D15600B3BB8A /* GameConditionalFlagView.swift in Sources */,
 				6380707C240AD841006EB5E1 /* NameToFlagLearnView.swift in Sources */,
 				6309E43F23F01B28009C9B0E /* CityToNameErrorView.swift in Sources */,
 				63807076240695B9006EB5E1 /* AnyTransition.swift in Sources */,
+				63A5AF452643119F00B3BB8A /* FlagButtonStyle.swift in Sources */,
 				63A3520D240BCB6A009B636A /* CityToNameLearnView.swift in Sources */,
 				6309E44123F01B35009C9B0E /* NameToCityView.swift in Sources */,
+				630B65AD26411D8000D5E2F0 /* GameModeViewModel.swift in Sources */,
 				6309E44723F01B6D009C9B0E /* NameToFlagErrorView.swift in Sources */,
+				630B65AF264122C300D5E2F0 /* MapRegion.swift in Sources */,
 				6309E44323F01B42009C9B0E /* NameToCityErrorView.swift in Sources */,
 				6309E43123F01A6E009C9B0E /* MapView.swift in Sources */,
 				63A053B32401A378005909CD /* SearchButton.swift in Sources */,
@@ -519,6 +569,7 @@
 				6380707424069519006EB5E1 /* MapSelectView.swift in Sources */,
 				6309E44B23F01B8B009C9B0E /* FlagToNameErrorView.swift in Sources */,
 				6309E42823F01A0E009C9B0E /* Buttons.swift in Sources */,
+				63719BB926419E0100D192B7 /* OptionButtonStyle.swift in Sources */,
 				6309E41523F01891009C9B0E /* NationList.swift in Sources */,
 				6309E42423F019CE009C9B0E /* MainScreen.swift in Sources */,
 				63694A9E26064512008A8703 /* NationListViewModel.swift in Sources */,
@@ -527,6 +578,7 @@
 				6309E41723F0189D009C9B0E /* NationDetail.swift in Sources */,
 				636CFA7024DD4E2F000C93EB /* AppStoreReviewPrompt.swift in Sources */,
 				6380707A240807FD006EB5E1 /* ModeScrollView.swift in Sources */,
+				63719BB726418EAF00D192B7 /* TimerManager.swift in Sources */,
 				6309E43723F01AAF009C9B0E /* GlobalSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -715,7 +767,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaclavikmartin.nationFlags;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -740,7 +792,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaclavikmartin.nationFlags;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -763,7 +815,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaclavikmartin.nationFlags.NationWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -787,7 +839,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0.2;
+				MARKETING_VERSION = 2.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vaclavikmartin.nationFlags.NationWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
