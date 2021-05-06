@@ -32,12 +32,10 @@ struct FlagToNameLearnView: View {
                         Button(action: {
                             viewModel.pressedButtonFor(item: item)
                             viewModel.disableAllButtons()
-                            if item == viewModel.correctOption {
-                                viewModel.generateOptions(useDelay: true)
-                            }else{
+                            if item != viewModel.correctOption {
                                 viewModel.highlightCorrectOption()
-                                viewModel.generateOptions(useDelay: true)
                             }
+                            viewModel.generateOptions(useDelay: true, learnMode: true)
                             viewModel.adjustScoreWhileLearning(wasCorrect: item == viewModel.correctOption)
                         },label: {
                             GameConditionalFlagView(item: item,

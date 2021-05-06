@@ -12,7 +12,6 @@ class GlobalSettings: ObservableObject {
     static var shared = GlobalSettings()
 
     var updateDate:Date = Date(timeIntervalSince1970: 1594029613)
-    @Environment(\.managedObjectContext) var managedObjectContext
     // Prodleva před načtením dalších otázek
     let nextDelay = 0.5
     let learnDelay = 1.5

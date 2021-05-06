@@ -75,8 +75,10 @@ final class GameViewModel: ObservableObject {
     func endGame() {
         GlobalSettings.shared.finish = true
     }
-    func generateOptions(useDelay: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + GlobalSettings.shared.nextDelay) {
+    func generateOptions(useDelay: Bool, learnMode: Bool = false) {
+        let delay = learnMode ? GlobalSettings.shared.learnDelay : GlobalSettings.shared.nextDelay
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
             self.generateOptions()
         }
     }
