@@ -87,7 +87,7 @@ struct ModeScrollView: View {
                             Divider()
                             HStack{
                                 NavigationLink(destination: NameToFlagErrorView()) {
-                                    GameModeRowView(title: "TimedGame", score: NameToFlagError)
+                                    GameModeRowView(title: "ErrorGame", score: NameToFlagError)
                                 }
                             }
                             .padding(.horizontal)
