@@ -32,7 +32,6 @@ class GlobalSettings: ObservableObject {
     }
     
     func saveScore(maxScore: Int, score:Int, view:String){
-        print("Score: \(score)")
         var achievements = [GKAchievement]()
         achievements.append(GKAchievement.init(identifier: "FirstGamePlayed"))
         

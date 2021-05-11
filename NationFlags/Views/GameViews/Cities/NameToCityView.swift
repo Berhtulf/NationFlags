@@ -34,8 +34,8 @@ struct NameToCityView: View {
                         Button(action: {
                             viewModel.pressedButtonFor(item: item)
                             if item == viewModel.correctOption {
-                                viewModel.generateOptions(useDelay: true)
                                 viewModel.disableAllButtons()
+                                viewModel.generateOptions(useDelay: true)
                             }else{
                                 viewModel.disableButton(item: item)
                             }

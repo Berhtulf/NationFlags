@@ -33,7 +33,7 @@ struct OptionButtonStyle: ButtonStyle {
     }
     
     func getBackgroundColor() -> Color {
-        if isEnabled || !wasPressed {
+        if (!wasPressed || isEnabled) {
             return Color("CustomGray")
         }else{
             return isCorrect ? Color.green : .red
