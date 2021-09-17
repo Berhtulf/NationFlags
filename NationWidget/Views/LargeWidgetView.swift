@@ -22,6 +22,13 @@ struct LargeWidgetView: View {
                         Image(uiImage: image)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
+                    }else{
+                        ZStack{
+                            Color.secondary.opacity(0.3)
+                            Image(systemName: "rectangle.slash")
+                                .font(.system(size: 50))
+                                .foregroundColor(.secondary)
+                        }
                     }
                 }
                 .shadow(color: Color("DarkWhite"), radius: 4)
