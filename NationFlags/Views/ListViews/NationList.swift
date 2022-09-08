@@ -15,22 +15,37 @@ struct NationList: View {
     @EnvironmentObject var settings: GlobalSettings
     var body: some View {
         VStack{
-            if model.showSearch{
-                SearchBar()
-                    .environmentObject(model)
-                    .padding(.top)
-                    .padding(.horizontal)
-            }
-            List(model.nationList, id: \.id) { nation in
-                NavigationLink(destination: NationDetail(nation: nation, location: MKCoordinateRegion(center: nation.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: nation.locationZoom, longitudeDelta: nation.locationZoom)) )){
-                    NationRow(nation: nation)
+            if #available(iOS 15.0, *) {
+                List(model.nationList, id: \.id) { nation in
+                    NavigationLink(destination: NationDetail(nation: nation, location: MKCoordinateRegion(center: nation.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: nation.locationZoom, longitudeDelta: nation.locationZoom)) )){
+                        NationRow(nation: nation)
+                    }
                 }
+                .searchable(text: $model.search)
+                .listStyle(.plain)
+            } else {
+                if model.showSearch{
+                    SearchBar()
+                        .environmentObject(model)
+                        .padding(.top)
+                        .padding(.horizontal)
+                }
+                List(model.nationList, id: \.id) { nation in
+                    NavigationLink(destination: NationDetail(nation: nation, location: MKCoordinateRegion(center: nation.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: nation.locationZoom, longitudeDelta: nation.locationZoom)) )){
+                        NationRow(nation: nation)
+                    }
+                }
+                .listStyle(.plain)
             }
-        }.navigationBarTitle("list", displayMode: .inline)
-        .toolbar(content: {
-            SearchButton()
-                .environmentObject(model)
-        })
+        }
+        .navigationBarTitle("list", displayMode: .inline)
+        .toolbar {
+            if #available(iOS 15.0, *) {
+            } else {
+                SearchButton()
+                    .environmentObject(model)
+            }
+        }
         .onAppear(){
             GKAccessPoint.shared.isActive = false
             if model.search == "" {
