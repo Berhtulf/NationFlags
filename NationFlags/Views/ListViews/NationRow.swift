@@ -19,7 +19,7 @@ struct NationRow: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width:100, height: 70)
                 .shadow(color: Color("DarkWhite"), radius: 5)
-                .padding(.horizontal)
+                .padding(.trailing)
             VStack(alignment: .leading) {
                 VStack(alignment: .leading){
                     Text(LocalizedStringKey(nation.name))
