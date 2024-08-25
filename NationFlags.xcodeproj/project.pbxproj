@@ -72,6 +72,8 @@
 		63EFEEF8254C93120031A325 /* MediumWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFEEF4254C93080031A325 /* MediumWidgetView.swift */; };
 		63EFEEFC254C93310031A325 /* LargeWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFEEFB254C93310031A325 /* LargeWidgetView.swift */; };
 		63EFEF00254C93530031A325 /* NationWidgetEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFEEFF254C93530031A325 /* NationWidgetEntryView.swift */; };
+		63F0DC4E2C7B9AD300CC9CB3 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 63F0DC4D2C7B9AD300CC9CB3 /* PrivacyInfo.xcprivacy */; };
+		63F0DC4F2C7B9AD300CC9CB3 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 63F0DC4D2C7B9AD300CC9CB3 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +167,7 @@
 		63EFEEF4254C93080031A325 /* MediumWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumWidgetView.swift; sourceTree = "<group>"; };
 		63EFEEFB254C93310031A325 /* LargeWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeWidgetView.swift; sourceTree = "<group>"; };
 		63EFEEFF254C93530031A325 /* NationWidgetEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NationWidgetEntryView.swift; sourceTree = "<group>"; };
+		63F0DC4D2C7B9AD300CC9CB3 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +336,7 @@
 				63EFEE93254B00240031A325 /* NationFlags.entitlements */,
 				63702AC52520EADA00101EA8 /* NationFlagsApp.swift */,
 				6321B60C23E07CE700DC745D /* Assets.xcassets */,
+				63F0DC4D2C7B9AD300CC9CB3 /* PrivacyInfo.xcprivacy */,
 				6309E44E23F01D0E009C9B0E /* Info.plist */,
 				63719BB526418E9600D192B7 /* Helpers */,
 				6309E42623F019F9009C9B0E /* Modifiers */,
@@ -523,6 +527,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63F0DC4E2C7B9AD300CC9CB3 /* PrivacyInfo.xcprivacy in Resources */,
 				6309E45423F01DDD009C9B0E /* Localizable.strings in Resources */,
 				6309E45A23F01E1D009C9B0E /* InfoPlist.strings in Resources */,
 				6321B61023E07CE700DC745D /* Preview Assets.xcassets in Resources */,
@@ -537,6 +542,7 @@
 			files = (
 				6331BB7925E2E7300027F3EC /* Nations.json in Resources */,
 				63EFEEA4254B00DA0031A325 /* Assets.xcassets in Resources */,
+				63F0DC4F2C7B9AD300CC9CB3 /* PrivacyInfo.xcprivacy in Resources */,
 				63EFEED2254B348E0031A325 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -697,6 +703,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 2.0.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -753,6 +760,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 2.0.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
