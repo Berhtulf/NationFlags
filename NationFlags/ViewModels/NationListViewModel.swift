@@ -33,8 +33,8 @@ class NationListViewModel : ObservableObject {
             nationList = Nation.list.sorted(by: {NSLocalizedString($0.name, comment: "") < NSLocalizedString($1.name, comment: "")})
         }else{
             nationList = Nation.list.filter({
-                                        NSLocalizedString($0.name, comment: "").lowercased().contains(search.lowercased())
-                                            || NSLocalizedString($0.capital, comment: "").lowercased().contains(search.lowercased())})
+                                        NSLocalizedString($0.name, comment: "").localizedCaseInsensitiveContains(search)
+                                            || NSLocalizedString($0.capital, comment: "").localizedCaseInsensitiveContains(search)})
         }
     }
 }
