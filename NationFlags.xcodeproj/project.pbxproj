@@ -453,6 +453,7 @@
 			buildConfigurationList = 6321B61723E07CE700DC745D /* Build configuration list for PBXNativeTarget "NationFlags" */;
 			buildPhases = (
 				6321B5FC23E07CE500DC745D /* Sources */,
+				6377EC532C84566F0044DCAB /* Run Swiftlint */,
 				6321B5FD23E07CE500DC745D /* Frameworks */,
 				6321B5FE23E07CE500DC745D /* Resources */,
 				63EFEEAE254B00DA0031A325 /* Embed App Extensions */,
@@ -548,6 +549,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6377EC532C84566F0044DCAB /* Run Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [ $ENABLE_PREVIEWS == \"NO\" ]\nthen\n    export PATH=\"$PATH:/opt/homebrew/bin\"\n    if which swiftlint >/dev/null; then\n        swiftlint --config .swiftlint.yml\n    else\n        echo \"warning: SwiftLint not installed, install with `brew install swiftlint`\"\n    fi\nelse\n  echo \"Skipping the script because of preview mode\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6321B5FC23E07CE500DC745D /* Sources */ = {
@@ -702,7 +726,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 2.0.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -759,7 +783,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 2.0.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -783,7 +807,6 @@
 				DEVELOPMENT_TEAM = 45Z42MYT8F;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NationFlags/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -809,7 +832,6 @@
 				DEVELOPMENT_TEAM = 45Z42MYT8F;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NationFlags/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -832,7 +854,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 45Z42MYT8F;
 				INFOPLIST_FILE = NationWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -856,7 +877,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 45Z42MYT8F;
 				INFOPLIST_FILE = NationWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

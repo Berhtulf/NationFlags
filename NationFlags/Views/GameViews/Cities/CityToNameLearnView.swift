@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct CityToNameLearnView: View {
-    @EnvironmentObject var settings: GlobalSettings
-    @Environment(\.presentationMode) var presentationMode
-    
-    @StateObject var viewModel = GameViewModel(withTimer: false)
-    
+    @EnvironmentObject private var settings: GlobalSettings
+    @Environment(\.presentationMode) private var presentationMode
+
+    @StateObject private var viewModel = GameViewModel(withTimer: false)
+
     var body: some View {
-        VStack{
+        VStack {
             Spacer()
             Text(LocalizedStringKey(viewModel.correctOption?.name ?? ""))
                 .font(.title)
@@ -15,11 +15,11 @@ struct CityToNameLearnView: View {
                 .allowsTightening(true)
                 .minimumScaleFactor(0.005)
                 .padding(.horizontal)
-                .padding(.vertical,7)
+                .padding(.vertical, 7)
             Spacer()
                 .frame(height: 50)
-            if (!viewModel.options.isEmpty) {
-                ForEach(viewModel.options){ item in
+            if !viewModel.options.isEmpty {
+                ForEach(viewModel.options) { item in
                     Button(action: {
                         viewModel.pressedButtonFor(item: item)
                         viewModel.disableAllButtons()
@@ -28,7 +28,7 @@ struct CityToNameLearnView: View {
                         }
                         viewModel.generateOptions(useDelay: true, learnMode: true)
                         viewModel.adjustScoreWhileLearning(wasCorrect: item == viewModel.correctOption)
-                    },label: {
+                    }, label: {
                         Text(LocalizedStringKey(item.capital))
                     })
                     .buttonStyle(OptionButtonStyle(wasPressed: viewModel.pressedButtons.contains(item),
@@ -44,21 +44,17 @@ struct CityToNameLearnView: View {
         .alert(isPresented: $settings.finish) {
             Alert(title: Text("Game over!"), message: Text("score <\(viewModel.score)>/<\(viewModel.pool.count)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    presentationMode.wrappedValue.dismiss()},
+                presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    viewModel.playAgain()
-                })
+                viewModel.playAgain()
+            })
         }
     }
 }
 
-struct CityToNameLearnView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group{
-            NavigationView{
-                CityToNameLearnView().environmentObject(GlobalSettings())
-            }
-        }
-        
+#Preview {
+    NavigationView {
+        CityToNameLearnView()
+            .environmentObject(GlobalSettings())
     }
 }

@@ -10,37 +10,38 @@ import SwiftUI
 import GameKit
 
 struct ModeScrollView: View {
-    @EnvironmentObject var settings: GlobalSettings
-    @EnvironmentObject var viewModel: GameModeViewModel
-    
+    @EnvironmentObject private var settings: GlobalSettings
+    @EnvironmentObject private var viewModel: GameModeViewModel
+
     @AppStorage("NameToFlag") private var NameToFlag = 0
     @AppStorage("NameToFlagError") private var NameToFlagError = 0
     @AppStorage("FlagToName") private var FlagToName = 0
     @AppStorage("FlagToNameError") private var FlagToNameError = 0
-    
+
     @AppStorage("NameToCity") private var NameToCity = 0
     @AppStorage("NameToCityError") private var NameToCityError = 0
     @AppStorage("CityToName") private var CityToName = 0
     @AppStorage("CityToNameError") private var CityToNameError = 0
-    
+
     var body: some View {
-        ScrollView{
+        ScrollView {
             if viewModel.gameMode == 0 {
-                VStack{
+                VStack {
                     Divider()
-                    HStack{
+                    HStack {
                         Text("FlagToName")
                         Spacer()
                         Image(systemName: "chevron.right")
                             .rotationEffect(.degrees(viewModel.showingMenu == 1 ? 90 : 0))
                     }
-                    .padding(.horizontal).contentShape(Rectangle())
+                    .padding(.horizontal)
+                    .contentShape(Rectangle())
                     .onTapGesture {
                         viewModel.toggleSubmenu(index: 1)
                     }
                     if viewModel.showingMenu == 1 {
                         Divider()
-                        VStack{
+                        VStack {
                             NavigationLink(destination: FlagToNameView()) {
                                 GameModeRowView(title: "TimedGame", score: FlagToName)
                             }
@@ -59,19 +60,20 @@ struct ModeScrollView: View {
                         .transition(.customTransition)
                     }
                     Divider()
-                    HStack{
+                    HStack {
                         Text("NameToFlag")
                         Spacer()
                         Image(systemName: "chevron.right")
                             .rotationEffect(.degrees(viewModel.showingMenu == 2 ? 90 : 0))
                     }
-                    .padding(.horizontal).contentShape(Rectangle())
+                    .padding(.horizontal)
+                    .contentShape(Rectangle())
                     .onTapGesture {
                         viewModel.toggleSubmenu(index: 2)
                     }
                     Divider()
                     if viewModel.showingMenu == 2 {
-                        VStack{
+                        VStack {
                             NavigationLink(destination: NameToFlagView()) {
                                 GameModeRowView(title: "TimedGame", score: NameToFlag)
                             }
@@ -92,21 +94,22 @@ struct ModeScrollView: View {
                     }
                 }.padding(.vertical)
             } else {
-                VStack{
+                VStack {
                     Divider()
-                    HStack{
+                    HStack {
                         Text("CityToState")
                         Spacer()
                         Image(systemName: "chevron.right")
                             .rotationEffect(.degrees(viewModel.showingMenu == 1 ? 90 : 0))
                     }
-                    .padding(.horizontal).contentShape(Rectangle())
+                    .padding(.horizontal)
+                    .contentShape(Rectangle())
                     .onTapGesture {
                         viewModel.toggleSubmenu(index: 1)
                     }
                     if viewModel.showingMenu == 1 {
                         Divider()
-                        VStack{
+                        VStack {
                             NavigationLink(destination: CityToNameView()) {
                                 GameModeRowView(title: "TimedGame", score: CityToName)
                             }
@@ -125,7 +128,7 @@ struct ModeScrollView: View {
                         .transition(.customTransition)
                     }
                     Divider()
-                    HStack{
+                    HStack {
                         Text("StateToCity")
                         Spacer()
                         Image(systemName: "chevron.right")
@@ -138,7 +141,7 @@ struct ModeScrollView: View {
                     }
                     Divider()
                     if viewModel.showingMenu == 2 {
-                        VStack{
+                        VStack {
                             NavigationLink(destination: NameToCityView()) {
                                 GameModeRowView(title: "TimedGame", score: NameToCity)
                             }
@@ -165,13 +168,10 @@ struct ModeScrollView: View {
     }
 }
 
-struct ModeScrollView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView{
-            ModeScrollView()
-                .environmentObject(GlobalSettings())
-                .environmentObject(GameModeViewModel())
-        }
+#Preview {
+    NavigationView {
+        ModeScrollView()
+            .environmentObject(GlobalSettings())
+            .environmentObject(GameModeViewModel())
     }
 }
-

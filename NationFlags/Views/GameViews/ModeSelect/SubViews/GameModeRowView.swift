@@ -12,13 +12,13 @@ struct GameModeRowView: View {
     var title: LocalizedStringKey
     var score: Int?
     var practice: Bool?
-    
+
     var body: some View {
-        HStack{
+        HStack {
             Text(title)
                 .padding(.leading)
             Spacer()
-            if let score = score {
+            if let score {
                 Text(String(score))
                     .font(.callout)
             }
@@ -27,12 +27,10 @@ struct GameModeRowView: View {
     }
 }
 
-struct GameModeRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack{
-            GameModeRowView(title: "Test")
-            GameModeRowView(title: "Test", score: 100)
-            GameModeRowView(title: "Test", practice: true)
-        }.padding()
-    }
+#Preview {
+    VStack {
+        GameModeRowView(title: "Test")
+        GameModeRowView(title: "Test", score: 100)
+        GameModeRowView(title: "Test", practice: true)
+    }.padding()
 }

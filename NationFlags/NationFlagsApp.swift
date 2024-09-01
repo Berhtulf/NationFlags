@@ -12,10 +12,10 @@ import UIKit
 
 @main
 struct NationFlagsApp: App {
-    @StateObject var settings = GlobalSettings.shared
-    
+    @ObservedObject var settings = GlobalSettings.shared
+
     var body: some Scene {
-        WindowGroup{
+        WindowGroup {
             MainScreen()
                 .environmentObject(settings)
         }
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
                 print(error?.localizedDescription ?? "")
                 return
             }
-            if let vc = vc {
+            if let vc {
                 self.present(vc, animated: true, completion: nil)
             }
             if #available(iOS 14.0, *) {

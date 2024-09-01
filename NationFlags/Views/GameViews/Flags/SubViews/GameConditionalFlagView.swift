@@ -8,18 +8,16 @@
 
 import SwiftUI
 
-struct GameConditionalFlagView : View{
+struct GameConditionalFlagView: View {
     var item: Nation
     var isCorrect: Bool
     var showCorrect: Bool?
     var wasTapped: Bool
-    
-    var body: some View{
+
+    var body: some View {
         if isCorrect && showCorrect == true {
             ShowCorrectFlag(nation: item)
-        }
-        else
-        {
+        } else {
             if isCorrect && wasTapped {
                 GameCorrectFlag(image: item.image)
             } else if wasTapped {

@@ -10,31 +10,44 @@ import SwiftUI
 import WidgetKit
 
 struct NationWidgetEntryView: View {
-    @Environment(\.widgetFamily) var family: WidgetFamily
+    @Environment(\.widgetFamily) private var family: WidgetFamily
     var entry: Provider.Entry
-    
+
     @ViewBuilder
     var body: some View {
-        switch family {
-        case .systemLarge:
-            LargeWidgetView(entry: entry)
-        case .systemMedium:
-            MediumWidgetView(entry: entry)
-        default:
-            SmallWidgetView(entry: entry)
+        VStack {
+            switch family {
+            case .systemLarge:
+                LargeWidgetView(entry: entry)
+            case .systemMedium:
+                MediumWidgetView(entry: entry)
+            default:
+                SmallWidgetView(entry: entry)
+            }
+        }
+        .widgetBackground(backgroundView: Color.clear)
+    }
+}
+
+extension View {
+    func widgetBackground(backgroundView: some View) -> some View {
+        if #available(iOSApplicationExtension 17.0, *) {
+            return containerBackground(for: .widget) {
+                backgroundView
+            }
+        } else {
+            return background(backgroundView)
         }
     }
 }
 
-struct NationWidgetEntryView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group{
-            NationWidgetEntryView(entry: NationEntry(date: Date(), nation: Nation.czechRepublic))
-                .previewContext(WidgetPreviewContext(family: .systemSmall))
-            NationWidgetEntryView(entry: NationEntry(date: Date(), nation: Nation.czechRepublic))
-                .previewContext(WidgetPreviewContext(family: .systemMedium))
-            NationWidgetEntryView(entry: NationEntry(date: Date(), nation: Nation.czechRepublic))
-                .previewContext(WidgetPreviewContext(family: .systemLarge))
-        }
+#Preview {
+    Group {
+        NationWidgetEntryView(entry: NationEntry(date: Date(), nation: Nation.czechRepublic))
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
+        NationWidgetEntryView(entry: NationEntry(date: Date(), nation: Nation.czechRepublic))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        NationWidgetEntryView(entry: NationEntry(date: Date(), nation: Nation.czechRepublic))
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
     }
 }

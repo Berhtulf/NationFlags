@@ -11,11 +11,11 @@ import MessageUI
 import GameKit
 
 struct MainScreen: View {
-	@StateObject var gameModel = GameModeViewModel()
+	@StateObject private var gameModel = GameModeViewModel()
 	
 	var body: some View {
-		NavigationView{
-			ZStack{
+		NavigationView {
+			ZStack {
 				GameCenterManager()
 					.allowsHitTesting(false)
 				VStack {
@@ -24,37 +24,37 @@ struct MainScreen: View {
 						.resizable()
 						.padding()
 						.aspectRatio(contentMode: .fit)
-						.frame(height:245)
+						.frame(height: 245)
 						.shadow(radius: 10)
 					Text("Countries")
 						.font(.largeTitle)
-						.padding(.vertical,40)
+						.padding(.vertical, 40)
 					NavigationLink(
 						destination:
 							ModeSelect()
-								.environmentObject(gameModel)
-						,label: {
-							Text("play")
-								.modifier(MainMenuButton())
-								.font(.title2)
-						})
+							.environmentObject(gameModel)
+					) {
+						Text("play")
+							.modifier(MainMenuButton())
+							.font(.title2)
+					}
 					NavigationLink(destination: NationList()) {
 						Text("list")
 							.modifier(MainMenuButton())
 					}.font(.title2)
 					Spacer()
-				}.edgesIgnoringSafeArea(.all)
-				.onAppear{
+				}
+				.edgesIgnoringSafeArea(.all)
+				.onAppear {
 					GKAccessPoint.shared.isActive = true
 				}
-				
 			}
-		}.navigationViewStyle(StackNavigationViewStyle())
+		}
+		.navigationViewStyle(StackNavigationViewStyle())
 	}
 }
 
-struct MainScreen_Previews: PreviewProvider {
-	static var previews: some View {
-		MainScreen().environmentObject(GlobalSettings())
-	}
+#Preview {
+	MainScreen()
+		.environmentObject(GlobalSettings())
 }

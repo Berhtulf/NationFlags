@@ -14,21 +14,21 @@ final class GameModeViewModel: ObservableObject {
     
     @Published var showingMenu: Int?
     
-    private func toggleMap(position:Int){
+    private func toggleMap(position: Int) {
         objectWillChange.send()
         if settings.img[position] > 0 {
             settings.img[position] = 0
-        }else{
+        } else {
             settings.img[position] = 1
         }
     }
     
-    //MARK: - Intents
+    // MARK: - Intents
     func toggleSubmenu(index: Int) {
-        withAnimation{
+        withAnimation {
             if showingMenu == index {
                 showingMenu = nil
-            }else{
+            } else {
                 showingMenu = index
             }
         }
@@ -54,15 +54,15 @@ final class GameModeViewModel: ObservableObject {
     }
     
     func handleMapDragGesture(location: CGPoint, map: CGSize) {
-        if location.x > map.width * 0.75 && location.y > map.height / 2{
+        if location.x > map.width * 0.75 && location.y > map.height / 2 {
             toggleMapRegion(region: .oceania)
-        }else if location.x < map.width * 0.35{
+        } else if location.x < map.width * 0.35 {
             toggleMapRegion(region: .americas)
-        }else if location.x > map.width * 0.35 && location.x < map.width * 0.6 && location.y > map.height * 0.3{
+        } else if location.x > map.width * 0.35 && location.x < map.width * 0.6 && location.y > map.height * 0.3 {
             toggleMapRegion(region: .africa)
-        }else if location.x > map.width * 0.35 && location.x < map.width * 0.6 && location.y < map.height * 0.3{
+        } else if location.x > map.width * 0.35 && location.x < map.width * 0.6 && location.y < map.height * 0.3 {
             toggleMapRegion(region: .europe)
-        }else if location.x > map.width * 0.6 && location.y < map.height / 2{
+        } else if location.x > map.width * 0.6 && location.y < map.height / 2 {
             toggleMapRegion(region: .asia)
         }
     }

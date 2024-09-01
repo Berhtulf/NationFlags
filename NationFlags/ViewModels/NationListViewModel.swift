@@ -9,32 +9,34 @@
 import SwiftUI
 import Combine
 
-class NationListViewModel : ObservableObject {
+class NationListViewModel: ObservableObject {
     @Published var search: String = ""
     @Published var showSearch = false
-    
+
     @Published var nationList = Nation.list
-    
+
     var searchCancellable: AnyCancellable?
-    
+
     init() {
         searchCancellable = $search
             .debounce(for: 0.3, scheduler: RunLoop.main) // debounces the string publisher, such that it delays the process of sending request to remote server.
             .removeDuplicates()
-            .compactMap{ $0 } // removes the nil values so the search string does not get passed down to the publisher chain
-            .sink(receiveValue: { str in
+            .compactMap { $0 } // removes the nil values so the search string does not get passed down to the publisher chain
+            .sink { str in
                 self.filterList(search: str)
-            })
+            }
     }
-    
-    
-    private func filterList(search: String){
-        if search == "" {
-            nationList = Nation.list.sorted(by: {NSLocalizedString($0.name, comment: "") < NSLocalizedString($1.name, comment: "")})
-        }else{
-            nationList = Nation.list.filter({
-                                        NSLocalizedString($0.name, comment: "").localizedCaseInsensitiveContains(search)
-                                            || NSLocalizedString($0.capital, comment: "").localizedCaseInsensitiveContains(search)})
+
+    private func filterList(search: String) {
+        if search.isEmpty {
+            nationList = Nation.list.sorted {
+                NSLocalizedString($0.name, comment: "") < NSLocalizedString($1.name, comment: "")
+            }
+        } else {
+            nationList = Nation.list.filter {
+                NSLocalizedString($0.name, comment: "").localizedCaseInsensitiveContains(search)
+                || NSLocalizedString($0.capital, comment: "").localizedCaseInsensitiveContains(search)
+            }
         }
     }
 }

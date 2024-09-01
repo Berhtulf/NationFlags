@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum MapRegion : String {
+enum MapRegion: String {
     case asia = "Asia"
     case europe = "Europe"
     case africa = "Africa"

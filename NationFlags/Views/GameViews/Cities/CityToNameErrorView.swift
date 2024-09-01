@@ -9,13 +9,13 @@
 import SwiftUI
 
 struct CityToNameErrorView: View {
-    @EnvironmentObject var settings: GlobalSettings
-    @Environment(\.presentationMode) var presentationMode
-    
-    @StateObject var viewModel = GameViewModel(withTimer: false)
-    
+    @EnvironmentObject private var settings: GlobalSettings
+    @Environment(\.presentationMode) private var presentationMode
+
+    @StateObject private var viewModel = GameViewModel(withTimer: false)
+
     var body: some View {
-        VStack{
+        VStack {
             Spacer()
             Text(LocalizedStringKey(viewModel.correctOption?.name ?? ""))
                 .font(.title)
@@ -23,23 +23,23 @@ struct CityToNameErrorView: View {
                 .allowsTightening(true)
                 .minimumScaleFactor(0.005)
                 .padding(.horizontal)
-                .padding(.vertical,7)
+                .padding(.vertical, 7)
             Spacer()
                 .frame(height: 50)
-            if (!viewModel.options.isEmpty) {
-                ForEach(viewModel.options){ item in
+            if !viewModel.options.isEmpty {
+                ForEach(viewModel.options) { item in
                     Button(action: {
                         viewModel.pressedButtonFor(item: item)
                         if item == viewModel.correctOption {
                             viewModel.generateOptions(useDelay: true)
                             viewModel.disableAllButtons()
-                        }else{
+                        } else {
                             viewModel.disableButton(item: item)
                             viewModel.highlightCorrectOption()
                             viewModel.endGame()
                         }
                         viewModel.adjustScore(wasCorrect: item == viewModel.correctOption)
-                    },label: {
+                    }, label: {
                         Text(LocalizedStringKey(item.capital))
                     })
                     .buttonStyle(OptionButtonStyle(wasPressed: viewModel.pressedButtons.contains(item),
@@ -55,23 +55,19 @@ struct CityToNameErrorView: View {
         .alert(isPresented: $settings.finish) {
             Alert(title: Text("Game over!"), message: Text("score <\(viewModel.score)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    viewModel.saveScore(score: viewModel.score, view: "CityToNameError")
-                    presentationMode.wrappedValue.dismiss()},
+                viewModel.saveScore(score: viewModel.score, view: "CityToNameError")
+                presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    viewModel.saveScore(score: viewModel.score, view: "CityToNameError")
-                    viewModel.playAgain()
-                })
+                viewModel.saveScore(score: viewModel.score, view: "CityToNameError")
+                viewModel.playAgain()
+            })
         }
     }
 }
 
-struct CityToNameErrorView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group{
-            NavigationView{
-                CityToNameErrorView().environmentObject(GlobalSettings())
-            }
-        }
-        
+#Preview {
+    NavigationView {
+        CityToNameErrorView()
+            .environmentObject(GlobalSettings())
     }
 }

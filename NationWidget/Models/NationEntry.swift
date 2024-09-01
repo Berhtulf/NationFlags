@@ -13,5 +13,5 @@ struct NationEntry: TimelineEntry, Hashable {
     var date: Date
     let nation: Nation
     
-    var image:UIImage?
+    var image: UIImage?
 }

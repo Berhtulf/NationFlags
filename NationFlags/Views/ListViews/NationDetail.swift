@@ -10,45 +10,48 @@ import SwiftUI
 import MapKit
 
 struct NationDetail: View {
-    @State var showInfo:Bool = false
-    @EnvironmentObject var settings: GlobalSettings
+    @State private var showInfo = false
+    @EnvironmentObject private var settings: GlobalSettings
     static let taskDateFormat: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         return formatter
     }()
     var nation: Nation
-    @State var showLegend:Bool = false
-    @State var location:MKCoordinateRegion
-    
+    @State private var showLegend = false
+    var location: MKCoordinateRegion
+
     @State private var selection = "default"
     @State private var mapType = 0
     var body: some View {
-        TabView(selection: $selection){
+        TabView(selection: $selection) {
             ZStack {
                 NationDetailInfo(nation: nation, legend: $showLegend)
                     .opacity(showLegend ? 0.3 : 1)
-                if (showLegend){
-                    VStack{
+                if showLegend {
+                    VStack {
                         Spacer()
                         RecognitionLegend()
                             .background(Color(UIColor.systemBackground))
                             .shadow(radius: 10)
                             .gesture(DragGesture(minimumDistance: 1, coordinateSpace: .local)
-                                        .onEnded { value in
-                                            if (value.translation.height > 20) { self.showLegend = false}
-                                        })
-                    }.animation(.easeInOut)
+                                .onEnded { value in
+                                    if value.translation.height > 20 {
+                                        self.showLegend = false
+                                    }
+                                })
+                    }
+                    .animation(.easeInOut)
                     .transition(.asymmetric(insertion: .move(edge: .bottom), removal: .move(edge: .bottom)))
                 }
             }
             .onTapGesture {
-                withAnimation(){
+                withAnimation {
                     self.showLegend = false
                 }
             }
             .tag("default")
-            .tabItem{
+            .tabItem {
                 VStack {
                     Image(systemName: "info.circle.fill")
                     Text("Info")
@@ -61,7 +64,7 @@ struct NationDetail: View {
                     .padding(.vertical, 15)
             }
             .tag("map")
-            .tabItem{
+            .tabItem {
                 VStack {
                     Image(systemName: "map.fill")
                     Text("Map")
@@ -69,14 +72,14 @@ struct NationDetail: View {
             }
         }
         .navigationBarTitle(LocalizedStringKey(nation.name), displayMode: .inline)
-        .toolbar(content: {
+        .toolbar {
             Button(action: {
                 self.showInfo.toggle()
             }) {
                 Image(systemName: "questionmark.circle")
                     .padding()
             }
-        })
+        }
         .alert(isPresented: $showInfo) {
             Alert(title: Text("infoLastUpdate"), message: Text("\(settings.updateDate)"),
                   dismissButton: .default(Text("Back")) {})
@@ -84,30 +87,27 @@ struct NationDetail: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group{
-            NavigationView{
-                NationDetail(nation: Nation.list[153], location: MKCoordinateRegion(center: Nation.list[153].locationCoordinate, span: MKCoordinateSpan(latitudeDelta: Nation.list[153].locationZoom, longitudeDelta: Nation.list[153].locationZoom)))
-            }
-        }
+#Preview {
+    NavigationView {
+        NationDetail(nation: Nation.list[153], location: MKCoordinateRegion(center: Nation.list[153].locationCoordinate, span: MKCoordinateSpan(latitudeDelta: Nation.list[153].locationZoom, longitudeDelta: Nation.list[153].locationZoom)))
     }
 }
 
 struct NationDetailInfo: View {
-    @State var nation: Nation
-    @Binding var legend:Bool
+    let nation: Nation
+    @Binding var legend: Bool
+
     var body: some View {
-        VStack(alignment: .leading){
-            HStack{
-                VStack{
-                    NationDetailFlag(nation: $nation).padding()
+        VStack(alignment: .leading) {
+            HStack {
+                VStack {
+                    NationDetailFlag(nation: nation).padding()
                     Text(LocalizedStringKey(nation.name))
                         .font(.title).multilineTextAlignment(.center)
                 }
             }
             Divider()
-            HStack{
+            HStack {
                 Text("MainCity")
                     .padding(.leading)
                 Spacer()
@@ -115,16 +115,16 @@ struct NationDetailInfo: View {
                     .padding(.trailing)
             }
             Divider()
-            HStack{
+            HStack {
                 Text("Population")
                     .padding(.leading)
                 Spacer()
                 Text("\(nation.population)")
                     .padding(.trailing)
             }
-            Group{
+            Group {
                 Divider()
-                HStack{
+                HStack {
                     Text("StateSize")
                         .padding(.leading)
                     Spacer()
@@ -132,7 +132,7 @@ struct NationDetailInfo: View {
                         .padding(.trailing)
                 }
                 Divider()
-                HStack{
+                HStack {
                     Text("Density")
                         .padding(.leading)
                     Spacer()
@@ -140,28 +140,28 @@ struct NationDetailInfo: View {
                         .padding(.trailing)
                 }
                 Divider()
-                if (nation.recognition != "All"){
-                    HStack{
-                        if (nation.recognition == "Red" || nation.recognition == "Orange"){
+                if nation.recognition != "All" {
+                    HStack {
+                        if nation.recognition == "Red" || nation.recognition == "Orange" {
                             RoundedRectangle(cornerRadius: 3)
                                 .fill(nation.recognition == "Red" ? Color("RedRecognition") : Color("OrangeRecognition"))
                                 .frame(width: 30, height: 30)
                                 .padding(.horizontal)
                                 .onTapGesture {
-                                    withAnimation(){
+                                    withAnimation {
                                         self.legend.toggle()
                                     }
                                 }
                             Spacer()
                             Text(nation.recognition == "Red" ? "RedRecognition" : "OrangeRecognition")
                                 .padding(.horizontal).multilineTextAlignment(.trailing)
-                        }else if (nation.recognition == "Pink" || nation.recognition == "Green"){
+                        } else if nation.recognition == "Pink" || nation.recognition == "Green" {
                             RoundedRectangle(cornerRadius: 3)
                                 .fill(nation.recognition == "Pink" ? Color("PinkRecognition") : Color("GreenRecognition"))
                                 .frame(width: 30, height: 30)
                                 .padding(.horizontal)
                                 .onTapGesture {
-                                    withAnimation(){
+                                    withAnimation {
                                         self.legend.toggle()
                                     }
                                 }
@@ -178,9 +178,9 @@ struct NationDetailInfo: View {
 }
 
 struct RecognitionLegend: View {
-    var body: some View{
+    var body: some View {
         VStack(alignment: .leading) {
-            HStack{
+            HStack {
                 RoundedRectangle(cornerRadius: 3)
                     .fill(Color("RedRecognition"))
                     .frame(width: 30, height: 30)
@@ -189,7 +189,7 @@ struct RecognitionLegend: View {
                     .padding(.horizontal)
             }
             Divider()
-            HStack{
+            HStack {
                 RoundedRectangle(cornerRadius: 3)
                     .fill(Color("OrangeRecognition"))
                     .frame(width: 30, height: 30)
@@ -198,7 +198,7 @@ struct RecognitionLegend: View {
                     .padding(.horizontal)
             }
             Divider()
-            HStack{
+            HStack {
                 RoundedRectangle(cornerRadius: 3)
                     .fill(Color("GreenRecognition"))
                     .frame(width: 30, height: 30)
@@ -207,7 +207,7 @@ struct RecognitionLegend: View {
                     .padding(.horizontal)
             }
             Divider()
-            HStack{
+            HStack {
                 RoundedRectangle(cornerRadius: 3)
                     .fill(Color("PinkRecognition"))
                     .frame(width: 30, height: 30)
@@ -221,28 +221,31 @@ struct RecognitionLegend: View {
 }
 
 struct MapLayers: View {
-    @State var showMapTypes:Bool = false
-    
-    @Binding var mapType:Int
+    @State private var showMapTypes = false
+    @Binding var mapType: Int
+
     var body: some View {
-        HStack{
+        HStack {
             Button(action: {
-                withAnimation(){
+                withAnimation {
                     self.showMapTypes.toggle()
                 }
-            }){
+            }) {
                 Image(systemName: "square.stack.3d.up.fill")
                     .padding(showMapTypes ? 0 : 10)
                     .frame(height: 40)
-            }.buttonStyle(PlainButtonStyle())
+            }
+            .buttonStyle(PlainButtonStyle())
             if showMapTypes {
-                HStack{
+                HStack {
                     Picker(selection: $mapType, label: Text("ModeSelect")) {
                         Text("Standard").tag(0)
                         Text("Hybrid").tag(1)
                         Text("Satellite").tag(2)
-                    }.pickerStyle(SegmentedPickerStyle())
-                }.frame(width:250)
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+                .frame(width: 250)
             }
         }
         .padding(.horizontal, showMapTypes ? 10 : 0)

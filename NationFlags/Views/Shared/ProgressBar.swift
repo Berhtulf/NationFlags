@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ProgressBar: View {
     @ObservedObject var timer = TimerManager.shared
-    
+
     var body: some View {
         GeometryReader { geometryReader in
             VStack {
@@ -28,13 +28,11 @@ struct ProgressBar: View {
         }.frame(height: 40)
     }
 }
-struct ProgressBar_Previews: PreviewProvider {
-    static var previews: some View {
-        Group{
-            ProgressBar().padding().previewDevice(PreviewDevice(rawValue: "iPhone 7"))
-            ProgressBar().padding().previewDevice(PreviewDevice(rawValue: "iPhone X"))
-            ProgressBar().padding().previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))
-            ProgressBar().padding().previewDevice(PreviewDevice(rawValue: "iPhone SE"))
-        }
+#Preview {
+    Group {
+        ProgressBar().padding().previewDevice(PreviewDevice(rawValue: "iPhone 7"))
+        ProgressBar().padding().previewDevice(PreviewDevice(rawValue: "iPhone X"))
+        ProgressBar().padding().previewDevice(PreviewDevice(rawValue: "iPhone 11 Pro Max"))
+        ProgressBar().padding().previewDevice(PreviewDevice(rawValue: "iPhone SE"))
     }
 }

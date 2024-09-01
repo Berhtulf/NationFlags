@@ -10,8 +10,8 @@ import CoreLocation
 
 struct Nation: Hashable, Codable, Identifiable {
     static var list: [Nation] = load("Nations.json")
-    private var latlngZm:[Double]
-    
+    private var latlngZm: [Double]
+
     let id = UUID()
     var name: String
     var capital: String
@@ -36,7 +36,7 @@ struct Nation: Hashable, Codable, Identifiable {
             latitude: latlngZm[0],
             longitude: latlngZm[1])
     }
-    var locationZoom:CLLocationDegrees{
+    var locationZoom: CLLocationDegrees {
         CLLocationDegrees(latlngZm[2])
     }
     

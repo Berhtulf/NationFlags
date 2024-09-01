@@ -3,7 +3,7 @@ import SwiftUI
 
 class StoreReview {
     @AppStorage("ActionCount") var actionCount = 0
-    @AppStorage("lastReviewRequestAppVersion") var lastVersion:String = ""
+    @AppStorage("lastReviewRequestAppVersion") var lastVersion: String = ""
 }
 
 struct AppStoreReviewPrompt {

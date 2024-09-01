@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct SearchButton: View {
-    @EnvironmentObject var model: NationListViewModel
-    var body: some View{
+    @EnvironmentObject private var model: NationListViewModel
+
+    var body: some View {
         Button(action: {
-            withAnimation{
+            withAnimation {
                 model.search = ""
                 model.showSearch.toggle()
             }
@@ -23,9 +24,8 @@ struct SearchButton: View {
     }
 }
 
-struct SearchButton_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchButton().padding()
+#Preview {
+    SearchButton()
+        .padding()
         .previewLayout(.sizeThatFits)
-    }
 }

@@ -11,27 +11,27 @@ import GameKit
 class GlobalSettings: ObservableObject {
     static var shared = GlobalSettings()
 
-    var updateDate:Date = Date(timeIntervalSince1970: 1594029613)
+    var updateDate: Date = Date(timeIntervalSince1970: 1594029613)
     // Prodleva před načtením dalších otázek
     let nextDelay = 0.5
     let learnDelay = 1.5
     
-    @Published var regions:Set<String> = []
+    @Published var regions: Set<String> = []
     @Published var finish = false
-    @Published var img: [Int] = [0,0,0,0,0]
-    var imgName:String{
-        img.map{ String($0) }.joined()
+    @Published var img: [Int] = [0, 0, 0, 0, 0]
+    var imgName: String {
+        img.map { String($0) }.joined()
     }
     
     func toggleRegion(_ region: MapRegion) {
         if regions.contains(region.rawValue) {
             regions.remove(region.rawValue)
-        }else{
+        } else {
             regions.insert(region.rawValue)
         }
     }
     
-    func saveScore(maxScore: Int, score:Int, view:String){
+    func saveScore(maxScore: Int, score: Int, view: String) {
         var achievements = [GKAchievement]()
         achievements.append(GKAchievement.init(identifier: "FirstGamePlayed"))
         
@@ -51,7 +51,7 @@ class GlobalSettings: ObservableObject {
         }
     }
     
-    func addAchievementProgress(_ achievements:[GKAchievement], progress:Double) -> Void {
+    func addAchievementProgress(_ achievements: [GKAchievement], progress: Double) {
         //Je uživatel přihlášen?
         guard GKLocalPlayer.local.isAuthenticated else { return }
         
@@ -60,11 +60,11 @@ class GlobalSettings: ObservableObject {
             item.showsCompletionBanner = true
         }
         
-        GKAchievement.report(achievements, withCompletionHandler: { error in
+        GKAchievement.report(achievements) { error in
             if let er = error {
                 print("Error saving, \(er.localizedDescription)")
                 return
             }
-        })
+        }
     }
 }

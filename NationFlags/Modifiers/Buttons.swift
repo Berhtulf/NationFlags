@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct BasicButton: ViewModifier {
-    var color:Color = Color("CustomGray")
-    func body(content: Content) -> some View{
+    var color = Color("CustomGray")
+    func body(content: Content) -> some View {
         content
             .foregroundColor(Color.primary)
             .multilineTextAlignment(.center)
@@ -25,7 +25,7 @@ struct BasicButton: ViewModifier {
 }
 
 struct MainMenuButton: ViewModifier {
-    func body(content: Content) -> some View{
+    func body(content: Content) -> some View {
         content
             .modifier(BasicButton(color: Color("CustomGray")))
     }

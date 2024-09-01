@@ -9,9 +9,10 @@
 import SwiftUI
 
 struct ModeSelectMapImage: View {
-    @EnvironmentObject var viewModel: GameModeViewModel
+    @EnvironmentObject private var viewModel: GameModeViewModel
+
     var body: some View {
-        VStack{
+        VStack {
             Image(viewModel.settings.imgName)
                 .resizable()
                 .shadow(radius: 2)
@@ -21,10 +22,8 @@ struct ModeSelectMapImage: View {
     }
 }
 
-struct ModeSelectMapImage_Preview: PreviewProvider {
-    static var previews: some View {
-            ModeSelectMapImage()
-                .environmentObject(GameModeViewModel())
-                .environment(\.locale, Locale(identifier: "cs"))
-    }
+#Preview {
+    ModeSelectMapImage()
+        .environmentObject(GameModeViewModel())
+        .environment(\.locale, Locale(identifier: "cs"))
 }

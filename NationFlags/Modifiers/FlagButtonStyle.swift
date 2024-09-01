@@ -18,29 +18,29 @@ struct FlagButtonStyle: ButtonStyle {
         configuration.label
             .shadow(color: showCorrect && isCorrect ? Color.green : Color.white.opacity(0), radius: 2, x: 0.0, y: 0.0)
             .overlay(
-                ZStack{
+                ZStack {
                     RoundedRectangle(cornerRadius: 2)
                         .stroke(showCorrect && isCorrect ? Color.green : Color.white.opacity(0), lineWidth: 5)
-                    Group{
+                    Group {
                         Image(systemName: "circle.fill")
                             .resizable()
-                            .frame(width:60, height: 60)
+                            .frame(width: 60, height: 60)
                         Image(systemName: "checkmark.circle.fill")
                             .resizable()
-                            .frame(width:60, height: 60)
+                            .frame(width: 60, height: 60)
                             .foregroundColor(.green)
                             .overlay(
                                 Circle()
                                     .stroke(Color.black, lineWidth: 1)
                             )
                     }.opacity(wasPressed && isCorrect ? 1 : 0)
-                    Group{
+                    Group {
                         Image(systemName: "circle.fill")
                             .resizable()
-                            .frame(width:60, height: 60)
+                            .frame(width: 60, height: 60)
                         Image(systemName: "xmark.circle.fill")
                             .resizable()
-                            .frame(width:60, height: 60)
+                            .frame(width: 60, height: 60)
                             .foregroundColor(.red)
                             .overlay(
                                 Circle()
@@ -55,7 +55,7 @@ struct FlagButtonStyle: ButtonStyle {
     func getBackgroundColor() -> Color {
         if isEnabled || !wasPressed {
             return Color.white
-        }else{
+        } else {
             return isCorrect ? Color.green : .red
         }
     }
@@ -63,8 +63,8 @@ struct FlagButtonStyle: ButtonStyle {
 
 struct FlagButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
-        Group{
-            HStack{
+        Group {
+            HStack {
                 Button(action: {}, label: {
                     GameFlagImage(image: Nation.czechRepublic.image)
                 }).buttonStyle(FlagButtonStyle(wasPressed: false, isCorrect: true, showCorrect: false))

@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct CityToNameView: View {
-    @EnvironmentObject var settings: GlobalSettings
-    @Environment(\.presentationMode) var presentationMode
-    
-    @StateObject var viewModel = GameViewModel(withTimer: true)
-    
+    @EnvironmentObject private var settings: GlobalSettings
+    @Environment(\.presentationMode) private var presentationMode
+
+    @StateObject private var viewModel = GameViewModel(withTimer: true)
+
     var body: some View {
-        ZStack{
-            VStack{
+        ZStack {
+            VStack {
                 ProgressBar()
                     .padding(10)
                 Spacer()
@@ -26,21 +26,21 @@ struct CityToNameView: View {
                     .allowsTightening(true)
                     .minimumScaleFactor(0.005)
                     .padding(.horizontal)
-                    .padding(.vertical,7)
+                    .padding(.vertical, 7)
                 Spacer()
                     .frame(height: 50)
-                if (!viewModel.options.isEmpty) {
-                    ForEach(viewModel.options){ item in
+                if !viewModel.options.isEmpty {
+                    ForEach(viewModel.options) { item in
                         Button(action: {
                             viewModel.pressedButtonFor(item: item)
                             if item == viewModel.correctOption {
                                 viewModel.generateOptions(useDelay: true)
                                 viewModel.disableAllButtons()
-                            }else{
+                            } else {
                                 viewModel.disableButton(item: item)
                             }
                             viewModel.adjustScore(wasCorrect: item == viewModel.correctOption, deduct: true)
-                        },label: {
+                        }, label: {
                             Text(LocalizedStringKey(item.capital))
                         })
                         .buttonStyle(OptionButtonStyle(wasPressed: viewModel.pressedButtons.contains(item),
@@ -56,21 +56,20 @@ struct CityToNameView: View {
         .alert(isPresented: $settings.finish) {
             Alert(title: Text("Game over!"), message: Text("score <\(viewModel.score)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    viewModel.saveScore(score: viewModel.score, view: "CityToName")
-                    presentationMode.wrappedValue.dismiss()},
+                viewModel.saveScore(score: viewModel.score, view: "CityToName")
+                presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    viewModel.saveScore(score: viewModel.score, view: "CityToName")
-                    viewModel.playAgain()
-                })
+                viewModel.saveScore(score: viewModel.score, view: "CityToName")
+                viewModel.playAgain()
+            })
         }
     }
 }
 
-struct capitalToNameView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView{
-            CityToNameView().environmentObject(GlobalSettings())
-                .environment(\.locale, Locale(identifier: "cs"))
-        }
+#Preview {
+    NavigationView {
+        CityToNameView()
+            .environmentObject(GlobalSettings())
+            .environment(\.locale, Locale(identifier: "cs"))
     }
 }

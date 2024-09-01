@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-final class TimerManager : ObservableObject {
+final class TimerManager: ObservableObject {
     static var shared = TimerManager()
     
     @Published var time = 60
@@ -18,11 +18,11 @@ final class TimerManager : ObservableObject {
         GlobalSettings.shared.finish = false
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             self.timer = timer
-            withAnimation(.linear(duration: 1)){
+            withAnimation(.linear(duration: 1)) {
                 self.time -= 1
             }
             
-            if (self.time <= 0) {
+            if self.time <= 0 {
                 self.timer?.invalidate()
                 DispatchQueue.main.asyncAfter(deadline: .now() + GlobalSettings.shared.nextDelay) {
                     GlobalSettings.shared.finish = true

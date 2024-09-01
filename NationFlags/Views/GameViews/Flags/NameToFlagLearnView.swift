@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct NameToFlagLearnView: View {
-    @EnvironmentObject var settings: GlobalSettings
-    @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject private var settings: GlobalSettings
+    @Environment(\.presentationMode) private var presentationMode
     
-    @StateObject var viewModel = GameViewModel(withTimer: false)
+    @StateObject private var viewModel = GameViewModel(withTimer: false)
     
     var body: some View {
-        VStack{
+        VStack {
             Spacer()
             FlagImage(image: viewModel.correctOption?.image)
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 300, alignment: .center)
                 .padding(.horizontal)
-            if (!viewModel.options.isEmpty) {
-                ForEach(viewModel.options){ item in
+            if !viewModel.options.isEmpty {
+                ForEach(viewModel.options) { item in
                     Button(action: {
                         viewModel.pressedButtonFor(item: item)
                         viewModel.disableAllButtons()
@@ -29,7 +29,7 @@ struct NameToFlagLearnView: View {
                         }
                         viewModel.generateOptions(useDelay: true, learnMode: true)
                         viewModel.adjustScoreWhileLearning(wasCorrect: item == viewModel.correctOption)
-                    },label: {
+                    }, label: {
                         Text(LocalizedStringKey(item.name))
                     })
                     .buttonStyle(OptionButtonStyle(wasPressed: viewModel.pressedButtons.contains(item),
@@ -39,25 +39,24 @@ struct NameToFlagLearnView: View {
                 }
             }
             Spacer()
-        }.navigationBarTitle("NameToFlag", displayMode: .inline)
+        }
+        .navigationBarTitle("NameToFlag", displayMode: .inline)
         .onAppear(perform: viewModel.playAgain)
         .alert(isPresented: $settings.finish) {
             Alert(title: Text("Game over!"), message: Text("score <\(viewModel.score)>/<\(viewModel.pool.count)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    presentationMode.wrappedValue.dismiss()},
+                presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    viewModel.playAgain()
-                })
+                viewModel.playAgain()
+            })
         }
     }
 }
 
-struct NameToFlagLearnView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group{
-            NavigationView{ NameToFlagLearnView().environmentObject(GlobalSettings())
-            }
+#Preview {
+    Group {
+        NavigationView {
+            NameToFlagLearnView().environmentObject(GlobalSettings())
         }
-        
     }
 }

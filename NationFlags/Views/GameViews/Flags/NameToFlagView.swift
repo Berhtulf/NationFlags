@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct NameToFlagView: View {
-    @EnvironmentObject var settings: GlobalSettings
-    @Environment(\.presentationMode) var presentationMode
-    
-    @StateObject var viewModel = GameViewModel(withTimer: true)
-    
+    @EnvironmentObject private var settings: GlobalSettings
+    @Environment(\.presentationMode) private var presentationMode
+
+    @StateObject private var viewModel = GameViewModel(withTimer: true)
+
     var body: some View {
-        ZStack{
-            VStack{
+        ZStack {
+            VStack {
                 ProgressBar()
                     .padding(.top, 10)
                     .padding(.horizontal)
@@ -24,18 +24,18 @@ struct NameToFlagView: View {
                 FlagImage(image: viewModel.correctOption?.image)
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 250, alignment: .center)
                     .padding(.horizontal)
-                if (!viewModel.options.isEmpty) {
-                    ForEach(viewModel.options){ item in
+                if !viewModel.options.isEmpty {
+                    ForEach(viewModel.options) { item in
                         Button(action: {
                             viewModel.pressedButtonFor(item: item)
                             if item == viewModel.correctOption {
                                 viewModel.generateOptions(useDelay: true)
                                 viewModel.disableAllButtons()
-                            }else{
+                            } else {
                                 viewModel.disableButton(item: item)
                             }
                             viewModel.adjustScore(wasCorrect: item == viewModel.correctOption, deduct: true)
-                        },label: {
+                        }, label: {
                             Text(LocalizedStringKey(item.name))
                         })
                         .buttonStyle(OptionButtonStyle(wasPressed: viewModel.pressedButtons.contains(item),
@@ -45,25 +45,24 @@ struct NameToFlagView: View {
                 }
                 Spacer()
             }
-        }.navigationBarTitle("NameToFlag", displayMode: .inline)
+        }
+        .navigationBarTitle("NameToFlag", displayMode: .inline)
         .onAppear(perform: viewModel.playAgain)
         .alert(isPresented: $settings.finish) {
             Alert(title: Text("Game over!"), message: Text("score <\(viewModel.score)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    viewModel.saveScore(score: viewModel.score, view: "NameToFlag")
-                    presentationMode.wrappedValue.dismiss()},
+                viewModel.saveScore(score: viewModel.score, view: "NameToFlag")
+                presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    viewModel.saveScore(score: viewModel.score, view: "NameToFlag")
-                    viewModel.playAgain()
-                  })
+                viewModel.saveScore(score: viewModel.score, view: "NameToFlag")
+                viewModel.playAgain()
+            })
         }
     }
 }
 
-struct NameToFlagView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView{
-            NameToFlagView()
-        }
+#Preview {
+    NavigationView {
+        NameToFlagView()
     }
 }

@@ -13,7 +13,7 @@ struct SmallWidgetView: View {
     let entry: NationEntry
     
     var body: some View {
-        VStack{
+        VStack {
             Text(LocalizedStringKey(entry.nation.name))
                 .font(.headline)
                 .lineLimit(2)
@@ -30,5 +30,3 @@ struct SmallWidgetView: View {
         .padding()
     }
 }
-
-

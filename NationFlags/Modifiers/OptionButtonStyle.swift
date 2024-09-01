@@ -13,7 +13,7 @@ struct OptionButtonStyle: ButtonStyle {
     private(set) var wasPressed: Bool
     private(set) var isCorrect: Bool
     private(set) var showCorrect = false
-    
+
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(Color.primary)
@@ -31,20 +31,18 @@ struct OptionButtonStyle: ButtonStyle {
             .shadow(radius: 2, y: 2)
             .opacity(configuration.isPressed ? 0.3 : 1)
     }
-    
+
     func getBackgroundColor() -> Color {
-        if (!wasPressed || isEnabled) {
+        if !wasPressed || isEnabled {
             return Color("CustomGray")
-        }else{
+        } else {
             return isCorrect ? Color.green : .red
         }
     }
 }
 
-struct OptionButtonStyle_Previews: PreviewProvider {
-    static var previews: some View {
-        Button("Button", action: {})
-            .buttonStyle(OptionButtonStyle(wasPressed: false, isCorrect: false))
-            .preferredColorScheme(.dark)
-    }
+#Preview {
+    Button("Button") { }
+        .buttonStyle(OptionButtonStyle(wasPressed: false, isCorrect: false))
+        .preferredColorScheme(.dark)
 }

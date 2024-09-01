@@ -12,18 +12,18 @@ struct LargeWidgetView: View {
     let entry: NationEntry
     
     var body: some View {
-        GeometryReader{ geometry in
-            VStack{
+        GeometryReader { geometry in
+            VStack {
                 MediumWidgetView(entry: entry)
                     .frame(height: geometry.size.height/3)
                 Spacer()
-                VStack{
+                VStack {
                     if let image = entry.image {
                         Image(uiImage: image)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                    }else{
-                        ZStack{
+                    } else {
+                        ZStack {
                             Color.secondary.opacity(0.3)
                             Image(systemName: "rectangle.slash")
                                 .font(.system(size: 50))

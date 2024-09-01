@@ -1,0 +1,72 @@
+disabled_rules:
+  - line_length
+  - file_length
+  - identifier_name
+  - cyclomatic_complexity
+  - type_name
+  - function_body_length
+  - type_body_length
+  - trailing_whitespace
+  - block_based_kvo
+  - weak_delegate
+  - comment_spacing
+  - private_over_fileprivate
+  - nesting
+  - force_try
+  - multiple_closures_with_trailing_closure
+  - redundant_type_annotation
+  - switch_case_alignment
+  - blanket_disable_command
+opt_in_rules: # some rules are turned off by default, so you need to opt-in
+  - empty_count
+  - empty_string
+  - redundant_nil_coalescing
+  - contains_over_filter_count
+  - contains_over_filter_is_empty
+  - contains_over_first_not_nil
+  - contains_over_range_nil_comparison
+  - empty_collection_literal
+  - fallthrough
+  - first_where
+  - force_unwrapping
+#  - flatmap_over_map_reduce
+  - last_where
+  - legacy_multiple
+  - multiline_function_chains
+  - multiline_parameters
+  - multiline_parameters_brackets
+  - toggle_bool
+  - trailing_closure
+  - unhandled_throwing_task
+  - unneeded_parentheses_in_closure_argument
+  - untyped_error_in_catch
+  - yoda_condition
+  - sorted_first_last
+  - shorthand_optional_binding
+  - redundant_type_annotation
+  - private_swiftui_state
+  - prefer_zero_over_explicit_init
+  - prefer_self_type_over_type_of_self
+  - colon
+analyzer_rules:
+  - unused_import
+  - unused_declaration
+custom_rules:
+  preview_provider: # rule identifier
+    name: "PreviewProvider" # rule name. optional.
+    regex: "PreviewProvider" # matching pattern
+    capture_group: 0 # number of regex capture group to highlight the rule violation at. optional.
+    match_kinds: # SyntaxKinds to match. optional.
+      - typeidentifier
+    message: "Prefer #Preview macro over obsolete PreviewProvider" # violation message. optional.
+    severity: warning # violation severity. optional.
+  swiftui_environmentObject_private:
+    name: "PropertyWrapper ACL" # rule name. optional.
+    regex: '(@EnvironmentObject)\s(?!private)'
+    message: 'SwiftUI @EnvironmentObject properties should be private'
+  swiftui_environment_private:
+    name: "PropertyWrapper ACL" # rule name. optional.
+    regex: '@Environment\(\\\.(\w+)\)\s(?!private)'
+    message: 'SwiftUI @Environment properties should be private'
+excluded:
+    - ./*/SnapshotHelper.swift

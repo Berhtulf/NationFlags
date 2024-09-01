@@ -9,10 +9,11 @@
 import SwiftUI
 
 struct SearchBar: View {
-    @EnvironmentObject var viewModel: NationListViewModel
+    @EnvironmentObject private var viewModel: NationListViewModel
+
     var body: some View {
-        HStack{
-            HStack{
+        HStack {
+            HStack {
                 Image(systemName: "magnifyingglass")
                     .padding(7)
                     .foregroundColor(Color.secondary.opacity(0.6))
@@ -23,20 +24,21 @@ struct SearchBar: View {
             .cornerRadius(10)
             .animation(.spring())
             Button(action: {
-                withAnimation{
+                withAnimation {
                     viewModel.showSearch = false
                     viewModel.search = ""
                 }
             }) {
-                Text("Cancel").padding(.horizontal, 3)
+                Text("Cancel")
+                    .padding(.horizontal, 3)
             }
         }
     }
 }
 
-struct SearchBar_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchBar().environmentObject(NationListViewModel()).padding()
+#Preview {
+    SearchBar()
+        .environmentObject(NationListViewModel())
+        .padding()
         .previewLayout(.sizeThatFits)
-    }
 }

@@ -11,27 +11,28 @@ import GameKit
 import MapKit
 
 struct NationList: View {
-    @StateObject var model = NationListViewModel()
-    @EnvironmentObject var settings: GlobalSettings
+    @StateObject private var model = NationListViewModel()
+    @EnvironmentObject private var settings: GlobalSettings
+
     var body: some View {
-        VStack{
+        VStack {
             if #available(iOS 15.0, *) {
                 List(model.nationList, id: \.id) { nation in
-                    NavigationLink(destination: NationDetail(nation: nation, location: MKCoordinateRegion(center: nation.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: nation.locationZoom, longitudeDelta: nation.locationZoom)) )){
+                    NavigationLink(destination: NationDetail(nation: nation, location: MKCoordinateRegion(center: nation.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: nation.locationZoom, longitudeDelta: nation.locationZoom)))) {
                         NationRow(nation: nation)
                     }
                 }
                 .searchable(text: $model.search)
                 .listStyle(.plain)
             } else {
-                if model.showSearch{
+                if model.showSearch {
                     SearchBar()
                         .environmentObject(model)
                         .padding(.top)
                         .padding(.horizontal)
                 }
                 List(model.nationList, id: \.id) { nation in
-                    NavigationLink(destination: NationDetail(nation: nation, location: MKCoordinateRegion(center: nation.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: nation.locationZoom, longitudeDelta: nation.locationZoom)) )){
+                    NavigationLink(destination: NationDetail(nation: nation, location: MKCoordinateRegion(center: nation.locationCoordinate, span: MKCoordinateSpan(latitudeDelta: nation.locationZoom, longitudeDelta: nation.locationZoom)))) {
                         NationRow(nation: nation)
                     }
                 }
@@ -40,27 +41,23 @@ struct NationList: View {
         }
         .navigationBarTitle("list", displayMode: .inline)
         .toolbar {
-            if #available(iOS 15.0, *) {
-            } else {
+            if #unavailable(iOS 15.0) {
                 SearchButton()
                     .environmentObject(model)
             }
         }
-        .onAppear(){
+        .onAppear {
             GKAccessPoint.shared.isActive = false
-            if model.search == "" {
+            if model.search.isEmpty {
                 model.showSearch = false
             }
         }
     }
 }
 
-struct NationList_Previews: PreviewProvider {
-    static var previews: some View {
-        Group{
-            NavigationView{
-                NationList().environmentObject(GlobalSettings())
-            }
-        }
+#Preview {
+    NavigationView {
+        NationList()
+            .environmentObject(GlobalSettings())
     }
 }

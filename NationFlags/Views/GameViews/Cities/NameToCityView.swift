@@ -9,14 +9,14 @@
 import SwiftUI
 
 struct NameToCityView: View {
-    @EnvironmentObject var settings: GlobalSettings
-    @Environment(\.presentationMode) var presentationMode
-    
-    @StateObject var viewModel = GameViewModel(withTimer: true)
-    
+    @EnvironmentObject private var settings: GlobalSettings
+    @Environment(\.presentationMode) private var presentationMode
+
+    @StateObject private var viewModel = GameViewModel(withTimer: true)
+
     var body: some View {
-        ZStack{
-            VStack{
+        ZStack {
+            VStack {
                 ProgressBar()
                     .padding(10)
                 Spacer()
@@ -26,21 +26,21 @@ struct NameToCityView: View {
                     .allowsTightening(true)
                     .minimumScaleFactor(0.005)
                     .padding(.horizontal)
-                    .padding(.vertical,7)
+                    .padding(.vertical, 7)
                 Spacer()
                     .frame(height: 50)
-                if (!viewModel.options.isEmpty) {
-                    ForEach(viewModel.options){ item in
+                if !viewModel.options.isEmpty {
+                    ForEach(viewModel.options) { item in
                         Button(action: {
                             viewModel.pressedButtonFor(item: item)
                             if item == viewModel.correctOption {
                                 viewModel.disableAllButtons()
                                 viewModel.generateOptions(useDelay: true)
-                            }else{
+                            } else {
                                 viewModel.disableButton(item: item)
                             }
                             viewModel.adjustScore(wasCorrect: item == viewModel.correctOption, deduct: true)
-                        },label: {
+                        }, label: {
                             Text(LocalizedStringKey(item.name))
                         })
                         .buttonStyle(OptionButtonStyle(wasPressed: viewModel.pressedButtons.contains(item),
@@ -50,26 +50,26 @@ struct NameToCityView: View {
                 }
                 Spacer()
             }
-            
-        }.navigationBarTitle("StateToCity", displayMode: .inline)
+
+        }
+        .navigationBarTitle("StateToCity", displayMode: .inline)
         .onAppear(perform: viewModel.playAgain)
         .alert(isPresented: $settings.finish) {
             Alert(title: Text("Game over!"), message: Text("score <\(viewModel.score)>"),
                   primaryButton: .destructive(Text("Back")) {
-                    viewModel.saveScore(score: viewModel.score, view: "NameToCity")
-                    presentationMode.wrappedValue.dismiss()},
+                viewModel.saveScore(score: viewModel.score, view: "NameToCity")
+                presentationMode.wrappedValue.dismiss()},
                   secondaryButton: .default(Text("SaveAndPlay")) {
-                    viewModel.saveScore(score: viewModel.score, view: "NameToCity")
-                    viewModel.playAgain()
-                })
+                viewModel.saveScore(score: viewModel.score, view: "NameToCity")
+                viewModel.playAgain()
+            })
         }
     }
 }
 
-struct NameToCityView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView{
-            NameToCityView().environmentObject(GlobalSettings())
-        }
+#Preview {
+    NavigationView {
+        NameToCityView()
+            .environmentObject(GlobalSettings())
     }
 }

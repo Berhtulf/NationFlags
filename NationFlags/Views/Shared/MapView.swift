@@ -12,9 +12,9 @@ import MapKit
 struct MapView: UIViewRepresentable {
     var coord: CLLocationCoordinate2D
     var zoom: CLLocationDegrees
-    var type:Int = 0
-    
-    var mapType:MKMapType {
+    var type: Int = 0
+
+    var mapType: MKMapType {
         if type == 1 {return .hybrid}
         if type == 2 {return .satellite}
         return .standard

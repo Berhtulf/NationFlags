@@ -20,8 +20,8 @@ struct FlagImage: View {
     }
 }
 
-struct NationDetailFlag: View{
-    @Binding var nation: Nation
+struct NationDetailFlag: View {
+    let nation: Nation
     
     var body: some View {
         nation.image

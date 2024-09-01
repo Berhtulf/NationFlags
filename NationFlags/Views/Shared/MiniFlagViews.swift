@@ -15,24 +15,24 @@ struct GameFlagImage: View {
             .cornerRadius(4)
             .shadow(color: Color("CustomShadow"), radius: 4)
             .aspectRatio(contentMode: .fit)
-            .frame(width:150, height: 100)
+            .frame(width: 150, height: 100)
     }
 }
 struct GameCorrectFlag: View {
     var image: Image?
     var body: some View {
-        ZStack{
+        ZStack {
             GameFlagImage(image: image)
             Image(systemName: "circle.fill")
                 .resizable()
-                .frame(width:60, height: 60)
+                .frame(width: 60, height: 60)
             Image(systemName: "checkmark.circle.fill")
                 .resizable()
-                .frame(width:60, height: 60)
+                .frame(width: 60, height: 60)
                 .foregroundColor(.green)
                 .overlay(
-                        Circle()
-                            .stroke(Color.black, lineWidth: 1)
+                    Circle()
+                        .stroke(Color.black, lineWidth: 1)
                 )
         }
     }
@@ -40,15 +40,15 @@ struct GameCorrectFlag: View {
 struct ShowCorrectFlag: View {
     var nation: Nation
     var body: some View {
-        Group{
+        Group {
             if nation.name == "Nepal" {
                 Image("np_correct")
                     .resizable()
                     .cornerRadius(4)
                     .shadow(color: Color("CustomShadow"), radius: 4)
                     .aspectRatio(contentMode: .fit)
-                    .frame(width:150, height: 100)
-            }else{
+                    .frame(width: 150, height: 100)
+            } else {
                 Image(nation.alpha2Code.lowercased())
                     .resizable()
                     .cornerRadius(4)
@@ -58,7 +58,7 @@ struct ShowCorrectFlag: View {
                         RoundedRectangle(cornerRadius: 4)
                             .stroke(Color.green, lineWidth: 6)
                     )
-                    .frame(width:150, height: 100)
+                    .frame(width: 150, height: 100)
             }
         }
     }
@@ -66,41 +66,42 @@ struct ShowCorrectFlag: View {
 struct GameWrongFlag: View {
     var image: Image?
     var body: some View {
-        ZStack{
-                GameFlagImage(image: image)
-                Image(systemName: "circle.fill")
-                    .resizable()
-                    .frame(width:60, height: 60)
-                Image(systemName: "xmark.circle.fill")
-                    .resizable()
-                    .frame(width:60, height: 60)
-                    .foregroundColor(.red)
-                    .overlay(
-                            Circle()
-                                .stroke(Color.black, lineWidth: 1)
-                    )
-            }
+        ZStack {
+            GameFlagImage(image: image)
+            Image(systemName: "circle.fill")
+                .resizable()
+                .frame(width: 60, height: 60)
+            Image(systemName: "xmark.circle.fill")
+                .resizable()
+                .frame(width: 60, height: 60)
+                .foregroundColor(.red)
+                .overlay(
+                    Circle()
+                        .stroke(Color.black, lineWidth: 1)
+                )
         }
     }
+}
 
-struct GameCorrectFlag_Previews: PreviewProvider {
-    static var previews: some View {
-        Group{
-            HStack{
-                GameFlagImage(image: Image("np")).padding()
-                GameFlagImage(image: Image("va")).padding()
-                GameFlagImage(image: Image("cz")).padding()
-            }.previewLayout(.sizeThatFits)
-            HStack{
-                GameCorrectFlag(image: Image("np")).padding()
-                GameCorrectFlag(image: Image("va")).padding()
-                GameCorrectFlag(image: Image("cz")).padding()
-            }.previewLayout(.sizeThatFits)
-            HStack{
-                GameWrongFlag(image: Image("np")).padding()
-                GameWrongFlag(image: Image("va")).padding()
-                GameWrongFlag(image: Image("cz")).padding()
-            }.previewLayout(.sizeThatFits)
+#Preview {
+    Group {
+        HStack {
+            GameFlagImage(image: Image("np")).padding()
+            GameFlagImage(image: Image("va")).padding()
+            GameFlagImage(image: Image("cz")).padding()
         }
+        .previewLayout(.sizeThatFits)
+        HStack {
+            GameCorrectFlag(image: Image("np")).padding()
+            GameCorrectFlag(image: Image("va")).padding()
+            GameCorrectFlag(image: Image("cz")).padding()
+        }
+        .previewLayout(.sizeThatFits)
+        HStack {
+            GameWrongFlag(image: Image("np")).padding()
+            GameWrongFlag(image: Image("va")).padding()
+            GameWrongFlag(image: Image("cz")).padding()
+        }
+        .previewLayout(.sizeThatFits)
     }
 }

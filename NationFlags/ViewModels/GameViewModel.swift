@@ -15,24 +15,24 @@ final class GameViewModel: ObservableObject {
     }
     
     var useTimer: Bool
-    @Published var options:[Nation] = []
-    @Published var correctOption:Nation? = nil
-    
-    @Published var timer:Timer? = nil
-    
+    @Published var options: [Nation] = []
+    @Published var correctOption: Nation?
+
+    @Published var timer: Timer?
+
     @Published var time = 60
     var score = 0
     
     @Published var history = Set<Nation?>()
-    var pool:[Nation]{
-        return Nation.list.filter{settings.regions.contains($0.region)}
+    var pool: [Nation] {
+        return Nation.list.filter { settings.regions.contains($0.region) }
     }
     
-    @Published var disabledButtons : Set<Nation> = []
-    @Published var pressedButtons : Set<Nation> = []
+    @Published var disabledButtons: Set<Nation> = []
+    @Published var pressedButtons: Set<Nation> = []
     @Published private(set) var showCorrectOption = false
     
-    //MARK: - Intents
+    // MARK: - Intents
     func saveScore(score: Int, view: String) {
         settings.saveScore(maxScore: pool.count * 10, score: score, view: view)
     }
@@ -54,7 +54,7 @@ final class GameViewModel: ObservableObject {
         disabledButtons.removeAll()
         showCorrectOption = false
         if history.count < pool.count {
-            repeat{
+            repeat {
                 self.correctOption = pool.randomElement()!
             } while history.contains(self.correctOption)
             
@@ -63,12 +63,12 @@ final class GameViewModel: ObservableObject {
             options.insert(correctOption)
             history.insert(correctOption)
             while options.count < 4 {
-                if let incorrectOption = pool.randomElement(){
+                if let incorrectOption = pool.randomElement() {
                     options.insert(incorrectOption)
                 }
             }
-            self.options = options.map({$0}).shuffled()
-        }else{
+            self.options = options.map { $0 }.shuffled()
+        } else {
             settings.finish = true
         }
     }
