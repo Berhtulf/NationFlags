@@ -19,9 +19,9 @@ class NationListViewModel: ObservableObject {
 
     init() {
         searchCancellable = $search
-            .debounce(for: 0.3, scheduler: RunLoop.main) // debounces the string publisher, such that it delays the process of sending request to remote server.
+            .debounce(for: 0.3, scheduler: RunLoop.main)
             .removeDuplicates()
-            .compactMap { $0 } // removes the nil values so the search string does not get passed down to the publisher chain
+            .compactMap { $0 }
             .sink { str in
                 self.filterList(search: str)
             }
@@ -30,7 +30,7 @@ class NationListViewModel: ObservableObject {
     private func filterList(search: String) {
         if search.isEmpty {
             nationList = Nation.list.sorted {
-                NSLocalizedString($0.name, comment: "") < NSLocalizedString($1.name, comment: "")
+                NSLocalizedString($0.name, comment: "").localizedCaseInsensitiveCompare(NSLocalizedString($1.name, comment: "")) == .orderedAscending
             }
         } else {
             nationList = Nation.list.filter {

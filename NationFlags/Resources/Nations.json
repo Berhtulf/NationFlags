@@ -125,20 +125,6 @@
     "recognition" : "Green"
   },
   {
-    "name" : "Republic of Artsakh",
-    "alpha2Code" : "ROA",
-    "capital" : "Stepanakert",
-    "region" : "Asia",
-    "population" : 150932,
-    "latlngZm" : [
-      39.866667,
-      46.716667,
-      5
-    ],
-    "area" : 11458,
-    "recognition" : "Pink"
-  },
-  {
     "name" : "Australia",
     "alpha2Code" : "AU",
     "capital" : "Canberra",

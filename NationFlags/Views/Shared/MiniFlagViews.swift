@@ -26,13 +26,14 @@ struct GameCorrectFlag: View {
             Image(systemName: "circle.fill")
                 .resizable()
                 .frame(width: 60, height: 60)
+                .foregroundStyle(.white)
             Image(systemName: "checkmark.circle.fill")
                 .resizable()
                 .frame(width: 60, height: 60)
                 .foregroundColor(.green)
                 .overlay(
                     Circle()
-                        .stroke(Color.black, lineWidth: 1)
+                        .stroke(Color.customBlack, lineWidth: 1)
                 )
         }
     }
@@ -71,13 +72,14 @@ struct GameWrongFlag: View {
             Image(systemName: "circle.fill")
                 .resizable()
                 .frame(width: 60, height: 60)
+                .foregroundStyle(.white)
             Image(systemName: "xmark.circle.fill")
                 .resizable()
                 .frame(width: 60, height: 60)
                 .foregroundColor(.red)
                 .overlay(
                     Circle()
-                        .stroke(Color.black, lineWidth: 1)
+                        .stroke(Color.customBlack, lineWidth: 1)
                 )
         }
     }
